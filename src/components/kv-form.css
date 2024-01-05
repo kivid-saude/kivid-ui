@@ -30,7 +30,7 @@
   padding: 1rem 1rem;
   font-family: inherit;
   font-size: var(--kv-font-size-md);
-  font-weight: var(--kv-font-weight-medium);
+  font-weight: var(--kv-font-weight-bold);
   line-height: var(--kv-line-height-xs);
   border: 1px solid var(--kv-color-gray-3);
   border-radius: 1rem;
