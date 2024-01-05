@@ -1,5 +1,3 @@
-import "../kv-form.css";
-
 type TInput = {
   label?: string;
 } & React.DetailedHTMLProps<
@@ -12,11 +10,11 @@ export const Input = (props: TInput) => {
   return (
     <fieldset className="kv-fieldset">
       {!!label && (
-        <label htmlFor={inputProps.id ?? ""} className="kv-label">
+        <label className="kv-label" htmlFor={inputProps.id ?? ""}>
           {label}
         </label>
       )}
-      <input type="text" className="kv-input" {...inputProps} />
+      <input className="kv-input" type="text" {...inputProps} />
     </fieldset>
   );
 };
