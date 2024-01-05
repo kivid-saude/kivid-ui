@@ -1,4 +1,6 @@
-import { Input } from "./components/Input/Input";
+import { KvFieldset } from "./components/KvFieldset/KvFieldset";
+import { KvInput } from "./components/KvInput/KvInput";
+import { KvLabel } from "./components/KvLabel/KvLabel";
 
 function App() {
   return (
@@ -9,7 +11,10 @@ function App() {
       </header>
       <div className="kv-container">
         <p>KvInput:</p>
-        <Input label="Nome completo" placeholder="Digite seu nome completo" />
+        <KvFieldset>
+          <KvLabel>Nome completo</KvLabel>
+          <KvInput placeholder="Digite seu nome completo" />
+        </KvFieldset>
       </div>
     </>
   );
