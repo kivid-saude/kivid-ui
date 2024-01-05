@@ -1,0 +1,10 @@
+.kv-card {
+  background: #fff;
+  border: 1px solid #0002;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.kv-card__content {
+  padding: var(--container-padding);
+}

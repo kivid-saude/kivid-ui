@@ -1,0 +1,113 @@
+.kv-buttons {
+  display: grid;
+  gap: 0.5rem;
+}
+.kv-buttons--column {
+  grid-auto-flow: column;
+}
+
+/**/
+button.kv-button,
+.kv-button {
+  --background: var(--kv-color-base, #fff);
+  --color: var(--kv-color-contrast, var(--kv-body-color));
+  --border-color: var(--kv-color-base, var(--kv-color-gray-3));
+  --font-size: var(--kv-font-size-sm);
+  --height: 3rem;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--height);
+  margin: 0;
+  padding: 0.5rem 1rem;
+  appearance: none;
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  color: var(--color);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-size);
+  font-weight: 700;
+  line-height: calc(1em + 0.25rem);
+}
+
+.kv-button:focus {
+  outline-color: var(--border-color);
+}
+.kv-button:active {
+  opacity: 0.8;
+}
+.kv-button:disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+button.kv-button--outline,
+.kv-button--outline {
+  --background: #fff;
+  --color: var(--kv-color-contrast);
+  --border-color: var(--kv-color-gray-3);
+}
+
+.kv-button--small {
+  --height: 2.5rem;
+}
+.kv-button--medium {
+  --height: 3rem;
+}
+.kv-button--large {
+  --height: 3.5rem;
+}
+
+.kv-button--loading {
+  pointer-events: none;
+}
+
+.kv-button--block {
+  width: 100%;
+}
+
+button.kv-button--centered,
+.kv-button--centered {
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  --font-size: var(--kv-font-size-2xs);
+}
+
+/* button.kv-button--secondary,
+.kv-button--secondary {
+  --background: var(--kv-color-secondary);
+  --border-color: transparent;
+  --color: #fff;
+}
+button.kv-button--tertiary,
+.kv-button--tertiary {
+  --background: var(--kv-color-tertiary);
+  --border-color: transparent;
+  --color: #fff;
+}
+button.kv-button--success,
+.kv-button--success {
+  --background: var(--kv-color-success);
+  --border-color: transparent;
+  --color: #fff;
+}
+button.kv-button--danger,
+.kv-button--danger {
+  --background: var(--kv-color-danger);
+  --border-color: transparent;
+  --color: #fff;
+} */
+
+.kv-button .slot-start,
+.kv-button .slot-end {
+  display: flex;
+  align-items: center;
+}
+.kv-button .slot-end {
+  margin-left: auto;
+}

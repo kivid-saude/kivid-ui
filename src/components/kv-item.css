@@ -1,0 +1,27 @@
+/* #kv-item */
+.kv-item {
+  --margin: 0;
+  --padding-vertical: 0.75rem;
+  --padding-inline: var(--container-padding, 0);
+  --padding: var(--padding-vertical) var(--padding-inline);
+  --border-width: 0;
+  --border-color: var(--color-gray-3);
+
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 1rem;
+  width: 100%;
+  padding: var(--padding);
+  background: none;
+}
+
+.kv-item:not(:last-child) {
+  margin-bottom: var(--margin);
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+.kv-item--rounded {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1rem;
+}

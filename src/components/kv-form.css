@@ -1,0 +1,89 @@
+/* FORM */
+.kv-fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* LABEL */
+.kv-label {
+  width: 100%;
+  font-size: var(--kv-font-size-xs);
+  font-weight: 500;
+  line-height: var(--kv-line-height-sm);
+}
+
+.kv-fieldset .kv-label {
+  position: absolute;
+  top: 0;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  pointer-events: none;
+}
+
+/* INPUT */
+.kv-input {
+  appearance: none;
+  width: 100%;
+  padding: 1rem 1rem;
+  font-family: inherit;
+  font-size: var(--kv-font-size-md);
+  font-weight: var(--kv-font-weight-medium);
+  line-height: var(--kv-line-height-xs);
+  border: 1px solid var(--kv-color-gray-3);
+  border-radius: 1rem;
+  color: var(--kv-body-color);
+}
+.kv-input:focus {
+  outline-color: var(--kv-color-tertiary);
+}
+.kv-input::placeholder {
+  color: var(--kv-body-color);
+  opacity: 0.4;
+}
+.kv-fieldset .kv-input {
+  height: 4.5rem;
+  padding-top: 2.25rem;
+}
+
+/* CHECKBOX */
+.kv-checkbox {
+  accent-color: var(--kv-color-success);
+  margin-right: 0.25rem;
+}
+.kv-label--checkable {
+  font-size: var(--kv-font-size-sm);
+  font-weight: var(--kv-font-weight-medium);
+}
+
+/* SELECT */
+.kv-select {
+  appearance: none;
+  width: 100%;
+  padding: 1rem 1rem;
+  font-family: inherit;
+  font-size: var(--kv-font-size-md);
+  font-weight: var(--kv-font-weight-bold);
+  line-height: var(--kv-line-height-xs);
+  border: 1px solid var(--kv-color-gray-3);
+  border-radius: 1rem;
+  background: #fff;
+  cursor: pointer;
+}
+.kv-select:focus {
+  outline-color: var(--kv-color-tertiary);
+}
+.kv-fieldset .kv-select {
+  height: 4.5rem;
+  padding-top: 2.25rem;
+}
+
+/* ICON */
+.kv-fieldset .kv-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}

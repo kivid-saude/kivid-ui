@@ -1,0 +1,125 @@
+:root {
+  /* COLORS */
+  --kv-color-gray-1: #fafbfb;
+  --kv-color-gray-2: #f2f4f5;
+
+  --kv-color-gray-3: #e2e4e5;
+  --kv-color-gray-3-rgb: 226, 228, 229;
+  --kv-color-gray-3-hsl: 200, 5%, 89%;
+
+  --kv-color-gray-4: #bcc0c2;
+  --kv-color-gray-5: #838b8e;
+  --kv-color-gray-6: #4b565b;
+
+  /* COLORS */
+  --kv-color-primary: #4b565b;
+  --kv-color-primary-contrast: #fff;
+
+  --kv-color-secondary: #0dd1e2;
+  --kv-color-secondary-contrast: #fff;
+
+  --kv-color-tertiary: #776de6;
+  --kv-color-tertiary-hsl: 245, 71%, 66%;
+  --kv-color-tertiary-contrast: #fff;
+  --kv-color-tertiary-alt: #ea2797;
+
+  --kv-color-success: #37d67a;
+  --kv-color-success-rgb: 55, 214, 122;
+  --kv-color-success-hsl: 145, 66%, 53%;
+  --kv-color-success-shade: hsl(145, 66%, 43%);
+  --kv-color-success-tint: hsl(145, 66%, 63%);
+  --kv-color-success-contrast: #fff;
+
+  --kv-color-warning: #ffc134;
+  --kv-color-warning-alt: #ff834d;
+  --kv-color-warning-contrast: #fff;
+
+  --kv-color-danger: #e84343;
+  --kv-color-danger-contrast: #fff;
+
+  --kv-color-medium: #8e989c;
+  --kv-color-medium-contrast: #fff;
+
+  --kv-color-light: #f2f3f4;
+  --kv-color-light-tint: hsl(210, 8%, 105%);
+  --kv-color-light-shade: hsl(210, 8%, 85%);
+  --kv-color-light-contrast: var(--kv-color-primary);
+
+  --kv-color-white: #fff;
+  --kv-color-white-tint: #fff;
+  --kv-color-white-shade: hsl(0, 0%, 90%);
+  --kv-color-white-contrast: var(--kv-color-primary);
+
+  /* BODY */
+  --kv-font-family: "Red Hat Display", sans-serif;
+  --kv-body-background: var(--kv-color-gray-2);
+  --kv-body-color: var(--kv-color-primary);
+
+  /* FONT-SIZE */
+  --kv-font-size-2xs: 0.625rem;
+  --kv-font-size-xs: 0.75rem;
+  --kv-font-size-sm: 0.875rem;
+  --kv-font-size-md: 1rem;
+  --kv-font-size-lg: 1.125rem;
+  --kv-font-size-xl: 1.25rem;
+  --kv-font-size-2xl: 1.5rem;
+  --kv-font-size-3xl: 1.75rem;
+  --kv-font-size-4xl: 2rem;
+  --kv-font-size-5xl: 2.5rem;
+  --kv-font-size-6xl: 3rem;
+  --kv-font-size-base: var(--kv-font-size-medium);
+
+  /* LINE-HEIGHT */
+  --kv-line-height-xl: calc(1em + 1rem);
+  --kv-line-height-lg: calc(1em + 0.75rem);
+  --kv-line-height-md: calc(1em + 0.5rem);
+  --kv-line-height-sm: calc(1em + 0.25rem);
+  --kv-line-height-xs: calc(1em + 0.125rem);
+  --kv-line-height-base: var(--kv-line-height-md);
+
+  --kv-font-weight-thin: 200;
+  --kv-font-weight-light: 300;
+  --kv-font-weight-regular: 400;
+  --kv-font-weight-medium: 500;
+  --kv-font-weight-semibold: 600;
+  --kv-font-weight-bold: 700;
+  --kv-font-weight-black: 900;
+
+  --container-padding: 1.5rem;
+}
+
+.kv-color-primary {
+  --kv-color-base: var(--kv-color-primary);
+  --kv-color-base-tint: var(--kv-color-primary-tint);
+  --kv-color-contrast: var(--kv-color-primary-contrast);
+}
+.kv-color-secondary {
+  --kv-color-base: var(--kv-color-secondary);
+  --kv-color-base-tint: var(--kv-color-secondary-tint);
+  --kv-color-contrast: var(--kv-color-secondary-contrast);
+}
+.kv-color-tertiary {
+  --kv-color-base: var(--kv-color-tertiary);
+  --kv-color-base-tint: var(--kv-color-tertiary-tint);
+  --kv-color-contrast: var(--kv-color-tertiary-contrast);
+}
+.kv-color-success {
+  --kv-color-base: var(--kv-color-success);
+  --kv-color-base-tint: var(--kv-color-success-tint);
+  --kv-color-contrast: var(--kv-color-success-contrast);
+}
+.kv-color-warning {
+  --kv-color-base: var(--kv-color-warning);
+  --kv-color-base-tint: var(--kv-color-warning-tint);
+  --kv-color-contrast: var(--kv-color-warning-contrast);
+}
+.kv-color-danger {
+  --kv-color-base: var(--kv-color-danger);
+  --kv-color-base-tint: var(--kv-color-danger-tint);
+  --kv-color-contrast: var(--kv-color-danger-contrast);
+}
+.kv-color-light {
+  --kv-color-base: var(--kv-color-light);
+  --kv-color-base-tint: var(--kv-color-light-tint);
+  --kv-color-contrast: var(--kv-color-light-contrast);
+}

@@ -1,0 +1,117 @@
+@import url(./variables.css);
+/* @import url(./components/kv-form.css); */
+@import url(./components/kv-button.css);
+@import url(./components/kv-card.css);
+@import url(./components/kv-item.css);
+@import url(./components/kv-list.css);
+@import url(./components/kv-actions.css);
+@import url(./components/kv-action.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 16px/1.5 var(--kv-font-family);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  background: var(--kv-body-background);
+  color: var(--kv-body-color);
+  font-weight: 500;
+  user-select: none;
+}
+
+a {
+  color: var(--kv-color-secondary);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* LAYOUT */
+.kv-app__header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  /* background: var(--kv-color-gray-1); */
+  /* border-bottom: 1px solid var(--kv-color-gray-3); */
+}
+
+.kv-app__footer {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* COMPONENTS */
+
+/* .kv-container */
+.kv-container,
+.kv-container--fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: var(--container-padding);
+}
+@media (min-width: 768px) {
+  .kv-container {
+    max-width: 640px;
+  }
+}
+/* @media (min-width: 1280px) {
+  .kv-container {
+    max-width: 1280px;
+    padding-inline: 2.5rem;
+  }
+} */
+
+/* kv-title */
+.kv-title {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.kv-title__heading,
+.kv-title__description {
+  margin: 0;
+  line-height: var(--kv-line-height-sm);
+}
+.kv-title__heading {
+  font-size: var(--kv-font-size-xl);
+  font-weight: var(--kv-font-weight-regular);
+}
+.kv-title__heading::before,
+.kv-title__border {
+  --border-color: var(--kv-color-base, var(--kv-color-tertiary));
+  content: "";
+  display: block;
+  width: 1.5em;
+  height: 0.25em;
+  margin-bottom: 0.5rem;
+  background: var(--border-color);
+  border-radius: 2em;
+}
+.kv-title__description {
+  font-size: var(--kv-font-size-sm);
+  font-weight: var(--kv-font-weight-medium);
+}
+
+/* kv-icon */
+.kv-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
