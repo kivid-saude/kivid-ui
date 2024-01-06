@@ -20,26 +20,39 @@ type TButton = {
   >;
 
 export const KvButton = (props: TButton) => {
+  const {
+    children,
+    className,
+    outline,
+    small,
+    medium,
+    large,
+    block,
+    loading,
+    centered,
+    href,
+    ...restProps
+  } = props;
   const classes = ["kv-button"];
 
-  if (props.centered) classes.push("kv-button--centered");
-  if (props.outline) classes.push("kv-button--outline");
-  if (props.small) classes.push("kv-button--small");
-  if (props.medium) classes.push("kv-button--medium");
-  if (props.large) classes.push("kv-button--large");
-  if (props.block) classes.push("kv-button--block");
-  if (props.loading) classes.push("kv-button--loading");
+  if (centered) classes.push("kv-button--centered");
+  if (outline) classes.push("kv-button--outline");
+  if (small) classes.push("kv-button--small");
+  if (medium) classes.push("kv-button--medium");
+  if (large) classes.push("kv-button--large");
+  if (block) classes.push("kv-button--block");
+  if (loading) classes.push("kv-button--loading");
 
-  if (props.href) {
+  if (href) {
     return (
-      <a {...props} className={`${props.className} ${classes.join(" ")}`}>
-        {props.children}
+      <a {...restProps} className={`${className} ${classes.join(" ")}`}>
+        {children}
       </a>
     );
   }
   return (
-    <button {...props} className={`${props.className} ${classes.join(" ")}`}>
-      {props.children}
+    <button {...restProps} className={`${className} ${classes.join(" ")}`}>
+      {children}
     </button>
   );
 };
