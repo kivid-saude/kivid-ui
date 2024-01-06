@@ -41,8 +41,10 @@ button.kv-button,
   opacity: 0.8;
 }
 .kv-button:disabled {
+  opacity: 0.5;
   pointer-events: none;
-  opacity: 0.4;
+  user-select: none;
+  cursor: not-allowed;
 }
 
 button.kv-button--outline,

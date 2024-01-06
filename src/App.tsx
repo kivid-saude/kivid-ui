@@ -10,17 +10,23 @@ function App() {
         <h1>Kivid UI</h1>
         <hr />
       </header>
-      <div className="kv-container" style={{ display: "grid", gap: "1rem" }}>
+
+      <form className="kv-container" style={{ display: "grid", gap: "1rem" }}>
         <p>KvInput:</p>
+
         <KvFieldset>
           <KvLabel>Nome completo</KvLabel>
-          <KvInput placeholder="Digite seu nome completo" />
+          <KvInput placeholder="Digite seu nome completo" required />
         </KvFieldset>
 
-        <KvButton className="kv-color-success" block={true} centered={true}>
-          Entrar
+        <KvButton className="kv-color-success" block centered type="submit">
+          Button
         </KvButton>
-      </div>
+
+        <KvButton className="kv-color-success" block centered disabled>
+          Disabled Button
+        </KvButton>
+      </form>
     </>
   );
 }
