@@ -12,7 +12,8 @@
 }
 
 html {
-  font: 16px/1.5 var(--kv-font-family);
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   height: 100%;
@@ -25,6 +26,7 @@ body {
   overflow-x: hidden;
   background: var(--kv-body-background);
   color: var(--kv-body-color);
+  font-family: var(--kv-font-family);
   font-weight: 500;
   user-select: none;
 }
