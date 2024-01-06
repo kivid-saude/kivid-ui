@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import "./kv-buttons.css";
 
 type TKvButtons = {
   column?: boolean;
