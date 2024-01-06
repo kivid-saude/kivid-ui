@@ -1,6 +1,5 @@
 @import url(./kv-variables.css);
 @import url(./components/kv-form.css);
-@import url(./components/kv-card.css);
 @import url(./components/kv-item.css);
 @import url(./components/kv-list.css);
 @import url(./components/kv-actions.css);
@@ -80,8 +79,8 @@ svg {
 /* kv-title */
 .kv-title {
   display: grid;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 .kv-title__heading,
 .kv-title__description {

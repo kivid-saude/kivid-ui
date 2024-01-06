@@ -1,4 +1,5 @@
 import React from "react";
+import "./kv-input.css";
 
 type TInput = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
