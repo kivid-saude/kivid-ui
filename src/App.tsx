@@ -1,3 +1,4 @@
+import { KvButton } from "./components/KvButton/KvButton";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
@@ -9,12 +10,16 @@ function App() {
         <h1>Kivid UI</h1>
         <hr />
       </header>
-      <div className="kv-container">
+      <div className="kv-container" style={{ display: "grid", gap: "1rem" }}>
         <p>KvInput:</p>
         <KvFieldset>
           <KvLabel>Nome completo</KvLabel>
           <KvInput placeholder="Digite seu nome completo" />
         </KvFieldset>
+
+        <KvButton className="kv-color-success" block={true} centered={true}>
+          Entrar
+        </KvButton>
       </div>
     </>
   );

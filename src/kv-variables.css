@@ -1,58 +1,44 @@
 :root {
   /* COLORS */
-  --kv-color-gray-1: #fafbfb;
-  --kv-color-gray-2: #f2f4f5;
-
-  --kv-color-gray-3: #e2e4e5;
-  --kv-color-gray-3-rgb: 226, 228, 229;
-  --kv-color-gray-3-hsl: 200, 5%, 89%;
-
-  --kv-color-gray-4: #bcc0c2;
-  --kv-color-gray-5: #838b8e;
-  --kv-color-gray-6: #4b565b;
+  --kv-color-gray-100: #fafcfc;
+  --kv-color-gray-200: #fafcfc;
+  --kv-color-gray-300: #f2f5f5;
+  --kv-color-gray-400: #e8ebeb;
+  --kv-color-gray-500: #d9dede;
+  --kv-color-gray-600: #adb2b2;
+  --kv-color-gray-700: #949999;
+  --kv-color-gray-800: #565959;
+  --kv-color-gray-900: #263333;
 
   /* COLORS */
-  --kv-color-primary: #4b565b;
+  --kv-color-primary: var(--kv-color-gray-800);
   --kv-color-primary-contrast: #fff;
 
-  --kv-color-secondary: #0dd1e2;
+  --kv-color-secondary: #39d7e5;
   --kv-color-secondary-contrast: #fff;
 
-  --kv-color-tertiary: #776de6;
-  --kv-color-tertiary-hsl: 245, 71%, 66%;
+  --kv-color-tertiary: #7c66e5;
   --kv-color-tertiary-contrast: #fff;
-  --kv-color-tertiary-alt: #ea2797;
 
-  --kv-color-success: #37d67a;
-  --kv-color-success-rgb: 55, 214, 122;
-  --kv-color-success-hsl: 145, 66%, 53%;
-  --kv-color-success-shade: hsl(145, 66%, 43%);
-  --kv-color-success-tint: hsl(145, 66%, 63%);
+  --kv-color-tertiary-alt: #f048b8;
+
+  --kv-color-success: #52e583;
   --kv-color-success-contrast: #fff;
 
-  --kv-color-warning: #ffc134;
-  --kv-color-warning-alt: #ff834d;
+  --kv-color-warning: #ffc234;
   --kv-color-warning-contrast: #fff;
 
-  --kv-color-danger: #e84343;
+  --kv-color-warning-alt: #f5914a;
+
+  --kv-color-danger: #e54545;
   --kv-color-danger-contrast: #fff;
 
-  --kv-color-medium: #8e989c;
-  --kv-color-medium-contrast: #fff;
-
-  --kv-color-light: #f2f3f4;
-  --kv-color-light-tint: hsl(210, 8%, 105%);
-  --kv-color-light-shade: hsl(210, 8%, 85%);
-  --kv-color-light-contrast: var(--kv-color-primary);
-
   --kv-color-white: #fff;
-  --kv-color-white-tint: #fff;
-  --kv-color-white-shade: hsl(0, 0%, 90%);
   --kv-color-white-contrast: var(--kv-color-primary);
 
   /* BODY */
   --kv-font-family: "Red Hat Display", sans-serif;
-  --kv-body-background: var(--kv-color-gray-2);
+  --kv-body-background: var(--kv-color-gray-300);
   --kv-body-color: var(--kv-color-primary);
 
   /* FONT-SIZE */

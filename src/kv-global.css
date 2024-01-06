@@ -1,6 +1,6 @@
 @import url(./kv-variables.css);
 @import url(./components/kv-form.css);
-@import url(./components/kv-button.css);
+@import url(./components/KvButton/kv-button.css);
 @import url(./components/kv-card.css);
 @import url(./components/kv-item.css);
 @import url(./components/kv-list.css);

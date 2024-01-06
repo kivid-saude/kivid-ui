@@ -74,8 +74,6 @@ button.kv-button--centered,
 .kv-button--centered {
   text-align: center;
   justify-content: center;
-  text-transform: uppercase;
-  --font-size: var(--kv-font-size-2xs);
 }
 
 /* button.kv-button--secondary,
