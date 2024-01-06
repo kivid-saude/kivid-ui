@@ -1,4 +1,5 @@
 import { KvButton } from "./components/KvButton/KvButton";
+import { KvButtons } from "./components/KvButtons/KvButtons";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
@@ -19,13 +20,15 @@ function App() {
           <KvInput placeholder="Digite seu nome completo" required />
         </KvFieldset>
 
-        <KvButton className="kv-color-success" block centered type="submit">
-          Button
-        </KvButton>
+        <KvButtons>
+          <KvButton className="kv-color-success" block centered type="submit">
+            Success Button
+          </KvButton>
 
-        <KvButton className="kv-color-success" block centered disabled>
-          Disabled Button
-        </KvButton>
+          <KvButton className="kv-color-success" block centered disabled>
+            Disabled Success Button
+          </KvButton>
+        </KvButtons>
       </form>
     </>
   );

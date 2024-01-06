@@ -1,9 +1,12 @@
 .kv-buttons {
   display: grid;
   gap: 0.5rem;
+  margin: 0;
+  padding: 0;
 }
 .kv-buttons--column {
   grid-auto-flow: column;
+  grid-auto-columns: 1fr;
 }
 
 /**/
