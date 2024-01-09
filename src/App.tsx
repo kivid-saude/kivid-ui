@@ -4,6 +4,7 @@ import { KvCard } from "./components/KvCard/KvCard";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
+import { KvOtp } from "./components/KvOtp/KvOtp";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       </header>
 
       <div className="kv-container">
-        <KvCard style={{ padding: "2rem" }}>
+        <KvCard>
           <header className="kv-title">
             <h1 className="kv-title__heading">
               Bem-vindo ao
@@ -23,6 +24,7 @@ function App() {
             </h1>
             <p className="kv-title__description">Entre com suas credenciais.</p>
           </header>
+
           <form style={{ display: "grid", gap: "1rem" }}>
             <KvFieldset>
               <KvLabel>Nome completo</KvLabel>
@@ -41,6 +43,23 @@ function App() {
 
               <KvButton className="kv-color-success" block centered disabled>
                 Disabled Success Button
+              </KvButton>
+            </KvButtons>
+          </form>
+        </KvCard>
+
+        <KvCard>
+          <form style={{ display: "grid", gap: "1rem" }}>
+            <KvOtp placeholder="######" />
+
+            <KvButtons>
+              <KvButton
+                className="kv-color-success"
+                block
+                centered
+                type="submit"
+              >
+                Send
               </KvButton>
             </KvButtons>
           </form>
