@@ -3,7 +3,7 @@ button.kv-button,
 .kv-button {
   --background: var(--kv-color-base, #fff);
   --color: var(--kv-color-contrast, var(--kv-body-color));
-  --border-color: var(--kv-color-base, var(--kv-color-gray-3));
+  --border-color: var(--kv-color-base, var(--kv-color-gray-400));
   --font-size: var(--kv-font-size-sm);
   --height: 3rem;
   position: relative;
@@ -17,7 +17,7 @@ button.kv-button,
   appearance: none;
   background-color: var(--background);
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
+  border-radius: var(--border-radius, 1rem);
   color: var(--color);
   cursor: pointer;
   font-family: inherit;
@@ -41,9 +41,9 @@ button.kv-button,
 
 button.kv-button--outline,
 .kv-button--outline {
-  --background: #fff;
-  --color: var(--kv-color-contrast);
-  --border-color: var(--kv-color-gray-3);
+  /* --background: #fff; */
+  /* --color: var(--kv-body-color); */
+  --border-color: var(--kv-color-gray-400);
 }
 
 .kv-button--small {
@@ -62,6 +62,10 @@ button.kv-button--outline,
 
 .kv-button--block {
   width: 100%;
+}
+
+.kv-button--rounded {
+  --border-radius: 2em;
 }
 
 button.kv-button--centered,
@@ -95,11 +99,11 @@ button.kv-button--danger,
   --color: #fff;
 } */
 
-.kv-button .slot-start,
+/* .kv-button .slot-start,
 .kv-button .slot-end {
   display: flex;
   align-items: center;
 }
 .kv-button .slot-end {
   margin-left: auto;
-}
+} */

@@ -9,6 +9,7 @@ type TButton = {
   block?: boolean;
   loading?: boolean;
   centered?: boolean;
+  rounded?: boolean;
   href?: string;
 } & PropsWithChildren &
   React.DetailedHTMLProps<
@@ -20,20 +21,20 @@ type TButton = {
     HTMLAnchorElement
   >;
 
-export const KvButton = (props: TButton) => {
-  const {
-    children,
-    className,
-    outline,
-    small,
-    medium,
-    large,
-    block,
-    loading,
-    centered,
-    href,
-    ...restProps
-  } = props;
+export const KvButton = ({
+  children,
+  className,
+  outline,
+  small,
+  medium,
+  large,
+  block,
+  loading,
+  centered,
+  rounded,
+  href,
+  ...restProps
+}: TButton) => {
   const classes = ["kv-button"];
 
   if (centered) classes.push("kv-button--centered");
@@ -43,16 +44,23 @@ export const KvButton = (props: TButton) => {
   if (large) classes.push("kv-button--large");
   if (block) classes.push("kv-button--block");
   if (loading) classes.push("kv-button--loading");
+  if (rounded) classes.push("kv-button--rounded");
 
   if (href) {
     return (
-      <a {...restProps} className={`${className} ${classes.join(" ")}`}>
+      <a
+        {...restProps}
+        className={`${className ? className : ""} ${classes.join(" ")}`}
+      >
         {children}
       </a>
     );
   }
   return (
-    <button {...restProps} className={`${className} ${classes.join(" ")}`}>
+    <button
+      {...restProps}
+      className={`${className ? className : ""} ${classes.join(" ")}`}
+    >
       {children}
     </button>
   );
