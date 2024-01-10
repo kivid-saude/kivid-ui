@@ -6,6 +6,7 @@ import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
 import { KvLoading } from "./components/KvLoading/KvLoading";
 import { KvOtp } from "./components/KvOtp/KvOtp";
+import { KvPasswordInput } from "./components/KvPasswordInput/KvPasswordInput";
 
 function App() {
   return (
@@ -30,6 +31,11 @@ function App() {
             <KvFieldset>
               <KvLabel>Nome completo</KvLabel>
               <KvInput placeholder="Digite seu nome completo" required />
+            </KvFieldset>
+
+            <KvFieldset>
+              <KvLabel>Senha</KvLabel>
+              <KvPasswordInput placeholder="Digite sua senha" />
             </KvFieldset>
 
             <KvButtons>
@@ -67,7 +73,7 @@ function App() {
         </KvCard>
       </div>
 
-      <KvLoading isVisible />
+      <KvLoading isVisible={false} />
     </>
   );
 }

@@ -7,14 +7,13 @@ type TInput = React.DetailedHTMLProps<
 >;
 
 export const KvInput = React.forwardRef<HTMLInputElement, TInput>(
-  (props, ref) => {
-    const { className, ...restProps } = props;
+  ({ className = "", ...props }, ref) => {
     return (
       <input
-        className={`kv-input ${className ? className : ""}`}
+        className={`kv-input ${className}`}
         type="text"
         ref={ref}
-        {...restProps}
+        {...props}
       />
     );
   }

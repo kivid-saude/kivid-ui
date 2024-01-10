@@ -2,9 +2,9 @@ type TKvIcon = {
   icon: string;
 } & React.SVGProps<SVGSVGElement>;
 
-export const KvIcon = ({ icon, className }: TKvIcon) => {
+export const KvIcon = ({ icon, className = "", ...props }: TKvIcon) => {
   return (
-    <svg className={`kv-icon ${className ? className : ""}`}>
+    <svg className={`kv-icon ${className}`} {...props}>
       <use href={`/icon-${icon}.svg#icon`} />
     </svg>
   );
