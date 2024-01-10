@@ -13,7 +13,7 @@ export const KvLoading = ({ isVisible = false }: TKvLoading) => {
         <Player
           loop={true}
           autoplay={true}
-          src="/loading-borboleta.json"
+          src="./loading-borboleta.json"
           style={{ width: "140px", height: "140px" }}
         />
       )}
