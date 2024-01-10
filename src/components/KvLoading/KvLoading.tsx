@@ -1,6 +1,7 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import { PropsWithChildren } from "react";
 import "./kv-loading.css";
+import loadingSrc from "./loading-borboleta.json";
 
 type TKvLoading = {
   isVisible: boolean;
@@ -13,7 +14,7 @@ export const KvLoading = ({ isVisible = false }: TKvLoading) => {
         <Player
           loop={true}
           autoplay={true}
-          src="./loading-borboleta.json"
+          src={loadingSrc}
           style={{ width: "140px", height: "140px" }}
         />
       )}
