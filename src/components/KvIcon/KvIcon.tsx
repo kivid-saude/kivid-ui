@@ -5,7 +5,7 @@ type TKvIcon = {
 export const KvIcon = ({ icon, className = "", ...props }: TKvIcon) => {
   return (
     <svg className={`kv-icon ${className}`} {...props}>
-      <use href={`/icon-${icon}.svg#icon`} />
+      <use href={`/icons/icon-${icon}.svg#icon`} />
     </svg>
   );
 };
