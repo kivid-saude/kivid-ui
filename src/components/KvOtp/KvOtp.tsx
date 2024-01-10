@@ -12,12 +12,11 @@ type TInput = {
 >;
 
 export const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
-  (props, ref) => {
-    const { className, handleResendToken, ...restProps } = props;
+  ({ className = "", handleResendToken, ...props }, ref) => {
     return (
       <div style={{ display: "grid", gap: "1rem", justifyItems: "center" }}>
         <input
-          className={`kv-otp kv-input ${className ? className : ""}`}
+          className={`kv-otp kv-input ${className}`}
           type="text"
           inputMode="numeric"
           autoComplete="one-time-code"
@@ -25,7 +24,7 @@ export const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
           pattern="\d{6}"
           required
           ref={ref}
-          {...restProps}
+          {...props}
         />
         <KvButton type="button" onClick={() => handleResendToken?.()}>
           <KvIcon icon="token" />

@@ -23,7 +23,7 @@ type TButton = {
 
 export const KvButton = ({
   children,
-  className,
+  className = "",
   outline,
   small,
   medium,
@@ -48,10 +48,7 @@ export const KvButton = ({
 
   if (href) {
     return (
-      <a
-        {...restProps}
-        className={`${className ? className : ""} ${classes.join(" ")}`}
-      >
+      <a {...restProps} className={`${className} ${classes.join(" ")}`}>
         {children}
       </a>
     );

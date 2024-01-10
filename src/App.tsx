@@ -4,6 +4,7 @@ import { KvCard } from "./components/KvCard/KvCard";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
+import { KvLoading } from "./components/KvLoading/KvLoading";
 import { KvOtp } from "./components/KvOtp/KvOtp";
 
 function App() {
@@ -65,6 +66,8 @@ function App() {
           </form>
         </KvCard>
       </div>
+
+      <KvLoading isVisible />
     </>
   );
 }

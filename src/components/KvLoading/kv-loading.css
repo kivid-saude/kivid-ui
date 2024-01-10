@@ -1,0 +1,22 @@
+.kv-loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999999;
+  background: var(--kv-color-gray-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s opacity ease-out;
+  transform: translateZ(0);
+  will-change: opacity;
+}
+.kv-loading--active {
+  opacity: 1;
+  transition-timing-function: var(--ease-out);
+}

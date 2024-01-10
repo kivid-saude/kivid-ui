@@ -8,9 +8,9 @@ type TKvCard = React.DetailedHTMLProps<
   PropsWithChildren;
 
 export const KvCard = (props: TKvCard) => {
-  const { children, className, ...restProps } = props;
+  const { children, className = "", ...restProps } = props;
   return (
-    <div className={`kv-card ${className ? className : ""}`} {...restProps}>
+    <div className={`kv-card ${className}`} {...restProps}>
       {children}
     </div>
   );
