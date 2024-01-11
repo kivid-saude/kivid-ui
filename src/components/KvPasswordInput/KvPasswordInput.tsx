@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { KvIcon } from "../KvIcon/KvIcon";
+import "../KvInput/kv-input.css";
 
 export const KvPasswordInput = React.forwardRef<
   HTMLInputElement,
