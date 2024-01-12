@@ -5,7 +5,7 @@ import { KvAlert } from "./components/KvDialog";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
-import { KvLoading } from "./components/KvLoading/KvLoading";
+import KvLoading from "./components/KvLoading/KvLoading";
 import { KvOtp } from "./components/KvOtp/KvOtp";
 import { KvPasswordInput } from "./components/KvPasswordInput/KvPasswordInput";
 import { KvTitle } from "./components/KvTitle/KvTitle";
