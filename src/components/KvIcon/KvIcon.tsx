@@ -1,3 +1,5 @@
+import "./kv-icon.css";
+
 type TKvIcon = {
   icon: string;
 } & React.SVGProps<SVGSVGElement>;
