@@ -11,7 +11,7 @@ type TInput = {
   HTMLInputElement
 >;
 
-export const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
+const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
   ({ className = "", handleResendToken, ...props }, ref) => {
     return (
       <div style={{ display: "grid", gap: "1rem", justifyItems: "center" }}>
@@ -34,3 +34,7 @@ export const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
     );
   }
 );
+
+KvOtp.displayName = "KvOtp";
+
+export { KvOtp };

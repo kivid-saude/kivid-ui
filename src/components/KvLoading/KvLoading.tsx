@@ -18,10 +18,6 @@ export const KvLoading = ({ isVisible = false }: TKvLoading) => {
           style={{ width: "140px", height: "140px" }}
         />
       )}
-
-      {/* <div className="wrapper-icon">
-      <kv-icon icon="logo-kivid-mono-small" />
-    </div> */}
     </section>
   );
 };

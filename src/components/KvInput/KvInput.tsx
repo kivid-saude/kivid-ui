@@ -6,7 +6,7 @@ type TInput = React.DetailedHTMLProps<
   HTMLInputElement
 >;
 
-export const KvInput = React.forwardRef<HTMLInputElement, TInput>(
+const KvInput = React.forwardRef<HTMLInputElement, TInput>(
   ({ className = "", ...props }, ref) => {
     return (
       <input
@@ -18,3 +18,7 @@ export const KvInput = React.forwardRef<HTMLInputElement, TInput>(
     );
   }
 );
+
+KvInput.displayName = "KvInput";
+
+export { KvInput };
