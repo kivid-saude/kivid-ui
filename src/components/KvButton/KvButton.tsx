@@ -54,10 +54,7 @@ export const KvButton = ({
     );
   }
   return (
-    <button
-      {...restProps}
-      className={`${className ? className : ""} ${classes.join(" ")}`}
-    >
+    <button {...restProps} className={`${className} ${classes.join(" ")}`}>
       {children}
     </button>
   );
