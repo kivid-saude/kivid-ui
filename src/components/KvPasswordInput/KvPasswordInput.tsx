@@ -15,7 +15,6 @@ const KvPasswordInput = React.forwardRef<
       <input
         className={`kv-input ${className}`}
         type={isVisible ? "text" : "password"}
-        required
         {...props}
         ref={ref}
       />
