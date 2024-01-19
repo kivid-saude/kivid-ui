@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { KvButton } from "./components/KvButton/KvButton";
 import { KvButtons } from "./components/KvButtons/KvButtons";
 import { KvCard } from "./components/KvCard/KvCard";
-import { KvAlert } from "./components/KvDialog";
+import {
+  KvAlert,
+  KvDialogContent,
+  KvDialogFooter,
+  KvDialogHeader,
+} from "./components/KvDialog";
+import { KvModal } from "./components/KvDialog/KvModal";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
@@ -17,6 +24,7 @@ function App() {
     message:
       "Certifique-se de que as informações estão corretas. Após a confirmação, não será possível altera-lá.",
   });
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -87,12 +95,35 @@ function App() {
         <br />
 
         <KvCard>
-          <KvButton onClick={() => presentAlert()}>Abrir alert</KvButton>
+          <KvButtons column>
+            <KvButton centered onClick={() => presentAlert()}>
+              Abrir Alert
+            </KvButton>
+            <KvButton centered onClick={() => setShowModal(true)}>
+              Abrir Modal
+            </KvButton>
+          </KvButtons>
         </KvCard>
       </div>
 
       <KvLoading isVisible={false} />
       <KvAlert {...alertProps} />
+
+      <KvModal showModal={showModal} onDidDismiss={() => setShowModal(false)}>
+        <KvDialogHeader>
+          <KvTitle
+            title={<>Meu link de vendas</>}
+            description="Você ainda não tem um endereço cadastrado. Personalize o seu link abaixo."
+          />
+        </KvDialogHeader>
+        <KvDialogContent>Content</KvDialogContent>
+        <KvDialogFooter>
+          <KvButtons>
+            <KvButton onClick={() => setShowModal(false)}>Cancelar</KvButton>
+            <KvButton onClick={() => setShowModal(false)}>Salvar</KvButton>
+          </KvButtons>
+        </KvDialogFooter>
+      </KvModal>
     </>
   );
 }

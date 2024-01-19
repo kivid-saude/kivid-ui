@@ -13,7 +13,9 @@
   --dialog-footer-background: #eee;
   --dialog-box-shadow: 0 12px 24px 0 #0002;
   --dialog-max-width: 400px;
+  --dialog-min-height: auto;
 
+  position: relative;
   width: calc(100% - 5rem);
   max-width: var(--dialog-max-width);
   margin: auto;
@@ -27,12 +29,14 @@
 }
 
 .dialog__container {
+  position: relative;
   display: grid;
   align-items: start;
   background: var(--dialog-background);
   border-radius: var(--dialog-border-radius);
   box-shadow: var(--dialog-box-shadow);
   overflow: hidden;
+  min-height: var(--dialog-min-height);
 }
 
 .dialog__header {
