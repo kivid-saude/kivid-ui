@@ -8,7 +8,6 @@ import { KvDialogHeader } from "./KvDialogHeader";
 export type AlertProps = DialogProps & {
   header?: string;
   message?: string | React.ReactNode;
-  onDidDismiss?: (bool?: boolean) => void;
 };
 
 export const KvAlert = ({

@@ -31,6 +31,7 @@
 .dialog__container {
   position: relative;
   display: grid;
+  grid-auto-rows: auto 1fr auto;
   align-items: start;
   background: var(--dialog-background);
   border-radius: var(--dialog-border-radius);
@@ -65,4 +66,23 @@
   gap: 1rem;
   margin: 0;
   padding: 0;
+}
+
+.dialog__close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 0;
+  background: var(--kv-color-gray-700);
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  cursor: pointer;
 }

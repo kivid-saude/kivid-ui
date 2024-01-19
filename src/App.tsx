@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { KvButton } from "./components/KvButton/KvButton";
 import { KvButtons } from "./components/KvButtons/KvButtons";
 import { KvCard } from "./components/KvCard/KvCard";
@@ -17,6 +16,7 @@ import { KvOtp } from "./components/KvOtp/KvOtp";
 import { KvPasswordInput } from "./components/KvPasswordInput/KvPasswordInput";
 import { KvTitle } from "./components/KvTitle/KvTitle";
 import { useAlert } from "./hooks/useAlert";
+import { useModal } from "./hooks/useModal";
 
 function App() {
   const { props: alertProps, present: presentAlert } = useAlert({
@@ -24,7 +24,11 @@ function App() {
     message:
       "Certifique-se de que as informações estão corretas. Após a confirmação, não será possível altera-lá.",
   });
-  const [showModal, setShowModal] = useState(false);
+  const {
+    props: modalProps,
+    present: presentModal,
+    dismiss: dismissModal,
+  } = useModal();
 
   return (
     <>
@@ -99,7 +103,7 @@ function App() {
             <KvButton centered onClick={() => presentAlert()}>
               Abrir Alert
             </KvButton>
-            <KvButton centered onClick={() => setShowModal(true)}>
+            <KvButton centered onClick={() => presentModal()}>
               Abrir Modal
             </KvButton>
           </KvButtons>
@@ -109,7 +113,7 @@ function App() {
       <KvLoading isVisible={false} />
       <KvAlert {...alertProps} />
 
-      <KvModal showModal={showModal} onDidDismiss={() => setShowModal(false)}>
+      <KvModal {...modalProps}>
         <KvDialogHeader>
           <KvTitle
             title={<>Meu link de vendas</>}
@@ -119,8 +123,8 @@ function App() {
         <KvDialogContent>Content</KvDialogContent>
         <KvDialogFooter>
           <KvButtons>
-            <KvButton onClick={() => setShowModal(false)}>Cancelar</KvButton>
-            <KvButton onClick={() => setShowModal(false)}>Salvar</KvButton>
+            <KvButton onClick={() => dismissModal()}>Cancelar</KvButton>
+            <KvButton onClick={() => dismissModal()}>Salvar</KvButton>
           </KvButtons>
         </KvDialogFooter>
       </KvModal>

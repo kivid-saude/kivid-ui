@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import style from "../KvDialog/styles.module.css";
 import { DialogProps, KvDialog } from "./KvDialog";
 
 export type KvModal = DialogProps & {
@@ -16,7 +17,7 @@ export const KvModal = ({ children, onDidDismiss, ...props }: KvModal) => {
     >
       <button
         onClick={() => onDidDismiss?.()}
-        style={{ position: "absolute", top: "1rem", right: "1rem" }}
+        className={style["dialog__close-button"]}
       >
         &times;
       </button>

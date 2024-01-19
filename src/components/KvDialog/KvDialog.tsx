@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 export type DialogProps = {
   showModal?: boolean;
   show?: boolean;
+  onDidDismiss?: (bool?: boolean) => void;
 } & React.DetailedHTMLProps<
   React.DialogHTMLAttributes<HTMLDialogElement>,
   HTMLDialogElement
