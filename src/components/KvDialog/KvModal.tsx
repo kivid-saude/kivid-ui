@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
-import style from "../KvDialog/styles.module.css";
 import { DialogProps, KvDialog } from "./KvDialog";
+import style from "./styles.module.css";
 
 export type KvModal = DialogProps & {
   onDidDismiss?: (bool?: boolean) => void;
