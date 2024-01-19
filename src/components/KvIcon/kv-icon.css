@@ -2,4 +2,5 @@
   flex-shrink: 0;
   width: 1.5rem;
   height: 1.5rem;
+  color: var(--kv-color-base, currentColor);
 }
