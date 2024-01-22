@@ -1,6 +1,6 @@
 .dialog {
   --dialog-padding: 1rem 1.5rem;
-  --dialog-background: var(--kv-color-gray-200);
+  --dialog-background: #fffa;
   --dialog-border-radius: 12px;
   --dialog-header-padding: 1.5rem 1.5rem 0;
   --dialog-header-color: #333;
