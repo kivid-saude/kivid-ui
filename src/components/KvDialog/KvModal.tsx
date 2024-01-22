@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import { KvIcon } from "../KvIcon/KvIcon";
 import { DialogProps, KvDialog } from "./KvDialog";
 import style from "./styles.module.css";
 
@@ -19,7 +20,7 @@ export const KvModal = ({ children, onDidDismiss, ...props }: KvModal) => {
         onClick={() => onDidDismiss?.()}
         className={style["dialog__close-button"]}
       >
-        &times;
+        <KvIcon icon="close" />
       </button>
 
       {children}
