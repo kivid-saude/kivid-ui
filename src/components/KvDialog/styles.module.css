@@ -3,13 +3,13 @@
   --dialog-padding: 1rem 1.5rem;
   --dialog-background: var(--kv-color-gray-200);
   --dialog-border-radius: 12px;
-  --dialog-header-padding: 1.5rem 1.5rem 0;
+  --dialog-header-padding: 2rem 2rem 0;
   --dialog-header-color: #333;
   --dialog-header-background: var(--dialog-background);
-  --dialog-content-padding: 1.5rem;
+  --dialog-content-padding: 1rem 2rem;
   --dialog-content-color: #333;
   --dialog-content-background: var(--dialog-background);
-  --dialog-footer-padding: 1rem 1.5rem;
+  --dialog-footer-padding: 1rem 2rem;
   --dialog-footer-color: #333;
   --dialog-footer-background: #eee;
   --dialog-box-shadow: 0 12px 24px 0 #0002;
