@@ -73,9 +73,9 @@ svg {
     max-width: 640px;
   }
 }
-/* @media (min-width: 1280px) {
+@media (min-width: 1280px) {
   .kv-container {
     max-width: 1280px;
     padding-inline: 2.5rem;
   }
-} */
+}
