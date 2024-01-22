@@ -1,6 +1,7 @@
 .dialog {
+  --dialog-backdrop-color: #fffa;
   --dialog-padding: 1rem 1.5rem;
-  --dialog-background: #fffa;
+  --dialog-background: var(--kv-color-gray-200);
   --dialog-border-radius: 12px;
   --dialog-header-padding: 1.5rem 1.5rem 0;
   --dialog-header-color: #333;
@@ -25,7 +26,7 @@
   overflow: visible;
 }
 .dialog::backdrop {
-  background-color: #0008;
+  background-color: var(--dialog-backdrop-color);
 }
 
 .dialog__container {
