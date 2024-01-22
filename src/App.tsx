@@ -122,10 +122,8 @@ function App() {
         </KvDialogHeader>
         <KvDialogContent>Content</KvDialogContent>
         <KvDialogFooter>
-          <KvButtons>
-            <KvButton onClick={() => dismissModal()}>Cancelar</KvButton>
-            <KvButton onClick={() => dismissModal()}>Salvar</KvButton>
-          </KvButtons>
+          <KvButton onClick={() => dismissModal()}>Cancelar</KvButton>
+          <KvButton onClick={() => dismissModal()}>Salvar</KvButton>
         </KvDialogFooter>
       </KvModal>
     </>

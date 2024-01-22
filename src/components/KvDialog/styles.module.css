@@ -9,10 +9,10 @@
   --dialog-content-padding: 1rem 2rem;
   --dialog-content-color: #333;
   --dialog-content-background: var(--dialog-background);
-  --dialog-footer-padding: 1rem 2rem;
+  --dialog-footer-padding: 2rem;
   --dialog-footer-color: #333;
-  --dialog-footer-background: #eee;
-  --dialog-box-shadow: 0 12px 24px 0 #0002;
+  --dialog-footer-background: transparent;
+  --dialog-box-shadow: 0 8px 24px 0 #0002;
   --dialog-max-width: 400px;
   --dialog-min-height: auto;
 
@@ -56,6 +56,8 @@
 }
 
 .dialog__footer {
+  display: flex;
+  justify-content: space-between;
   padding: var(--dialog-footer-padding);
   color: var(--dialog-footer-color);
   background: var(--dialog-footer-background);
