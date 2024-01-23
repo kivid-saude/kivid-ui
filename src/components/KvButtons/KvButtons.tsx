@@ -9,11 +9,18 @@ type TKvButtons = {
 > &
   PropsWithChildren;
 
-export const KvButtons = ({ className = "", column, children }: TKvButtons) => {
+export const KvButtons = ({
+  className = "",
+  column,
+  children,
+  ...props
+}: TKvButtons) => {
   const classes = ["kv-buttons"];
   if (column) classes.push("kv-buttons--column");
 
   return (
-    <menu className={`${classes.join(" ")} ${className}`}>{children}</menu>
+    <menu {...props} className={`${classes.join(" ")} ${className}`}>
+      {children}
+    </menu>
   );
 };
