@@ -6,7 +6,7 @@ import { KvDialogContent } from "./KvDialogContent";
 import { KvDialogFooter } from "./KvDialogFooter";
 import { KvDialogHeader } from "./KvDialogHeader";
 
-export type AlertProps = DialogProps & {
+export type AlertProps = {
   title?: string | ReactNode;
   message?: string | ReactNode;
 };
@@ -16,7 +16,7 @@ export const KvAlert = ({
   title,
   onDidDismiss,
   ...props
-}: AlertProps) => {
+}: AlertProps & DialogProps) => {
   return (
     <KvDialog {...props}>
       <KvDialogHeader>{title}</KvDialogHeader>

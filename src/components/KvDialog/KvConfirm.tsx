@@ -6,7 +6,7 @@ import { KvDialogContent } from "./KvDialogContent";
 import { KvDialogFooter } from "./KvDialogFooter";
 import { KvDialogHeader } from "./KvDialogHeader";
 
-export type ConfirmProps = DialogProps & {
+export type ConfirmProps = {
   title?: string | ReactNode;
   message?: string | ReactNode;
   accept?: string;
@@ -21,7 +21,7 @@ export const KvConfirm = ({
   cancel = "Cancelar",
   onDidDismiss,
   ...props
-}: ConfirmProps) => {
+}: ConfirmProps & DialogProps) => {
   return (
     <KvDialog {...props}>
       {title && <KvDialogHeader>{title}</KvDialogHeader>}
