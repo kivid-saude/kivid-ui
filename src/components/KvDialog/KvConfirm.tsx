@@ -17,8 +17,8 @@ export type ConfirmProps = DialogProps & {
 export const KvConfirm = ({
   title,
   message,
-  accept = "Sim",
-  cancel = "Não",
+  accept = "Confirmar",
+  cancel = "Cancelar",
   onDidDismiss,
   ...props
 }: ConfirmProps) => {
