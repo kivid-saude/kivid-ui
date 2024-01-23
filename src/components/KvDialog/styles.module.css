@@ -75,17 +75,14 @@
   position: absolute;
   top: 2rem;
   right: 2rem;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 1rem;
   border: 0;
   background: var(--kv-color-gray-700);
   color: #fff;
-  font-size: 2.5rem;
-  font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 1;
   cursor: pointer;
 }

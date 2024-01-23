@@ -21,6 +21,7 @@
   --kv-color-tertiary-contrast: #fff;
 
   --kv-color-tertiary-alt: #f048b8;
+  --kv-color-tertiary-alt-contrast: #fff;
 
   --kv-color-success: #52e583;
   --kv-color-success-contrast: #fff;
@@ -76,36 +77,33 @@
 
 .kv-color-primary {
   --kv-color-base: var(--kv-color-primary);
-  --kv-color-base-tint: var(--kv-color-primary-tint);
   --kv-color-contrast: var(--kv-color-primary-contrast);
 }
 .kv-color-secondary {
   --kv-color-base: var(--kv-color-secondary);
-  --kv-color-base-tint: var(--kv-color-secondary-tint);
   --kv-color-contrast: var(--kv-color-secondary-contrast);
 }
 .kv-color-tertiary {
   --kv-color-base: var(--kv-color-tertiary);
-  --kv-color-base-tint: var(--kv-color-tertiary-tint);
   --kv-color-contrast: var(--kv-color-tertiary-contrast);
+}
+.kv-color-tertiary-alt {
+  --kv-color-base: var(--kv-color-tertiary-alt);
+  --kv-color-contrast: var(--kv-color-tertiary-alt-contrast);
 }
 .kv-color-success {
   --kv-color-base: var(--kv-color-success);
-  --kv-color-base-tint: var(--kv-color-success-tint);
   --kv-color-contrast: var(--kv-color-success-contrast);
 }
 .kv-color-warning {
   --kv-color-base: var(--kv-color-warning);
-  --kv-color-base-tint: var(--kv-color-warning-tint);
   --kv-color-contrast: var(--kv-color-warning-contrast);
 }
 .kv-color-danger {
   --kv-color-base: var(--kv-color-danger);
-  --kv-color-base-tint: var(--kv-color-danger-tint);
   --kv-color-contrast: var(--kv-color-danger-contrast);
 }
-.kv-color-light {
-  --kv-color-base: var(--kv-color-light);
-  --kv-color-base-tint: var(--kv-color-light-tint);
-  --kv-color-contrast: var(--kv-color-light-contrast);
+.kv-color-medium {
+  --kv-color-base: var(--kv-color-gray-400);
+  --kv-color-contrast: var(--kv-color-primary);
 }

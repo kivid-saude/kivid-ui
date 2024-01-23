@@ -5,17 +5,32 @@ import "./kv-title.css";
 type TKvTitle = {
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
-  color?: "success" | "danger";
+  color?:
+    | "tertiary"
+    | "tertiary-alt"
+    | "success"
+    | "danger"
+    | "medium"
+    | "warning";
   icon?: string;
 };
 
-export const KvTitle = ({ title, description, color, icon }: TKvTitle) => {
+export const KvTitle = ({
+  title,
+  description,
+  color = "tertiary",
+  icon,
+}: TKvTitle) => {
   const colorClassMap = {
+    tertiary: "kv-color-tertiary",
+    "tertiary-alt": "kv-color-tertiary-alt",
     success: "kv-color-success",
+    warning: "kv-color-warning",
     danger: "kv-color-danger",
+    medium: "kv-color-medium",
   };
 
-  const colorClass = color ? colorClassMap[color] : "kv-color-tertiary";
+  const colorClass = colorClassMap[color];
 
   return (
     <>
