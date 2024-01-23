@@ -4,13 +4,13 @@
   --dialog-background: var(--kv-color-gray-200);
   --dialog-border-radius: 12px;
   --dialog-header-padding: 2rem 2rem 0;
-  --dialog-header-color: #333;
+  --dialog-header-color: var(--kv-body-color);
   --dialog-header-background: var(--dialog-background);
   --dialog-content-padding: 2rem;
-  --dialog-content-color: #333;
+  --dialog-content-color: var(--kv-body-color);
   --dialog-content-background: var(--dialog-background);
   --dialog-footer-padding: 0 2rem 2rem;
-  --dialog-footer-color: #333;
+  --dialog-footer-color: var(--kv-body-color);
   --dialog-footer-background: transparent;
   --dialog-box-shadow: 0 8px 24px 0 #0002;
   --dialog-max-width: 400px;
