@@ -13,7 +13,7 @@ button.kv-button,
   gap: 0.5rem;
   min-height: var(--height);
   margin: 0;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   appearance: none;
   background-color: var(--background);
   border: 1px solid var(--border-color);
