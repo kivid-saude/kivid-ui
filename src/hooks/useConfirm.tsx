@@ -22,10 +22,7 @@ export const useConfirm = (props?: ConfirmProps): ReturnType => {
   }, [onDidDismiss]);
 
   return {
-    props: {
-      ...state,
-      onDidDismiss: dismiss,
-    },
+    props: state,
     present,
     dismiss,
   };
