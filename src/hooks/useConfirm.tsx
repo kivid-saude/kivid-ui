@@ -7,7 +7,7 @@ type ReturnType = {
   dismiss(): void;
 };
 
-export const useAlert = (props?: ConfirmProps): ReturnType => {
+export const useConfirm = (props?: ConfirmProps): ReturnType => {
   const [state, setState] = useState<ConfirmProps>(() => ({ ...props }));
 
   const { onDidDismiss } = state;
