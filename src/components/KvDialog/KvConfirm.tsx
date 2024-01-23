@@ -15,8 +15,8 @@ export type ConfirmProps = DialogProps & {
 };
 
 export const KvConfirm = ({
-  title,
-  message,
+  title = "",
+  message = "",
   accept = "Confirmar",
   cancel = "Cancelar",
   onDidDismiss,
@@ -24,8 +24,8 @@ export const KvConfirm = ({
 }: ConfirmProps) => {
   return (
     <KvDialog {...props}>
-      <KvDialogHeader>{title}</KvDialogHeader>
-      <KvDialogContent>{message}</KvDialogContent>
+      {title && <KvDialogHeader>{title}</KvDialogHeader>}
+      {message && <KvDialogContent>{message}</KvDialogContent>}
       <KvDialogFooter>
         <KvButtons column>
           <KvButton outline centered onClick={() => onDidDismiss?.(false)}>
