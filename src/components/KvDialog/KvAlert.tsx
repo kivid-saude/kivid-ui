@@ -9,14 +9,14 @@ import { KvDialogHeader } from "./KvDialogHeader";
 export type AlertProps = {
   title?: string | ReactNode;
   message?: string | ReactNode;
-};
+} & DialogProps;
 
 export const KvAlert = ({
   message,
   title,
   onDidDismiss,
   ...props
-}: AlertProps & DialogProps) => {
+}: AlertProps) => {
   return (
     <KvDialog {...props}>
       <KvDialogHeader>{title}</KvDialogHeader>

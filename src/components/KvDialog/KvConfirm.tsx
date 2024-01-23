@@ -11,8 +11,7 @@ export type ConfirmProps = {
   message?: string | ReactNode;
   accept?: string;
   cancel?: string;
-  onDidDismiss?: (bool?: boolean) => void;
-};
+} & DialogProps;
 
 export const KvConfirm = ({
   title = "",
@@ -21,7 +20,7 @@ export const KvConfirm = ({
   cancel = "Cancelar",
   onDidDismiss,
   ...props
-}: ConfirmProps & DialogProps) => {
+}: ConfirmProps) => {
   return (
     <KvDialog {...props}>
       {title && <KvDialogHeader>{title}</KvDialogHeader>}

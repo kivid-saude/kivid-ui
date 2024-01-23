@@ -6,10 +6,7 @@ export type DialogProps = {
   showModal?: boolean;
   show?: boolean;
   onDidDismiss?: (bool?: boolean) => void;
-} & React.DetailedHTMLProps<
-  React.DialogHTMLAttributes<HTMLDialogElement>,
-  HTMLDialogElement
-> &
+} & Pick<React.DialogHTMLAttributes<HTMLDialogElement>, "className" | "style"> &
   React.PropsWithChildren;
 
 const handleAnimateClose = async (element: HTMLDialogElement) => {
