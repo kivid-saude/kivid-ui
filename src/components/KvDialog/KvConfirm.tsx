@@ -6,7 +6,7 @@ import { KvDialogContent } from "./KvDialogContent";
 import { KvDialogFooter } from "./KvDialogFooter";
 import { KvDialogHeader } from "./KvDialogHeader";
 
-type ConfirmProps = DialogProps & {
+export type ConfirmProps = DialogProps & {
   title?: string | ReactNode;
   message?: string | ReactNode;
   accept?: string;
