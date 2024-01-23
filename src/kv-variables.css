@@ -104,6 +104,6 @@
   --kv-color-contrast: var(--kv-color-danger-contrast);
 }
 .kv-color-medium {
-  --kv-color-base: var(--kv-color-gray-400);
-  --kv-color-contrast: var(--kv-color-primary);
+  --kv-color-base: var(--kv-color-gray-600);
+  --kv-color-contrast: var(--kv-color-white);
 }
