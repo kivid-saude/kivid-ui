@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { DialogProps, KvDialog } from ".";
 import { KvButton } from "../KvButton/KvButton";
 import { KvButtons } from "../KvButtons/KvButtons";
@@ -6,8 +7,8 @@ import { KvDialogFooter } from "./KvDialogFooter";
 import { KvDialogHeader } from "./KvDialogHeader";
 
 type ConfirmProps = DialogProps & {
-  title?: string;
-  message?: string;
+  title?: string | ReactNode;
+  message?: string | ReactNode;
   accept?: string;
   cancel?: string;
   onDidDismiss?: (bool?: boolean) => void;

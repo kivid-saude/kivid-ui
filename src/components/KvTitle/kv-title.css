@@ -3,7 +3,6 @@
   display: grid;
   gap: 0.5rem;
   justify-items: start;
-  margin-bottom: 1rem;
 }
 .kv-title {
   font-size: var(--kv-font-size-xl);
@@ -11,7 +10,7 @@
 }
 .kv-title,
 .kv-description {
-  margin: 0;
+  margin: unset;
   line-height: var(--kv-line-height-sm);
 }
 .kv-title--bordered::before {

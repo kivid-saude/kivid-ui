@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { KvButton } from "../KvButton/KvButton";
 import { KvButtons } from "../KvButtons/KvButtons";
 import { DialogProps, KvDialog } from "./KvDialog";
@@ -6,19 +7,19 @@ import { KvDialogFooter } from "./KvDialogFooter";
 import { KvDialogHeader } from "./KvDialogHeader";
 
 export type AlertProps = DialogProps & {
-  header?: string;
-  message?: string | React.ReactNode;
+  title?: string | ReactNode;
+  message?: string | ReactNode;
 };
 
 export const KvAlert = ({
   message,
-  header,
+  title,
   onDidDismiss,
   ...props
 }: AlertProps) => {
   return (
     <KvDialog {...props}>
-      <KvDialogHeader>{header}</KvDialogHeader>
+      <KvDialogHeader>{title}</KvDialogHeader>
       <KvDialogContent>{message}</KvDialogContent>
       <KvDialogFooter>
         <KvButtons>

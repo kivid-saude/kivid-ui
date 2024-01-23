@@ -20,7 +20,7 @@ import { useModal } from "./hooks/useModal";
 
 function App() {
   const { props: alertProps, present: presentAlert } = useAlert({
-    header: "Atenção",
+    title: "Atenção",
     message:
       "Certifique-se de que as informações estão corretas. Após a confirmação, não será possível altera-lá.",
   });
