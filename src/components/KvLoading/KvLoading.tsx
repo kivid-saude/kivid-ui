@@ -1,3 +1,5 @@
+"use client";
+
 import { Player } from "@lottiefiles/react-lottie-player";
 import { PropsWithChildren } from "react";
 import "./kv-loading.css";
