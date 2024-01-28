@@ -1,15 +1,8 @@
+import { PropsWithChildren } from "react";
 import "./kv-action.css";
 
-type TKvAction = {
-  icon: string;
-  text?: string;
-};
+type TKvAction = PropsWithChildren;
 
-export const KvAction = ({ icon, text }: TKvAction) => {
-  return (
-    <div className="kv-action">
-      {icon}
-      {text}
-    </div>
-  );
+export const KvAction = ({ children }: TKvAction) => {
+  return <div className="kv-action">{children}</div>;
 };
