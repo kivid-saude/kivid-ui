@@ -10,11 +10,11 @@ export type KvModal = DialogProps & {
 export const KvModal = ({ children, onDidDismiss, ...props }: KvModal) => {
   return (
     <KvDialog
-      {...props}
       style={{
         ["--dialog-max-width" as string]: "920px",
         ["--dialog-min-height" as string]: "496px",
       }}
+      {...props}
     >
       <button
         onClick={() => onDidDismiss?.()}
