@@ -11,6 +11,7 @@
   border-radius: 1rem;
   line-height: calc(1em + 0.25rem);
   white-space: nowrap;
+  cursor: pointer;
   transition: 0.15s ease-out;
 }
 
