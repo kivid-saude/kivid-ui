@@ -4,7 +4,7 @@ type TKvIcon = {
   icon: string;
 } & React.SVGProps<SVGSVGElement>;
 
-const iconsPath = "/kivid-icons/spritesheet.svg";
+const iconsPath = "/kivid-icons/sprites.svg";
 
 export const KvIcon = ({ icon, className = "", ...props }: TKvIcon) => {
   return (
