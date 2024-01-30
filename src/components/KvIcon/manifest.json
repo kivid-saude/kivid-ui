@@ -1,0 +1,602 @@
+{
+  "social-youtube": {
+    "width": 24,
+    "height": 24
+  },
+  "social-whatsapp": {
+    "width": 24,
+    "height": 24
+  },
+  "mic-off": {
+    "width": 24,
+    "height": 24
+  },
+  "mic": {
+    "width": 24,
+    "height": 24
+  },
+  "eye-check": {
+    "width": 24,
+    "height": 24
+  },
+  "video-off": {
+    "width": 24,
+    "height": 24
+  },
+  "video": {
+    "width": 24,
+    "height": 24
+  },
+  "twitter": {
+    "width": 24,
+    "height": 24
+  },
+  "phone-message": {
+    "width": 24,
+    "height": 24
+  },
+  "documents": {
+    "width": 24,
+    "height": 24
+  },
+  "clock": {
+    "width": 24,
+    "height": 24
+  },
+  "cellphone": {
+    "width": 24,
+    "height": 24
+  },
+  "phone": {
+    "width": 24,
+    "height": 24
+  },
+  "key": {
+    "width": 24,
+    "height": 24
+  },
+  "document-not": {
+    "width": 24,
+    "height": 24
+  },
+  "seal-certified": {
+    "width": 24,
+    "height": 24
+  },
+  "dropdown": {
+    "width": 24,
+    "height": 24
+  },
+  "exit": {
+    "width": 24,
+    "height": 24
+  },
+  "bag": {
+    "width": 24,
+    "height": 24
+  },
+  "pin-route": {
+    "width": 24,
+    "height": 24
+  },
+  "reload-heart": {
+    "width": 24,
+    "height": 24
+  },
+  "reload": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-invisible": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-heart": {
+    "width": 24,
+    "height": 24
+  },
+  "coupon-stripe": {
+    "width": 24,
+    "height": 24
+  },
+  "refresh": {
+    "width": 24,
+    "height": 24
+  },
+  "arrow-curve": {
+    "width": 24,
+    "height": 24
+  },
+  "person-frame": {
+    "width": 24,
+    "height": 24
+  },
+  "shield-check": {
+    "width": 24,
+    "height": 24
+  },
+  "play": {
+    "width": 24,
+    "height": 24
+  },
+  "add-rect": {
+    "width": 24,
+    "height": 24
+  },
+  "pix": {
+    "width": 24,
+    "height": 24
+  },
+  "check": {
+    "width": 24,
+    "height": 24
+  },
+  "person-change": {
+    "width": 24,
+    "height": 24
+  },
+  "person-return": {
+    "width": 24,
+    "height": 24
+  },
+  "person-arrow-right": {
+    "width": 24,
+    "height": 24
+  },
+  "person-block": {
+    "width": 24,
+    "height": 24
+  },
+  "person-arrow-left": {
+    "width": 24,
+    "height": 24
+  },
+  "person-substract": {
+    "width": 24,
+    "height": 24
+  },
+  "person-invite": {
+    "width": 24,
+    "height": 24
+  },
+  "person-add": {
+    "width": 24,
+    "height": 24
+  },
+  "pause": {
+    "width": 24,
+    "height": 24
+  },
+  "coupon-return": {
+    "width": 24,
+    "height": 24
+  },
+  "coupon-discount": {
+    "width": 24,
+    "height": 24
+  },
+  "coupon-check": {
+    "width": 24,
+    "height": 24
+  },
+  "coupon-pay": {
+    "width": 24,
+    "height": 24
+  },
+  "sort": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-budget": {
+    "width": 24,
+    "height": 24
+  },
+  "health-circle": {
+    "width": 24,
+    "height": 24
+  },
+  "eye-off": {
+    "width": 24,
+    "height": 24
+  },
+  "eye": {
+    "width": 24,
+    "height": 24
+  },
+  "transfer": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-vaccine": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-thyroid": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-blood-type": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-blood": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-kidney": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-balance": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-hourglass": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-hormone": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-female-silhouette": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-male-silhouette": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-glucose": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-liver": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-virus": {
+    "width": 24,
+    "height": 24
+  },
+  "marker-height": {
+    "width": 24,
+    "height": 24
+  },
+  "pin": {
+    "width": 24,
+    "height": 24
+  },
+  "connect": {
+    "width": 24,
+    "height": 24
+  },
+  "logo-kivid": {
+    "width": 24,
+    "height": 24
+  },
+  "logo-instagram": {
+    "width": 24,
+    "height": 24
+  },
+  "chevron-up": {
+    "width": 24,
+    "height": 24
+  },
+  "chevron-righ": {
+    "width": 24,
+    "height": 24
+  },
+  "chevron-left": {
+    "width": 24,
+    "height": 24
+  },
+  "chevron-down": {
+    "width": 24,
+    "height": 24
+  },
+  "download": {
+    "width": 24,
+    "height": 24
+  },
+  "print": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-clock": {
+    "width": 24,
+    "height": 24
+  },
+  "book": {
+    "width": 24,
+    "height": 24
+  },
+  "calendar-stripe": {
+    "width": 24,
+    "height": 24
+  },
+  "logo-store-google": {
+    "width": 24,
+    "height": 24
+  },
+  "photo-axis": {
+    "width": 24,
+    "height": 24
+  },
+  "photo-center": {
+    "width": 24,
+    "height": 24
+  },
+  "photo-brightness": {
+    "width": 24,
+    "height": 24
+  },
+  "photo-camera": {
+    "width": 24,
+    "height": 24
+  },
+  "filter": {
+    "width": 24,
+    "height": 24
+  },
+  "people": {
+    "width": 24,
+    "height": 24
+  },
+  "close": {
+    "width": 24,
+    "height": 24
+  },
+  "social-facebook": {
+    "width": 24,
+    "height": 24
+  },
+  "ellipsis": {
+    "width": 24,
+    "height": 24
+  },
+  "trash": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-lab-exam": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-image-exam": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-cardiac-exam": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-write": {
+    "width": 24,
+    "height": 24
+  },
+  "send": {
+    "width": 24,
+    "height": 24
+  },
+  "mail": {
+    "width": 24,
+    "height": 24
+  },
+  "edit": {
+    "width": 24,
+    "height": 24
+  },
+  "help-balloon": {
+    "width": 24,
+    "height": 24
+  },
+  "service-dropbox": {
+    "width": 24,
+    "height": 24
+  },
+  "service-google-drive": {
+    "width": 24,
+    "height": 24
+  },
+  "person-doc": {
+    "width": 24,
+    "height": 24
+  },
+  "compass": {
+    "width": 24,
+    "height": 24
+  },
+  "dictionary": {
+    "width": 24,
+    "height": 24
+  },
+  "unlink": {
+    "width": 24,
+    "height": 24
+  },
+  "lock-open": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-health-stripe": {
+    "width": 24,
+    "height": 24
+  },
+  "pricetag": {
+    "width": 24,
+    "height": 24
+  },
+  "ticket-transfer": {
+    "width": 24,
+    "height": 24
+  },
+  "ticket-return": {
+    "width": 24,
+    "height": 24
+  },
+  "ticket-check": {
+    "width": 24,
+    "height": 24
+  },
+  "ticket-pay": {
+    "width": 24,
+    "height": 24
+  },
+  "copy": {
+    "width": 24,
+    "height": 24
+  },
+  "stethoscope": {
+    "width": 24,
+    "height": 24
+  },
+  "check-circle": {
+    "width": 24,
+    "height": 24
+  },
+  "link": {
+    "width": 24,
+    "height": 24
+  },
+  "arrow-right-rect": {
+    "width": 24,
+    "height": 24
+  },
+  "share": {
+    "width": 24,
+    "height": 24
+  },
+  "pin-check": {
+    "width": 24,
+    "height": 24
+  },
+  "pin-close": {
+    "width": 24,
+    "height": 24
+  },
+  "pin-alert": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-scan": {
+    "width": 24,
+    "height": 24
+  },
+  "card-add": {
+    "width": 24,
+    "height": 24
+  },
+  "reload-cash": {
+    "width": 24,
+    "height": 24
+  },
+  "card-close": {
+    "width": 24,
+    "height": 24
+  },
+  "card-arrow-right": {
+    "width": 24,
+    "height": 24
+  },
+  "money": {
+    "width": 24,
+    "height": 24
+  },
+  "card-check": {
+    "width": 24,
+    "height": 24
+  },
+  "doc-barcode": {
+    "width": 24,
+    "height": 24
+  },
+  "close-circle": {
+    "width": 24,
+    "height": 24
+  },
+  "calendar": {
+    "width": 24,
+    "height": 24
+  },
+  "search": {
+    "width": 24,
+    "height": 24
+  },
+  "lock-closed": {
+    "width": 24,
+    "height": 24
+  },
+  "biometry": {
+    "width": 24,
+    "height": 24
+  },
+  "fruit": {
+    "width": 24,
+    "height": 24
+  },
+  "arrow-up": {
+    "width": 24,
+    "height": 24
+  },
+  "arrow-right": {
+    "width": 24,
+    "height": 24
+  },
+  "arrow-left": {
+    "width": 24,
+    "height": 24
+  },
+  "arrow-down": {
+    "width": 24,
+    "height": 24
+  },
+  "file": {
+    "width": 24,
+    "height": 24
+  },
+  "store-apple": {
+    "width": 24,
+    "height": 24
+  },
+  "attach": {
+    "width": 24,
+    "height": 24
+  },
+  "calendar-arrow-right": {
+    "width": 24,
+    "height": 24
+  },
+  "alert": {
+    "width": 24,
+    "height": 24
+  },
+  "headset": {
+    "width": 24,
+    "height": 24
+  },
+  "help-circle": {
+    "width": 24,
+    "height": 24
+  },
+  "clock-opening": {
+    "width": 24,
+    "height": 24
+  },
+  "add-rect-dot": {
+    "width": 24,
+    "height": 24
+  },
+  "add-circle": {
+    "width": 24,
+    "height": 24
+  },
+  "add": {
+    "width": 24,
+    "height": 24
+  },
+  "resultadoexames": {
+    "width": 24,
+    "height": 24
+  }
+}
