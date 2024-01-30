@@ -9,6 +9,7 @@
   background: var(--background);
   border: 1px solid #0002;
   border-radius: 1rem;
+  font-size: var(--kv-font-size-sm);
   line-height: calc(1em + 0.25rem);
   white-space: nowrap;
   cursor: pointer;
