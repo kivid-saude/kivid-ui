@@ -9,6 +9,7 @@ import {
 } from "./components/KvDialog";
 import { KvModal } from "./components/KvDialog/KvModal";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
+import { KvIcon } from "./components/KvIcon/KvIcon";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
 import KvLoading from "./components/KvLoading/KvLoading";
@@ -94,6 +95,15 @@ function App() {
               </KvButton>
             </KvButtons>
           </form>
+        </KvCard>
+
+        <br />
+
+        <KvCard>
+          <div style={{ display: "flex", gap: "1rem" }}>
+            <KvIcon icon="add" />
+            <KvIcon icon="add-circle" />
+          </div>
         </KvCard>
 
         <br />
