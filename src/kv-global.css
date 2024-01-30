@@ -72,7 +72,9 @@ svg {
 }
 @media (min-width: 1024px) {
   .kv-container {
-    max-width: 816px;
+    max-width: calc(
+      816px + (var(--container-padding) + var(--container-padding))
+    );
     /* padding-inline: 2rem; */
   }
 }
