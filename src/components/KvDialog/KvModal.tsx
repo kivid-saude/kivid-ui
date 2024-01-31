@@ -13,6 +13,8 @@ export const KvModal = ({ children, onDidDismiss, ...props }: KvModal) => {
       style={{
         ["--dialog-max-width" as string]: "920px",
         ["--dialog-min-height" as string]: "496px",
+        margin: "10vh auto",
+        maxHeight: "80vh",
       }}
       {...props}
     >
