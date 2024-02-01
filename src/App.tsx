@@ -9,6 +9,7 @@ import {
 } from "./components/KvDialog";
 import { KvModal } from "./components/KvDialog/KvModal";
 import { KvFieldset } from "./components/KvFieldset/KvFieldset";
+import { KvHeader } from "./components/KvHeader/KvHeader";
 import { KvIcon } from "./components/KvIcon/KvIcon";
 import { KvInput } from "./components/KvInput/KvInput";
 import { KvLabel } from "./components/KvLabel/KvLabel";
@@ -18,6 +19,7 @@ import { KvPasswordInput } from "./components/KvPasswordInput/KvPasswordInput";
 import { KvTitle } from "./components/KvTitle/KvTitle";
 import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
+import logo from "/logo-kivid.svg";
 
 function App() {
   const { props: alertProps, present: presentAlert } = useAlert({
@@ -33,10 +35,11 @@ function App() {
 
   return (
     <>
-      <header className="kv-container">
-        <h1>Kivid UI</h1>
-        <hr />
-      </header>
+      <KvHeader
+        logo={<img src={logo} />}
+        title={`Afiliados`}
+        link={<a href="">kivid.com.br</a>}
+      />
 
       <div className="kv-container">
         <KvCard>
@@ -119,10 +122,8 @@ function App() {
           </KvButtons>
         </KvCard>
       </div>
-
       <KvLoading isVisible={false} />
       <KvAlert {...alertProps} />
-
       <KvModal {...modalProps}>
         <KvDialogHeader>
           <KvTitle

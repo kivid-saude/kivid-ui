@@ -28,6 +28,7 @@ body {
   font-family: var(--kv-font-family);
   font-weight: 500;
   user-select: none;
+  padding-left: var(--kv-header-width);
 }
 
 a {

@@ -73,6 +73,8 @@
   --kv-font-weight-black: 900;
 
   --container-padding: 1.5rem;
+
+  --kv-header-width: 104px;
 }
 
 .kv-color-primary {

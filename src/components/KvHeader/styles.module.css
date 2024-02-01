@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  /* align-items: center; */
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+  width: var(--kv-header-width);
+  height: 100%;
+  background: var(--kv-color-gray-200);
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: var(--kv-color-gray-400);
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  padding: 3rem 0;
+}
+
+.link a {
+  font-size: var(--kv-font-size-sm);
+  color: var(--kv-body-color);
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+.nav {
+}
+.title {
+  font-size: var(--kv-font-size-lg);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+.logo {
+}
+
+.slotEnd {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: end;
+  gap: 3rem;
+}
