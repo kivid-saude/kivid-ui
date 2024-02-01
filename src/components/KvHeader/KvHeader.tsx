@@ -7,16 +7,21 @@ type TKvHeader = {
   link?: React.ReactNode;
   title?: React.ReactNode;
   logo: React.ReactNode;
+  logout: boolean;
 };
 
-export const KvHeader = ({ link, title, logo }: TKvHeader) => {
+export const KvHeader = ({ link, title, logo, logout = false }: TKvHeader) => {
   return (
     <header className={styles.header}>
       <div>
-        <div className={styles.link}>{link}</div>
-        <KvButton onlyIcon>
-          <KvIcon icon="loggout" />
-        </KvButton>
+        {!!logout && <div className={styles.link}>{link}</div>}
+
+        {logout && (
+          <KvButton iconOnly>
+            <KvIcon icon="logout" />
+          </KvButton>
+        )}
+
         {/* <nav className={styles.nav}>{nav}</nav> */}
       </div>
       <div className={styles.slotEnd}>
