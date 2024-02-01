@@ -1,5 +1,3 @@
-import { KvButton } from "../KvButton/KvButton";
-import { KvIcon } from "../KvIcon/KvIcon";
 import styles from "./styles.module.css";
 
 type TKvHeader = {
@@ -14,13 +12,9 @@ export const KvHeader = ({ link, title, logo, logout = false }: TKvHeader) => {
   return (
     <header className={styles.header}>
       <div>
-        {!!logout && <div className={styles.link}>{link}</div>}
+        {!!link && <div className={styles.link}>{link}</div>}
 
-        {logout && (
-          <KvButton iconOnly>
-            <KvIcon icon="logout" />
-          </KvButton>
-        )}
+        {logout}
 
         {/* <nav className={styles.nav}>{nav}</nav> */}
       </div>
