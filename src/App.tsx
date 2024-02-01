@@ -69,14 +69,19 @@ function App() {
             <KvButtons>
               <KvButton
                 className="kv-color-success"
-                block
-                centered
+                expand="block"
+                textAlign="center"
                 type="submit"
               >
                 Success Button
               </KvButton>
 
-              <KvButton className="kv-color-success" block centered disabled>
+              <KvButton
+                className="kv-color-success"
+                expand="block"
+                textAlign="center"
+                disabled
+              >
                 Disabled Success Button
               </KvButton>
             </KvButtons>
@@ -90,8 +95,8 @@ function App() {
             <KvButtons>
               <KvButton
                 className="kv-color-success"
-                block
-                centered
+                expand="block"
+                textAlign="center"
                 type="submit"
               >
                 Send
@@ -113,10 +118,10 @@ function App() {
 
         <KvCard>
           <KvButtons column>
-            <KvButton centered onClick={() => presentAlert()}>
+            <KvButton textAlign="center" onClick={() => presentAlert()}>
               Abrir Alert
             </KvButton>
-            <KvButton centered onClick={() => presentModal()}>
+            <KvButton textAlign="center" onClick={() => presentModal()}>
               Abrir Modal
             </KvButton>
           </KvButtons>

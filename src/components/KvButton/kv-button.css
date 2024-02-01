@@ -107,3 +107,14 @@ button.kv-button--danger,
 .kv-button .slot-end {
   margin-left: auto;
 } */
+
+.kv-button--icon-only {
+  --width: 5.5rem;
+  --height: 3rem;
+  width: var(--width);
+  height: var(--height);
+}
+.kv-button--icon-only.kv-button--small {
+  --width: 2.5rem;
+  --height: 2.5rem;
+}
