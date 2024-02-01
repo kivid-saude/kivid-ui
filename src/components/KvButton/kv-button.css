@@ -6,6 +6,7 @@ button.kv-button,
   --border-color: var(--kv-color-base, var(--kv-color-gray-400));
   --font-size: var(--kv-font-size-sm);
   --height: 3rem;
+  --padding: 0.5rem 1rem;
   position: relative;
   overflow: hidden;
   display: inline-flex;
@@ -13,7 +14,7 @@ button.kv-button,
   gap: 0.5rem;
   min-height: var(--height);
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: var(--padding);
   appearance: none;
   background-color: var(--background);
   border: 1px solid var(--border-color);
@@ -111,9 +112,8 @@ button.kv-button--danger,
 .kv-button--icon-only {
   --width: 5.5rem;
   --height: 3rem;
+  --padding: 0;
   width: var(--width);
-  height: var(--height);
-  padding: 0;
   justify-content: center;
 }
 .kv-button--icon-only.kv-button--small {
