@@ -24,17 +24,17 @@
   color: var(--kv-body-color);
   text-decoration: none;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
+  transform: rotate(180deg);
 }
 .nav {
 }
 .title {
   font-size: var(--kv-font-size-lg);
   writing-mode: vertical-rl;
-  text-orientation: mixed;
+  transform: rotate(180deg);
 }
 .logo {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--kv-color-gray-400);
 }
 
@@ -43,5 +43,5 @@
   justify-content: center;
   justify-items: center;
   align-content: end;
-  gap: 3rem;
+  gap: 1.5rem;
 }
