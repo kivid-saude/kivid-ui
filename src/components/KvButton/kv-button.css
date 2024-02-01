@@ -113,6 +113,8 @@ button.kv-button--danger,
   --height: 3rem;
   width: var(--width);
   height: var(--height);
+  padding: 0;
+  justify-content: center;
 }
 .kv-button--icon-only.kv-button--small {
   --width: 2.5rem;
