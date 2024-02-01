@@ -109,14 +109,14 @@ button.kv-button--danger,
   margin-left: auto;
 } */
 
-.kv-button--icon-only {
+button.kv-button--icon-only {
   --width: 5.5rem;
   --height: 3rem;
   --padding: 0;
   width: var(--width);
   justify-content: center;
 }
-.kv-button--icon-only.kv-button--small {
+button.kv-button--icon-only.kv-button--small {
   --width: 2.5rem;
   --height: 2.5rem;
 }
