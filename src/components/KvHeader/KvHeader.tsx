@@ -5,7 +5,7 @@ type TKvHeader = {
   link?: React.ReactNode;
   title?: React.ReactNode;
   logo: React.ReactNode;
-  logout: boolean;
+  logout?: React.ReactNode;
 };
 
 export const KvHeader = ({ link, title, logo, logout = false }: TKvHeader) => {
