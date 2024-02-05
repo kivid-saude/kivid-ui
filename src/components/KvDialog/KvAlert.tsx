@@ -23,7 +23,7 @@ export const KvAlert = ({
       <KvDialogContent>{message}</KvDialogContent>
       <KvDialogFooter>
         <KvButtons>
-          <KvButton centered onClick={() => onDidDismiss?.()}>
+          <KvButton textAlign="center" onClick={() => onDidDismiss?.()}>
             OK
           </KvButton>
         </KvButtons>

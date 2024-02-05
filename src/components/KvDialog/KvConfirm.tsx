@@ -27,11 +27,15 @@ export const KvConfirm = ({
       {message && <KvDialogContent>{message}</KvDialogContent>}
       <KvDialogFooter>
         <KvButtons column>
-          <KvButton outline centered onClick={() => onDidDismiss?.(false)}>
+          <KvButton
+            fill="outline"
+            textAlign="center"
+            onClick={() => onDidDismiss?.(false)}
+          >
             {cancel}
           </KvButton>
           <KvButton
-            centered
+            textAlign="center"
             className="kv-color-success"
             onClick={() => onDidDismiss?.(true)}
           >
