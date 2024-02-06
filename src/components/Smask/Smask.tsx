@@ -9,6 +9,7 @@ type TSmask = {
 export const Smask = ({ children, mask }: TSmask) => {
   const [value, setValue] = useState("");
 
+  const minLength = mask.at(0)!.length;
   const maxLength = mask.at(-1)!.length;
 
   const onInput = (event: React.FormEvent<HTMLInputElement>) => {
@@ -24,6 +25,7 @@ export const Smask = ({ children, mask }: TSmask) => {
   return React.cloneElement(children, {
     value,
     onInput,
+    minLength,
     maxLength,
   });
 };
