@@ -13,8 +13,12 @@ export const Smask = ({ children, mask }: TSmask) => {
 
   const onInput = (event: React.FormEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
-    const maskedValue = smask.mask(value, mask);
-    setValue(maskedValue);
+    try {
+      const maskedValue = smask.mask(value, mask);
+      setValue(maskedValue);
+    } catch (e) {
+      setValue("");
+    }
   };
 
   return React.cloneElement(children, {
