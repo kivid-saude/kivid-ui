@@ -13,6 +13,7 @@ type TKvTitle = {
     | "medium"
     | "warning";
   icon?: string;
+  size?: "small" | "medium" | "large" | "xlarge";
 };
 
 export const KvTitle = ({
@@ -20,6 +21,7 @@ export const KvTitle = ({
   description,
   color = "tertiary",
   icon,
+  size = "xlarge",
 }: TKvTitle) => {
   const colorClassMap = {
     tertiary: "kv-color-tertiary",
@@ -30,20 +32,30 @@ export const KvTitle = ({
     medium: "kv-color-medium",
   };
 
+  const sizeClassMap = {
+    small: "kv-title--small",
+    medium: "kv-title--medium",
+    large: "kv-title--large",
+    xlarge: "kv-title--xlarge",
+  };
+
   const colorClass = colorClassMap[color];
+  const sizeClass = sizeClassMap[size];
 
   return (
     <>
-      <header className={`kv-header ${colorClass}`}>
+      <header className={`kv-header ${colorClass} ${sizeClass}`}>
         {!!icon && (
           <div className="kv-title-icon">
             <KvIcon icon="check" />
           </div>
         )}
+
         <h1 className={`kv-title ${icon ? "" : "kv-title--bordered"}`}>
           {title}
         </h1>
-        <p className="kv-description">{description}</p>
+
+        {!!description && <p className="kv-description">{description}</p>}
       </header>
     </>
   );
