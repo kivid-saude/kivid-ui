@@ -62,6 +62,19 @@ function App() {
             </KvFieldset>
 
             <KvFieldset>
+              <KvLabel>CPF</KvLabel>
+              <KvInput placeholder="Digite seu CPF" required />
+              <KvButton
+                type="button"
+                className="slot slot--right"
+                color="success"
+                iconOnly
+              >
+                <KvIcon icon="check" className="text-white" />
+              </KvButton>
+            </KvFieldset>
+
+            <KvFieldset>
               <KvLabel>Senha</KvLabel>
               <KvPasswordInput placeholder="Digite sua senha" />
             </KvFieldset>

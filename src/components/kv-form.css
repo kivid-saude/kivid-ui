@@ -5,6 +5,23 @@
   padding: 0;
   border: none;
 }
+.kv-fieldset .slot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.kv-fieldset .slot--right {
+  right: 0.75rem;
+}
+.kv-fieldset .slot--left {
+  left: 0.75rem;
+}
+.kv-fieldset > .kv-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
 
 /* LABEL */
 .kv-label {
@@ -53,12 +70,4 @@
 .kv-fieldset .kv-select {
   height: 4.5rem;
   padding-top: 2.25rem;
-}
-
-/* ICON */
-.kv-fieldset .kv-icon {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
 }
