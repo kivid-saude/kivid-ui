@@ -124,6 +124,14 @@ function App() {
             <KvButton textAlign="center" onClick={() => presentModal()}>
               Abrir Modal
             </KvButton>
+            <KvButton
+              textAlign="center"
+              loading
+              color="success"
+              onClick={() => presentModal()}
+            >
+              Loading Button
+            </KvButton>
           </KvButtons>
         </KvCard>
       </div>
