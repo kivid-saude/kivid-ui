@@ -68,7 +68,7 @@ function App() {
 
             <KvButtons>
               <KvButton
-                className="kv-color-success"
+                color="success"
                 expand="block"
                 textAlign="center"
                 type="submit"
@@ -77,7 +77,7 @@ function App() {
               </KvButton>
 
               <KvButton
-                className="kv-color-success"
+                color="success"
                 expand="block"
                 textAlign="center"
                 disabled
@@ -94,7 +94,7 @@ function App() {
 
             <KvButtons>
               <KvButton
-                className="kv-color-success"
+                color="success"
                 expand="block"
                 textAlign="center"
                 type="submit"
