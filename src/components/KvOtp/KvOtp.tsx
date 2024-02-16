@@ -22,12 +22,11 @@ const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
           autoComplete="one-time-code"
           maxLength={6}
           pattern="\d{6}"
-          required
           ref={ref}
           {...props}
         />
         <KvButton type="button" onClick={() => handleResendToken?.()}>
-          <KvIcon icon="token" />
+          <KvIcon icon="phone-message" />
           Reenviar Código
         </KvButton>
       </div>
