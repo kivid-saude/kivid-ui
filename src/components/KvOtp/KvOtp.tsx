@@ -22,6 +22,7 @@ const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
           autoComplete="one-time-code"
           maxLength={6}
           pattern="\d{6}"
+          placeholder="______"
           ref={ref}
           {...props}
         />
