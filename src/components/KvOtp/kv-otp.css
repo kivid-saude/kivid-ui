@@ -1,7 +1,7 @@
 .kv-otp {
-  width: 240px;
-  padding-inline: 1.5rem;
+  width: 280px;
+  padding-left: 1.5rem;
   font-size: var(--kv-font-size-xl);
   text-align: center;
-  letter-spacing: 0.5em;
+  letter-spacing: 1em;
 }
