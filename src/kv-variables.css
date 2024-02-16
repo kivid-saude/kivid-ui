@@ -39,7 +39,7 @@
 
   /* BODY */
   --kv-font-family: "Red Hat Display", sans-serif;
-  --kv-body-background: var(--kv-color-gray-300);
+  --kv-body-background: var(--kv-color-gray-200);
   --kv-body-color: var(--kv-color-primary);
 
   /* FONT-SIZE */
