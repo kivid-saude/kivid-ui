@@ -43,6 +43,25 @@ svg {
   pointer-events: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+div,
+p,
+span,
+strong {
+  color: var(--kv-color-base, currentColor);
+}
+
 /* LAYOUT */
 .kv-app__header {
   padding-top: 1.5rem;
