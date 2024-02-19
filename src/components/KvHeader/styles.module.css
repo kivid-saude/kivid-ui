@@ -16,7 +16,7 @@
   border-color: var(--kv-color-gray-400);
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
-  padding: 3rem 0;
+  padding: 2rem 0 3rem;
 }
 
 .link a {
