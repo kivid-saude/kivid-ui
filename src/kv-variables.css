@@ -109,3 +109,7 @@
   --kv-color-base: var(--kv-color-gray-600);
   --kv-color-contrast: var(--kv-color-white);
 }
+.kv-color-white {
+  --kv-color-base: var(--kv-color-white);
+  --kv-color-contrast: var(--kv-color-white-contrast);
+}
