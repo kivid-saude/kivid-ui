@@ -1,0 +1,21 @@
+.kv-select {
+  appearance: none;
+  width: 100%;
+  padding: 1rem 1rem;
+  font-family: inherit;
+  font-size: var(--kv-font-size-md);
+  font-weight: var(--kv-font-weight-bold);
+  line-height: var(--kv-line-height-xs);
+  border: 1px solid var(--kv-color-gray-400);
+  color: var(--kv-body-color);
+  border-radius: 1rem;
+  background: #fff;
+  cursor: pointer;
+}
+.kv-select:focus {
+  outline-color: var(--kv-color-tertiary);
+}
+.kv-fieldset .kv-select {
+  height: 4.5rem;
+  padding-top: 2.25rem;
+}

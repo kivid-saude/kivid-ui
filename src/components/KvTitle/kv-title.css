@@ -3,7 +3,7 @@
   display: grid;
   gap: 0.5rem;
   justify-items: start;
-  color: currentColor;
+  color: var(--kv-color-primary);
 }
 .kv-title {
   font-size: var(--font-size);

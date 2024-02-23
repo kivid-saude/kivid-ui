@@ -80,40 +80,32 @@
 .kv-color-primary {
   --kv-color-base: var(--kv-color-primary);
   --kv-color-contrast: var(--kv-color-primary-contrast);
-  color: var(--kv-color-primary);
 }
 .kv-color-secondary {
   --kv-color-base: var(--kv-color-secondary);
   --kv-color-contrast: var(--kv-color-secondary-contrast);
-  color: var(--kv-color-secondary);
 }
 .kv-color-tertiary {
   --kv-color-base: var(--kv-color-tertiary);
   --kv-color-contrast: var(--kv-color-tertiary-contrast);
-  color: var(--kv-color-tertiary);
 }
 .kv-color-tertiary-alt {
   --kv-color-base: var(--kv-color-tertiary-alt);
   --kv-color-contrast: var(--kv-color-tertiary-alt-contrast);
-  color: var(--kv-color-tertiary-alt);
 }
 .kv-color-success {
   --kv-color-base: var(--kv-color-success);
   --kv-color-contrast: var(--kv-color-success-contrast);
-  color: var(--kv-color-success);
 }
 .kv-color-warning {
   --kv-color-base: var(--kv-color-warning);
   --kv-color-contrast: var(--kv-color-warning-contrast);
-  color: var(--kv-color-warning);
 }
 .kv-color-danger {
   --kv-color-base: var(--kv-color-danger);
   --kv-color-contrast: var(--kv-color-danger-contrast);
-  color: var(--kv-color-danger);
 }
 .kv-color-medium {
   --kv-color-base: var(--kv-color-gray-600);
   --kv-color-contrast: var(--kv-color-white);
-  color: var(--kv-color-medium);
 }

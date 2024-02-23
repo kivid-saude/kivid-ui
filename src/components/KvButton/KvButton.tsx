@@ -1,9 +1,6 @@
-import { Player } from "@lottiefiles/react-lottie-player";
 import { PropsWithChildren } from "react";
+import KvSpinner from "../KvSpinner/KvSpinner";
 import "./kv-button.css";
-
-import loadingPurple from "./loading-button-purple.json";
-import loadingWhite from "./loading-button-white.json";
 
 type TButton = {
   color?: "success" | "danger" | "tertiary" | "warning" | "light" | "dark";
@@ -48,14 +45,7 @@ export const KvButton = ({
 
   const content = () => {
     if (loading) {
-      return (
-        <Player
-          loop={true}
-          autoplay={true}
-          src={color === "light" ? loadingPurple : loadingWhite}
-          style={{ width: "2rem", height: "2rem" }}
-        />
-      );
+      return <KvSpinner color={color} />;
     }
     return children;
   };

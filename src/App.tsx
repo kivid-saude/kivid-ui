@@ -16,6 +16,7 @@ import { KvLabel } from "./components/KvLabel/KvLabel";
 import KvLoading from "./components/KvLoading/KvLoading";
 import { KvOtp } from "./components/KvOtp/KvOtp";
 import { KvPasswordInput } from "./components/KvPasswordInput/KvPasswordInput";
+import { KvSelect } from "./components/KvSelect/KvSelect";
 import { KvTitle } from "./components/KvTitle/KvTitle";
 import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
@@ -77,6 +78,17 @@ function App() {
             <KvFieldset>
               <KvLabel>Senha</KvLabel>
               <KvPasswordInput placeholder="Digite sua senha" />
+            </KvFieldset>
+
+            <KvFieldset>
+              <KvLabel>KvSelect</KvLabel>
+              <KvSelect>
+                <option value="">Selecione...</option>
+                <option value="Opção 1">Opção 1</option>
+                <option value="Opção 2">Opção 2</option>
+                <option value="Opção 3">Opção 3</option>
+                <option value="Opção 4">Opção 4</option>
+              </KvSelect>
             </KvFieldset>
 
             <KvButtons>

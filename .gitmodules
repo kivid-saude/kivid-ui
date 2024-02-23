@@ -1,0 +1,3 @@
+[submodule "public/kivid-icons"]
+	path = public/kivid-icons
+	url = https://github.com/kivid-saude/kivid-icons
