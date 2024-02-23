@@ -53,6 +53,7 @@
   padding: var(--dialog-content-padding);
   color: var(--dialog-content-color);
   background: var(--dialog-content-background);
+  align-self: stretch;
 }
 
 .dialog__footer {
