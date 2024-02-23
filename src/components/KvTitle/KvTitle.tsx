@@ -47,7 +47,7 @@ export const KvTitle = ({
       <header className={`kv-header ${colorClass} ${sizeClass}`}>
         {!!icon && (
           <div className="kv-title-icon">
-            <KvIcon icon="check" />
+            <KvIcon icon={icon} />
           </div>
         )}
 

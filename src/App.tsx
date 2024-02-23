@@ -18,6 +18,7 @@ import { KvOtp } from "./components/KvOtp/KvOtp";
 import { KvPasswordInput } from "./components/KvPasswordInput/KvPasswordInput";
 import { KvSelect } from "./components/KvSelect/KvSelect";
 import { KvTitle } from "./components/KvTitle/KvTitle";
+import { Smask } from "./components/Smask/Smask";
 import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
 import logo from "/logo-kivid.svg";
@@ -60,6 +61,13 @@ function App() {
             <KvFieldset>
               <KvLabel>Nome completo</KvLabel>
               <KvInput placeholder="Digite seu nome completo" required />
+            </KvFieldset>
+
+            <KvFieldset>
+              <KvLabel>Agência</KvLabel>
+              <Smask mask={["d-d", "dd-d", "ddd-d", "dddd-d"]}>
+                <KvInput placeholder="Digite seu nome completo" />
+              </Smask>
             </KvFieldset>
 
             <KvFieldset>
