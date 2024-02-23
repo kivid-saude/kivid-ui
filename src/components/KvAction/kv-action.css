@@ -1,5 +1,6 @@
 .kv-action {
   --background: var(--background-default, #fff);
+  position: relative;
   display: grid;
   align-items: start;
   align-content: start;
