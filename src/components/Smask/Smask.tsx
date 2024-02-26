@@ -17,8 +17,8 @@ export const Smask = ({ children, mask }: TSmask) => {
     try {
       const maskedValue = smask.mask(value, mask);
       setValue(maskedValue);
-    } catch (e) {
-      setValue("");
+    } catch {
+      //
     }
   };
 
