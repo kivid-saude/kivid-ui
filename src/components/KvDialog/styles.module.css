@@ -16,7 +16,7 @@
   --dialog-max-width: 400px;
   --dialog-min-height: auto;
 
-  position: relative;
+  position: fixed;
   width: calc(100% - 5rem);
   max-width: var(--dialog-max-width);
   margin: auto;
