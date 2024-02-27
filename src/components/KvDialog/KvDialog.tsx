@@ -36,8 +36,6 @@ export const KvDialog = ({
     } else if (currentModal.open) {
       handleAnimateClose(currentModal);
     }
-
-    console.log({ currentModal });
   }, [show, showModal]);
 
   return (
