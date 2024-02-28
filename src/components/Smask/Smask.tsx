@@ -14,12 +14,17 @@ export const Smask = ({ children, mask }: TSmask) => {
 
   const onInput = (event: React.FormEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
-    if (!value) return;
+
+    if (!value) {
+      setValue(value);
+      return;
+    }
+
     try {
       const maskedValue = smask.mask(value, mask);
       setValue(maskedValue);
     } catch {
-      //
+      setValue(value);
     }
   };
 
