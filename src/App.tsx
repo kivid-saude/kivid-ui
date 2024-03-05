@@ -79,7 +79,7 @@ function App() {
                 color="success"
                 iconOnly
               >
-                <KvIcon icon="check" className="text-white" />
+                <KvIcon icon="check" className="kv-color-white" />
               </KvButton>
             </KvFieldset>
 
