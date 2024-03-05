@@ -1,6 +1,6 @@
 import React from "react";
-import { KvButton } from "../KvButton/KvButton";
-import { KvIcon } from "../KvIcon/KvIcon";
+import { KvButton } from "../KvButton";
+import { KvIcon } from "../KvIcon";
 import "../KvInput/kv-input.css";
 import "./kv-otp.css";
 

@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { KvIcon } from "../KvIcon/KvIcon";
+import { KvIcon } from "../KvIcon";
 import { DialogProps, KvDialog } from "./KvDialog";
 import style from "./styles.module.css";
 

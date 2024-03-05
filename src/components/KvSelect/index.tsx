@@ -1,5 +1,5 @@
 import React from "react";
-import { KvIcon } from "../KvIcon/KvIcon";
+import { KvIcon } from "../KvIcon";
 import "./kv-select.css";
 
 type TKvSelect = React.SelectHTMLAttributes<HTMLSelectElement>;

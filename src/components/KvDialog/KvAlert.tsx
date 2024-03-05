@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { KvButton } from "../KvButton/KvButton";
-import { KvButtons } from "../KvButtons/KvButtons";
+import { KvButton } from "../KvButton";
+import { KvButtons } from "../KvButtons";
 import { DialogProps, KvDialog } from "./KvDialog";
 import { KvDialogContent } from "./KvDialogContent";
 import { KvDialogFooter } from "./KvDialogFooter";

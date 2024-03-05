@@ -3,7 +3,7 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import loadingSrc from "./loading-borboleta.json";
 
-const KvLoader = () => {
+export const KvLoader = () => {
   return (
     <Player
       loop={true}
