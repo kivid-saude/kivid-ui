@@ -5,7 +5,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import loadingPurple from "./loading-button-purple.json";
 import loadingWhite from "./loading-button-white.json";
 
-export const KvSpinner = ({
+const KvSpinner = ({
   color,
 }: {
   color?: "success" | "danger" | "tertiary" | "warning" | "light" | "dark";
@@ -19,3 +19,5 @@ export const KvSpinner = ({
     />
   );
 };
+
+export default KvSpinner;
