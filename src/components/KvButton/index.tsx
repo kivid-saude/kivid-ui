@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import KvSpinner from "../KvSpinner/KvSpinner";
+import { KvSpinner } from "../KvSpinner";
 import "./kv-button.css";
 
 type TButton = {

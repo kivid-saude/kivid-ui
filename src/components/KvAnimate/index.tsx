@@ -6,7 +6,7 @@ type TAnimate = {
   iterationCount?: string;
 };
 
-export const Animate = ({
+export const KvAnimate = ({
   children,
   animation,
   duration = "1s",

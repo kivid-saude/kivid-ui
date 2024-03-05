@@ -1,24 +1,25 @@
-import { KvButton } from "./components/KvButton/KvButton";
-import { KvButtons } from "./components/KvButtons/KvButtons";
-import { KvCard } from "./components/KvCard/KvCard";
-import {
+import { 
+  KvButton,
+  KvButtons,
+  KvCard,
   KvAlert,
   KvDialogContent,
   KvDialogFooter,
   KvDialogHeader,
-} from "./components/KvDialog";
-import { KvModal } from "./components/KvDialog/KvModal";
-import { KvFieldset } from "./components/KvFieldset/KvFieldset";
-import { KvHeader } from "./components/KvHeader/KvHeader";
-import { KvIcon } from "./components/KvIcon/KvIcon";
-import { KvInput } from "./components/KvInput/KvInput";
-import { KvLabel } from "./components/KvLabel/KvLabel";
-import KvLoading from "./components/KvLoading/KvLoading";
-import { KvOtp } from "./components/KvOtp/KvOtp";
-import { KvPasswordInput } from "./components/KvPasswordInput/KvPasswordInput";
-import { KvSelect } from "./components/KvSelect/KvSelect";
-import { KvTitle } from "./components/KvTitle/KvTitle";
-import { Smask } from "./components/Smask/Smask";
+  KvModal,
+  KvFieldset,
+  KvHeader,
+  KvIcon,
+  KvInput,
+  KvLabel,
+  KvLoading,
+  KvOtp,
+  KvPasswordInput,
+  KvSelect,
+  KvTitle,
+  Smask,
+} from './components'
+
 import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
 import logo from "/logo-kivid.svg";

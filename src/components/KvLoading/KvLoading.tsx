@@ -8,7 +8,7 @@ type TKvLoading = {
   isVisible: boolean;
 } & PropsWithChildren;
 
-const KvLoading = ({ isVisible = false }: TKvLoading) => {
+export const KvLoading = ({ isVisible = false }: TKvLoading) => {
   return (
     <section className={`kv-loading ${isVisible ? "kv-loading--active" : ""}`}>
       {isVisible && <KvLoader />}
