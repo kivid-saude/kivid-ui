@@ -1,24 +1,24 @@
-import { 
+import {
+  KvAlert,
   KvButton,
   KvButtons,
   KvCard,
-  KvAlert,
   KvDialogContent,
   KvDialogFooter,
   KvDialogHeader,
-  KvModal,
   KvFieldset,
   KvHeader,
   KvIcon,
   KvInput,
   KvLabel,
   KvLoading,
+  KvModal,
   KvOtp,
   KvPasswordInput,
   KvSelect,
   KvTitle,
   Smask,
-} from './components'
+} from "./components";
 
 import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
@@ -169,8 +169,11 @@ function App() {
           </KvButtons>
         </KvCard>
       </div>
+
       <KvLoading isVisible={false} />
+
       <KvAlert {...alertProps} />
+
       <KvModal {...modalProps}>
         <KvDialogHeader>
           <KvTitle
@@ -178,7 +181,9 @@ function App() {
             description="Você ainda não tem um endereço cadastrado. Personalize o seu link abaixo."
           />
         </KvDialogHeader>
+
         <KvDialogContent>Content</KvDialogContent>
+
         <KvDialogFooter>
           <KvButton onClick={() => dismissModal()}>Cancelar</KvButton>
           <KvButton onClick={() => dismissModal()}>Salvar</KvButton>
