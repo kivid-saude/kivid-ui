@@ -14,16 +14,22 @@
   --dialog-footer-background: transparent;
   --dialog-box-shadow: 0 8px 24px 0 #0002;
   --dialog-max-width: 400px;
+  --dialog-max-height: 80vh;
   --dialog-min-height: auto;
 
   position: fixed;
   width: calc(100% - 5rem);
   max-width: var(--dialog-max-width);
+  height: calc(100% - 5rem);
+  max-height: var(--dialog-max-height);
   margin: auto;
   padding: 0;
-  border: none;
+  overflow-y: auto;
+  overflow-x: hidden;
   background: none;
-  overflow: visible;
+  border: none;
+  border-radius: var(--dialog-border-radius);
+  box-shadow: var(--dialog-box-shadow);
 }
 .dialog::backdrop {
   background-color: #fffa;
@@ -34,11 +40,11 @@
   display: grid;
   grid-auto-rows: auto 1fr auto;
   align-items: start;
+  min-height: var(--dialog-min-height);
+  overflow: hidden;
   background: var(--dialog-background);
   border-radius: var(--dialog-border-radius);
   box-shadow: var(--dialog-box-shadow);
-  overflow: hidden;
-  min-height: var(--dialog-min-height);
 }
 
 .dialog__header {
