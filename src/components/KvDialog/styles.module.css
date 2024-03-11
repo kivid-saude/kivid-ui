@@ -18,9 +18,10 @@
   --dialog-min-height: auto;
 
   position: fixed;
+  display: flex;
   width: calc(100% - 5rem);
   max-width: var(--dialog-max-width);
-  height: calc(100% - 5rem);
+  /* height: calc(100% - 5rem); */
   max-height: var(--dialog-max-height);
   margin: auto;
   padding: 0;
@@ -40,12 +41,12 @@
   display: grid;
   grid-auto-rows: auto 1fr auto;
   align-items: start;
-  min-height: var(--dialog-min-height);
-  max-height: 100%;
+  /* min-height: var(--dialog-min-height); */
+  /* max-height: 100%; */
   overflow: hidden;
   background: var(--dialog-background);
-  border-radius: var(--dialog-border-radius);
-  box-shadow: var(--dialog-box-shadow);
+  /* border-radius: var(--dialog-border-radius); */
+  /* box-shadow: var(--dialog-box-shadow); */
 }
 
 .dialog__header {
