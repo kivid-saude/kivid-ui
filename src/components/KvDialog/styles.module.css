@@ -22,6 +22,7 @@
   width: calc(100% - 5rem);
   max-width: var(--dialog-max-width);
   /* height: calc(100% - 5rem); */
+  min-height: var(--dialog-min-height);
   max-height: var(--dialog-max-height);
   margin: auto;
   padding: 0;
