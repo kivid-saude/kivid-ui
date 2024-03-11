@@ -29,6 +29,7 @@ td {
 /* Override Datatable */
 .p-datatable {
   display: grid;
+  overflow: hidden;
 }
 .p-highlight {
   font-weight: 700;
