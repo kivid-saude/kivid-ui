@@ -18,7 +18,6 @@
   --dialog-min-height: auto;
 
   position: fixed;
-  display: flex;
   width: calc(100% - 5rem);
   max-width: var(--dialog-max-width);
   /* height: calc(100% - 5rem); */
@@ -32,6 +31,9 @@
   border: none;
   border-radius: var(--dialog-border-radius);
   box-shadow: var(--dialog-box-shadow);
+}
+.dialog[open] {
+  display: flex;
 }
 .dialog::backdrop {
   background-color: #fffa;
