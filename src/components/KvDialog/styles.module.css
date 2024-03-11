@@ -41,6 +41,7 @@
   display: grid;
   grid-auto-rows: auto 1fr auto;
   align-items: start;
+  width: 100%;
   /* min-height: var(--dialog-min-height); */
   /* max-height: 100%; */
   overflow: hidden;
