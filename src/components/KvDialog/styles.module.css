@@ -61,7 +61,6 @@
 
 .dialog__main {
   display: grid;
-  align-items: start;
   align-content: start;
   align-self: stretch;
   overflow: hidden;
