@@ -41,6 +41,7 @@
   grid-auto-rows: auto 1fr auto;
   align-items: start;
   min-height: var(--dialog-min-height);
+  max-height: 100%;
   overflow: hidden;
   background: var(--dialog-background);
   border-radius: var(--dialog-border-radius);
@@ -60,6 +61,7 @@
   color: var(--dialog-content-color);
   background: var(--dialog-content-background);
   align-self: stretch;
+  overflow: hidden;
 }
 
 .dialog__footer {

@@ -27,6 +27,9 @@ td {
 }
 
 /* Override Datatable */
+.p-datatable {
+  display: grid;
+}
 .p-highlight {
   font-weight: 700;
 }
