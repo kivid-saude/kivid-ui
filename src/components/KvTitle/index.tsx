@@ -6,6 +6,7 @@ type TKvTitle = {
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
   color?:
+    | "secondary"
     | "tertiary"
     | "tertiary-alt"
     | "success"
@@ -24,6 +25,7 @@ export const KvTitle = ({
   size = "xlarge",
 }: TKvTitle) => {
   const colorClassMap = {
+    secondary: "kv-color-secondary",
     tertiary: "kv-color-tertiary",
     "tertiary-alt": "kv-color-tertiary-alt",
     success: "kv-color-success",
