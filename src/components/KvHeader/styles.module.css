@@ -26,8 +26,20 @@
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
-.nav {
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .title {
   font-size: var(--kv-font-size-lg);
   writing-mode: vertical-rl;

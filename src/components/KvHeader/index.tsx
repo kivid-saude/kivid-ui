@@ -8,15 +8,15 @@ type TKvHeader = {
   logout?: React.ReactNode;
 };
 
-export const KvHeader = ({ link, title, logo, logout = false }: TKvHeader) => {
+export const KvHeader = ({ link, title, logo, nav, logout = false }: TKvHeader) => {
   return (
     <header className={styles.header}>
-      <div>
+      <div className={styles.container}>
         {!!link && <div className={styles.link}>{link}</div>}
 
         {logout}
 
-        {/* <nav className={styles.nav}>{nav}</nav> */}
+        <nav className={styles.nav}>{nav}</nav>
       </div>
       <div className={styles.slotEnd}>
         <div className={styles.title}>{title}</div>
