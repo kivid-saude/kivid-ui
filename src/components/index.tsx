@@ -19,4 +19,5 @@ export { KvSelect } from './KvSelect'
 export { KvSpinner } from './KvSpinner'
 export { KvTitle } from './KvTitle'
 export { Smask } from './Smask'
+export { KvSeal } from './KvSeal'
 

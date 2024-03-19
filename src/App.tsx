@@ -15,6 +15,7 @@ import {
   KvModal,
   KvOtp,
   KvPasswordInput,
+  KvSeal,
   KvSelect,
   KvTitle,
   Smask,
@@ -145,6 +146,10 @@ function App() {
           <div style={{ display: "flex", gap: "1rem" }}>
             <KvIcon icon="add" />
             <KvIcon icon="add-circle" />
+            <KvSeal content={555} backgroundColor="secondary" contentColor="white" size="md" />
+            <KvSeal backgroundColor="warning" contentColor="secondary" size="md">
+              <KvIcon icon="add" />
+            </KvSeal>
           </div>
         </KvCard>
 
