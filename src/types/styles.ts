@@ -47,6 +47,7 @@ export type SystemColors = {
 
   "kv_color_tertiary": "grape300"
   "kv_color_tertiary_contrast": "lychee100"
+
   "kv_color_tertiary_alt": "pitaya300"
   "kv_color_tertiary_alt_contrast": "lychee100"
 
@@ -63,6 +64,13 @@ export type SystemColors = {
 
   "kv_color_white": "lychee100"
   "kv_color_white_contrast": "lychee800"
+
+  "kv_color_medium": "lychee600"
+  "kv_color_medium_contrast": "lychee100"
+
+  "kv_color_neutral": "lychee600"
+
+  "kv_color_stroke": "lychee400"  
 }
 
 export type Colors = {
@@ -75,6 +83,9 @@ export type Colors = {
   "warning_alt": "kv_color_warning",
   "danger": "kv_color_danger",
   "white": "kv_color_white",
+  "medium": "kv_color_medium",
+  "stroke": "kv_color_stroke",
+  "neutral": "kv_color_neutral",
 }
 
 export type FontSizes = {
@@ -90,7 +101,6 @@ export type FontSizes = {
   "kv_font_size_6xl": "3rem"; /* 48px*/
 }
 
-// LINE-HEIGHT
 export type LineHeights = {
   "kv_line_height_xs": "calc(1em + 0.125rem)";
   "kv_line_height_sm": "calc(1em + 0.25rem)";
@@ -99,7 +109,6 @@ export type LineHeights = {
   "kv_line_height_xl": "calc(1em + 1rem)";
 }
 
-// FONT-WEIGHT
 export type FontWeights = {
   "kv_font_weight_thin": 200;
   "kv_font_weight_light": 300;

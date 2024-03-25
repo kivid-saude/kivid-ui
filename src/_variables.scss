@@ -65,6 +65,14 @@ $kv_color_danger_contrast: $lychee_100;
 $kv_color_white: $lychee_100;
 $kv_color_white_contrast: $lychee_800;
 
+$kv_color_medium: $lychee_600;
+$kv_color_medium_contrast: $lychee_100;
+
+$kv_color_neutral: $lychee_600;
+$kv_color_neutral_contrast: $lychee_100;
+
+$kv_color_stroke: $lychee_400;
+
 $kv_colors: (
   "primary_color": $kv_color_primary,
   "secondary": $kv_color_secondary,
@@ -75,6 +83,9 @@ $kv_colors: (
   "warning_alt": $kv_color_warning,
   "danger": $kv_color_danger,
   "white": $kv_color_white,
+  "medium": $kv_color_medium,
+  "neutral": $kv_color_neutral,
+  "stroke": $kv_color_stroke
 );
 
 // FONT_SIZE
@@ -104,3 +115,19 @@ $kv_font_weight_medium: 500;
 $kv_font_weight_semibold: 600;
 $kv_font_weight_bold: 700;
 $kv_font_weight_black: 900;
+
+@mixin dataTypography {
+  font-size: $kv_font_size_md;
+  line-height: 1.125rem;
+}
+
+@mixin labelTypography {
+  font-size: $kv_font_size_sm;
+  line-height: 1rem;
+}
+
+@mixin descriptionTypography {
+  font-size: $kv_font_size_xs;
+  line-height: 0.875rem;
+  letter-spacing: 4%;
+}
