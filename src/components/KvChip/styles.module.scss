@@ -1,0 +1,50 @@
+@use '../../variables' as *;
+
+$lg: 2rem;
+$md: 1.5rem;
+$sm: 1.125rem;
+
+$sizes: (
+  "lg": $lg,
+  "md": $md,
+  "sm": $sm,
+);
+
+@each $size_name, $size_value in $sizes {
+  @if $size_name == 'lg' {
+    .chip-#{$size_name} {
+      @include labelTypography;
+      height: $size_value;
+      padding: 0.5rem 1rem;
+    }
+  } @else {
+    .chip-#{$size_name} {
+      @include descriptionTypography;
+      height: $size_value;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+}
+
+@each $kv_color_name, $kv_color_value in $kv_colors {
+  .chipBackgroundColor-#{$kv_color_name} {
+    background-color: $kv_color_value;
+
+    @if $kv_color_name == 'white' {
+      border: 1px solid $kv_color_stroke;
+    }
+  }
+
+  .chipColor-#{$kv_color_name} {
+    color: $kv_color_value;
+  }
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  font-weight: $kv_font_weight_bold;
+}
