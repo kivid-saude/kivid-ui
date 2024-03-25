@@ -7,7 +7,6 @@ import {
   KvDialogFooter,
   KvDialogHeader,
   KvFieldset,
-  KvHeader,
   KvIcon,
   KvInput,
   KvLabel,
@@ -15,10 +14,12 @@ import {
   KvModal,
   KvOtp,
   KvPasswordInput,
-  KvSeal,
+  KvBadge,
   KvSelect,
+  KvSidebar,
   KvTitle,
   Smask,
+  KvChip,
 } from "./components";
 
 import { useAlert } from "./hooks/useAlert";
@@ -39,7 +40,7 @@ function App() {
 
   return (
     <>
-      <KvHeader
+      <KvSidebar
         logo={<img src={logo} />}
         title={`Afiliados`}
         link={<a href="">kivid.com.br</a>}
@@ -146,10 +147,15 @@ function App() {
           <div style={{ display: "flex", gap: "1rem" }}>
             <KvIcon icon="add" />
             <KvIcon icon="add-circle" />
-            <KvSeal content={555} backgroundColor="secondary" contentColor="white" size="md" />
-            <KvSeal backgroundColor="warning" contentColor="secondary" size="md">
-              <KvIcon icon="add" />
-            </KvSeal>
+            <KvBadge content={555} backgroundColor="secondary" contentColor="white" size="md" />
+            <KvBadge backgroundColor="warning" contentColor="secondary" size="md" icon="add">
+            </KvBadge>
+            <KvChip
+              label="Confirmado"
+              size="md"
+              labelColor="white"
+              backgroundColor="success"
+            />
           </div>
         </KvCard>
 

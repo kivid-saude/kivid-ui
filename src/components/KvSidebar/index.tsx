@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-type TKvHeader = {
+type TKvSidebar = {
   nav?: React.ReactNode;
   link?: React.ReactNode;
   title?: React.ReactNode;
@@ -8,9 +8,9 @@ type TKvHeader = {
   logout?: React.ReactNode;
 };
 
-export const KvHeader = ({ link, title, logo, nav, logout = false }: TKvHeader) => {
+export const KvSidebar = ({ link, title, logo, nav, logout = false }: TKvSidebar) => {
   return (
-    <header className={styles.header}>
+    <aside className={styles.aside}>
       <div className={styles.container}>
         {!!link && <div className={styles.link}>{link}</div>}
 
@@ -22,6 +22,6 @@ export const KvHeader = ({ link, title, logo, nav, logout = false }: TKvHeader) 
         <div className={styles.title}>{title}</div>
         <div className={styles.logo}>{logo}</div>
       </div>
-    </header>
+    </aside>
   );
 };

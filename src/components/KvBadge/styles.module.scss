@@ -1,0 +1,63 @@
+@use '../../variables' as *;
+
+$lg: 2rem;
+$md: 1.5rem;
+$sm: 1rem;
+$xs: .5rem;
+
+$sizes: (
+  "lg": $lg,
+  "md": $md,
+  "sm": $sm,
+  "xs": $xs,
+);
+
+$circle: 100%;
+$rect: 8px;
+
+$shapes: (
+  "circle": $circle,
+  "rect": $rect,
+);
+
+@mixin react_width($width) {
+  width: calc($width * 1.75);
+}
+
+@each $shape_name, $shape_value in $shapes {
+  @each $size_name, $size_value in $sizes {
+    @if $shape_name == 'rect' {
+      .badge-rect-#{$size_name} {
+        @include react_width($size_value);
+        height: $size_value;
+        border-radius: $shape_value;
+      }
+    } @else {
+      .badge-circle-#{$size_name} {
+        height: $size_value;
+        width: $size_value;
+        border-radius: $shape_value;
+      }
+    }
+  }
+}
+
+@each $kv_color_name, $kv_color_value in $kv_colors {
+  .badgeBackgroundColor-#{$kv_color_name} {
+    background-color: $kv_color_value;
+  }
+
+  .badgeColor-#{$kv_color_name} {
+    color: $kv_color_value;
+  }
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: $kv_font_size_xs;
+  font-weight: $kv_font_weight_medium;
+}
+
