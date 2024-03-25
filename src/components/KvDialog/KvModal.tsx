@@ -5,9 +5,10 @@ import style from "./styles.module.css";
 
 export type KvModal = DialogProps & {
   onDidDismiss?: (bool?: boolean) => void;
+  onClick?: () => void | (() => unknown);
 } & PropsWithChildren;
 
-export const KvModal = ({ children, onDidDismiss, ...props }: KvModal) => {
+export const KvModal = ({ children, onDidDismiss, onClick, ...props }: KvModal) => {
   return (
     <KvDialog
       style={{
@@ -19,7 +20,7 @@ export const KvModal = ({ children, onDidDismiss, ...props }: KvModal) => {
       {...props}
     >
       <button
-        onClick={() => onDidDismiss?.()}
+        onClick={onClick ? onClick : () => onDidDismiss?.()}
         className={style["dialog__close-button"]}
       >
         <KvIcon icon="close" />
