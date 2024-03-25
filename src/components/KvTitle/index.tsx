@@ -5,24 +5,30 @@ import "./kv-title.css";
 type TKvTitle = {
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
-  color?:
+  textColor?:
+    | "primary"
+    | "medium"
+    | "white";
+  iconColor?:
     | "secondary"
     | "tertiary"
     | "tertiary-alt"
     | "success"
     | "danger"
     | "medium"
-    | "warning";
+    | "warning"
+    | "white";
   icon?: string;
-  size?: "small" | "medium" | "large" | "xlarge";
+  size?: "small" | "medium" | "large" | "xlarge" | "xxlarge";
 };
 
 export const KvTitle = ({
   title,
   description,
-  color = "tertiary",
+  iconColor = "tertiary",
   icon,
   size = "xlarge",
+  textColor = "primary",
 }: TKvTitle) => {
   const colorClassMap = {
     secondary: "kv-color-secondary",
@@ -32,6 +38,8 @@ export const KvTitle = ({
     warning: "kv-color-warning",
     danger: "kv-color-danger",
     medium: "kv-color-medium",
+    white: "kv-color-white",
+    primary: "kv-color-primary",
   };
 
   const sizeClassMap = {
@@ -39,21 +47,23 @@ export const KvTitle = ({
     medium: "kv-title--medium",
     large: "kv-title--large",
     xlarge: "kv-title--xlarge",
+    xxlarge: "kv-title--xxlarge",
   };
 
-  const colorClass = colorClassMap[color];
+  const iconColorClass = colorClassMap[iconColor];
+  const textColorClass = colorClassMap[textColor];
   const sizeClass = sizeClassMap[size];
 
   return (
     <>
-      <header className={`kv-header ${colorClass} ${sizeClass}`}>
+      <header className={`kv-header ${textColorClass} ${sizeClass}`}>
         {!!icon && (
           <div className="kv-title-icon">
             <KvIcon className="kv-color-white" icon={icon} />
           </div>
         )}
 
-        <h1 className={`kv-title ${icon ? "" : "kv-title--bordered"}`}>
+        <h1 className={`kv-title ${sizeClass} ${iconColorClass} ${icon ? "" : "kv-title--bordered"}`}>
           {title}
         </h1>
 
