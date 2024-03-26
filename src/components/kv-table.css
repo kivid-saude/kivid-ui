@@ -41,3 +41,6 @@ td {
 .p-paginator-element {
   padding-inline: 0.5rem;
 }
+.p-selectable-row:hover {
+  background-color: var(--kv-color-gray-300);
+}
