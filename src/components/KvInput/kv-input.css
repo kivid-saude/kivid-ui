@@ -2,7 +2,8 @@
 .kv-input {
   appearance: none;
   width: 100%;
-  padding: 1rem 1rem;
+  height: 3.5rem;
+  padding: 1rem;
   font-family: inherit;
   font-size: var(--kv-font-size-md);
   font-weight: var(--kv-font-weight-bold);
@@ -18,7 +19,7 @@
   color: var(--kv-body-color);
   opacity: 0.4;
 }
-.kv-fieldset .kv-input {
+.kv-fieldset:not(.kv-fieldset--no-label) .kv-input {
   height: 4.5rem;
   padding-top: 2.25rem;
 }

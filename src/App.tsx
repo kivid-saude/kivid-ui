@@ -1,8 +1,10 @@
 import {
   KvAlert,
+  KvBadge,
   KvButton,
   KvButtons,
   KvCard,
+  KvChip,
   KvDialogContent,
   KvDialogFooter,
   KvDialogHeader,
@@ -14,12 +16,10 @@ import {
   KvModal,
   KvOtp,
   KvPasswordInput,
-  KvBadge,
   KvSelect,
   KvSidebar,
   KvTitle,
   Smask,
-  KvChip,
 } from "./components";
 
 import { useAlert } from "./hooks/useAlert";
@@ -60,7 +60,11 @@ function App() {
             icon="check"
           />
 
-          <form style={{ display: "grid", gap: "1rem" }}>
+          <form style={{ display: "grid", gap: "1rem", marginTop: "1.5rem" }}>
+            <KvFieldset>
+              <KvInput placeholder="Digite seu nome completo" required />
+            </KvFieldset>
+
             <KvFieldset>
               <KvLabel>Nome completo</KvLabel>
               <KvInput placeholder="Digite seu nome completo" required />
@@ -93,6 +97,16 @@ function App() {
 
             <KvFieldset>
               <KvLabel>KvSelect</KvLabel>
+              <KvSelect>
+                <option value="">Selecione...</option>
+                <option value="Opção 1">Opção 1</option>
+                <option value="Opção 2">Opção 2</option>
+                <option value="Opção 3">Opção 3</option>
+                <option value="Opção 4">Opção 4</option>
+              </KvSelect>
+            </KvFieldset>
+
+            <KvFieldset>
               <KvSelect>
                 <option value="">Selecione...</option>
                 <option value="Opção 1">Opção 1</option>
@@ -147,9 +161,18 @@ function App() {
           <div style={{ display: "flex", gap: "1rem" }}>
             <KvIcon icon="add" />
             <KvIcon icon="add-circle" />
-            <KvBadge content={555} backgroundColor="secondary" contentColor="white" size="md" />
-            <KvBadge backgroundColor="warning" contentColor="secondary" size="md" icon="add">
-            </KvBadge>
+            <KvBadge
+              content={555}
+              backgroundColor="secondary"
+              contentColor="white"
+              size="md"
+            />
+            <KvBadge
+              backgroundColor="warning"
+              contentColor="secondary"
+              size="md"
+              icon="add"
+            ></KvBadge>
             <KvChip
               label="Confirmado"
               size="md"
