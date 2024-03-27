@@ -21,6 +21,7 @@ import {
   KvTitle,
   Smask,
 } from "./components";
+import { KvSeal } from "./components/KvSeal";
 
 import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
@@ -58,6 +59,7 @@ function App() {
             }
             description={`Entre com suas credenciais.`}
             icon="check"
+            iconColor="warning"
           />
 
           <form style={{ display: "grid", gap: "1rem", marginTop: "1.5rem" }}>
@@ -160,19 +162,13 @@ function App() {
         <KvCard>
           <div style={{ display: "flex", gap: "1rem" }}>
             <KvIcon icon="add" />
-            <KvIcon icon="add-circle" />
-            <KvBadge
-              content={555}
-              backgroundColor="secondary"
-              contentColor="white"
-              size="md"
-            />
-            <KvBadge
-              backgroundColor="warning"
-              contentColor="secondary"
-              size="md"
-              icon="add"
-            ></KvBadge>
+
+            <KvBadge background="warning" color="white">
+              +99
+            </KvBadge>
+
+            <KvSeal background="danger" color="white" icon="close" />
+
             <KvChip
               label="Confirmado"
               size="md"

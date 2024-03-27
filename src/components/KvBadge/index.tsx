@@ -1,34 +1,26 @@
+import { PropsWithChildren } from "react";
 import { Colors } from "../../types/styles";
 import styles from "./styles.module.scss";
-import { KvIcon } from "../KvIcon";
 
-interface BadgeProps {
-  backgroundColor?: keyof Colors;
-  contentColor: keyof Colors;
-  size: "lg" | "md" | "sm" | "xs";
-  icon?: string;
-  content?: number | string;
-  shape?: "circle" | "rect"
-}
+type TKvBadge = {
+  background?: keyof Colors;
+  color: keyof Colors;
+} & PropsWithChildren;
 
 export const KvBadge = ({
-  backgroundColor = "medium",
-  contentColor,
-  size,
-  icon,
-  content,
-  shape = "circle",
-}: BadgeProps) => {
+  children,
+  background = "medium",
+  color,
+}: TKvBadge) => {
   return (
     <span
       className={`
         ${styles.badge}
-        ${styles[`badge-${shape}-${size}`]}
-        ${styles[`badgeBackgroundColor-${backgroundColor}`]}
-        ${styles[`badgeColor-${contentColor}`]}
+        ${styles[`badge--background-${background}`]}
+        ${styles[`badge--color-${color}`]}
       `}
     >
-      {icon ? <KvIcon icon={icon} /> : content}
+      {children}
     </span>
   );
 };

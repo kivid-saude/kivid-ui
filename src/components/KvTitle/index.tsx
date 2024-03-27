@@ -5,10 +5,7 @@ import "./kv-title.css";
 type TKvTitle = {
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
-  textColor?:
-    | "primary"
-    | "medium"
-    | "white";
+  color?: "primary" | "medium" | "white";
   iconColor?:
     | "secondary"
     | "tertiary"
@@ -28,7 +25,7 @@ export const KvTitle = ({
   iconColor = "tertiary",
   icon,
   size = "xlarge",
-  textColor = "primary",
+  color = "primary",
 }: TKvTitle) => {
   const colorClassMap = {
     secondary: "kv-color-secondary",
@@ -51,19 +48,23 @@ export const KvTitle = ({
   };
 
   const iconColorClass = colorClassMap[iconColor];
-  const textColorClass = colorClassMap[textColor];
+  const textColorClass = colorClassMap[color];
   const sizeClass = sizeClassMap[size];
 
   return (
     <>
-      <header className={`kv-header ${textColorClass} ${sizeClass}`}>
+      <header className={`kv-header ${textColorClass}`}>
         {!!icon && (
           <div className="kv-title-icon">
             <KvIcon className="kv-color-white" icon={icon} />
           </div>
         )}
 
-        <h1 className={`kv-title ${sizeClass} ${iconColorClass} ${icon ? "" : "kv-title--bordered"}`}>
+        <h1
+          className={`kv-title ${sizeClass} ${iconColorClass} ${
+            icon ? "" : "kv-title--bordered"
+          }`}
+        >
           {title}
         </h1>
 
