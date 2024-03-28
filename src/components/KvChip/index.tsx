@@ -1,5 +1,5 @@
 import { Colors } from "../../types/styles";
-import { KvBadge } from "../KvBadge";
+import { KvSeal } from "../KvSeal";
 import styles from "./styles.module.scss";
 
 interface KvChipProps {
@@ -30,16 +30,16 @@ export const KvChip = ({
         ${styles[`chipColor-${labelColor}`]}
       `}
     >
-      {!!icon &&
-        <KvBadge
+      {!!icon && (
+        <KvSeal
           size={size === "sm" ? "xs" : "sm"}
-          backgroundColor={iconBackgroundColor}
+          background={iconBackgroundColor}
           icon={icon}
-          contentColor={iconColor}
+          color={iconColor}
         />
-      }
+      )}
 
       <p>{label}</p>
     </div>
-  )
+  );
 }
