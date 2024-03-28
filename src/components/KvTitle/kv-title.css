@@ -38,7 +38,6 @@
   display: block;
   width: 1.5em;
   height: 0.25em;
-  margin-bottom: 0.5rem;
   background: var(--border-color);
   border-radius: 2em;
 }
