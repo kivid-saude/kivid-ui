@@ -53,22 +53,20 @@ export const KvTitle = ({
 
   return (
     <>
-      <header className={`kv-header ${textColorClass}`}>
+      <header className={`kv-header ${sizeClass}`}>
+        {!icon && <div className={`kv-title__border ${iconColorClass}`}></div>}
+
         {!!icon && (
-          <div className="kv-title-icon">
+          <div className={`kv-title__icon ${iconColorClass}`}>
             <KvIcon className="kv-color-white" icon={icon} />
           </div>
         )}
 
-        <h1
-          className={`kv-title ${sizeClass} ${iconColorClass} ${
-            icon ? "" : "kv-title--bordered"
-          }`}
-        >
-          {title}
-        </h1>
+        <h1 className={`kv-title ${textColorClass}`}>{title}</h1>
 
-        {!!description && <p className="kv-description">{description}</p>}
+        {!!description && (
+          <p className={`kv-description ${textColorClass}`}>{description}</p>
+        )}
       </header>
     </>
   );

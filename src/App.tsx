@@ -59,7 +59,7 @@ function App() {
             }
             description={`Entre com suas credenciais.`}
             icon="check"
-            iconColor="warning"
+            iconColor="success"
           />
 
           <form style={{ display: "grid", gap: "1rem", marginTop: "1.5rem" }}>
