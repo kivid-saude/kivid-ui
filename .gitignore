@@ -26,3 +26,4 @@ dist-ssr
 # Custom
 .DS_store
 vite.config.ts
+*storybook.log

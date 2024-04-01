@@ -29,6 +29,8 @@ button.kv-button,
 
 .kv-button:focus {
   outline-color: var(--border-color);
+  outline-width: 0.25rem;
+  outline-style: solid;
 }
 .kv-button:active {
   opacity: 0.8;
@@ -42,7 +44,7 @@ button.kv-button,
 
 button.kv-button--outline,
 .kv-button--outline {
-  /* --background: #fff; */
+  --background: transparent;
   /* --color: var(--kv-body-color); */
   --border-color: var(--kv-color-gray-400);
 }

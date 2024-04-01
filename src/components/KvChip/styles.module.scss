@@ -1,50 +1,50 @@
-@use '../../variables' as *;
-
-$lg: 2rem;
-$md: 1.5rem;
-$sm: 1.125rem;
-
 $sizes: (
-  "lg": $lg,
-  "md": $md,
-  "sm": $sm,
+  "large": 2rem,
+  "medium": 1.5rem,
+  "small": 1.125rem,
 );
-
-@each $size_name, $size_value in $sizes {
-  @if $size_name == 'lg' {
-    .chip-#{$size_name} {
-      @include labelTypography;
-      height: $size_value;
-      padding: 0.5rem 1rem;
-    }
-  } @else {
-    .chip-#{$size_name} {
-      @include descriptionTypography;
-      height: $size_value;
-      padding: 0.25rem 0.5rem;
-    }
-  }
-}
-
-@each $kv_color_name, $kv_color_value in $kv_colors {
-  .chipBackgroundColor-#{$kv_color_name} {
-    background-color: $kv_color_value;
-
-    @if $kv_color_name == 'white' {
-      border: 1px solid $kv_color_stroke;
-    }
-  }
-
-  .chipColor-#{$kv_color_name} {
-    color: $kv_color_value;
-  }
-}
 
 .chip {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.5rem;
   border-radius: 1rem;
+  background: var(--kv-color-base);
+  color: var(--kv-color-contrast);
   font-weight: $kv_font_weight_bold;
+  border: 1px solid var(--kv-color-base);
+
+  &--outline {
+    border: 1px solid var(--kv-color-base);
+    background: transparent;
+    color: var(--kv-color-primary);
+  }
+}
+
+@each $size_name, $size_value in $sizes {
+  @if $size_name == "large" {
+    .chip--#{$size_name} {
+      font-size: var(--kv-font-size-sm);
+      height: $size_value;
+      padding: 0.5rem;
+      padding-right: 1rem;
+    }
+  }
+  @if $size_name == "medium" {
+    .chip--#{$size_name} {
+      font-size: var(--kv-font-size-xs);
+      height: $size_value;
+      padding: 0.25rem;
+      padding-right: 0.5rem;
+    }
+  }
+  @if $size_name == "small" {
+    .chip--#{$size_name} {
+      font-size: var(--kv-font-size-2xs);
+      height: $size_value;
+      padding: 0.125rem;
+      padding-right: 0.25rem;
+      gap: 0.25rem;
+    }
+  }
 }

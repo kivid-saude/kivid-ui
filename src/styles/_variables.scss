@@ -1,41 +1,41 @@
 // COLORS TOKENS
-$lychee_100: #FFFFFF;
-$lychee_200: #FCFCFC;
-$lychee_300: #F2F5F5;
-$lychee_400: #E8EBEB;
-$lychee_500: #D9DEDE;
-$lychee_600: #ADB2B2;
+$lychee_100: #ffffff;
+$lychee_200: #fcfcfc;
+$lychee_300: #f2f5f5;
+$lychee_400: #e8ebeb;
+$lychee_500: #d9dede;
+$lychee_600: #adb2b2;
 $lychee_700: #949999;
 $lychee_800: #565959;
 $lychee_900: #263333;
 
-$pear100: #E1FAE9;
-$pear_200: #A8F0C0;
-$pear_300: #50E582;
+$pear100: #e1fae9;
+$pear_200: #a8f0c0;
+$pear_300: #50e582;
 
-$java_100: #E1F8FA;
-$java_200: #ABEFF5;
-$java_300: #39D7E5;
+$java_100: #e1f8fa;
+$java_200: #abeff5;
+$java_300: #39d7e5;
 
-$grape_100: #E8E5FF;
-$grape_200: #AFAAF2;
-$grape_300: #7C67E5;
+$grape_100: #e8e5ff;
+$grape_200: #afaaf2;
+$grape_300: #7c67e5;
 
-$pitaya_100: #FFE5F7;
-$pitaya_200: #F5ABDC;
-$pitaya_300: #F048B8;
+$pitaya_100: #ffe5f7;
+$pitaya_200: #f5abdc;
+$pitaya_300: #f048b8;
 
-$blackberry_100: #FAE1E1;
-$blackberry_200: #F2A9A9;
-$blackberry_300: #E54545;
+$blackberry_100: #fae1e1;
+$blackberry_200: #f2a9a9;
+$blackberry_300: #e54545;
 
-$tangerine_100: #FFF0E5;
-$tangerine_200: #FFD2B2;
-$tangerine_300: #F5914A;
+$tangerine_100: #fff0e5;
+$tangerine_200: #ffd2b2;
+$tangerine_300: #f5914a;
 
-$mango_100: #FFF7E5;
-$mango_200: #FFE8B2;
-$mango_300: #FFC234;
+$mango_100: #fff7e5;
+$mango_200: #ffe8b2;
+$mango_300: #ffc234;
 
 // COLORS
 $kv_color_primary: $lychee_800;
@@ -68,13 +68,14 @@ $kv_color_white_contrast: $lychee_800;
 $kv_color_medium: $lychee_600;
 $kv_color_medium_contrast: $lychee_100;
 
+$kv_color_light: $lychee_400;
+$kv_color_light_contrast: $lychee_600;
+
 $kv_color_neutral: $lychee_600;
 $kv_color_neutral_contrast: $lychee_100;
 
-$kv_color_stroke: $lychee_400;
-
 $kv_colors: (
-  "primary_color": $kv_color_primary,
+  "primary": $kv_color_primary,
   "secondary": $kv_color_secondary,
   "tertiary": $kv_color_tertiary,
   "tertiary_alt": $kv_color_tertiary_alt,
@@ -84,8 +85,8 @@ $kv_colors: (
   "danger": $kv_color_danger,
   "white": $kv_color_white,
   "medium": $kv_color_medium,
+  "light": $kv_color_light,
   "neutral": $kv_color_neutral,
-  "stroke": $kv_color_stroke
 );
 
 // FONT_SIZE
@@ -118,16 +119,63 @@ $kv_font_weight_black: 900;
 
 @mixin dataTypography {
   font-size: $kv_font_size_md;
-  line-height: 1.125rem;
+  line-height: $kv_line_height_xs;
 }
 
 @mixin labelTypography {
   font-size: $kv_font_size_sm;
-  line-height: 1rem;
+  line-height: $kv_line_height_xs;
 }
 
 @mixin descriptionTypography {
-  font-size: $kv_font_size_xs;
-  line-height: 0.875rem;
-  letter-spacing: 4%;
+  font-size: var(--kv-font-size-xs);
+  line-height: var(--kv-line-height-xs);
+  letter-spacing: 0.0125em;
 }
+
+$kv_colors_contrasts: (
+  "primary": (
+    "color": $kv_color_primary,
+    "contrast": $kv_color_primary_contrast,
+  ),
+  "secondary": (
+    "color": $kv_color_secondary,
+    "contrast": $kv_color_secondary_contrast,
+  ),
+  "tertiary": (
+    "color": $kv_color_tertiary,
+    "contrast": $kv_color_tertiary_contrast,
+  ),
+  "tertiary_alt": (
+    "color": $kv_color_tertiary_alt,
+    "contrast": $kv_color_tertiary_alt_contrast,
+  ),
+  "success": (
+    "color": $kv_color_success,
+    "contrast": $kv_color_success_contrast,
+  ),
+  "warning": (
+    "color": $kv_color_warning,
+    "contrast": $kv_color_warning_contrast,
+  ),
+  "warning_alt": (
+    "color": $kv_color_warning_alt,
+    "contrast": $kv_color_warning_alt_contrast,
+  ),
+  "danger": (
+    "color": $kv_color_danger,
+    "contrast": $kv_color_danger_contrast,
+  ),
+  "white": (
+    "color": $kv_color_white,
+    "contrast": $kv_color_white_contrast,
+  ),
+  "medium": (
+    "color": $kv_color_medium,
+    "contrast": $kv_color_medium_contrast,
+  ),
+  "light": (
+    "color": $kv_color_light,
+    "contrast": $kv_color_light_contrast,
+  ),
+);

@@ -1,0 +1,111 @@
+:root {
+  /* COLORS BY NAME */
+  --kv-color-lychee_100: #ffffff;
+  --kv-color-lychee_200: #fcfcfc;
+  --kv-color-lychee_300: #f2f5f5;
+  --kv-color-lychee_400: #e8ebeb;
+  --kv-color-lychee_500: #d9dede;
+  --kv-color-lychee_600: #adb2b2;
+  --kv-color-lychee_700: #949999;
+  --kv-color-lychee_800: #565959;
+  --kv-color-lychee_900: #263333;
+
+  --kv-color-pear100: #e1fae9;
+  --kv-color-pear_200: #a8f0c0;
+  --kv-color-pear_300: #50e582;
+
+  --kv-color-java_100: #e1f8fa;
+  --kv-color-java_200: #abeff5;
+  --kv-color-java_300: #39d7e5;
+
+  --kv-color-grape_100: #e8e5ff;
+  --kv-color-grape_200: #afaaf2;
+  --kv-color-grape_300: #7c67e5;
+
+  --kv-color-pitaya_100: #ffe5f7;
+  --kv-color-pitaya_200: #f5abdc;
+  --kv-color-pitaya_300: #f048b8;
+
+  --kv-color-blackberry_100: #fae1e1;
+  --kv-color-blackberry_200: #f2a9a9;
+  --kv-color-blackberry_300: #e54545;
+
+  --kv-color-tangerine_100: #fff0e5;
+  --kv-color-tangerine_200: #ffd2b2;
+  --kv-color-tangerine_300: #f5914a;
+
+  --kv-color-mango_100: #fff7e5;
+  --kv-color-mango_200: #ffe8b2;
+  --kv-color-mango_300: #ffc234;
+
+  --kv-color-gray-100: #fafcfc;
+  --kv-color-gray-200: #fafcfc;
+  --kv-color-gray-300: #f2f5f5;
+  --kv-color-gray-400: #e8ebeb;
+  --kv-color-gray-500: #d9dede;
+  --kv-color-gray-600: #adb2b2;
+  --kv-color-gray-700: #949999;
+  --kv-color-gray-800: #565959;
+  --kv-color-gray-900: #263333;
+
+  /* COLORS BY STATUS */
+  --kv-color-primary: var(--kv-color-lychee_800);
+  --kv-color-primary-contrast: var(--kv-color-lychee_100);
+
+  --kv-color-secondary: var(--kv-color-java_300);
+  --kv-color-secondary-contrast: var(--kv-color-lychee_100);
+
+  --kv-color-tertiary: var(--kv-color-grape_300);
+  --kv-color-tertiary-contrast: var(--kv-color-lychee_100);
+
+  --kv-color-success: var(--kv-color-pear_300);
+  --kv-color-success-contrast: var(--kv-color-lychee_100);
+
+  --kv-color-warning: var(--kv-color-tangerine_300);
+  --kv-color-warning-contrast: var(--kv-color-lychee_100);
+
+  --kv-color-danger: var(--kv-color-blackberry_300);
+  --kv-color-danger-contrast: var(--kv-color-lychee_100);
+
+  --kv-color-white: white;
+  --kv-color-white-contrast: var(--kv-color-primary);
+
+  /* BODY */
+  --kv-font-family: "Red Hat Display", sans-serif;
+  --kv-body-background: var(--kv-color-gray-200);
+  --kv-body-color: var(--kv-color-primary);
+
+  /* FONT-SIZE */
+  --kv-font-size-2xs: 0.625rem;
+  --kv-font-size-xs: 0.75rem;
+  --kv-font-size-sm: 0.875rem;
+  --kv-font-size-md: 1rem;
+  --kv-font-size-lg: 1.125rem;
+  --kv-font-size-xl: 1.25rem;
+  --kv-font-size-2xl: 1.5rem;
+  --kv-font-size-3xl: 1.75rem;
+  --kv-font-size-4xl: 2rem;
+  --kv-font-size-5xl: 2.5rem;
+  --kv-font-size-6xl: 3rem;
+  --kv-font-size-base: var(--kv-font-size-medium);
+
+  /* LINE-HEIGHT */
+  --kv-line-height-xl: calc(1em + 1rem);
+  --kv-line-height-lg: calc(1em + 0.75rem);
+  --kv-line-height-md: calc(1em + 0.5rem);
+  --kv-line-height-sm: calc(1em + 0.25rem);
+  --kv-line-height-xs: calc(1em + 0.125rem);
+  --kv-line-height-base: var(--kv-line-height-md);
+
+  --kv-font-weight-thin: 200;
+  --kv-font-weight-light: 300;
+  --kv-font-weight-regular: 400;
+  --kv-font-weight-medium: 500;
+  --kv-font-weight-semibold: 600;
+  --kv-font-weight-bold: 700;
+  --kv-font-weight-black: 900;
+
+  --container-padding: 1.5rem;
+
+  --kv-header-width: 104px;
+}

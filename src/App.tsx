@@ -163,18 +163,11 @@ function App() {
           <div style={{ display: "flex", gap: "1rem" }}>
             <KvIcon icon="add" />
 
-            <KvBadge background="warning" color="white">
-              +99
-            </KvBadge>
+            <KvBadge color="warning">+99</KvBadge>
 
-            <KvSeal background="danger" color="white" icon="close" />
+            <KvSeal color="danger" icon="close" />
 
-            <KvChip
-              label="Confirmado"
-              size="md"
-              labelColor="white"
-              backgroundColor="success"
-            />
+            <KvChip label="Confirmado" size="medium" color="white" />
           </div>
         </KvCard>
 

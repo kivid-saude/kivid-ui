@@ -1,23 +1,12 @@
-@use '../../variables' as *;
-
-@each $kv_color_name, $kv_color_value in $kv_colors {
-  .badge--background-#{$kv_color_name} {
-    background: $kv_color_value;
-  }
-
-  .badge--color-#{$kv_color_name} {
-    color: $kv_color_value;
-  }
-}
-
 .badge {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 1.5rem;
-  // height: 1.5rem;
-  font-size: $kv_font_size_xs;
-  font-weight: $kv_font_weight_medium;
+  height: 1.5rem;
+  color: var(--kv-color-contrast);
+  background: var(--kv-color-base);
+  font-size: var(--kv-font-size-xs);
+  font-weight: var(--kv-font-weight-medium);
   border-radius: 50%;
 }
-

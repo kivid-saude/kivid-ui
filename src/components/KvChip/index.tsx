@@ -1,45 +1,49 @@
-import { Colors } from "../../types/styles";
+import { Colors, MapColors } from "../../types/styles";
 import { KvSeal } from "../KvSeal";
 import styles from "./styles.module.scss";
 
 interface KvChipProps {
   label: string;
-  labelColor: keyof Colors;
-  size: "lg" | "md" | "sm";
-  backgroundColor: keyof Colors;
+  color: keyof Colors;
+  size: "large" | "medium" | "small";
+  fill?: "solid" | "outline";
   icon?: string;
-  iconBackgroundColor?: keyof Colors;
   iconColor?: keyof Colors;
 }
 
 export const KvChip = ({
   size,
   label,
-  labelColor,
-  backgroundColor,
+  color = "light",
+  fill = "outline",
   icon,
   iconColor = "white",
-  iconBackgroundColor,
 }: KvChipProps) => {
-  return (
-    <div
-      className={`
-        ${styles.chip}
-        ${styles[`chip-${size}`]}
-        ${styles[`chipBackgroundColor-${backgroundColor}`]}
-        ${styles[`chipColor-${labelColor}`]}
-      `}
-    >
-      {!!icon && (
-        <KvSeal
-          size={size === "sm" ? "xs" : "sm"}
-          background={iconBackgroundColor}
-          icon={icon}
-          color={iconColor}
-        />
-      )}
+  const classes = [
+    styles.chip,
+    styles[`chip--${size}`],
+    styles[`chip--${fill}`],
+    MapColors[color],
+  ].join(" ");
 
-      <p>{label}</p>
+  const sealSize = () => {
+    switch (size) {
+      case "large":
+        return "small";
+      case "medium":
+        return "small";
+      case "small":
+        return "xsmall";
+      default:
+        return undefined;
+    }
+  };
+
+  return (
+    <div className={classes}>
+      {!!icon && <KvSeal size={sealSize()} icon={icon} color={iconColor} />}
+
+      <span>{label}</span>
     </div>
   );
-}
+};

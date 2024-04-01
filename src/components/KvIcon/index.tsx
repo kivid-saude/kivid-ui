@@ -7,9 +7,16 @@ type TKvIcon = {
 
 const iconsPath = "/kivid-icons/sprites.svg";
 
-export const KvIcon = ({ icon, color, className = "", ...props }: TKvIcon) => {
+export const KvIcon = ({
+  icon,
+  color = "",
+  className = "",
+  ...props
+}: TKvIcon) => {
+  const classes = ["kv-icon", className, color].join(" ");
+
   return (
-    <svg className={`kv-icon ${className} ${color}`} {...props}>
+    <svg className={classes} {...props}>
       <use href={`${iconsPath}#${icon}`} />
     </svg>
   );

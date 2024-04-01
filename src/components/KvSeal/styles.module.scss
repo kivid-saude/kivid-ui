@@ -1,23 +1,13 @@
-@use '../../variables' as *;
-
-$lg: 2rem;
-$md: 1.5rem;
-$sm: 1rem;
-$xs: .5rem;
-
 $sizes: (
-  "lg": $lg,
-  "md": $md,
-  "sm": $sm,
-  "xs": $xs,
+  "large": 2rem,
+  "medium": 1.5rem,
+  "small": 1rem,
+  "xsmall": 0.5rem,
 );
 
-$circle: 100%;
-$rect: 8px;
-
 $shapes: (
-  "circle": $circle,
-  "rect": $rect,
+  "circle": 50%,
+  "rect": 0.5rem,
 );
 
 @mixin react_width($width) {
@@ -26,7 +16,7 @@ $shapes: (
 
 @each $shape_name, $shape_value in $shapes {
   @each $size_name, $size_value in $sizes {
-    @if $shape_name == 'rect' {
+    @if $shape_name == "rect" {
       .seal-rect-#{$size_name} {
         @include react_width($size_value);
         height: $size_value;
@@ -34,6 +24,7 @@ $shapes: (
       }
     } @else {
       .seal-circle-#{$size_name} {
+        --icon-size: calc(#{$size_value}/1.5);
         height: $size_value;
         width: $size_value;
         border-radius: $shape_value;
@@ -42,21 +33,17 @@ $shapes: (
   }
 }
 
-@each $kv_color_name, $kv_color_value in $kv_colors {
-  .seal--background-#{$kv_color_name} {
-    background: $kv_color_value;
-  }
-  .seal--color-#{$kv_color_name} {
-    color: $kv_color_value;
-  }
-}
-
 .seal {
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: $kv_font_size_xs;
   font-weight: $kv_font_weight_medium;
+  background: var(--kv-color-base);
 }
 
+.seal__icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--kv-color-contrast);
+}
