@@ -29,11 +29,11 @@ export const Smask = ({ children, mask, value = "" }: TSmask) => {
     }
   };
 
-  const onPaste = async (event: React.ClipboardEvent<HTMLInputElement>) => {
-    const pastedText = event.clipboardData.getData("text");
-    const maskedValue = smask.mask(pastedText, mask);
-    setNewValue(maskedValue);
-  };
+  // const onPaste = async (event: React.ClipboardEvent<HTMLInputElement>) => {
+  //   const pastedText = event.clipboardData.getData("text");
+  //   const maskedValue = smask.mask(pastedText, mask);
+  //   setNewValue(maskedValue);
+  // };
 
   useEffect(() => {
     if (!value) return;
@@ -44,7 +44,7 @@ export const Smask = ({ children, mask, value = "" }: TSmask) => {
   return React.cloneElement(children, {
     value: newValue,
     onInput,
-    onPaste,
+    // onPaste,
     minLength,
     maxLength,
   });
