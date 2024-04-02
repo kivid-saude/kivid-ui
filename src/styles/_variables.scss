@@ -47,17 +47,11 @@ $kv_color_secondary_contrast: $lychee_100;
 $kv_color_tertiary: $grape_300;
 $kv_color_tertiary_contrast: $lychee_100;
 
-$kv_color_tertiary_alt: $pitaya_300;
-$kv_color_tertiary_alt_contrast: $lychee_100;
-
 $kv_color_success: $pear_300;
 $kv_color_success_contrast: $lychee_100;
 
 $kv_color_warning: $mango_300;
 $kv_color_warning_contrast: $lychee_100;
-
-$kv_color_warning_alt: $tangerine_300;
-$kv_color_warning_alt_contrast: $lychee_100;
 
 $kv_color_danger: $blackberry_300;
 $kv_color_danger_contrast: $lychee_100;
@@ -78,10 +72,8 @@ $kv_colors: (
   "primary": $kv_color_primary,
   "secondary": $kv_color_secondary,
   "tertiary": $kv_color_tertiary,
-  "tertiary_alt": $kv_color_tertiary_alt,
   "success": $kv_color_success,
   "warning": $kv_color_warning,
-  "warning_alt": $kv_color_warning,
   "danger": $kv_color_danger,
   "white": $kv_color_white,
   "medium": $kv_color_medium,
@@ -135,47 +127,39 @@ $kv_font_weight_black: 900;
 
 $kv_colors_contrasts: (
   "primary": (
-    "color": $kv_color_primary,
-    "contrast": $kv_color_primary_contrast,
+    "color": var(--kv-color-primary),
+    "contrast": var(--kv-color-primary-contrast),
   ),
   "secondary": (
-    "color": $kv_color_secondary,
-    "contrast": $kv_color_secondary_contrast,
+    "color": var(--kv-color-secondary),
+    "contrast": var(--kv-color-secondary-contrast),
   ),
   "tertiary": (
-    "color": $kv_color_tertiary,
-    "contrast": $kv_color_tertiary_contrast,
-  ),
-  "tertiary_alt": (
-    "color": $kv_color_tertiary_alt,
-    "contrast": $kv_color_tertiary_alt_contrast,
+    "color": var(--kv-color-tertiary),
+    "contrast": var(--kv-color-tertiary-contrast),
   ),
   "success": (
-    "color": $kv_color_success,
-    "contrast": $kv_color_success_contrast,
+    "color": var(--kv-color-success),
+    "contrast": var(--kv-color-success-contrast),
   ),
   "warning": (
-    "color": $kv_color_warning,
-    "contrast": $kv_color_warning_contrast,
-  ),
-  "warning_alt": (
-    "color": $kv_color_warning_alt,
-    "contrast": $kv_color_warning_alt_contrast,
+    "color": var(--kv-color-warning),
+    "contrast": var(--kv-color-warning-contrast),
   ),
   "danger": (
-    "color": $kv_color_danger,
-    "contrast": $kv_color_danger_contrast,
+    "color": var(--kv-color-danger),
+    "contrast": var(--kv-color-danger-contrast),
   ),
   "white": (
-    "color": $kv_color_white,
-    "contrast": $kv_color_white_contrast,
+    "color": var(--kv-color-white),
+    "contrast": var(--kv-color-white-contrast),
   ),
   "medium": (
-    "color": $kv_color_medium,
-    "contrast": $kv_color_medium_contrast,
+    "color": var(--kv-color-medium),
+    "contrast": var(--kv-color-medium-contrast),
   ),
   "light": (
-    "color": $kv_color_light,
-    "contrast": $kv_color_light_contrast,
+    "color": var(--kv-color-light),
+    "contrast": var(--kv-color-light-contrast),
   ),
 );

@@ -25,9 +25,58 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Example: Story = {
+export const Default: Story = {
+  args: {
+    label: "Example",
+  },
+};
+export const Small: Story = {
+  args: {
+    size: "small",
+    color: "light",
+    fill: "outline",
+    label: "Example",
+  },
+};
+export const Medium: Story = {
   args: {
     size: "medium",
+    color: "light",
+    fill: "outline",
+    label: "Example",
+  },
+};
+export const Large: Story = {
+  args: {
+    size: "large",
+    color: "light",
+    fill: "outline",
+    label: "Example",
+  },
+};
+export const SmallWithIcon: Story = {
+  args: {
+    size: "small",
+    color: "light",
+    fill: "outline",
+    label: "Example",
+    icon: "check",
+    iconColor: "success",
+  },
+};
+export const MediumWithIcon: Story = {
+  args: {
+    size: "medium",
+    color: "light",
+    fill: "outline",
+    label: "Example",
+    icon: "check",
+    iconColor: "success",
+  },
+};
+export const LargeWithIcon: Story = {
+  args: {
+    size: "large",
     color: "light",
     fill: "outline",
     label: "Example",

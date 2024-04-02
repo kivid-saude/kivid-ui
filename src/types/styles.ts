@@ -48,16 +48,11 @@ export type SystemColors = {
   kv_color_tertiary: "grape300";
   kv_color_tertiary_contrast: "lychee100";
 
-  kv_color_tertiary_alt: "pitaya300";
-  kv_color_tertiary_alt_contrast: "lychee100";
-
   kv_color_success: "pear300";
   kv_color_success_contrast: "lychee100";
 
   kv_color_warning: "mango300";
   kv_color_warning_contrast: "lychee100";
-
-  kv_color_warning_alt: "tangerine300";
 
   kv_color_danger: "blackberry300";
   kv_color_danger_contrast: "lychee100";
@@ -75,10 +70,8 @@ export type Colors = {
   primary: "kv_color_primary";
   secondary: "kv_color_secondary";
   tertiary: "kv_color_tertiary";
-  tertiary_alt: "kv_color_tertiary_alt";
   success: "kv_color_success";
   warning: "kv_color_warning";
-  warning_alt: "kv_color_warning";
   danger: "kv_color_danger";
   white: "kv_color_white";
   light: "kv_color_light";
@@ -86,14 +79,24 @@ export type Colors = {
   neutral: "kv_color_neutral";
 };
 
+export type KeyColors =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "success"
+  | "warning"
+  | "danger"
+  | "white"
+  | "light"
+  | "medium"
+  | "neutral";
+
 export const MapColors = {
   primary: "kv-color-primary",
   secondary: "kv-color-secondary",
   tertiary: "kv-color-tertiary",
-  tertiary_alt: "kv-color-tertiary-alt",
   success: "kv-color-success",
   warning: "kv-color-warning",
-  warning_alt: "kv-color-warning",
   danger: "kv-color-danger",
   white: "kv-color-white",
   light: "kv-color-light",

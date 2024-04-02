@@ -4,47 +4,55 @@ $sizes: (
   "small": 1.125rem,
 );
 
-.chip {
+.kv-chip {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  border-radius: 1rem;
-  background: var(--kv-color-base);
-  color: var(--kv-color-contrast);
-  font-weight: $kv_font_weight_bold;
+  width: fit-content;
   border: 1px solid var(--kv-color-base);
-
-  &--outline {
-    border: 1px solid var(--kv-color-base);
+  border-radius: 1rem;
+  font-weight: var(--kv-font-weight-bold);
+  
+  &--fill-outline {
     background: transparent;
     color: var(--kv-color-primary);
   }
-}
 
-@each $size_name, $size_value in $sizes {
-  @if $size_name == "large" {
-    .chip--#{$size_name} {
-      font-size: var(--kv-font-size-sm);
-      height: $size_value;
-      padding: 0.5rem;
-      padding-right: 1rem;
+  &--fill-solid {
+    background: var(--kv-color-base);
+    color: var(--kv-color-contrast);
+  }
+
+  @each $size_name, $size_value in $sizes {
+    @if $size_name == "large" {
+      &--size-#{$size_name} {
+        --padding-left-with-icon: 0.5rem;
+        height: $size_value;
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+        font-size: var(--kv-font-size-sm);
+      }
+    }
+    @if $size_name == "medium" {
+      &--size-#{$size_name} {
+        --padding-left-with-icon: 0.25rem;
+        height: $size_value;
+        padding: 0.25rem 0.5rem;
+        gap: 0.5rem;
+        font-size: var(--kv-font-size-xs);
+      }
+    }
+    @if $size_name == "small" {
+      &--size-#{$size_name} {
+        --padding-left-with-icon: 0.125rem;
+        height: $size_value;
+        padding: 0.125rem 0.25rem;
+        gap: 0.25rem;
+        font-size: var(--kv-font-size-2xs);
+      }
     }
   }
-  @if $size_name == "medium" {
-    .chip--#{$size_name} {
-      font-size: var(--kv-font-size-xs);
-      height: $size_value;
-      padding: 0.25rem;
-      padding-right: 0.5rem;
-    }
-  }
-  @if $size_name == "small" {
-    .chip--#{$size_name} {
-      font-size: var(--kv-font-size-2xs);
-      height: $size_value;
-      padding: 0.125rem;
-      padding-right: 0.25rem;
-      gap: 0.25rem;
-    }
+
+  &--with-icon {
+    padding-left: var(--padding-left-with-icon);
   }
 }

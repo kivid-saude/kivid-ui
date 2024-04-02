@@ -1,29 +1,46 @@
-import { Colors, MapColors } from "../../types/styles";
+import { KeyColors, MapColors } from "../../types/styles";
 import { KvIcon } from "../KvIcon";
 import styles from "./styles.module.scss";
 
 type TKvSeal = {
-  color?: keyof Colors;
+  color?: KeyColors;
   size?: "large" | "medium" | "small" | "xsmall";
-  icon: string;
   shape?: "circle" | "rect";
+  icon: string;
 };
 
 export const KvSeal = ({
-  color = "white",
-  size = "medium",
-  icon,
+  color = "medium",
+  size = "large",
   shape = "circle",
+  icon,
 }: TKvSeal) => {
+  const iconSize = () => {
+    switch (size) {
+      case "large":
+        return "medium";
+      case "medium":
+        return "small";
+      case "small":
+      case "xsmall":
+        return "xsmall";
+    }
+  };
+
+  const classes = [
+    styles["kv-seal"],
+    styles[`kv-seal--size-${size}`],
+    styles[`kv-seal--shape-${shape}`],
+    MapColors[color],
+  ].join(" ");
+
   return (
-    <span
-      className={`
-        ${styles.seal}
-        ${styles[`seal-${shape}-${size}`]}
-        ${MapColors[color]}
-      `}
-    >
-      <KvIcon className={styles["seal__icon"]} icon={icon} />
-    </span>
+    <div className={classes}>
+      <KvIcon
+        className={styles["kv-seal__icon"]}
+        size={iconSize()}
+        icon={icon}
+      />
+    </div>
   );
 };
