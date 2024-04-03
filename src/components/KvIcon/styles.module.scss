@@ -10,6 +10,13 @@ $sizes: (
   width: var(--icon-size);
   height: var(--icon-size);
   color: var(--kv-color-base, currentColor);
+
+  .kv-fieldset > & {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
 }
 
 @each $size_name, $size_value in $sizes {
