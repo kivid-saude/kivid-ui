@@ -10,7 +10,7 @@ type TKvSeal = {
 };
 
 export const KvSeal = ({
-  color = "medium",
+  color = "tertiary",
   size = "large",
   shape = "circle",
   icon,
