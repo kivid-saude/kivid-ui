@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.125rem;
   color: var(--kv-color-contrast);
   background: var(--kv-color-base);
-  font-size: var(--kv-font-size-xs);
-  font-weight: var(--kv-font-weight-medium);
-  border-radius: 50%;
+  font-size: var(--kv-font-size-2xs);
+  font-weight: var(--kv-font-weight-bold);
+  border-radius: 1rem;
 }

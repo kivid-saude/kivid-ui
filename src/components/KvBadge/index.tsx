@@ -1,20 +1,11 @@
-import { PropsWithChildren } from "react";
-import { Colors, MapColors } from "../../types/styles";
+import { KeyColors, MapColors } from "../../types/styles";
 import styles from "./styles.module.scss";
 
 type TKvBadge = {
-  // background?: keyof Colors;
-  color: keyof Colors;
-} & PropsWithChildren;
+  color: KeyColors;
+  label: string;
+};
 
-export const KvBadge = ({
-  children,
-  // background = "medium",
-  color,
-}: TKvBadge) => {
-  console.log("MapColors[color]", MapColors[color]);
-
-  return (
-    <span className={`${styles.badge} ${MapColors[color]}`}>{children}</span>
-  );
+export const KvBadge = ({ label, color }: TKvBadge) => {
+  return <span className={`${styles.badge} ${MapColors[color]}`}>{label}</span>;
 };
