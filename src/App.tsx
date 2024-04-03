@@ -163,7 +163,7 @@ function App() {
           <div style={{ display: "flex", gap: "1rem" }}>
             <KvIcon icon="add" />
 
-            <KvBadge color="warning">+99</KvBadge>
+            <KvBadge color="warning" label="+99" />
 
             <KvSeal color="danger" icon="close" />
 
