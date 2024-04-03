@@ -15,6 +15,13 @@ export const KvSeal = ({
   shape = "circle",
   icon,
 }: TKvSeal) => {
+  const classes = [
+    styles["kv-seal"],
+    styles[`kv-seal--size-${size}`],
+    styles[`kv-seal--shape-${shape}`],
+    MapColors[color],
+  ].join(" ");
+
   const iconSize = () => {
     switch (size) {
       case "large":
@@ -26,13 +33,6 @@ export const KvSeal = ({
         return "xsmall";
     }
   };
-
-  const classes = [
-    styles["kv-seal"],
-    styles[`kv-seal--size-${size}`],
-    styles[`kv-seal--shape-${shape}`],
-    MapColors[color],
-  ].join(" ");
 
   return (
     <div className={classes}>

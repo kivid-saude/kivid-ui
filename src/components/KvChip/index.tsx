@@ -2,14 +2,14 @@ import { KeyColors, MapColors } from "../../types/styles";
 import { KvSeal } from "../KvSeal";
 import styles from "./styles.module.scss";
 
-interface KvChipProps {
+type TKvChip = {
   label: string;
   color?: KeyColors;
   size?: "large" | "medium" | "small";
   fill?: "solid" | "outline";
   icon?: string;
   iconColor?: KeyColors;
-}
+};
 
 export const KvChip = ({
   label,
@@ -18,7 +18,15 @@ export const KvChip = ({
   fill = "outline",
   icon,
   iconColor,
-}: KvChipProps) => {
+}: TKvChip) => {
+  const classes = [
+    styles["kv-chip"],
+    styles[`kv-chip--size-${size}`],
+    styles[`kv-chip--fill-${fill}`],
+    icon ? styles[`kv-chip--with-icon`] : "",
+    MapColors[color],
+  ].join(" ");
+
   const sealSize = () => {
     switch (size) {
       case "large":
@@ -28,14 +36,6 @@ export const KvChip = ({
         return "xsmall";
     }
   };
-
-  const classes = [
-    styles["kv-chip"],
-    styles[`kv-chip--size-${size}`],
-    styles[`kv-chip--fill-${fill}`],
-    icon ? styles[`kv-chip--with-icon`] : "",
-    MapColors[color],
-  ].join(" ");
 
   return (
     <div className={classes}>
