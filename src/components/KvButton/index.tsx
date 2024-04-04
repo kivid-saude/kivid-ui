@@ -20,7 +20,7 @@ type TButton = {
 export const KvButton = ({
   children,
   className = "",
-  color = "tertiary",
+  color = "light",
   fill = "solid",
   size = "medium",
   shape,
