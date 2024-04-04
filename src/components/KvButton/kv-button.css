@@ -29,8 +29,8 @@ button.kv-button,
 
 .kv-button:focus:not(.kv-button:active),
 .kv-button:focus:not(.kv-button:disabled) {
-  outline-color: var(--border-color);
-  outline-width: 0.25rem;
+  outline-color: var(--kv-color-gray-400);
+  outline-width: 0.125rem;
   outline-style: solid;
 }
 .kv-button:active {
