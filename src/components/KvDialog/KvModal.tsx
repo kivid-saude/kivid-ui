@@ -23,7 +23,7 @@ export const KvModal = ({ children, onDidDismiss, onClick, ...props }: KvModal) 
         onClick={onClick ? onClick : () => onDidDismiss?.()}
         className={style["dialog__close-button"]}
       >
-        <KvIcon icon="close" />
+        <KvIcon color="white" icon="close" />
       </button>
 
       {children}
