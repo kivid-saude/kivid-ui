@@ -1,9 +1,10 @@
 import { PropsWithChildren } from "react";
+import { KeyColors } from "../../types/styles";
 import { KvSpinner } from "../KvSpinner";
 import "./kv-button.css";
 
 type TButton = {
-  color?: "success" | "danger" | "tertiary" | "warning" | "light" | "dark";
+  color?: KeyColors;
   fill?: "solid" | "outline" | "clear";
   size?: "small" | "medium" | "large";
   expand?: "block" | "full";
@@ -19,7 +20,7 @@ type TButton = {
 export const KvButton = ({
   children,
   className = "",
-  color = "light",
+  color = "tertiary",
   fill = "solid",
   size = "medium",
   shape,
