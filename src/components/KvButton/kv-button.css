@@ -27,7 +27,8 @@ button.kv-button,
   line-height: calc(1em + 0.25rem);
 }
 
-.kv-button:focus {
+.kv-button:focus:not(.kv-button:active),
+.kv-button:focus:not(.kv-button:disabled) {
   outline-color: var(--border-color);
   outline-width: 0.25rem;
   outline-style: solid;
@@ -45,7 +46,7 @@ button.kv-button,
 button.kv-button--outline,
 .kv-button--outline {
   --background: transparent;
-  /* --color: var(--kv-body-color); */
+  --color: var(--kv-body-color);
   --border-color: var(--kv-color-gray-400);
 }
 
