@@ -33,7 +33,7 @@
   box-shadow: var(--dialog-box-shadow);
 }
 .dialog[open] {
-  display: flex;
+  display: grid;
 }
 .dialog::backdrop {
   background-color: #fffa;
@@ -63,9 +63,7 @@
 
 .dialog__main {
   display: grid;
-  align-content: start;
-  align-self: stretch;
-  overflow: hidden;
+  overflow: auto;
   padding: var(--dialog-content-padding);
   color: var(--dialog-content-color);
   background: var(--dialog-content-background);
