@@ -8,14 +8,17 @@ export type KvModal = DialogProps & {
   onClick?: () => void | (() => unknown);
 } & PropsWithChildren;
 
-export const KvModal = ({ children, onDidDismiss, onClick, ...props }: KvModal) => {
+export const KvModal = ({
+  children,
+  onDidDismiss,
+  onClick,
+  ...props
+}: KvModal) => {
   return (
     <KvDialog
       style={{
         ["--dialog-max-width" as string]: "920px",
-        ["--dialog-min-height" as string]: "496px",
-        margin: "10vh auto",
-        maxHeight: "80vh",
+        ["--dialog-min-height" as string]: "min(80vh, 496px)",
       }}
       {...props}
     >
