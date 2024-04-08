@@ -25,7 +25,7 @@ jobs:
       run: |
         git config --global user.name "Marcelo Ribeiro"
         git config --global user.email "kividsaude@gmail.com"
-        git branch -D components
+        git push origin --delete components
         git subtree split -P src -b components
         git checkout components
         echo "/node_modules" >> .gitignore
