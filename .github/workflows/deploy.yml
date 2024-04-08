@@ -36,6 +36,6 @@ jobs:
         echo "App.tsx" >> .gitignore
         echo "main.tsx" >> .gitignore
         git rm -r --cached .
-        git add .gitignore
+        git add -A
         git commit -m "Add .gitignore for components branch"
         git push origin components
