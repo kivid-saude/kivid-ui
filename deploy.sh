@@ -1,10 +1,10 @@
 #!/bin/bash
 
 git config --global user.email "marceloribeiro.dev@gmail.com"
-  git config --global user.name "Marcelo Ribeiro"
+git config --global user.name "Marcelo Ribeiro"
 
 # Exclui a branch components
-git branch -d components
+# git branch -d components
 
 # Executa o comando para criar a nova branch com a subárvore
 git subtree split -P src -b components

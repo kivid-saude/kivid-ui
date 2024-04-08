@@ -13,5 +13,34 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    # - name: Install dependencies
+    #   run: npm install
+
     - name: Run deploy script
-      run: npm run deploy
+      run: |
+        git subtree split -P src -b components
+        git checkout components
+        echo "/node_modules" >> .gitignore
+        echo "/stories" >> .gitignore
+        echo "/public" >> .gitignore
+        echo "/.vite" >> .gitignore
+        echo "vite-env.d.ts" >> .gitignore
+        echo "*.stories.ts" >> .gitignore
+        echo "App.tsx" >> .gitignore
+        echo "main.tsx" >> .gitignore
+        git add .gitignore
+        git commit -m "Add .gitignore for components branch"
+        git push origin components
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "Marcelo Ribeiro"
+        git config --global user.email "kividsaude@gmail.com"
+        git add .
+        git commit -m "Automated deploy"
+        git push
