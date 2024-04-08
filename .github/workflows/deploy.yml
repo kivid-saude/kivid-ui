@@ -25,6 +25,7 @@ jobs:
       run: |
         git config --global user.name "Marcelo Ribeiro"
         git config --global user.email "kividsaude@gmail.com"
+        git branch -d components
         git subtree split -P src -b components
         git checkout components
         echo "/node_modules" >> .gitignore
@@ -35,12 +36,7 @@ jobs:
         echo "*.stories.ts" >> .gitignore
         echo "App.tsx" >> .gitignore
         echo "main.tsx" >> .gitignore
+        git rm -r --cached .
         git add .gitignore
         git commit -m "Add .gitignore for components branch"
         git push origin components
-
-    - name: Commit changes
-      run: |
-        git add .
-        git commit -m "Automated deploy"
-        git push
