@@ -8,7 +8,7 @@ export const KvFieldset = ({ children }: TFieldset) => {
 
   React.Children.forEach(children, (child) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const bool = (child as any).type === KvLabel;
+    const bool = child && (child as any).type === KvLabel;
     bool && classes.push("kv-fieldset--has-label");
   });
 
