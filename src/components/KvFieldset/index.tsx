@@ -6,7 +6,7 @@ export const KvFieldset = ({ children }: TFieldset) => {
   return (
     <fieldset
       className={`kv-fieldset ${
-        !Array.isArray(children) ? "kv-fieldset--no-label" : ""
+        Array.isArray(children) ? "kv-fieldset--has-label" : ""
       }`}
     >
       {children}

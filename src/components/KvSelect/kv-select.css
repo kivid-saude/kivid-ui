@@ -16,7 +16,7 @@
 .kv-select:focus {
   outline-color: var(--kv-color-tertiary);
 }
-.kv-fieldset:not(.kv-fieldset--no-label) .kv-select {
+.kv-fieldset--has-label .kv-select {
   height: 4.5rem;
   padding-top: 2.25rem;
 }

@@ -19,7 +19,7 @@
   color: var(--kv-body-color);
   opacity: 0.4;
 }
-.kv-fieldset:not(.kv-fieldset--no-label) .kv-input {
+.kv-fieldset--has-label .kv-input {
   height: 4.5rem;
   padding-top: 2.25rem;
 }
