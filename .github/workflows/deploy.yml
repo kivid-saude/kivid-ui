@@ -23,6 +23,8 @@ jobs:
 
     - name: Run deploy script
       run: |
+        git config --global user.name "Marcelo Ribeiro"
+        git config --global user.email "kividsaude@gmail.com"
         git subtree split -P src -b components
         git checkout components
         echo "/node_modules" >> .gitignore
@@ -39,8 +41,6 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --global user.name "Marcelo Ribeiro"
-        git config --global user.email "kividsaude@gmail.com"
         git add .
         git commit -m "Automated deploy"
         git push
