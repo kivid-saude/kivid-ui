@@ -1,0 +1,52 @@
+.kv-action {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-items: start;
+  align-content: start;
+  gap: 0.75rem;
+  min-width: 8rem;
+  padding: 1rem;
+  color: var(--kv-action-color);
+  background: var(--kv-action-background);
+  border: 1px solid var(--kv-action-border-color);
+  border-radius: 1rem;
+  font-size: var(--kv-font-size-sm);
+  line-height: var(--kv-line-height-sm);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.15s ease-out;
+
+  &--solid {
+    --kv-action-color: var(--kv-color-white);
+    --kv-action-background: var(--kv-color-base);
+    --kv-action-border-color: var(--kv-color-base);
+  }
+
+  &--outline {
+    --kv-action-color: var(--kv-color-primary);
+    --kv-action-background: transparent;
+    --kv-action-border-color: var(--kv-color-base);
+  }
+
+  &--selected {
+    --kv-action-border-color: var(--kv-color-contrast);
+  }
+
+  &--featured {
+    --background: var(--ion-color-base);
+    display: flex;
+    align-items: center;
+    min-width: unset;
+    border-color: var(--ion-color-base);
+  }
+
+  &--corner-square {
+    border-top-left-radius: 0.25rem;
+  }
+
+  &--only-icon {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
