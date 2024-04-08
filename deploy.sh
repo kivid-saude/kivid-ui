@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git config --global user.email "marceloribeiro.dev@gmail.com"
+  git config --global user.name "Marcelo Ribeiro"
+
 # Exclui a branch components
 git branch -d components
 
