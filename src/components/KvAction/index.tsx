@@ -4,7 +4,7 @@ import { KvIcon } from "../KvIcon";
 import styles from "./style.module.scss";
 
 type TKvAction = {
-  label: string;
+  label: string | React.ReactNode;
   color?: KeyColors;
   fill?: "solid" | "outline";
   icon?: string;
