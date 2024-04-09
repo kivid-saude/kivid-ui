@@ -1,23 +1,17 @@
 import { PropsWithChildren } from "react";
 import { KeyColors, MapColors } from "../../types/styles";
-import { KvIcon } from "../KvIcon";
 import styles from "./style.module.scss";
 
 type TKvAction = {
-  label: string | React.ReactNode;
   color?: KeyColors;
   fill?: "solid" | "outline";
-  icon?: string;
-  iconColor?: KeyColors;
 } & React.HTMLAttributes<HTMLDivElement> &
   PropsWithChildren;
 
 export const KvAction = ({
-  label,
+  children,
   color = "light",
   fill = "outline",
-  icon,
-  iconColor,
   ...props
 }: TKvAction) => {
   const classes = [
@@ -28,8 +22,7 @@ export const KvAction = ({
 
   return (
     <div className={classes} {...props}>
-      {!!icon && <KvIcon color={iconColor} icon={icon} />}
-      {label}
+      {children}
     </div>
   );
 };
