@@ -34,6 +34,7 @@ jobs:
         echo "/.vite" >> .gitignore
         echo "vite-env.d.ts" >> .gitignore
         echo "*.stories.ts" >> .gitignore
+        echo "*.stories.tsx" >> .gitignore
         echo "App.tsx" >> .gitignore
         echo "main.tsx" >> .gitignore
         git rm -r --cached .
