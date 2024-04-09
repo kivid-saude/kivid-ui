@@ -1,11 +1,11 @@
 import { PropsWithChildren } from "react";
-import { KeyColors } from "../../types/styles";
+import { KeyColors, MapColors } from "../../types/styles";
 import { KvSpinner } from "../KvSpinner";
-import "./kv-button.css";
+import styles from "./style.module.scss";
 
 type TButton = {
   color?: KeyColors;
-  fill?: "solid" | "outline" | "clear";
+  fill?: "solid" | "outline";
   size?: "small" | "medium" | "large";
   expand?: "block" | "full";
   shape?: "round";
@@ -21,7 +21,7 @@ export const KvButton = ({
   children,
   className = "",
   color = "light",
-  fill = "solid",
+  fill = "outline",
   size = "medium",
   shape,
   expand,
@@ -31,18 +31,17 @@ export const KvButton = ({
   href,
   ...restProps
 }: TButton) => {
-  const classes = ["kv-button"];
-
-  if (color) classes.push(`kv-color-${color}`);
-  if (textAlign === "center") classes.push("kv-button--centered");
-  if (fill === "outline") classes.push("kv-button--outline");
-  if (size === "small") classes.push("kv-button--small");
-  if (size === "medium") classes.push("kv-button--medium");
-  if (size === "large") classes.push("kv-button--large");
-  if (expand === "block") classes.push("kv-button--block");
-  if (shape === "round") classes.push("kv-button--rounded");
-  if (iconOnly) classes.push("kv-button--icon-only");
-  if (loading) classes.push("kv-button--loading");
+  const classes = [
+    styles["kv-button"],
+    styles[`kv-button--${size}`],
+    styles[`kv-button--${fill}`],
+    MapColors[color],
+  ];
+  if (shape) classes.push(styles[`kv-button--${shape}`]);
+  if (expand) classes.push(styles[`kv-button--${expand}`]);
+  if (textAlign === "center") classes.push(styles["kv-button--centered"]);
+  if (iconOnly) classes.push(styles["kv-button--icon-only"]);
+  if (loading) classes.push(styles["kv-button--loading"]);
 
   const content = () => {
     if (loading) {

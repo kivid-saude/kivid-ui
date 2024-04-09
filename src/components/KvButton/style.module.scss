@@ -2,8 +2,8 @@
 button.kv-button,
 .kv-button {
   --background: var(--kv-color-base, #fff);
-  --color: var(--kv-color-contrast, var(--kv-body-color));
-  --border-color: var(--kv-color-base, var(--kv-color-gray-400));
+  --color: var(--kv-color-contrast);
+  --border-color: var(--kv-color-base);
   --font-size: var(--kv-font-size-sm);
   --height: 3rem;
   --padding: 0.5rem 1rem;
@@ -27,8 +27,8 @@ button.kv-button,
   line-height: calc(1em + 0.25rem);
 }
 
-.kv-button:focus:not(.kv-button:active),
-.kv-button:focus:not(.kv-button:disabled) {
+.kv-button:focus:not(:active),
+.kv-button:focus:not(:disabled) {
   outline-color: var(--kv-color-gray-400);
   outline-width: 0.125rem;
   outline-style: solid;
@@ -47,7 +47,6 @@ button.kv-button--outline,
 .kv-button--outline {
   --background: transparent;
   --color: var(--kv-body-color);
-  --border-color: var(--kv-color-gray-400);
 }
 
 .kv-button--small {
@@ -78,31 +77,6 @@ button.kv-button--centered,
   justify-content: center;
 }
 
-/* button.kv-button--secondary,
-.kv-button--secondary {
-  --background: var(--kv-color-secondary);
-  --border-color: transparent;
-  --color: #fff;
-}
-button.kv-button--tertiary,
-.kv-button--tertiary {
-  --background: var(--kv-color-tertiary);
-  --border-color: transparent;
-  --color: #fff;
-}
-button.kv-button--success,
-.kv-button--success {
-  --background: var(--kv-color-success);
-  --border-color: transparent;
-  --color: #fff;
-}
-button.kv-button--danger,
-.kv-button--danger {
-  --background: var(--kv-color-danger);
-  --border-color: transparent;
-  --color: #fff;
-} */
-
 /* .kv-button .slot-start,
 .kv-button .slot-end {
   display: flex;
@@ -119,6 +93,7 @@ button.kv-button--icon-only {
   width: var(--width);
   justify-content: center;
 }
+
 button.kv-button--icon-only.kv-button--small {
   --width: 2.5rem;
   --height: 2.5rem;
