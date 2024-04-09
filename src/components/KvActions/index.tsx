@@ -1,6 +1,5 @@
-import { PropsWithChildren } from "react";
-import "./kv-actions.css";
+import style from "./style.module.scss";
 
-export const KvActions = ({ children }: PropsWithChildren) => {
-  return <section className="kv-actions">{children}</section>;
+export const KvActions = ({ children }: React.PropsWithChildren) => {
+  return <section className={style["kv-actions"]}>{children}</section>;
 };
