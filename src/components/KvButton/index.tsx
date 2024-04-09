@@ -3,7 +3,7 @@ import { KeyColors, MapColors } from "../../types/styles";
 import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
-type TButton = {
+type TKvButton = {
   color?: KeyColors;
   fill?: "solid" | "outline";
   size?: "small" | "medium" | "large";
@@ -12,25 +12,23 @@ type TButton = {
   textAlign?: "center" | "right";
   iconOnly?: boolean;
   loading?: boolean;
-  href?: string;
+  disabled?: boolean;
 } & PropsWithChildren &
-  React.ButtonHTMLAttributes<HTMLButtonElement> &
-  React.AnchorHTMLAttributes<HTMLAnchorElement>;
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const KvButton = ({
   children,
   className = "",
-  color = "light",
-  fill = "outline",
+  color = "tertiary",
+  fill = "solid",
   size = "medium",
   shape,
   expand,
   textAlign,
   iconOnly,
   loading,
-  href,
-  ...restProps
-}: TButton) => {
+  ...props
+}: TKvButton) => {
   const classes = [
     styles["kv-button"],
     styles[`kv-button--${size}`],
@@ -50,15 +48,8 @@ export const KvButton = ({
     return children;
   };
 
-  if (href) {
-    return (
-      <a {...restProps} className={`${className} ${classes.join(" ")}`}>
-        {content()}
-      </a>
-    );
-  }
   return (
-    <button {...restProps} className={`${className} ${classes.join(" ")}`}>
+    <button className={`${className} ${classes.join(" ")}`} {...props}>
       {content()}
     </button>
   );

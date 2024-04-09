@@ -5,11 +5,11 @@ button.kv-button,
   --color: var(--kv-color-contrast);
   --border-color: var(--kv-color-base);
   --font-size: var(--kv-font-size-sm);
-  --height: 3rem;
   --padding: 0.5rem 1rem;
   position: relative;
   overflow: hidden;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   min-height: var(--height);
@@ -25,68 +25,57 @@ button.kv-button,
   font-size: var(--font-size);
   font-weight: 700;
   line-height: calc(1em + 0.25rem);
-}
-
-.kv-button:focus:not(:active),
-.kv-button:focus:not(:disabled) {
-  outline-color: var(--kv-color-gray-400);
-  outline-width: 0.125rem;
-  outline-style: solid;
-}
-.kv-button:active {
-  opacity: 0.8;
-}
-.kv-button:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-  user-select: none;
-  cursor: not-allowed;
-}
-
-button.kv-button--outline,
-.kv-button--outline {
-  --background: transparent;
-  --color: var(--kv-body-color);
-}
-
-.kv-button--small {
-  --height: 2.5rem;
-}
-.kv-button--medium {
-  --height: 3rem;
-}
-.kv-button--large {
-  --height: 3.5rem;
-}
-
-.kv-button--loading {
-  pointer-events: none;
-}
-
-.kv-button--block {
-  width: 100%;
-}
-
-.kv-button--rounded {
-  --border-radius: 2em;
-}
-
-button.kv-button--centered,
-.kv-button--centered {
   text-align: center;
-  justify-content: center;
+
+  &:focus:not(:disabled) {
+    outline-color: var(--kv-color-gray-400);
+    outline-width: 0.125rem;
+    outline-style: solid;
+  }
+  &:active {
+    opacity: 0.8;
+  }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+    cursor: not-allowed;
+  }
+
+  &--small {
+    --height: 2.5rem;
+  }
+  &--medium {
+    --height: 3rem;
+  }
+  &--large {
+    --height: 3.5rem;
+  }
+
+  &--outline {
+    --background: transparent;
+    --color: var(--kv-body-color);
+  }
+
+  &--loading {
+    pointer-events: none;
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--full {
+    width: 100%;
+    --border-radius: 0;
+  }
+
+  &--rounded {
+    --border-radius: 2em;
+  }
 }
 
-/* .kv-button .slot-start,
-.kv-button .slot-end {
-  display: flex;
-  align-items: center;
-}
-.kv-button .slot-end {
-  margin-left: auto;
-} */
-
-button.kv-button--icon-only {
+.kv-button--icon-only {
   --width: 5.5rem;
   --height: 3rem;
   --padding: 0;
@@ -94,7 +83,7 @@ button.kv-button--icon-only {
   justify-content: center;
 }
 
-button.kv-button--icon-only.kv-button--small {
+.kv-button--icon-only.kv-button--small {
   --width: 2.5rem;
   --height: 2.5rem;
 }

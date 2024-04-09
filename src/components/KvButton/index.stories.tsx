@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { KvButton } from ".";
 import { KvIcon } from "../KvIcon";
 
@@ -8,7 +9,7 @@ const meta = {
   component: KvButton,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
+    // layout: "centered",
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
@@ -18,7 +19,7 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
-    // onClick: fn()
+    onClick: fn(),
   },
 } satisfies Meta<typeof KvButton>;
 
@@ -31,10 +32,46 @@ export const Default: Story = {
   render: (args) => <KvButton {...args}>Button</KvButton>,
 };
 
+export const Outline: Story = {
+  render: () => <KvButton fill="outline">Button</KvButton>,
+};
+
+export const Disabled: Story = {
+  render: () => (
+    <KvButton disabled fill="solid" color="success">
+      Button
+    </KvButton>
+  ),
+};
+
+export const Solid: Story = {
+  render: () => (
+    <KvButton fill="solid" color="success">
+      Button
+    </KvButton>
+  ),
+};
+
+export const Block: Story = {
+  render: () => (
+    <KvButton fill="solid" color="tertiary" expand="block">
+      Button
+    </KvButton>
+  ),
+};
+
+export const Full: Story = {
+  render: () => (
+    <KvButton fill="solid" color="tertiary" expand="full">
+      Button
+    </KvButton>
+  ),
+};
+
 export const WithIcon: Story = {
   render: () => (
     <KvButton>
-      <KvIcon icon="check" />
+      <KvIcon icon="check" color="white" />
       Button
     </KvButton>
   ),
@@ -43,7 +80,7 @@ export const WithIcon: Story = {
 export const IconOnly: Story = {
   render: () => (
     <KvButton iconOnly>
-      <KvIcon icon="check" />
+      <KvIcon icon="check" color="white" />
     </KvButton>
   ),
 };
