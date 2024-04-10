@@ -10,13 +10,15 @@ type TUser = {
 
 type TKvPassportCard = {
   variant?: 'individual' | 'family'
-  passportDueDate?: string | Date
   user: TUser
+  passportDueDate?: string | Date
+  hasProfileImage?: boolean
 }
 
 export const KvPassportCard = ({
   variant = 'individual',
   passportDueDate = '',
+  hasProfileImage = false,
   user = {
     photo: '',
     name: '',
@@ -51,10 +53,12 @@ export const KvPassportCard = ({
           <p>{typeVariantDictionary[variant]}</p>
         </div>
 
-        <img
-          src={user.photo ?? defaultAvatar}
-          alt='Icone de perfil do cliente'
-        />
+        {hasProfileImage && (
+          <img
+            src={user.photo ?? defaultAvatar}
+            alt='Icone de perfil do cliente'
+          />
+        )}
       </header>
 
       <footer className={styles['kv-passport-card-footer']}>
