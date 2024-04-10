@@ -40,28 +40,8 @@ export const Family: Story = {
   },
 }
 
-export const IndividualNoAvatar: Story = {
-  args: {
-    passportDueDate: new Date(),
-    user: {
-      name: 'Nome cliente',
-    },
-  },
-}
-
-export const FamilyNoAvatar: Story = {
-  args: {
-    variant: 'family',
-    passportDueDate: new Date(),
-    user: {
-      name: 'Nome cliente',
-    },
-  },
-}
-
 export const IndividualDefaultAvatar: Story = {
   args: {
-    hasProfileImage: true,
     passportDueDate: new Date(),
     user: {
       name: 'Nome cliente',
@@ -72,7 +52,28 @@ export const IndividualDefaultAvatar: Story = {
 export const FamilyDefaultAvatar: Story = {
   args: {
     variant: 'family',
-    hasProfileImage: true,
+
+    passportDueDate: new Date(),
+    user: {
+      name: 'Nome cliente',
+    },
+  },
+}
+
+export const IndividualNoAvatar: Story = {
+  args: {
+    passportDueDate: new Date(),
+    hasProfileImage: false,
+    user: {
+      name: 'Nome cliente',
+    },
+  },
+}
+
+export const FamilyNoAvatar: Story = {
+  args: {
+    variant: 'family',
+    hasProfileImage: false,
     passportDueDate: new Date(),
     user: {
       name: 'Nome cliente',

@@ -1,45 +1,29 @@
 .kv-passport-card {
+  display: grid;
+  align-content: space-between;
   width: 23rem;
   max-width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   height: 13rem;
   padding: 1.5rem;
-  position: relative;
   color: var(--kv-color-white);
   border-radius: var(--border-radius, 1rem);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.kv-passport-card-image-individual {
-  background: url('/src/components/KvPassportCard/assets/passport-individual.png')
-    no-repeat center center / cover;
+.kv-passport-card--variant-individual {
+  background-image: url('./assets/passport-individual.png');
 }
 
-.kv-passport-card-image-family {
-  background: url('/src/components/KvPassportCard/assets/passport-family.png')
-    no-repeat center center / cover;
+.kv-passport-card--variant-family {
+  background-image: url('./assets/passport-family.png');
 }
 
-.kv-passport-card-header {
+.kv-passport-card__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
-  div {
-    h2 {
-      font-size: 1.375rem;
-      font-weight: var(--kv-font-weight-bold);
-    }
-
-    p {
-      font-size: 0.9375rem;
-      font-weight: var(--kv-font-weight-medium);
-      line-height: 16px;
-    }
-  }
 
   img {
     width: 32px;
@@ -49,21 +33,32 @@
   }
 }
 
-.kv-passport-card-footer {
+.kv-passport-card__title {
+  font-size: 1.375rem;
+  font-weight: var(--kv-font-weight-bold);
+}
+
+.kv-passport-card__subtitle {
+  font-size: 0.9375rem;
+  font-weight: var(--kv-font-weight-medium);
+  line-height: 16px;
+}
+
+.kv-passport-card__footer {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
   bottom: 22px;
+}
 
-  h2 {
-    font-size: var(--kv-font-size-lg);
-    font-weight: var(--kv-font-weight-bold);
-    line-height: 22px;
-  }
+.kv-passport-card__username {
+  font-size: var(--kv-font-size-lg);
+  font-weight: var(--kv-font-weight-bold);
+  line-height: 22px;
+}
 
-  p {
-    font-size: 0.6875rem;
-    font-weight: var(--kv-font-weight-medium);
-  }
+.kv-passport-card__due-date {
+  font-size: 0.6875rem;
+  font-weight: var(--kv-font-weight-medium);
 }

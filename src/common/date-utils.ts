@@ -2,7 +2,7 @@ import moment from 'moment'
 
 export enum DatePatternEnum {
   'default' = 'DD/MM/YYYY',
-  'pointer' = 'DD.MM.YYYY',
+  'dot' = 'DD.MM.YYYY',
 }
 
 type TFormatDate = {
