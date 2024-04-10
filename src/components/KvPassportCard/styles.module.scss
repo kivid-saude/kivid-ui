@@ -1,0 +1,69 @@
+.kv-passport-card {
+  width: 23rem;
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 13rem;
+  padding: 1.5rem;
+  position: relative;
+  color: var(--kv-color-white);
+  border-radius: var(--border-radius, 1rem);
+}
+
+.kv-passport-card-image-individual {
+  background: url('/src/components/KvPassportCard/assets/passport-individual.png')
+    no-repeat center center / cover;
+}
+
+.kv-passport-card-image-family {
+  background: url('/src/components/KvPassportCard/assets/passport-family.png')
+    no-repeat center center / cover;
+}
+
+.kv-passport-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  div {
+    h2 {
+      font-size: 1.375rem;
+      font-weight: var(--kv-font-weight-bold);
+    }
+
+    p {
+      font-size: 0.9375rem;
+      font-weight: var(--kv-font-weight-medium);
+      line-height: 16px;
+    }
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    outline: 1px solid;
+  }
+}
+
+.kv-passport-card-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  bottom: 22px;
+
+  h2 {
+    font-size: var(--kv-font-size-lg);
+    font-weight: var(--kv-font-weight-bold);
+    line-height: 22px;
+  }
+
+  p {
+    font-size: 0.6875rem;
+    font-weight: var(--kv-font-weight-medium);
+  }
+}
