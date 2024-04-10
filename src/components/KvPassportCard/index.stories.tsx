@@ -20,6 +20,7 @@ export const Individual: Story = {
   args: {
     variant: 'individual',
     passportDueDate: new Date(),
+    hasProfileImage: true,
     user: {
       name: 'Manuela Azevedo',
       photo: '/src/components/KvPassportCard/assets/avatar-female.png',
@@ -30,6 +31,7 @@ export const Individual: Story = {
 export const Family: Story = {
   args: {
     variant: 'family',
+    hasProfileImage: true,
     passportDueDate: new Date(),
     user: {
       name: 'Nome cliente',
@@ -50,6 +52,27 @@ export const IndividualNoAvatar: Story = {
 export const FamilyNoAvatar: Story = {
   args: {
     variant: 'family',
+    passportDueDate: new Date(),
+    user: {
+      name: 'Nome cliente',
+    },
+  },
+}
+
+export const IndividualDefaultAvatar: Story = {
+  args: {
+    hasProfileImage: true,
+    passportDueDate: new Date(),
+    user: {
+      name: 'Nome cliente',
+    },
+  },
+}
+
+export const FamilyDefaultAvatar: Story = {
+  args: {
+    variant: 'family',
+    hasProfileImage: true,
     passportDueDate: new Date(),
     user: {
       name: 'Nome cliente',
