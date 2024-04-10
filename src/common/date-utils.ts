@@ -10,10 +10,10 @@ type TFormatDate = {
   pattern?: DatePatternEnum
 }
 
-export function formatDateByPattern({
+export const formatDateByPattern = ({
   date = new Date(),
   pattern = DatePatternEnum.default,
-}: TFormatDate) {
+}: TFormatDate) => {
   const formatted = moment(new Date(date)).format(pattern)
 
   return formatted
