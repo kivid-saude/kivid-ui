@@ -1,16 +1,12 @@
 import { PropsWithChildren } from "react";
-import { KeyColors, MapColors } from "../../types/styles";
 import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
 type TKvButton = {
-  color?: KeyColors;
-  fill?: "solid" | "outline";
+  color?: "tertiary" | "success" | "danger" | "muted";
   size?: "small" | "medium" | "large";
   expand?: "block" | "full";
-  shape?: "round";
-  textAlign?: "center" | "right";
-  iconOnly?: boolean;
+  shape?: "default" | "round";
   loading?: boolean;
   disabled?: boolean;
 } & PropsWithChildren &
@@ -18,38 +14,32 @@ type TKvButton = {
 
 export const KvButton = ({
   children,
-  className = "",
+  className,
   color = "tertiary",
-  fill = "solid",
   size = "medium",
-  shape,
+  shape = "default",
   expand,
-  textAlign,
-  iconOnly,
   loading,
   ...props
 }: TKvButton) => {
   const classes = [
     styles["kv-button"],
     styles[`kv-button--${size}`],
-    styles[`kv-button--${fill}`],
-    MapColors[color],
+    styles[`kv-button--${color}`],
+    styles[`kv-button--${shape}`],
   ];
-  if (shape) classes.push(styles[`kv-button--${shape}`]);
-  if (expand) classes.push(styles[`kv-button--${expand}`]);
-  if (textAlign === "center") classes.push(styles["kv-button--centered"]);
-  if (iconOnly) classes.push(styles["kv-button--icon-only"]);
+  if (expand) classes.push(styles[`kv-button--expand-${expand}`]);
   if (loading) classes.push(styles["kv-button--loading"]);
 
   const content = () => {
     if (loading) {
-      return <KvSpinner color={color} />;
+      return <KvSpinner color={`white`} />;
     }
     return children;
   };
 
   return (
-    <button className={`${className} ${classes.join(" ")}`} {...props}>
+    <button className={`${classes.join(" ")} ${className}`} {...props}>
       {content()}
     </button>
   );

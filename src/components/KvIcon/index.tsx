@@ -1,11 +1,12 @@
-import { Colors, MapColors } from "../../types/styles";
+import { KeyColors, MapColors } from "../../types/styles";
 import styles from "./styles.module.scss";
 
 type TKvIcon = {
   icon: string;
-  color?: keyof Colors;
+  color?: KeyColors;
   size?: "large" | "medium" | "small" | "xsmall";
-} & React.SVGProps<SVGSVGElement>;
+  className?: string;
+};
 
 const iconsPath = "/kivid-icons/sprites.svg";
 
@@ -14,7 +15,6 @@ export const KvIcon = ({
   color = "primary",
   className = "",
   size = "medium",
-  ...props
 }: TKvIcon) => {
   const classes = [
     styles["kv-icon"],
@@ -24,7 +24,7 @@ export const KvIcon = ({
   ].join(" ");
 
   return (
-    <svg className={classes} {...props}>
+    <svg className={classes}>
       <use href={`${iconsPath}#${icon}`} />
     </svg>
   );

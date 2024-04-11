@@ -26,7 +26,11 @@ const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
           ref={ref}
           {...props}
         />
-        <KvButton type="button" onClick={() => handleResendToken?.()}>
+        <KvButton
+          type="button"
+          color="muted"
+          onClick={() => handleResendToken?.()}
+        >
           <KvIcon icon="phone-message" />
           Reenviar Código
         </KvButton>

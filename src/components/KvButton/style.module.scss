@@ -1,11 +1,40 @@
-/**/
-button.kv-button,
+@use "sass:map";
+
+$colors: (
+  tertiary: (
+    "background": var(--kv-color-grape-500),
+    "background-hover": var(--kv-color-grape-600),
+    "background-focus": var(--kv-color-grape-600),
+    "background-active": var(--kv-color-grape-500),
+    "border-color": var(--kv-color-grape-500),
+    "color": var(--kv-color-lychee-100),
+  ),
+  // success: (
+  //   "background": var(--kv-color-pear-200),
+  //   "background-hover": var(--kv-color-pear-300),
+  //   "background-focus": var(--kv-color-pear-300),
+  //   "border-color": var(--kv-color-pear-300),
+  //   "color": var(--kv-color-white),
+  // ),
+  // danger: (
+  //   "background": var(--kv-color-blackberry-200),
+  //   "background-hover": var(--kv-color-blackberry-300),
+  //   "background-focus": var(--kv-color-blackberry-300),
+  //   "border-color": var(--kv-color-blackberry-300),
+  //   "color": var(--kv-color-white),
+  // ),
+  muted: (
+    "background": var(--kv-color-lychee-100),
+    "background-hover": var(--kv-color-lychee-200),
+    "background-focus": var(--kv-color-lychee-200),
+    "background-active": var(--kv-color-lychee-100),
+    "border-color": var(--kv-color-lychee-400),
+    "color": var(--kv-color-lychee-800),
+  ),
+);
+
 .kv-button {
-  --background: var(--kv-color-base, #fff);
-  --color: var(--kv-color-contrast);
-  --border-color: var(--kv-color-base);
-  --font-size: var(--kv-font-size-sm);
-  --padding: 0.5rem 1rem;
+  --border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
   display: inline-flex;
@@ -18,7 +47,7 @@ button.kv-button,
   appearance: none;
   background-color: var(--background);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius, 1rem);
+  border-radius: var(--border-radius);
   color: var(--color);
   cursor: pointer;
   font-family: inherit;
@@ -27,14 +56,18 @@ button.kv-button,
   line-height: calc(1em + 0.25rem);
   text-align: center;
 
-  &:focus:not(:disabled) {
-    outline-color: var(--kv-color-gray-400);
-    outline-width: 0.125rem;
-    outline-style: solid;
+  &:hover {
+    --background: var(--background-hover);
   }
-  &:active {
-    opacity: 0.8;
+  
+  &:active:focus {
+    --background: var(--background-active);
   }
+  
+  &:focus {
+    --background: var(--background-focus);
+  }
+
   &:disabled {
     opacity: 0.5;
     pointer-events: none;
@@ -44,46 +77,47 @@ button.kv-button,
 
   &--small {
     --height: 2.5rem;
+    --font-size: var(--kv-font-size-xs);
+    --padding: 0.5rem 3em;
   }
+  
   &--medium {
     --height: 3rem;
+    --font-size: var(--kv-font-size-sm);
+    --padding: 0.5rem 3em;
   }
+  
   &--large {
     --height: 3.5rem;
-  }
-
-  &--outline {
-    --background: transparent;
-    --color: var(--kv-body-color);
+    --font-size: var(--kv-font-size-md);
+    --padding: 0.5rem 3em;
   }
 
   &--loading {
     pointer-events: none;
   }
 
-  &--block {
+  &--expand-block {
     width: 100%;
   }
 
-  &--full {
+  &--expand-full {
     width: 100%;
     --border-radius: 0;
   }
 
-  &--rounded {
-    --border-radius: 2em;
+  &--round {
+    --border-radius: 1rem;
   }
-}
 
-.kv-button--icon-only {
-  --width: 5.5rem;
-  --height: 3rem;
-  --padding: 0;
-  width: var(--width);
-  justify-content: center;
-}
-
-.kv-button--icon-only.kv-button--small {
-  --width: 2.5rem;
-  --height: 2.5rem;
+  @each $color, $map in $colors {
+    &--#{$color} {
+      --background: #{map.get($map, "background")};
+      --background-hover: #{map.get($map, "background-hover")};
+      --background-focus: #{map.get($map, "background-focus")};
+      --background-active: #{map.get($map, "background-active")};
+      --border-color: #{map.get($map, "border-color")};
+      --color: #{map.get($map, "color")};
+    }
+  }
 }

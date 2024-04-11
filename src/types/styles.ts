@@ -38,6 +38,55 @@ export type ColorsTokens = {
   mango_300: "#FFC234";
 };
 
+export type ColorsTokensMap = {
+  lychee: {
+    100: "#FFFFFF";
+    200: "#FCFCFC";
+    300: "#F2F5F5";
+    400: "#E8EBEB";
+    500: "#D9DEDE";
+    600: "#ADB2B2";
+    700: "#949999";
+    800: "#565959";
+    900: "#263333";
+  };
+  pear: {
+    100: "#E1FAE9";
+    200: "#A8F0C0";
+    300: "#50E582";
+  };
+  java: {
+    100: "#E1F8FA";
+    200: "#ABEFF5";
+    300: "#39D7E5";
+  };
+  grape: {
+    100: "#E8E5FF";
+    200: "#AFAAF2";
+    300: "#7C67E5";
+  };
+  pitaya: {
+    100: "#FFE5F7";
+    200: "#F5ABDC";
+    300: "#F048B8";
+  };
+  blackberry: {
+    100: "#FAE1E1";
+    200: "#F2A9A9";
+    300: "#E54545";
+  };
+  tangerine: {
+    100: "#FFF0E5";
+    200: "#FFD2B2";
+    300: "#F5914A";
+  };
+  mango: {
+    100: "#FFF7E5";
+    200: "#FFE8B2";
+    300: "#FFC234";
+  };
+};
+
 export type SystemColors = {
   kv_color_primary: "lychee800";
   kv_color_primary_contrast: "lychee100";

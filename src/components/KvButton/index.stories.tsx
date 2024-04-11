@@ -27,34 +27,49 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   render: (args) => <KvButton {...args}>Button</KvButton>,
 };
 
-export const Outline: Story = {
-  render: () => <KvButton fill="outline">Button</KvButton>,
+export const Medium: Story = {
+  render: () => <KvButton size="medium">Button</KvButton>,
+};
+
+export const Small: Story = {
+  render: () => <KvButton size="small">Button</KvButton>,
+};
+
+export const Large: Story = {
+  render: () => <KvButton size="large">Button</KvButton>,
+};
+
+export const Tertiary: Story = {
+  render: () => <KvButton color="tertiary">Button</KvButton>,
+};
+
+export const Success: Story = {
+  render: () => <KvButton color="success">Button</KvButton>,
+};
+
+export const Danger: Story = {
+  render: () => <KvButton color="danger">Button</KvButton>,
+};
+
+export const Muted: Story = {
+  render: () => <KvButton color="muted">Button</KvButton>,
 };
 
 export const Disabled: Story = {
-  render: () => (
-    <KvButton disabled fill="solid" color="success">
-      Button
-    </KvButton>
-  ),
+  render: () => <KvButton disabled>Button</KvButton>,
 };
 
-export const Solid: Story = {
-  render: () => (
-    <KvButton fill="solid" color="success">
-      Button
-    </KvButton>
-  ),
+export const Rounded: Story = {
+  render: () => <KvButton shape="round">Button</KvButton>,
 };
 
 export const Block: Story = {
   render: () => (
-    <KvButton fill="solid" color="tertiary" expand="block">
+    <KvButton color="tertiary" expand="block">
       Button
     </KvButton>
   ),
@@ -62,7 +77,7 @@ export const Block: Story = {
 
 export const Full: Story = {
   render: () => (
-    <KvButton fill="solid" color="tertiary" expand="full">
+    <KvButton color="tertiary" expand="full">
       Button
     </KvButton>
   ),
@@ -73,14 +88,6 @@ export const WithIcon: Story = {
     <KvButton>
       <KvIcon icon="check" color="white" />
       Button
-    </KvButton>
-  ),
-};
-
-export const IconOnly: Story = {
-  render: () => (
-    <KvButton iconOnly>
-      <KvIcon icon="check" color="white" />
     </KvButton>
   ),
 };

@@ -1,15 +1,14 @@
 :root {
   /* COLORS BY NAME */
-  --kv-color-lychee-100: #ffffff;
-  --kv-color-lychee-200: #fcfcfc;
-  --kv-color-lychee-300: #f2f5f5;
-  --kv-color-lychee-400: #e8ebeb;
-  --kv-color-lychee-500: #d9dede;
-  --kv-color-lychee-600: #adb2b2;
-  --kv-color-lychee-700: #949999;
-  --kv-color-lychee-800: #565959;
-  --kv-color-lychee-850: #383e3e;
-  --kv-color-lychee-900: #263333;
+  --kv-color-lychee-100: #FCFDFD;
+  --kv-color-lychee-200: #F6F9F9;
+  --kv-color-lychee-300: #EDF3F3;
+  --kv-color-lychee-400: #E4ECEC;
+  --kv-color-lychee-500: #CFD8D8;
+  --kv-color-lychee-600: #A5B1B1;
+  --kv-color-lychee-700: #6D7878;
+  --kv-color-lychee-800: #383E3E;
+  --kv-color-lychee-900: #1D2020;
 
   --kv-color-pear-100: #e1fae9;
   --kv-color-pear-200: #a8f0c0;
@@ -19,10 +18,15 @@
   --kv-color-java-200: #abeff5;
   --kv-color-java-300: #39d7e5;
 
-  --kv-color-grape-50: #eae9fb;
-  --kv-color-grape-100: #e8e5ff;
-  --kv-color-grape-200: #afaaf2;
-  --kv-color-grape-300: #7c67e5;
+  --kv-color-grape-100: #EAE9FB;
+  --kv-color-grape-200: #DDDCF9;
+  --kv-color-grape-300: #C0BEF4;
+  --kv-color-grape-400: #9693EC;
+  --kv-color-grape-500: #7267E4;
+  --kv-color-grape-600: #6552E0;
+  --kv-color-grape-700: #5140BF;
+  --kv-color-grape-800: #413399;
+  --kv-color-grape-900: #392D86;
 
   --kv-color-pitaya-100: #ffe5f7;
   --kv-color-pitaya-200: #f5abdc;
