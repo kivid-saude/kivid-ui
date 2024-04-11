@@ -6,7 +6,7 @@ type TKvIcon = {
   color?: KeyColors;
   size?: "large" | "medium" | "small" | "xsmall";
   className?: string;
-};
+} & React.SVGProps<SVGSVGElement>;
 
 const iconsPath = "/kivid-icons/sprites.svg";
 

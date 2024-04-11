@@ -21,6 +21,7 @@ import {
   KvTitle,
   Smask,
 } from "./components";
+import { KvIconButton } from "./components/KvIconButton";
 import { KvSeal } from "./components/KvSeal";
 
 import { useAlert } from "./hooks/useAlert";
@@ -82,14 +83,9 @@ function App() {
             <KvFieldset>
               <KvLabel>CPF</KvLabel>
               <KvInput placeholder="Digite seu CPF" required />
-              <KvButton
-                type="button"
-                className="slot slot--right"
-                color="success"
-                iconOnly
-              >
+              <KvIconButton type="button" color="success">
                 <KvIcon icon="check" className="kv-color-white" />
-              </KvButton>
+              </KvIconButton>
             </KvFieldset>
 
             <KvFieldset>
@@ -119,21 +115,11 @@ function App() {
             </KvFieldset>
 
             <KvButtons>
-              <KvButton
-                color="success"
-                expand="block"
-                textAlign="center"
-                type="submit"
-              >
+              <KvButton color="success" expand="block" type="submit">
                 Success Button
               </KvButton>
 
-              <KvButton
-                color="success"
-                expand="block"
-                textAlign="center"
-                disabled
-              >
+              <KvButton color="success" expand="block" disabled>
                 Disabled Success Button
               </KvButton>
             </KvButtons>
@@ -145,12 +131,7 @@ function App() {
             <KvOtp placeholder="######" />
 
             <KvButtons>
-              <KvButton
-                color="success"
-                expand="block"
-                textAlign="center"
-                type="submit"
-              >
+              <KvButton color="success" expand="block" type="submit">
                 Send
               </KvButton>
             </KvButtons>
@@ -175,18 +156,9 @@ function App() {
 
         <KvCard>
           <KvButtons column>
-            <KvButton textAlign="center" onClick={() => presentAlert()}>
-              Abrir Alert
-            </KvButton>
-            <KvButton textAlign="center" onClick={() => presentModal()}>
-              Abrir Modal
-            </KvButton>
-            <KvButton
-              textAlign="center"
-              loading
-              color="success"
-              onClick={() => presentModal()}
-            >
+            <KvButton onClick={() => presentAlert()}>Abrir Alert</KvButton>
+            <KvButton onClick={() => presentModal()}>Abrir Modal</KvButton>
+            <KvButton loading color="success" onClick={() => presentModal()}>
               Loading Button
             </KvButton>
           </KvButtons>
