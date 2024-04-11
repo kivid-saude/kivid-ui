@@ -1,42 +1,42 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { KvCheckboxInput } from '.'
+import type { Meta, StoryObj } from "@storybook/react";
+import { KvCheckboxInput } from ".";
 
 const meta = {
-  title: 'Kivid/KvCheckboxInput',
+  title: "Kivid/KvCheckboxInput",
   component: KvCheckboxInput,
   parameters: {
-    layout: 'centered',
+    layout: "centered"
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
-  args: {},
-} satisfies Meta<typeof KvCheckboxInput>
+  args: {}
+} satisfies Meta<typeof KvCheckboxInput>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    name: 'checkbox',
-    id: 'checkbox',
-  },
-}
+    name: "checkbox",
+    id: "checkbox"
+  }
+};
 
 export const NoChecked: Story = {
   args: {
-    name: 'checkbox',
-    id: 'checkbox',
+    name: "checkbox",
+    id: "checkbox",
     checked: false,
-    disabled: true,
-  },
-}
+    disabled: true
+  }
+};
 
 export const Checked: Story = {
   args: {
-    name: 'checkbox',
-    id: 'checkbox',
+    name: "checkbox",
+    id: "checkbox",
     checked: true,
-    disabled: true,
-  },
-}
+    disabled: true
+  }
+};

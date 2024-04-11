@@ -1,40 +1,40 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { KvRadioInput } from '.'
+import type { Meta, StoryObj } from "@storybook/react";
+import { KvRadioInput } from ".";
 
 const meta = {
-  title: 'Kivid/KvRadioInput',
+  title: "Kivid/KvRadioInput",
   component: KvRadioInput,
   parameters: {
-    layout: 'centered',
+    layout: "centered"
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
-  args: {},
-} satisfies Meta<typeof KvRadioInput>
+  args: {}
+} satisfies Meta<typeof KvRadioInput>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    name: 'radio-default',
-    id: 'radio-default',
-  },
-}
+    name: "radio-default",
+    id: "radio-default"
+  }
+};
 
 export const Checked: Story = {
   args: {
-    name: 'radio-checked',
-    id: 'radio-checked',
-    checked: true,
-  },
-}
+    name: "radio-checked",
+    id: "radio-checked",
+    checked: true
+  }
+};
 
 export const NotChecked: Story = {
   args: {
-    name: 'radio-not-checked',
-    id: 'radio-not-checked',
-    checked: false,
-  },
-}
+    name: "radio-not-checked",
+    id: "radio-not-checked",
+    checked: false
+  }
+};
