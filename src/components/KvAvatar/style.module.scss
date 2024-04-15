@@ -1,0 +1,47 @@
+$sizes: (
+  "xlarge": 6rem,
+  "large": 4.5rem,
+  "medium": 3.5rem,
+  "small": 2.5rem,
+  "xsmall": 2rem,
+);
+
+.kv-avatar {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  object-fit: contain;
+
+  @each $size_name, $size_value in $sizes {
+    @if $size_name == "xlarge" {
+      &--size-#{$size_name} {
+        width: $size_value;
+        height: $size_value;
+      }
+    }
+    @if $size_name == "large" {
+      &--size-#{$size_name} {
+        width: $size_value;
+        height: $size_value;
+      }
+    }
+    @if $size_name == "medium" {
+      &--size-#{$size_name} {
+        width: $size_value;
+        height: $size_value;
+      }
+    }
+    @if $size_name == "small" {
+      &--size-#{$size_name} {
+        width: $size_value;
+        height: $size_value;
+      }
+    }
+
+    @if $size_name == "xsmall" {
+      &--size-#{$size_name} {
+        width: $size_value;
+        height: $size_value;
+      }
+    }
+  }
+}
