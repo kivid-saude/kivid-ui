@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./style.module.scss";
 import { KvIcon } from "../KvIcon";

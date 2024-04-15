@@ -1,5 +1,5 @@
 import { DatePatternEnum, formatDateByPattern } from "../../common/date-utils";
-import { kividLogoSm } from "../../common/images-src";
+import { kividLogo } from "../../common/images-src";
 import styles from "./styles.module.scss";
 
 type TKvPassportCard = {
@@ -52,7 +52,11 @@ export const KvPassportCard = ({
           </p>
         </div>
 
-        <img className={styles["kv-passport-card__logo"]} src={kividLogoSm} />
+        <img
+          className={styles["kv-passport-card__logo"]}
+          src={kividLogo.sm}
+          alt="Logo do Kivid em tamanho pequeno"
+        />
       </footer>
     </div>
   );
