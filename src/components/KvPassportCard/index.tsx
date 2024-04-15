@@ -1,74 +1,66 @@
-import { DatePatternEnum, formatDateByPattern } from '../../common/date-utils'
-import styles from './styles.module.scss'
+import { DatePatternEnum, formatDateByPattern } from "../../common/date-utils";
 
-import defaultAvatar from './assets/avatar-void.png'
-import logoKivid from './assets/logo-kivid-sm.png'
+import styles from "./styles.module.scss";
 
-type TUser = {
-  photo?: string
-  name: string
-}
+const KividLogo =
+  "https://kivid-assets.s3.sa-east-1.amazonaws.com/logo-kivid-white-small.png";
 
 type TKvPassportCard = {
-  variant?: 'individual' | 'family'
-  user: TUser
-  passportDueDate?: string | Date
-  hasProfileImage?: boolean
-}
+  type?: "individual" | "family";
+  userName: string;
+  passportDueDate?: Date | string;
+  avatar?: React.ReactNode;
+};
 
 export const KvPassportCard = ({
-  variant = 'individual',
-  passportDueDate = '',
-  hasProfileImage = true,
-  user = {
-    photo: '',
-    name: '',
-  },
+  type = "individual",
+  passportDueDate = "",
+  userName = "",
+  avatar,
 }: TKvPassportCard) => {
   const typeVariantDictionary = {
-    individual: 'Individual',
-    family: 'Família',
-  }
+    individual: "Individual",
+    family: "Família",
+  };
 
   const classes = [
-    styles['kv-passport-card'],
-    styles[`kv-passport-card--variant-${variant}`],
-  ].join(' ')
+    styles["kv-passport-card"],
+    styles[`kv-passport-card--variant-${type}`],
+  ].join(" ");
 
   const formatedPassportDueDate = formatDateByPattern({
     date: passportDueDate,
     pattern: DatePatternEnum.dot,
-  })
+  });
 
   return (
     <div className={classes}>
-      <header className={styles['kv-passport-card__header']}>
+      <header className={styles["kv-passport-card__header"]}>
         <div>
-          <h2 className={styles['kv-passport-card__title']}>Passaporte</h2>
-          <p className={styles['kv-passport-card__subtitle']}>
-            {typeVariantDictionary[variant]}
+          <h2 className={styles["kv-passport-card__title"]}>Passaporte</h2>
+          <p className={styles["kv-passport-card__subtitle"]}>
+            {typeVariantDictionary[type]}
           </p>
         </div>
 
-        {hasProfileImage && (
-          <img
-            src={user.photo ?? defaultAvatar}
-            alt='Icone de perfil do cliente'
-          />
-        )}
+        {avatar}
       </header>
 
-      <footer className={styles['kv-passport-card__footer']}>
+      <footer className={styles["kv-passport-card__footer"]}>
         <div>
-          <h2 className={styles['kv-passport-card__username']}>{user.name}</h2>
+          <h2 className={styles["kv-passport-card__username"]}>{userName}</h2>
 
-          <p className={styles['kv-passport-card__due-date']}>
+          <p className={styles["kv-passport-card__due-date"]}>
             Validade: {<>{formatedPassportDueDate}</>}
           </p>
         </div>
 
-        <img src={logoKivid} />
+        <img
+          className={styles["kv-passport-card__logo"]}
+          src={KividLogo}
+          alt="Logo do Kivid em tamanho pequeno"
+        />
       </footer>
     </div>
-  )
-}
+  );
+};

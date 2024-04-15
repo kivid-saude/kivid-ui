@@ -13,24 +13,17 @@
 }
 
 .kv-passport-card--variant-individual {
-  background-image: url('./assets/passport-individual.png');
+  background-image: url("./assets/passport-individual.png");
 }
 
 .kv-passport-card--variant-family {
-  background-image: url('./assets/passport-family.png');
+  background-image: url("./assets/passport-family.png");
 }
 
 .kv-passport-card__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
-  img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    outline: 1px solid;
-  }
 }
 
 .kv-passport-card__title {
@@ -45,11 +38,13 @@
 }
 
 .kv-passport-card__footer {
-  display: flex;
+  position: relative;
   width: 100%;
+  display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  place-content: space-between;
   align-items: flex-end;
-  bottom: 22px;
 }
 
 .kv-passport-card__username {
@@ -61,4 +56,9 @@
 .kv-passport-card__due-date {
   font-size: 0.6875rem;
   font-weight: var(--kv-font-weight-medium);
+}
+
+.kv-passport-card__logo {
+  transform-origin: top right;
+  transform: rotate(-90deg) translateX(4.5rem) translateY(-1.5rem);
 }
