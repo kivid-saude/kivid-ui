@@ -1,19 +1,22 @@
 import { DatePatternEnum, formatDateByPattern } from "../../common/date-utils";
-import { kividLogo } from "../../common/images-src";
+
 import styles from "./styles.module.scss";
 
+const KividLogo =
+  "https://kivid-assets.s3.sa-east-1.amazonaws.com/logo-kivid-white-small.png";
+
 type TKvPassportCard = {
-  variant?: "individual" | "family";
+  type?: "individual" | "family";
   userName: string;
   passportDueDate?: Date | string;
-  profileImage?: React.ReactNode;
+  avatar?: React.ReactNode;
 };
 
 export const KvPassportCard = ({
-  variant = "individual",
+  type = "individual",
   passportDueDate = "",
   userName = "",
-  profileImage,
+  avatar,
 }: TKvPassportCard) => {
   const typeVariantDictionary = {
     individual: "Individual",
@@ -22,7 +25,7 @@ export const KvPassportCard = ({
 
   const classes = [
     styles["kv-passport-card"],
-    styles[`kv-passport-card--variant-${variant}`],
+    styles[`kv-passport-card--variant-${type}`],
   ].join(" ");
 
   const formatedPassportDueDate = formatDateByPattern({
@@ -36,11 +39,11 @@ export const KvPassportCard = ({
         <div>
           <h2 className={styles["kv-passport-card__title"]}>Passaporte</h2>
           <p className={styles["kv-passport-card__subtitle"]}>
-            {typeVariantDictionary[variant]}
+            {typeVariantDictionary[type]}
           </p>
         </div>
 
-        {profileImage}
+        {avatar}
       </header>
 
       <footer className={styles["kv-passport-card__footer"]}>
@@ -54,7 +57,7 @@ export const KvPassportCard = ({
 
         <img
           className={styles["kv-passport-card__logo"]}
-          src={kividLogo.sm}
+          src={KividLogo}
           alt="Logo do Kivid em tamanho pequeno"
         />
       </footer>

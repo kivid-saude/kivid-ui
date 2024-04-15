@@ -20,50 +20,50 @@ type Story = StoryObj<typeof meta>;
 
 export const Individual: Story = {
   args: {
-    variant: "individual",
+    type: "individual",
     passportDueDate: new Date(),
     userName: "Gabriela Monteiro",
-    profileImage: <KvAvatar src={avatarFemale} size="xsmall" />,
+    avatar: <KvAvatar src={avatarFemale} size="xsmall" />,
   },
 };
 
 export const Family: Story = {
   args: {
-    variant: "family",
+    type: "family",
     passportDueDate: new Date(),
     userName: "Gabriela Monteiro",
-    profileImage: <KvAvatar src={avatarFemale} size="xsmall" />,
+    avatar: <KvAvatar src={avatarFemale} size="xsmall" />,
   },
 };
 
 export const IndividualDefaultAvatar: Story = {
   args: {
-    passportDueDate: new Date(),
+    passportDueDate: "2024-04-15T12:00:00",
     userName: "Gabriela Monteiro",
-    profileImage: <KvAvatar size="xsmall" />,
+    avatar: <KvAvatar size="xsmall" />,
   },
 };
 
 export const FamilyDefaultAvatar: Story = {
   args: {
-    variant: "family",
-    passportDueDate: "04.15.2024",
+    type: "family",
+    passportDueDate: "2024-04-15T12:00:00",
     userName: "Gabriela Monteiro",
-    profileImage: <KvAvatar size="xsmall" />,
+    avatar: <KvAvatar size="xsmall" />,
   },
 };
 
 export const IndividualNoAvatar: Story = {
   args: {
-    passportDueDate: new Date(),
+    passportDueDate: "2024-04-15T12:00:00",
     userName: "Gabriela Monteiro",
   },
 };
 
 export const FamilyNoAvatar: Story = {
   args: {
-    variant: "family",
-    passportDueDate: new Date(),
+    type: "family",
+    passportDueDate: "2024-04-15T12:00:00",
     userName: "Gabriela Monteiro",
   },
 };

@@ -7,41 +7,14 @@ $sizes: (
 );
 
 .kv-avatar {
-  border: 1px solid var(--kv-color-white);
+  border: 1px solid var();
   border-radius: 50%;
   object-fit: contain;
 
   @each $size_name, $size_value in $sizes {
-    @if $size_name == "xlarge" {
-      &--size-#{$size_name} {
-        width: $size_value;
-        height: $size_value;
-      }
-    }
-    @if $size_name == "large" {
-      &--size-#{$size_name} {
-        width: $size_value;
-        height: $size_value;
-      }
-    }
-    @if $size_name == "medium" {
-      &--size-#{$size_name} {
-        width: $size_value;
-        height: $size_value;
-      }
-    }
-    @if $size_name == "small" {
-      &--size-#{$size_name} {
-        width: $size_value;
-        height: $size_value;
-      }
-    }
-
-    @if $size_name == "xsmall" {
-      &--size-#{$size_name} {
-        width: $size_value;
-        height: $size_value;
-      }
+    &--size-#{$size_name} {
+      width: $size_value;
+      height: $size_value;
     }
   }
 }
