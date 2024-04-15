@@ -1,82 +1,69 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { KvPassportCard } from '.'
+import type { Meta, StoryObj } from "@storybook/react";
+import { KvPassportCard } from ".";
+import { KvAvatar } from "../KvAvatar";
+import avatarFemale from "./assets/avatar-female.png";
 
 const meta = {
-  title: 'Kivid/KvPassportCard',
+  title: "Kivid/KvPassportCard",
   component: KvPassportCard,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof KvPassportCard>
+} satisfies Meta<typeof KvPassportCard>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Individual: Story = {
   args: {
-    variant: 'individual',
+    variant: "individual",
     passportDueDate: new Date(),
-    hasProfileImage: true,
-    user: {
-      name: 'Manuela Azevedo',
-      photo: '/src/components/KvPassportCard/assets/avatar-female.png',
-    },
+    userName: "Gabriela Monteiro",
+    profileImage: <KvAvatar src={avatarFemale} size="xsmall" />,
   },
-}
+};
 
 export const Family: Story = {
   args: {
-    variant: 'family',
-    hasProfileImage: true,
+    variant: "family",
     passportDueDate: new Date(),
-    user: {
-      name: 'Nome cliente',
-      photo: '/src/components/KvPassportCard/assets/avatar-female.png',
-    },
+    userName: "Gabriela Monteiro",
+    profileImage: <KvAvatar src={avatarFemale} size="xsmall" />,
   },
-}
+};
 
 export const IndividualDefaultAvatar: Story = {
   args: {
     passportDueDate: new Date(),
-    user: {
-      name: 'Nome cliente',
-    },
+    userName: "Gabriela Monteiro",
+    profileImage: <KvAvatar size="xsmall" />,
   },
-}
+};
 
 export const FamilyDefaultAvatar: Story = {
   args: {
-    variant: 'family',
-
-    passportDueDate: new Date(),
-    user: {
-      name: 'Nome cliente',
-    },
+    variant: "family",
+    passportDueDate: "04.15.2024",
+    userName: "Gabriela Monteiro",
+    profileImage: <KvAvatar size="xsmall" />,
   },
-}
+};
 
 export const IndividualNoAvatar: Story = {
   args: {
     passportDueDate: new Date(),
-    hasProfileImage: false,
-    user: {
-      name: 'Nome cliente',
-    },
+    userName: "Gabriela Monteiro",
   },
-}
+};
 
 export const FamilyNoAvatar: Story = {
   args: {
-    variant: 'family',
-    hasProfileImage: false,
+    variant: "family",
     passportDueDate: new Date(),
-    user: {
-      name: 'Nome cliente',
-    },
+    userName: "Gabriela Monteiro",
   },
-}
+};
