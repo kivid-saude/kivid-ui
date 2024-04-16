@@ -63,8 +63,8 @@ export const Disabled: Story = {
   render: () => <KvButton disabled>Button</KvButton>,
 };
 
-export const Rounded: Story = {
-  render: () => <KvButton shape="round">Button</KvButton>,
+export const NoRounded: Story = {
+  render: () => <KvButton rounded={false}>Button</KvButton>,
 };
 
 export const Block: Story = {

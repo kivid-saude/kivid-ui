@@ -6,7 +6,7 @@ type TKvButton = {
   color?: "tertiary" | "success" | "danger" | "muted";
   size?: "small" | "medium" | "large";
   expand?: "block" | "full";
-  shape?: "default" | "round";
+  rounded?: boolean;
   loading?: boolean;
   disabled?: boolean;
 } & PropsWithChildren &
@@ -17,7 +17,7 @@ export const KvButton = ({
   className,
   color = "tertiary",
   size = "medium",
-  shape = "default",
+  rounded = true,
   expand,
   loading,
   ...props
@@ -26,8 +26,8 @@ export const KvButton = ({
     styles["kv-button"],
     styles[`kv-button--${size}`],
     styles[`kv-button--${color}`],
-    styles[`kv-button--${shape}`],
   ];
+  if (rounded) classes.push(styles[`kv-button--rounded`]);
   if (expand) classes.push(styles[`kv-button--expand-${expand}`]);
   if (loading) classes.push(styles["kv-button--loading"]);
 

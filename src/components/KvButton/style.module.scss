@@ -9,20 +9,22 @@ $colors: (
     "border-color": var(--kv-color-grape-500),
     "color": var(--kv-color-lychee-100),
   ),
-  // success: (
-  //   "background": var(--kv-color-pear-200),
-  //   "background-hover": var(--kv-color-pear-300),
-  //   "background-focus": var(--kv-color-pear-300),
-  //   "border-color": var(--kv-color-pear-300),
-  //   "color": var(--kv-color-white),
-  // ),
-  // danger: (
-  //   "background": var(--kv-color-blackberry-200),
-  //   "background-hover": var(--kv-color-blackberry-300),
-  //   "background-focus": var(--kv-color-blackberry-300),
-  //   "border-color": var(--kv-color-blackberry-300),
-  //   "color": var(--kv-color-white),
-  // ),
+  success: (
+    "background": var(--kv-color-pear-500),
+    "background-hover": var(--kv-color-pear-600),
+    "background-focus": var(--kv-color-pear-600),
+    "background-active": var(--kv-color-pear-500),
+    "border-color": var(--kv-color-pear-500),
+    "color": var(--kv-color-lychee-100),
+  ),
+  danger: (
+    "background": var(--kv-color-blackberry-500),
+    "background-hover": var(--kv-color-blackberry-600),
+    "background-focus": var(--kv-color-blackberry-600),
+    "background-active": var(--kv-color-blackberry-500),
+    "border-color": var(--kv-color-blackberry-500),
+    "color": var(--kv-color-lychee-100),
+  ),
   muted: (
     "background": var(--kv-color-lychee-100),
     "background-hover": var(--kv-color-lychee-200),
@@ -106,7 +108,7 @@ $colors: (
     --border-radius: 0;
   }
 
-  &--round {
+  &--rounded {
     --border-radius: 1rem;
   }
 
