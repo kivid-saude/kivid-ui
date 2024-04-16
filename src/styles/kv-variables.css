@@ -10,9 +10,15 @@
   --kv-color-lychee-800: #383E3E;
   --kv-color-lychee-900: #1D2020;
 
-  --kv-color-pear-100: #e1fae9;
-  --kv-color-pear-200: #a8f0c0;
-  --kv-color-pear-300: #50e582;
+  --kv-color-pear-100: #E9FCEF;
+  --kv-color-pear-200: #D2F9DF;
+  --kv-color-pear-300: #BDF5CF;
+  --kv-color-pear-400: #8FEFB0;
+  --kv-color-pear-500: #37E270;
+  --kv-color-pear-600: #1ED25B;
+  --kv-color-pear-700: #19B24C;
+  --kv-color-pear-800: #15933F;
+  --kv-color-pear-900: #107030;
 
   --kv-color-java-100: #e1f8fa;
   --kv-color-java-200: #abeff5;
@@ -32,9 +38,15 @@
   --kv-color-pitaya-200: #f5abdc;
   --kv-color-pitaya-300: #f048b8;
 
-  --kv-color-blackberry-100: #fae1e1;
-  --kv-color-blackberry-200: #f2a9a9;
-  --kv-color-blackberry-300: #e54545;
+  --kv-color-blackberry-100: #FDE3E3;
+  --kv-color-blackberry-200: #FBCDCD;
+  --kv-color-blackberry-300: #F7AAAA;
+  --kv-color-blackberry-400: #F17878;
+  --kv-color-blackberry-500: #E54545;
+  --kv-color-blackberry-600: #D32F2F;
+  --kv-color-blackberry-700: #B12424;
+  --kv-color-blackberry-800: #922222;
+  --kv-color-blackberry-900: #7A2222;
 
   --kv-color-tangerine-100: #fff0e5;
   --kv-color-tangerine-200: #ffd2b2;
@@ -58,22 +70,22 @@
   --kv-color-primary: var(--kv-color-lychee-800);
   --kv-color-primary-contrast: var(--kv-color-lychee-100);
 
-  --kv-color-secondary: var(--kv-color-java-300);
+  --kv-color-secondary: var(--kv-color-java-500);
   --kv-color-secondary-contrast: var(--kv-color-lychee-100);
 
   --kv-color-secondary-invert: var(--kv-color-lychee-200);
   --kv-color-secondary-invert-contrast: var(--kv-color-java-300);
 
-  --kv-color-tertiary: var(--kv-color-grape-300);
+  --kv-color-tertiary: var(--kv-color-grape-500);
   --kv-color-tertiary-contrast: var(--kv-color-lychee-100);
 
-  --kv-color-success: var(--kv-color-pear-300);
+  --kv-color-success: var(--kv-color-pear-500);
   --kv-color-success-contrast: var(--kv-color-lychee-100);
 
   --kv-color-warning: var(--kv-color-tangerine-300);
   --kv-color-warning-contrast: var(--kv-color-lychee-100);
 
-  --kv-color-danger: var(--kv-color-blackberry-300);
+  --kv-color-danger: var(--kv-color-blackberry-500);
   --kv-color-danger-contrast: var(--kv-color-lychee-100);
 
   --kv-color-white: white;
