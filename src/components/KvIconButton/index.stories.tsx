@@ -62,74 +62,26 @@ export const Large: Story = {
   ),
 };
 
-export const Rounded: Story = {
+export const NoRounded: Story = {
   render: () => (
-    <KvIconButton shape="round">
+    <KvIconButton rounded={false}>
       <KvIcon icon="check" color="white" />
     </KvIconButton>
   ),
 };
 
-export const RoundedSmall: Story = {
+export const NoRoundedSmall: Story = {
   render: () => (
-    <KvIconButton size="small" shape="round">
+    <KvIconButton size="small" rounded={false}>
       <KvIcon icon="check" color="white" />
     </KvIconButton>
   ),
 };
 
-export const RoundedLarge: Story = {
+export const NoRoundedLarge: Story = {
   render: () => (
-    <KvIconButton size="large" shape="round">
+    <KvIconButton size="large" rounded={false}>
       <KvIcon icon="check" color="white" />
-    </KvIconButton>
-  ),
-};
-
-export const Outline: Story = {
-  render: () => (
-    <KvIconButton fill="outline" color="light">
-      <KvIcon icon="check" color="primary" />
-    </KvIconButton>
-  ),
-};
-
-export const OutlineRounded: Story = {
-  render: () => (
-    <KvIconButton shape="round" fill="outline" color="light">
-      <KvIcon icon="check" color="primary" />
-    </KvIconButton>
-  ),
-};
-
-export const OutlineSmall: Story = {
-  render: () => (
-    <KvIconButton fill="outline" color="light" size="small">
-      <KvIcon icon="check" color="primary" />
-    </KvIconButton>
-  ),
-};
-
-export const OutlineSmallRounded: Story = {
-  render: () => (
-    <KvIconButton shape="round" fill="outline" color="light" size="small">
-      <KvIcon icon="check" color="primary" />
-    </KvIconButton>
-  ),
-};
-
-export const OutlineLarge: Story = {
-  render: () => (
-    <KvIconButton fill="outline" color="light" size="large">
-      <KvIcon icon="check" color="primary" />
-    </KvIconButton>
-  ),
-};
-
-export const OutlineLargeRounded: Story = {
-  render: () => (
-    <KvIconButton shape="round" fill="outline" color="light" size="large">
-      <KvIcon icon="check" color="primary" />
     </KvIconButton>
   ),
 };
