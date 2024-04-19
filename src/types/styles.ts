@@ -135,10 +135,9 @@ export type KeyColors =
   | "success"
   | "warning"
   | "danger"
-  | "white"
-  | "light"
   | "medium"
-  | "neutral";
+  | "light"
+  | "white";
 
 export const MapColors = {
   primary: "kv-color-primary",
