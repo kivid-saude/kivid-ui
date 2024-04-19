@@ -20,9 +20,15 @@
   --kv-color-pear-800: #15933F;
   --kv-color-pear-900: #107030;
 
-  --kv-color-java-100: #e1f8fa;
-  --kv-color-java-200: #abeff5;
-  --kv-color-java-300: #39d7e5;
+  --kv-color-java-100: #DCF9F9;
+  --kv-color-java-200: #C8F5F9;
+  --kv-color-java-300: #A6ECF2;
+  --kv-color-java-300: #79E2EC;
+  --kv-color-java-300: #4DD9E6;
+  --kv-color-java-300: #17BFCF;
+  --kv-color-java-300: #199CB2;
+  --kv-color-java-300: #118197;
+  --kv-color-java-300: #0A687B;
 
   --kv-color-grape-100: #EAE9FB;
   --kv-color-grape-200: #DDDCF9;
@@ -72,9 +78,6 @@
 
   --kv-color-secondary: var(--kv-color-java-500);
   --kv-color-secondary-contrast: var(--kv-color-lychee-100);
-
-  --kv-color-secondary-invert: var(--kv-color-lychee-200);
-  --kv-color-secondary-invert-contrast: var(--kv-color-java-300);
 
   --kv-color-tertiary: var(--kv-color-grape-500);
   --kv-color-tertiary-contrast: var(--kv-color-lychee-100);
