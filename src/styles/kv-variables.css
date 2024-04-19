@@ -40,9 +40,15 @@
   --kv-color-grape-800: #413399;
   --kv-color-grape-900: #392D86;
 
-  --kv-color-pitaya-100: #ffe5f7;
-  --kv-color-pitaya-200: #f5abdc;
-  --kv-color-pitaya-300: #f048b8;
+  --kv-color-pitaya-100: #fde6f5;
+  --kv-color-pitaya-200: #fbcfec;
+  --kv-color-pitaya-300: #f8a5dc;
+  --kv-color-pitaya-400: #f471c8;
+  --kv-color-pitaya-500: #ef43b6;
+  --kv-color-pitaya-600: #e619a1;
+  --kv-color-pitaya-700: #d41193;
+  --kv-color-pitaya-800: #aa1378;
+  --kv-color-pitaya-900: #8c1062;
 
   --kv-color-blackberry-100: #FDE3E3;
   --kv-color-blackberry-200: #FBCDCD;
@@ -54,13 +60,25 @@
   --kv-color-blackberry-800: #922222;
   --kv-color-blackberry-900: #7A2222;
 
-  --kv-color-tangerine-100: #fff0e5;
-  --kv-color-tangerine-200: #ffd2b2;
-  --kv-color-tangerine-300: #f5914a;
+  --kv-color-tangerine-100: #fef0e7;
+  --kv-color-tangerine-200: #fde7d7;
+  --kv-color-tangerine-300: #fbd3b6;
+  --kv-color-tangerine-400: #f9b686;
+  --kv-color-tangerine-500: #f58a3d;
+  --kv-color-tangerine-600: #ed7621;
+  --kv-color-tangerine-700: #d46211;
+  --kv-color-tangerine-800: #b8520a;
+  --kv-color-tangerine-900: #a34400;
 
-  --kv-color-mango-100: #fff7e5;
-  --kv-color-mango-200: #ffe8b2;
-  --kv-color-mango-300: #ffc234;
+  --kv-color-mango-100: #fff7e6;
+  --kv-color-mango-200: #fff1d4;
+  --kv-color-mango-300: #ffe5b2;
+  --kv-color-mango-400: #ffd480;
+  --kv-color-mango-500: #ffbb34;
+  --kv-color-mango-600: #f9ab10;
+  --kv-color-mango-700: #e59900;
+  --kv-color-mango-800: #cc8800;
+  --kv-color-mango-900: #b27700;
 
   --kv-color-gray-100: #ffffff;
   --kv-color-gray-200: #fafcfc;
@@ -85,7 +103,7 @@
   --kv-color-success: var(--kv-color-pear-500);
   --kv-color-success-contrast: var(--kv-color-lychee-100);
 
-  --kv-color-warning: var(--kv-color-tangerine-300);
+  --kv-color-warning: var(--kv-color-tangerine-500);
   --kv-color-warning-contrast: var(--kv-color-lychee-100);
 
   --kv-color-danger: var(--kv-color-blackberry-500);
