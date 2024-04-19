@@ -1,20 +1,13 @@
 import React from "react";
+import { KeyColors } from "../../types/styles";
 import { KvIcon } from "../KvIcon";
 import "./kv-title.css";
 
 type TKvTitle = {
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
-  color?: "primary" | "medium" | "white";
-  iconColor?:
-    | "secondary"
-    | "tertiary"
-    | "tertiary-alt"
-    | "success"
-    | "danger"
-    | "medium"
-    | "warning"
-    | "white";
+  color?: KeyColors;
+  iconColor?: KeyColors;
   icon?: string;
   size?: "small" | "medium" | "large" | "xlarge" | "xxlarge";
 };
@@ -28,15 +21,15 @@ export const KvTitle = ({
   color = "primary",
 }: TKvTitle) => {
   const colorClassMap = {
+    primary: "kv-color-primary",
     secondary: "kv-color-secondary",
     tertiary: "kv-color-tertiary",
-    "tertiary-alt": "kv-color-tertiary-alt",
     success: "kv-color-success",
     warning: "kv-color-warning",
     danger: "kv-color-danger",
     medium: "kv-color-medium",
+    light: "kv-color-light",
     white: "kv-color-white",
-    primary: "kv-color-primary",
   };
 
   const sizeClassMap = {
