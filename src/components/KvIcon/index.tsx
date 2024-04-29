@@ -15,6 +15,7 @@ export const KvIcon = ({
   color = "primary",
   className = "",
   size = "medium",
+  ...props
 }: TKvIcon) => {
   const classes = [
     styles["kv-icon"],
@@ -24,7 +25,7 @@ export const KvIcon = ({
   ].join(" ");
 
   return (
-    <svg className={classes}>
+    <svg className={classes} {...props}>
       <use href={`${iconsPath}#${icon}`} />
     </svg>
   );
