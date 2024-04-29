@@ -4,7 +4,7 @@ import * as smask from "smask";
 type TSmask = {
   children: React.ReactElement;
   mask: [string, ...string[]];
-  value: string;
+  value?: string;
 };
 
 export const Smask = ({ children, mask, value = "" }: TSmask) => {
