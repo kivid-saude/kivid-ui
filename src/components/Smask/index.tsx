@@ -30,10 +30,10 @@ export const Smask = ({ children, mask, value = "" }: TSmask) => {
   };
 
   useEffect(() => {
-    if (!value) return;
+    if (value === newValue) return;
     const maskedValue = smask.mask(value, mask);
     setNewValue(maskedValue);
-  }, [mask, value]);
+  }, [mask, value, newValue]);
 
   return React.cloneElement(children, {
     value: newValue,
