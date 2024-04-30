@@ -6,13 +6,14 @@ import "./kv-otp.css";
 
 type TInput = {
   handleResendToken?: () => void;
+  disableTryAgain?: boolean;
 } & React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 >;
 
 const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
-  ({ className = "", handleResendToken, ...props }, ref) => {
+  ({ className = "", handleResendToken, disableTryAgain, ...props }, ref) => {
     return (
       <div style={{ display: "grid", gap: "1rem", justifyItems: "center" }}>
         <input
@@ -30,13 +31,14 @@ const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
           type="button"
           color="muted"
           onClick={() => handleResendToken?.()}
+          disabled={disableTryAgain}
         >
           <KvIcon icon="phone-message" />
           Reenviar Código
         </KvButton>
       </div>
     );
-  }
+  },
 );
 
 KvOtp.displayName = "KvOtp";
