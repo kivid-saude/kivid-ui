@@ -22,6 +22,10 @@ $sizes: (
     width: var(--kv-seal-circle-width);
   }
 
+  &--disabled-true {
+    opacity: 0.5;
+  }
+
   @each $size_name, $size_value in $sizes {
     &--size-#{$size_name} {
       --kv-seal-rect-width: calc(#{$size_value} * 1.75);

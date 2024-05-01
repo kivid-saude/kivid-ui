@@ -7,18 +7,21 @@ type TKvSeal = {
   size?: "large" | "medium" | "small" | "xsmall";
   shape?: "circle" | "rect";
   icon: string;
+  disabled?: boolean;
 };
 
 export const KvSeal = ({
   color = "tertiary",
   size = "large",
   shape = "circle",
+  disabled = false,
   icon,
 }: TKvSeal) => {
   const classes = [
     styles["kv-seal"],
     styles[`kv-seal--size-${size}`],
     styles[`kv-seal--shape-${shape}`],
+    styles[`kv-seal--disabled-${disabled}`],
     MapColors[color],
   ].join(" ");
 
