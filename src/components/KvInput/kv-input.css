@@ -11,30 +11,32 @@
   border: 1px solid var(--kv-color-gray-400);
   border-radius: 0.5rem;
   color: var(--kv-body-color);
-}
 
-.kv-input:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+  &:focus {
+    outline-color: var(--kv-color-tertiary);
+  }
 
-.kv-input--error {
-  border: 1px solid var(--kv-color-blackberry-500);
-  color: var(--kv-color-blackberry-500);
-}
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
-.kv-input--full-rounded {
-  border-radius: 1rem;
-}
+  &::placeholder {
+    color: var(--kv-body-color);
+    opacity: 0.4;
+  }
 
-.kv-input:focus {
-  outline-color: var(--kv-color-tertiary);
-}
-.kv-input::placeholder {
-  color: var(--kv-body-color);
-  opacity: 0.4;
-}
-.kv-fieldset--has-label .kv-input {
-  height: 4.5rem;
-  padding-top: 2.25rem;
+  &--rounded {
+    border-radius: 1rem;
+  }
+
+  &--error {
+    border-color: var(--kv-color-blackberry-500);
+    color: var(--kv-color-blackberry-500);
+  }
+
+  :global(.kv-fieldset--has-label) & {
+    height: 4.5rem;
+    padding-top: 2.25rem;
+  }
 }

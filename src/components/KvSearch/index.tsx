@@ -1,20 +1,18 @@
-import { ReactNode } from "react";
 import { KvFieldset, KvIcon, KvLabel, KvSeal } from "..";
 import { KvIconButton } from "../KvIconButton";
 
 type TKvSearch = {
   label?: string;
-  searchStatus: "loading" | "error" | "success" | "idle" | "clean";
+  status: "idle" | "loading" | "error" | "success" | "clean";
   disabled?: boolean;
-  onCleanSearch?: () => void;
-  children?: ReactNode;
-};
+  onClean?: () => void;
+} & React.PropsWithChildren;
 
 export const KvSearch = ({
   label,
-  searchStatus = "idle",
+  status = "idle",
   disabled = false,
-  onCleanSearch,
+  onClean,
   children,
 }: TKvSearch) => {
   const hasLabel = Boolean(label?.length);
@@ -22,7 +20,7 @@ export const KvSearch = ({
   return (
     <KvFieldset>
       {hasLabel && <KvLabel>{label}</KvLabel>}
-      {searchStatus === "error" && (
+      {status === "error" && (
         <div className="slot slot--right">
           <KvSeal
             icon="close"
@@ -32,7 +30,7 @@ export const KvSearch = ({
           />
         </div>
       )}
-      {searchStatus === "success" && (
+      {status === "success" && (
         <div className="slot slot--right">
           <KvSeal
             icon="check"
@@ -43,7 +41,7 @@ export const KvSearch = ({
         </div>
       )}
 
-      {searchStatus === "clean" && (
+      {status === "clean" && (
         <KvIconButton
           type="button"
           disabled={disabled}
@@ -56,16 +54,16 @@ export const KvSearch = ({
         </KvIconButton>
       )}
 
-      {["idle", "loading"].includes(searchStatus) && (
+      {["idle", "loading"].includes(status) && (
         <KvIconButton
           type="button"
           disabled={disabled}
           color="success"
           className="slot slot--right pointer-events-none"
-          loading={searchStatus === "loading"}
+          loading={status === "loading"}
           size={hasLabel ? "large" : "medium"}
           rounded={false}
-          onClick={onCleanSearch}
+          onClick={onClean}
         >
           <KvIcon icon="search" color="white" size="medium" />
         </KvIconButton>

@@ -1,26 +1,21 @@
 import React from "react";
 import "./kv-input.css";
 
-type TInput = {
+type TKvInput = {
   errorMessage?: string;
-  fullRounded?: boolean;
-} & React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->;
+  rounded?: boolean;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-const KvInput = React.forwardRef<HTMLInputElement, TInput>(
-  ({ className = "", errorMessage, fullRounded = true, ...props }, ref) => {
+const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
+  ({ className = "", errorMessage, rounded = true, ...props }, ref) => {
     const classes = ["kv-input"];
-    if (fullRounded) classes.push("kv-input--full-rounded");
+    if (rounded) classes.push("kv-input--rounded");
+    if (errorMessage) classes.push("kv-input--error");
+    if (className) classes.push(className);
+    const computedClasses = classes.join(" ");
 
     return (
-      <input
-        className={`${classes.join(" ")} ${className} ${errorMessage && "kv-input--error"}`}
-        type="text"
-        ref={ref}
-        {...props}
-      />
+      <input className={computedClasses} type="text" ref={ref} {...props} />
     );
   },
 );

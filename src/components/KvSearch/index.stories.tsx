@@ -176,7 +176,7 @@ export const DefaultWithSmallRounded: Story = {
           type="search"
           placeholder="placeholder"
           value="Input"
-          fullRounded={false}
+          rounded={false}
         />
       </KvSearch>
     </div>

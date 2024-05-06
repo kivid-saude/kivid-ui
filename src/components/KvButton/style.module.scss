@@ -36,7 +36,7 @@ $colors: (
 );
 
 .kv-button {
-  --border-radius: 0.5rem;
+  --kv-button-border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
   display: inline-flex;
@@ -49,7 +49,7 @@ $colors: (
   appearance: none;
   background-color: var(--background);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--kv-button-border-radius);
   color: var(--color);
   cursor: pointer;
   font-family: inherit;
@@ -105,11 +105,11 @@ $colors: (
 
   &--expand-full {
     width: 100%;
-    --border-radius: 0;
+    --kv-button-border-radius: 0;
   }
 
   &--rounded {
-    --border-radius: 1rem;
+    --kv-button-border-radius: 1rem;
   }
 
   @each $color, $map in $colors {
