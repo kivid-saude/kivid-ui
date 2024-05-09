@@ -53,7 +53,7 @@ export const Valid: Story = {
 export const Invalid: Story = {
   args: {
     status: "invalid",
-    errorMessage: "Campo obrigatório",
+    invalidMessage: "Campo obrigatório",
   },
   render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
@@ -94,7 +94,7 @@ export const InvalidWithLabel: Story = {
   args: {
     label: "Label",
     status: "invalid",
-    errorMessage: "Campo obrigatório",
+    invalidMessage: "Campo obrigatório",
   },
   render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
