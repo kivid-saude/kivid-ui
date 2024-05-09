@@ -7,21 +7,53 @@ type TSmask = {
   value?: string;
 };
 
-export const Smask = ({ children, mask, value = "" }: TSmask) => {
-  const [newValue, setNewValue] = useState(value);
+export const Smask = ({ children, mask, ...props }: TSmask) => {
+  const [newValue, setNewValue] = useState(props.value);
 
   const minLength = mask.at(0)!.length;
   const maxLength = mask.at(-1)!.length;
+  const maskFormattedLength = mask.at(-1)?.replace(/\W/g, "").length;
+
+  const onInput = (event: React.FormEvent<HTMLInputElement>) => {
+    const { value } = event.currentTarget;
+
+    if (!value) {
+      setNewValue(value);
+      return;
+    }
+
+    try {
+      const maskedValue = smask.mask(value, mask);
+      setNewValue(maskedValue);
+    } catch {
+      setNewValue(value);
+    }
+  };
 
   useEffect(() => {
-    if (value === newValue) return;
-    const maskedValue = value ? smask.mask(value, mask) : "";
+    if (!props) return;
+    if (typeof props.value === "undefined") return;
+    if (props.value === newValue) return;
+
+    const maskedValue = smask.mask(
+      props.value.slice(0, maskFormattedLength),
+      mask,
+    );
     setNewValue(maskedValue);
-  }, [mask, newValue, value]);
+  }, [mask, maskFormattedLength, newValue, props]);
+
+  if (typeof props.value !== "undefined") {
+    return React.cloneElement(children, {
+      value: newValue,
+      minLength,
+      maxLength,
+    });
+  }
 
   return React.cloneElement(children, {
     value: newValue,
     minLength,
     maxLength,
+    onInput,
   });
 };
