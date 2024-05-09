@@ -2,7 +2,6 @@
 @use "sass:map";
 
 @import url(./kv-variables.css);
-@import url(../components/kv-form.css);
 @import url(../components/kv-table.css);
 
 @import "https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap";
@@ -36,6 +35,10 @@ body {
 
 a {
   color: var(--kv-body-color);
+}
+
+:focus {
+  outline: none;
 }
 
 img,
