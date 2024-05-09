@@ -1,23 +1,20 @@
 import React from "react";
 import { KvButton } from "../KvButton";
 import { KvIcon } from "../KvIcon";
-import "../KvInput/kv-input.css";
+import styles from "../KvInput/styles.module.scss";
 import "./kv-otp.css";
 
-type TInput = {
+type TKvOTPInput = {
   handleResendToken?: () => void;
   disableTryAgain?: boolean;
-} & React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-const KvOtp = React.forwardRef<HTMLInputElement, TInput>(
+const KvOtp = React.forwardRef<HTMLInputElement, TKvOTPInput>(
   ({ className = "", handleResendToken, disableTryAgain, ...props }, ref) => {
     return (
       <div style={{ display: "grid", gap: "1rem", justifyItems: "center" }}>
         <input
-          className={`kv-otp kv-input ${className}`}
+          className={`kv-otp ${styles["kv-input"]} ${className}`}
           type="text"
           inputMode="numeric"
           autoComplete="one-time-code"
