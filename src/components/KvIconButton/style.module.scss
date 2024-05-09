@@ -42,6 +42,7 @@
 
     [class*="kv-icon"] {
       --kv-color-base: var(--color-active);
+      transition-duration: 0s;
     }
   }
 
@@ -133,5 +134,13 @@
     --background-active: var(--kv-color-grape-100);
     --border-color-active: var(--kv-color-grape-300);
     --color-active: var(--kv-color-grape-500);
+  }
+
+  &:global(.slot--right) {
+    right: 0.5rem;
+  }
+
+  &:global(.slot--left) {
+    left: 0.5rem;
   }
 }
