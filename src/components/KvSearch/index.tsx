@@ -28,6 +28,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
             size={hasLabel ? "medium" : "small"}
             rounded={false}
             onClick={onClean}
+            shape={hasLabel ? "rect" : "square"}
           >
             <KvIcon icon="close" color="primary" size="medium" />
           </KvIconButton>
@@ -42,6 +43,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
             loading={status === "loading"}
             size={hasLabel ? "medium" : "small"}
             rounded={false}
+            shape={hasLabel ? "rect" : "square"}
           >
             <KvIcon icon="search" color="white" size="medium" />
           </KvIconButton>

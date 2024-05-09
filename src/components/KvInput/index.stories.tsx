@@ -10,7 +10,24 @@ const meta = {
     // layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    status: {
+      control: {
+        type: "radio",
+      },
+      options: ["idle", "invalid", "valid"],
+    },
+    invalidMessage: {
+      control: {
+        type: "text",
+      },
+    },
+    rounded: {
+      control: {
+        type: "boolean",
+      },
+    },
+  },
 } satisfies Meta<typeof KvInput>;
 
 export default meta;
