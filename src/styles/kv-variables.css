@@ -156,4 +156,10 @@
   --container-padding: 1.5rem;
 
   --kv-header-width: 104px;
+
+  /* SHADOW */
+  --kv-shadow-highlight: 1px 1px 16px var(--kv-color-lychee-400);
+  --kv-shadow-floating: 4px 4px 16px var(--kv-color-lychee-400);
+  --kv-shadow-overlay: 6px 6px 32px var(--kv-color-lychee-400);
+  --kv-shadow-sheet: 0 -8px var(--kv-color-lychee-400);
 }
