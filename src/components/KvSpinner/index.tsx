@@ -12,7 +12,7 @@ export const KvSpinner = ({ color }: { color?: KeyColors }) => {
       loop={true}
       autoplay={true}
       src={color === "light" ? loadingPurple : loadingWhite}
-      style={{ width: "2rem", height: "2rem" }}
+      style={{ width: "1.5rem", height: "1.5rem" }}
     />
   );
 };
