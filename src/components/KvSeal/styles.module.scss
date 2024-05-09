@@ -37,4 +37,12 @@ $sizes: (
   &__icon {
     color: var(--kv-color-contrast);
   }
+
+  &:global(.slot--right) {
+    right: 1rem;
+  }
+
+  &:global(.slot--left) {
+    left: 1rem;
+  }
 }
