@@ -52,7 +52,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
 
         <KvTooltip
           content={invalidMessage}
-          open={!!invalidMessage}
+          open={status === "invalid" && !!invalidMessage}
           align="start"
           side="bottom"
           status={status === "invalid" ? status : undefined}
