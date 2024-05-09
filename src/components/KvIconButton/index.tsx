@@ -33,7 +33,7 @@ export const KvIconButton = ({
 
   const renderContent = () => {
     if (loading) {
-      return <KvSpinner color={color === "muted" ? "primary" : "white"} />;
+      return <KvSpinner color={color === "muted" ? "light" : "white"} />;
     }
     return children;
   };
