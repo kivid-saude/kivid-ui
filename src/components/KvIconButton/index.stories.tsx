@@ -12,7 +12,17 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    size: {
+      control: "radio",
+      options: {
+        xsmall: "xsmall",
+        small: "small",
+        medium: "medium",
+        large: "large",
+      },
+    },
+  },
   args: {
     onClick: fn(),
   },
@@ -29,6 +39,17 @@ export const Default: Story = {
         icon="check"
         color={args.color === "muted" ? undefined : "white"}
       />
+    </KvIconButton>
+  ),
+};
+
+export const XSmall: Story = {
+  args: {
+    size: "xsmall",
+  },
+  render: (args) => (
+    <KvIconButton {...args}>
+      <KvIcon icon="check" color="white" />
     </KvIconButton>
   ),
 };

@@ -53,6 +53,8 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
         <KvTooltip
           content={invalidMessage}
           open={!!invalidMessage}
+          align="start"
+          side="bottom"
           status={status === "invalid" ? status : undefined}
         >
           <input className={computedClasses} type="text" ref={ref} {...props} />

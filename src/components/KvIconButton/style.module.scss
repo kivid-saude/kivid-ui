@@ -53,6 +53,8 @@
   }
 
   &--square {
+    --xsmall-width: 2rem;
+    --xsmall-height: 2rem;
     --small-width: 2.5rem;
     --small-height: 2.5rem;
     --medium-width: 3rem;
@@ -62,14 +64,21 @@
   }
 
   &--rect {
-    --small-width: 2.5rem;
-    --small-height: 2rem;
-    --medium-width: 3.5rem;
-    --medium-height: 2.5rem;
+    --xsmall-width: 2.5rem;
+    --xsmall-height: 2rem;
+    --small-width: 3.5rem;
+    --small-height: 2.5rem;
+    --medium-width: 4.5rem;
+    --medium-height: 3rem;
     --large-width: 5.5rem;
-    --large-height: 3rem;
+    --large-height: 3.5rem;
   }
 
+  &--xsmall {
+    --width: var(--xsmall-width);
+    --height: var(--xsmall-height);
+  }
+  
   &--small {
     --width: var(--small-width);
     --height: var(--small-height);
@@ -130,7 +139,6 @@
     --background-focus: var(--kv-color-lychee-200);
     --border-color: var(--kv-color-lychee-400);
     --color: var(--kv-color-lychee-800);
-
     --background-active: var(--kv-color-grape-100);
     --border-color-active: var(--kv-color-grape-300);
     --color-active: var(--kv-color-grape-500);

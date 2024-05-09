@@ -9,7 +9,32 @@ const meta = {
     // layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    status: {
+      control: {
+        type: "radio",
+      },
+      options: ["idle", "clean", "loading", "valid", "invalid"],
+    },
+    disabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    placeholder: {
+      control: {
+        type: "text",
+      },
+    },
+    onClean: {
+      action: "onClean",
+    },
+    invalidMessage: {
+      control: {
+        type: "text",
+      },
+    },
+  },
   args: {},
 } satisfies Meta<typeof KvSearch>;
 

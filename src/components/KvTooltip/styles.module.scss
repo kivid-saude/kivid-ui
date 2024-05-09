@@ -41,6 +41,11 @@
   &--error {
     fill: var(--kv-color-blackberry-300);
   }
+
+  [data-align="start"] span:has(&) {
+    left: 1.5rem !important;
+    visibility: visible !important;
+  }
 }
 
 @keyframes slideUpAndFade {

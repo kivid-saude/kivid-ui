@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 
 type TKvIconButton = {
   color?: "tertiary" | "success" | "danger" | "muted";
-  size?: "small" | "medium" | "large";
+  size?: "xsmall" | "small" | "medium" | "large";
   shape?: "square" | "rect";
   rounded?: boolean;
   loading?: boolean;
