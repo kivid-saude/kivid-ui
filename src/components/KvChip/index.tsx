@@ -9,6 +9,9 @@ type TKvChip = {
   fill?: "solid" | "outline";
   icon?: string;
   iconColor?: KeyColors;
+  type?: "text" | "button";
+  disabled?: boolean;
+  onClick?: () => void;
 };
 
 export const KvChip = ({
@@ -18,6 +21,9 @@ export const KvChip = ({
   fill = "outline",
   icon,
   iconColor,
+  type = "text",
+  disabled = false,
+  onClick,
 }: TKvChip) => {
   const classes = [
     styles["kv-chip"],
@@ -36,6 +42,21 @@ export const KvChip = ({
         return "xsmall";
     }
   };
+
+  if (type === "button") {
+    return (
+      <button
+        type={type}
+        className={classes}
+        onClick={() => onClick?.()}
+        disabled={disabled}
+      >
+        {!!icon && <KvSeal size={sealSize()} icon={icon} color={iconColor} />}
+
+        <span>{label}</span>
+      </button>
+    );
+  }
 
   return (
     <div className={classes}>

@@ -11,7 +11,24 @@ $sizes: (
   border: 1px solid var(--kv-color-base);
   border-radius: 1rem;
   font-weight: var(--kv-font-weight-bold);
-  
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+
+  &[type="button"] {
+    appearance: none;
+    font-family: var(--kv-font-family);
+
+    &:active {
+      opacity: 0.4;
+      transition-duration: 0s;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
   &--fill-outline {
     background: transparent;
     color: var(--kv-color-primary);
