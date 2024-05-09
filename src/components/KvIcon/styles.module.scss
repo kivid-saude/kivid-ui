@@ -10,6 +10,7 @@ $sizes: (
   width: var(--icon-size);
   height: var(--icon-size);
   color: var(--kv-color-base, currentColor);
+  transition: 0.3s ease-in-out;
 
   :global(.kv-fieldset) > & {
     position: absolute;
