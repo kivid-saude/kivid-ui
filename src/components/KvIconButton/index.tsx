@@ -1,21 +1,22 @@
-import { PropsWithChildren } from "react";
 import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
 type TKvIconButton = {
   color?: "tertiary" | "success" | "danger" | "muted";
   size?: "small" | "medium" | "large";
+  shape?: "square" | "rect";
   rounded?: boolean;
   loading?: boolean;
   disabled?: boolean;
-} & PropsWithChildren &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.PropsWithChildren;
 
 export const KvIconButton = ({
   children,
   className = "",
   color = "tertiary",
   size = "medium",
+  shape = "square",
   rounded = true,
   loading,
   ...props
@@ -24,11 +25,13 @@ export const KvIconButton = ({
     styles["kv-icon-button"],
     styles[`kv-icon-button--${color}`],
     styles[`kv-icon-button--${size}`],
+    styles[`kv-icon-button--${shape}`],
   ];
-  if (rounded) classes.push(styles[`kv-icon-button--rounded`]);
+  if (rounded) classes.push(styles["kv-icon-button--rounded"]);
   if (loading) classes.push(styles["kv-icon-button--loading"]);
+  if (className) classes.push(className);
 
-  const content = () => {
+  const renderContent = () => {
     if (loading) {
       return <KvSpinner color={color === "muted" ? "primary" : "white"} />;
     }
@@ -36,8 +39,8 @@ export const KvIconButton = ({
   };
 
   return (
-    <button className={`${className} ${classes.join(" ")}`} {...props}>
-      {content()}
+    <button className={classes.join(" ")} {...props}>
+      {renderContent()}
     </button>
   );
 };
