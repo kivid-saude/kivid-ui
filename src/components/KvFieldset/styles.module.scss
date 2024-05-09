@@ -1,0 +1,20 @@
+.kv-fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  :global(.slot) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  > .kv-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    pointer-events: auto;
+    transform: translateY(-50%);
+  }
+}
