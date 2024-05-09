@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 export type TKvInputStatus = "idle" | "invalid" | "valid";
 
 export type TKvInput = {
-  errorMessage?: string;
+  invalidMessage?: string;
   rounded?: boolean;
   status?: TKvInputStatus;
 } & React.InputHTMLAttributes<HTMLInputElement>;
@@ -15,7 +15,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
   (
     {
       className = "",
-      errorMessage = "",
+      invalidMessage = "",
       rounded = true,
       status = "idle",
       ...props
@@ -51,8 +51,8 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
         )}
 
         <KvTooltip
-          content={errorMessage}
-          open={!!errorMessage}
+          content={invalidMessage}
+          open={!!invalidMessage}
           status={status === "invalid" ? status : undefined}
         >
           <input className={computedClasses} type="text" ref={ref} {...props} />

@@ -50,7 +50,7 @@ export const Valid: Story = {
 export const Invalid: Story = {
   args: {
     status: "invalid",
-    errorMessage: "Campo obrigatório",
+    invalidMessage: "Campo obrigatório",
   },
   render: (args) => (
     <KvFieldset>
@@ -95,7 +95,7 @@ export const ValidWithLabel: Story = {
 export const InvalidWithLabel: Story = {
   args: {
     status: "invalid",
-    errorMessage: "Campo obrigatório",
+    invalidMessage: "Campo obrigatório",
   },
   render: (args) => (
     <KvFieldset>
