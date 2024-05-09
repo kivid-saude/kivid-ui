@@ -1,31 +1,27 @@
 import React, { useState } from "react";
 import { KvIcon } from "../KvIcon";
-import "../KvInput/kv-input.css";
+import { KvIconButton } from "../KvIconButton";
+import { KvInput, TKvInput } from "../KvInput";
 
-const KvPasswordInput = React.forwardRef<
-  HTMLInputElement,
-  React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >
->(({ className = "", ...props }, ref) => {
-  const [isVisible, setIsVisible] = useState(false);
-  return (
-    <>
-      <input
-        className={`kv-input ${className}`}
-        type={isVisible ? "text" : "password"}
-        {...props}
-        ref={ref}
-      />
-      <KvIcon
-        icon={isVisible ? "eye" : "eye-off"}
-        onClick={() => setIsVisible((prev) => !prev)}
-        style={{ pointerEvents: "auto", cursor: "pointer" }}
-      />
-    </>
-  );
-});
+const KvPasswordInput = React.forwardRef<HTMLInputElement, TKvInput>(
+  (props, ref) => {
+    const [isVisible, setIsVisible] = useState(false);
+    return (
+      <>
+        <KvInput type={isVisible ? "text" : "password"} ref={ref} {...props} />
+        <KvIconButton
+          className="slot slot--right"
+          color="muted"
+          size="medium"
+          rounded={false}
+          onClick={() => setIsVisible((prev) => !prev)}
+        >
+          <KvIcon icon={isVisible ? "eye" : "eye-off"} />
+        </KvIconButton>
+      </>
+    );
+  },
+);
 
 KvPasswordInput.displayName = "KvPasswordInput";
 
