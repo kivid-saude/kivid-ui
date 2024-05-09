@@ -1,75 +1,54 @@
-import { KvFieldset, KvIcon, KvLabel, KvSeal } from "..";
+import React from "react";
+import { KvFieldset, KvIcon, KvLabel } from "..";
 import { KvIconButton } from "../KvIconButton";
+import { KvInput, TKvInput, TKvInputStatus } from "../KvInput";
+
+type TKvSearchStatus = "loading" | "clean";
 
 type TKvSearch = {
   label?: string;
-  status: "idle" | "loading" | "error" | "success" | "clean";
-  disabled?: boolean;
+  status?: TKvInputStatus | TKvSearchStatus;
   onClean?: () => void;
-} & React.PropsWithChildren;
+} & Omit<TKvInput, "status">;
 
-export const KvSearch = ({
-  label,
-  status = "idle",
-  disabled = false,
-  onClean,
-  children,
-}: TKvSearch) => {
-  const hasLabel = Boolean(label?.length);
+export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
+  ({ label, status = "idle", onClean, ...props }, ref) => {
+    const hasLabel = Boolean(label?.length);
 
-  return (
-    <KvFieldset>
-      {hasLabel && <KvLabel>{label}</KvLabel>}
-      {status === "error" && (
-        <div className="slot slot--right">
-          <KvSeal
-            icon="close"
-            color="danger"
-            size="medium"
-            disabled={disabled}
-          />
-        </div>
-      )}
-      {status === "success" && (
-        <div className="slot slot--right">
-          <KvSeal
-            icon="check"
+    return (
+      <KvFieldset>
+        {hasLabel && <KvLabel>{label}</KvLabel>}
+
+        {status === "clean" && (
+          <KvIconButton
+            type="button"
+            disabled={props.disabled}
+            color="muted"
+            className="slot slot--right pointer-events-none"
+            size={hasLabel ? "medium" : "small"}
+            rounded={false}
+            onClick={onClean}
+          >
+            <KvIcon icon="close" color="primary" size="medium" />
+          </KvIconButton>
+        )}
+
+        {status && ["idle", "loading"].includes(status) && (
+          <KvIconButton
+            type="button"
+            disabled={props.disabled}
             color="success"
-            size="medium"
-            disabled={disabled}
-          />
-        </div>
-      )}
+            className="slot slot--right pointer-events-none"
+            loading={status === "loading"}
+            size={hasLabel ? "medium" : "small"}
+            rounded={false}
+          >
+            <KvIcon icon="search" color="white" size="medium" />
+          </KvIconButton>
+        )}
 
-      {status === "clean" && (
-        <KvIconButton
-          type="button"
-          disabled={disabled}
-          color="muted"
-          className="slot slot--right pointer-events-none"
-          size={hasLabel ? "large" : "medium"}
-          rounded={false}
-        >
-          <KvIcon icon="close" color="primary" size="medium" />
-        </KvIconButton>
-      )}
-
-      {["idle", "loading"].includes(status) && (
-        <KvIconButton
-          type="button"
-          disabled={disabled}
-          color="success"
-          className="slot slot--right pointer-events-none"
-          loading={status === "loading"}
-          size={hasLabel ? "large" : "medium"}
-          rounded={false}
-          onClick={onClean}
-        >
-          <KvIcon icon="search" color="white" size="medium" />
-        </KvIconButton>
-      )}
-
-      {children}
-    </KvFieldset>
-  );
-};
+        <KvInput ref={ref} status={status as TKvInputStatus} {...props} />
+      </KvFieldset>
+    );
+  },
+);

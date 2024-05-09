@@ -1,16 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { KvSearch } from ".";
-import { KvInput } from "..";
+import { fn } from "@storybook/test";
+import { KvSearch } from "./";
 
 const meta = {
   title: "Kivid/KvSearch",
   component: KvSearch,
   parameters: {
-    layout: "centered",
+    // layout: "centered",
   },
   tags: ["autodocs"],
-
   argTypes: {},
   args: {},
 } satisfies Meta<typeof KvSearch>;
@@ -20,165 +18,83 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    searchStatus: "idle",
-  },
-  render: ({ searchStatus, disabled, ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args} searchStatus={searchStatus} disabled={disabled}>
-        <KvInput
-          type="text"
-          placeholder={searchStatus !== "error" ? searchStatus : ""}
-          value={searchStatus === "error" ? "Sua busca falhou" : ""}
-          errorMessage={searchStatus === "error" ? "Sua busca falhou" : ""}
-          disabled={disabled}
-        />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
-export const WithLabel: Story = {
+export const Disabled: Story = {
   args: {
-    searchStatus: "idle",
+    disabled: true,
   },
-  render: ({ ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args} label="Label">
-        <KvInput type="text" placeholder="placeholder" value="Input" />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
 export const Loading: Story = {
   args: {
-    searchStatus: "loading",
+    status: "loading",
   },
-  render: ({ ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args}>
-        <KvInput type="text" placeholder="placeholder" value="Input" />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
 export const Clean: Story = {
   args: {
-    searchStatus: "clean",
+    status: "clean",
+    onClean: fn(),
   },
-  render: ({ ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args}>
-        <KvInput type="text" placeholder="placeholder" value="Input" />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
-export const Success: Story = {
+export const Valid: Story = {
   args: {
-    searchStatus: "success",
+    status: "valid",
   },
-  render: ({ ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args}>
-        <KvInput type="text" placeholder="placeholder" value="Input" />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
-export const Error: Story = {
+export const Invalid: Story = {
   args: {
-    searchStatus: "error",
+    status: "invalid",
+    errorMessage: "Campo obrigatório",
   },
-  render: ({ ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args}>
-        <KvInput
-          type="text"
-          placeholder="placeholder"
-          value="Input"
-          errorMessage="Sua busca falhou"
-        />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
-export const WithLabelAndError: Story = {
+export const WithLabel: Story = {
   args: {
-    searchStatus: "error",
+    label: "Label",
   },
-  render: ({ ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args} label="label">
-        <KvInput
-          type="text"
-          placeholder="placeholder"
-          value="Input"
-          errorMessage="Sua busca falhou"
-        />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
-export const ErrorDisabled: Story = {
+export const LoadingWithLabel: Story = {
   args: {
-    searchStatus: "error",
-    disabled: true,
+    label: "Label",
+    status: "loading",
   },
-  render: ({ disabled, ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args}>
-        <KvInput
-          type="text"
-          placeholder="placeholder"
-          value="Input"
-          errorMessage="Sua busca falhou"
-          disabled={disabled}
-        />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
-export const DefaultDisabled: Story = {
+export const CleanWithLabel: Story = {
   args: {
-    searchStatus: "idle",
-    disabled: true,
+    label: "Label",
+    status: "clean",
+    onClean: fn(),
   },
-  render: ({ disabled, ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args}>
-        <KvInput
-          type="text"
-          placeholder="placeholder"
-          value="Input"
-          disabled={disabled}
-        />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
 
-export const DefaultWithSmallRounded: Story = {
+export const ValidWithLabel: Story = {
   args: {
-    searchStatus: "idle",
+    label: "Label",
+    status: "valid",
   },
-  render: ({ ...args }) => (
-    <div style={{ width: "23rem" }}>
-      <KvSearch {...args}>
-        <KvInput
-          type="search"
-          placeholder="placeholder"
-          value="Input"
-          rounded={false}
-        />
-      </KvSearch>
-    </div>
-  ),
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
+};
+
+export const InvalidWithLabel: Story = {
+  args: {
+    label: "Label",
+    status: "invalid",
+    errorMessage: "Campo obrigatório",
+  },
+  render: (args) => <KvSearch placeholder="Digite sua busca" {...args} />,
 };
