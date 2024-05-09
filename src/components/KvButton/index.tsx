@@ -3,7 +3,7 @@ import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
 type TKvButton = {
-  color?: "tertiary" | "success" | "danger" | "muted";
+  color?: "tertiary" | "success" | "danger" | "muted" | "clear";
   size?: "small" | "medium" | "large";
   expand?: "block" | "full";
   rounded?: boolean;
@@ -33,7 +33,7 @@ export const KvButton = ({
 
   const content = () => {
     if (loading) {
-      return <KvSpinner color={`white`} />;
+      return <KvSpinner color={color === "muted" ? "light" : "white"} />;
     }
     return children;
   };

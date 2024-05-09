@@ -59,6 +59,10 @@ export const Muted: Story = {
   render: () => <KvButton color="muted">Button</KvButton>,
 };
 
+export const Clear: Story = {
+  render: () => <KvButton color="clear">Button</KvButton>,
+};
+
 export const Disabled: Story = {
   render: () => <KvButton disabled>Button</KvButton>,
 };
@@ -77,7 +81,7 @@ export const Block: Story = {
 
 export const Full: Story = {
   render: () => (
-    <KvButton color="tertiary" expand="full">
+    <KvButton color="tertiary" expand="full" rounded={false}>
       Button
     </KvButton>
   ),

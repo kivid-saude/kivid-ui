@@ -36,6 +36,7 @@
     --background: var(--background-active);
     --color: var(--color-active);
     --border-color: var(--border-color-active);
+    transition-duration: 0s;
   }
 
   &:disabled {
@@ -135,6 +136,20 @@
     --color-active: var(--kv-color-grape-500);
     --background-disabled: var(--kv-color-white);
     --border-color-disabled: var(--kv-color-lychee-400);
+    --color-disabled: var(--kv-color-lychee-400);
+  }
+
+  &--clear {
+    --background: transparent;
+    --background-hover: var(--kv-color-lychee-200);
+    --background-focus: var(--kv-color-lychee-200);
+    --border-color: transparent;
+    --color: var(--kv-color-lychee-800);
+    --background-active: var(--kv-color-grape-100);
+    --border-color-active: transparent;
+    --color-active: var(--kv-color-grape-500);
+    --background-disabled: transparent;
+    --border-color-disabled: transparent;
     --color-disabled: var(--kv-color-lychee-400);
   }
 }
