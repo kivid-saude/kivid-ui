@@ -10,6 +10,7 @@ const KvPasswordInput = React.forwardRef<HTMLInputElement, TKvInput>(
       <>
         <KvInput type={isVisible ? "text" : "password"} ref={ref} {...props} />
         <KvIconButton
+          type="button"
           className="slot slot--right"
           color="muted"
           size="medium"
