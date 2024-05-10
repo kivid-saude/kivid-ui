@@ -12,7 +12,7 @@ export const Smask = ({ children, mask, ...props }: TSmask) => {
 
   const minLength = mask.at(0)!.length;
   const maxLength = mask.at(-1)!.length;
-  const maskFormattedLength = mask.at(-1)?.replace(/\W/g, "").length;
+  // const maskFormattedLength = mask.at(-1)?.replace(/\W/g, "").length;
 
   const onInput = (event: React.FormEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
@@ -35,12 +35,9 @@ export const Smask = ({ children, mask, ...props }: TSmask) => {
     if (typeof props.value === "undefined") return;
     if (props.value === newValue) return;
 
-    const maskedValue = smask.mask(
-      props.value.slice(0, maskFormattedLength),
-      mask,
-    );
+    const maskedValue = smask.mask(props.value.slice(0, maxLength), mask);
     setNewValue(maskedValue);
-  }, [mask, maskFormattedLength, newValue, props]);
+  }, [mask, maxLength, newValue, props]);
 
   if (typeof props.value !== "undefined") {
     return React.cloneElement(children, {
