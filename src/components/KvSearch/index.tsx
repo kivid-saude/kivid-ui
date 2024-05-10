@@ -54,3 +54,5 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
     );
   },
 );
+
+KvSearch.displayName = "KvSearch";
