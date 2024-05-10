@@ -1,3 +1,7 @@
+[data-radix-popper-content-wrapper] {
+  z-index: 100 !important;
+}
+
 .kv-tooltip__content {
   display: flex;
   gap: 0.5rem;

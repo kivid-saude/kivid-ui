@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { KvTooltip } from ".";
-import { KvIcon } from "../KvIcon";
-import { KvIconButton } from "../KvIconButton";
 
 const meta = {
   title: "Kivid/KvTooltip",
@@ -34,9 +32,7 @@ export const Default: Story = {
   },
   render: (args) => (
     <KvTooltip {...args}>
-      <KvIconButton>
-        <KvIcon icon="people" />
-      </KvIconButton>
+      <span>Hover me</span>
     </KvTooltip>
   ),
 };
@@ -49,7 +45,7 @@ export const Invalid: Story = {
   },
   render: (args) => (
     <KvTooltip {...args}>
-      <button>Tooltip trigger</button>
+      <span>Hover me</span>
     </KvTooltip>
   ),
 };
