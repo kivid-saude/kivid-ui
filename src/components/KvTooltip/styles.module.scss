@@ -1,4 +1,4 @@
-div[data-radix-popper-content-wrapper] {
+:global(div[data-radix-popper-content-wrapper]) {
   z-index: 100 !important;
 }
 
