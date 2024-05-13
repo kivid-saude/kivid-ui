@@ -70,9 +70,14 @@ export const Invalid: Story = {
     invalidMessage: "Campo obrigatório",
   },
   render: (args) => (
-    <KvFieldset>
-      <KvInput placeholder="Digite aqui" {...args} />
-    </KvFieldset>
+    <div style={{ display: "grid", gap: "1rem" }}>
+      <KvFieldset>
+        <KvInput placeholder="Digite aqui" {...args} />
+      </KvFieldset>
+      <KvFieldset>
+        <KvInput placeholder="Digite aqui" {...args} />
+      </KvFieldset>
+    </div>
   ),
 };
 
