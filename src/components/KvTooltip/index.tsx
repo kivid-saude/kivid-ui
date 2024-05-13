@@ -19,6 +19,7 @@ export function KvTooltip({
   defaultOpen,
   onOpenChange,
   align = "center",
+  side = "top",
   status = "idle",
   ...props
 }: TKvTooltip) {
@@ -31,22 +32,25 @@ export function KvTooltip({
         onOpenChange={onOpenChange}
       >
         <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
-        <Tooltip.Content
-          className={`${styles["kv-tooltip__content"]} ${status === "invalid" && styles["kv-tooltip__content--error"]}`}
-          align={align}
-          sideOffset={2}
-          {...props}
-        >
-          {status === "invalid" && (
-            <KvSeal icon={"close"} color="danger" size="small" />
-          )}
-          {content}
-          <Tooltip.Arrow
-            className={`${styles["kv-tooltip__arrow"]} ${status === "invalid" && styles["kv-tooltip__arrow--error"]}`}
-            height={8}
-            width={16}
-          />
-        </Tooltip.Content>
+        <Tooltip.Portal>
+          <Tooltip.Content
+            className={`${styles["kv-tooltip__content"]} ${status === "invalid" && styles["kv-tooltip__content--error"]}`}
+            align={align}
+            sideOffset={status === "invalid" ? -12 : 4}
+            side={side}
+            {...props}
+          >
+            {status === "invalid" && (
+              <KvSeal icon={"close"} color="danger" size="small" />
+            )}
+            {content}
+            <Tooltip.Arrow
+              className={`${styles["kv-tooltip__arrow"]} ${status === "invalid" && styles["kv-tooltip__arrow--error"]}`}
+              height={8}
+              width={16}
+            />
+          </Tooltip.Content>
+        </Tooltip.Portal>
       </Tooltip.Root>
     </Tooltip.Provider>
   );

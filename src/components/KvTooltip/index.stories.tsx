@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { KvTooltip } from ".";
+import { KvFieldset } from "../KvFieldset";
+import { KvInput } from "../KvInput";
 
 const meta = {
   title: "Kivid/KvTooltip",
@@ -9,16 +11,33 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
+    status: {
+      defaultValue: "idle",
+      control: "radio",
+      options: {
+        idle: "idle",
+        invalid: "invalid",
+      },
+    },
     align: {
-      // control: "select",
+      control: "radio",
       options: {
         start: "start",
         end: "end",
         center: "center",
       },
     },
+    side: {
+      control: "radio",
+      options: {
+        top: "top",
+        bottom: "bottom",
+      },
+    },
   },
-  args: {},
+  args: {
+    content: "Tooltip text",
+  },
 } satisfies Meta<typeof KvTooltip>;
 
 export default meta;
@@ -26,26 +45,27 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    // open: true,
-    content: "Tooltip text",
-  },
+  args: {},
   render: (args) => (
     <KvTooltip {...args}>
-      <span>Hover me</span>
+      <span>Hover me to show tooltip</span>
     </KvTooltip>
   ),
 };
 
 export const Invalid: Story = {
   args: {
-    // open: true,
-    content: "Tooltip text",
     status: "invalid",
   },
   render: (args) => (
     <KvTooltip {...args}>
-      <span>Hover me</span>
+      <KvFieldset>
+        <KvInput
+          status="invalid"
+          invalidMessage="Campo obrigatório"
+          placeholder="Digite seu nome"
+        />
+      </KvFieldset>
     </KvTooltip>
   ),
 };
