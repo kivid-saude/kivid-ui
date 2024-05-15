@@ -1,7 +1,7 @@
 .dialog {
   --dialog-backdrop-color: #fffa;
   --dialog-padding: 2rem;
-  --dialog-background: var(--kv-color-gray-200);
+  --dialog-background: var(--kv-color-lychee-200);
   --dialog-border-radius: 12px;
   --dialog-header-padding: 2rem 2rem 0;
   --dialog-header-color: var(--kv-body-color);
@@ -93,7 +93,7 @@
   height: 2.5rem;
   border-radius: 1rem;
   border: 0;
-  background: var(--kv-color-gray-700);
+  background: var(--kv-color-lychee-700);
   color: #fff;
   display: flex;
   justify-content: center;

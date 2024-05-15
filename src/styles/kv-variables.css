@@ -1,54 +1,55 @@
 :root {
   /* COLORS BY NAME */
-  --kv-color-lychee-100: #FCFDFD;
-  --kv-color-lychee-200: #F6F9F9;
-  --kv-color-lychee-300: #EDF3F3;
-  --kv-color-lychee-400: #E4ECEC;
-  --kv-color-lychee-500: #CFD8D8;
-  --kv-color-lychee-600: #A5B1B1;
-  --kv-color-lychee-700: #6D7878;
-  --kv-color-lychee-800: #383E3E;
-  --kv-color-lychee-900: #1D2020;
+  --kv-color-lychee-100: #FAFCFC;
+  --kv-color-lychee-200: #F2F7F7;
+  --kv-color-lychee-300: #EBF2F2;
+  --kv-color-lychee-400: #E1EBEB;
+  --kv-color-lychee-500: #C9D4D4;
+  --kv-color-lychee-600: #B6C2C2;
+  --kv-color-lychee-700: #778080;
+  --kv-color-lychee-800: #393E3E;
+  --kv-color-lychee-900: #252929;
 
-  --kv-color-pear-100: #E9FCEF;
-  --kv-color-pear-200: #D2F9DF;
-  --kv-color-pear-300: #BDF5CF;
-  --kv-color-pear-400: #8FEFB0;
-  --kv-color-pear-500: #37E270;
-  --kv-color-pear-600: #1ED25B;
-  --kv-color-pear-700: #19B24C;
-  --kv-color-pear-800: #15933F;
-  --kv-color-pear-900: #107030;
+  --kv-color-pear-100: #DDFCDC;
+  --kv-color-pear-200: #BBF8BA;
+  --kv-color-pear-300: #89E589;
+  --kv-color-pear-400: #4EC74E;
+  --kv-color-pear-500: #36B536;
+  --kv-color-pear-600: #26A626;
+  --kv-color-pear-700: #239823;
+  --kv-color-pear-800: #1F851F;
+  --kv-color-pear-900: #1B681B;
 
-  --kv-color-java-100: #DCF9F9;
-  --kv-color-java-200: #C8F5F9;
-  --kv-color-java-300: #A6ECF2;
-  --kv-color-java-400: #79E2EC;
-  --kv-color-java-500: #4DD9E6;
-  --kv-color-java-600: #17BFCF;
-  --kv-color-java-700: #199CB2;
-  --kv-color-java-800: #118197;
-  --kv-color-java-900: #0A687B;
+  --kv-color-java-100: #D6F3F8;
+  --kv-color-java-200: #C1EDF5;
+  --kv-color-java-300: #A2E4F1;
+  --kv-color-java-400: #79D9EA;
+  --kv-color-java-500: #32C5E0;
+  --kv-color-java-600: #2CB2C9;
+  --kv-color-java-700: #2AA7BE;
+  --kv-color-java-800: #2593A8;
+  --kv-color-java-900: #1E7686;
 
-  --kv-color-grape-100: #EAE9FB;
-  --kv-color-grape-200: #DDDCF9;
-  --kv-color-grape-300: #C0BEF4;
-  --kv-color-grape-400: #9693EC;
-  --kv-color-grape-500: #7267E4;
-  --kv-color-grape-600: #6552E0;
-  --kv-color-grape-700: #5140BF;
-  --kv-color-grape-800: #413399;
-  --kv-color-grape-900: #392D86;
+  --kv-color-grape-100: #EAE8FD;
+  --kv-color-grape-200: #D5D1FB;
+  --kv-color-grape-300: #C0BAF9;
+  --kv-color-grape-400: #9D93F5;
+  --kv-color-grape-500: #7460E0;
+  --kv-color-grape-600: #6654D1;
+  --kv-color-grape-700: #5C4ABF;
+  --kv-color-grape-800: #5141AB;
+  --kv-color-grape-900: #463794;
 
-  --kv-color-pitaya-100: #fde6f5;
-  --kv-color-pitaya-200: #fbcfec;
-  --kv-color-pitaya-300: #f8a5dc;
-  --kv-color-pitaya-400: #f471c8;
-  --kv-color-pitaya-500: #ef43b6;
-  --kv-color-pitaya-600: #e619a1;
-  --kv-color-pitaya-700: #d41193;
-  --kv-color-pitaya-800: #aa1378;
-  --kv-color-pitaya-900: #8c1062;
+
+  --kv-color-pitaya-100: #FDE6F5;
+  --kv-color-pitaya-200: #FBCFEC;
+  --kv-color-pitaya-300: #F8A5DC;
+  --kv-color-pitaya-400: #F471C8;
+  --kv-color-pitaya-500: #EF43B6;
+  --kv-color-pitaya-600: #E619A1;
+  --kv-color-pitaya-700: #D41193;
+  --kv-color-pitaya-800: #AA1378;
+  --kv-color-pitaya-900: #8C1062;
 
   --kv-color-blackberry-100: #FDE3E3;
   --kv-color-blackberry-200: #FBCDCD;
@@ -60,35 +61,25 @@
   --kv-color-blackberry-800: #922222;
   --kv-color-blackberry-900: #7A2222;
 
-  --kv-color-tangerine-100: #fef0e7;
-  --kv-color-tangerine-200: #fde7d7;
-  --kv-color-tangerine-300: #fbd3b6;
-  --kv-color-tangerine-400: #f9b686;
-  --kv-color-tangerine-500: #f58a3d;
-  --kv-color-tangerine-600: #ed7621;
-  --kv-color-tangerine-700: #d46211;
-  --kv-color-tangerine-800: #b8520a;
-  --kv-color-tangerine-900: #a34400;
+  --kv-color-tangerine-100: #FEF0E7;
+  --kv-color-tangerine-200: #FDE7D7;
+  --kv-color-tangerine-300: #FBD3B6;
+  --kv-color-tangerine-400: #F9B686;
+  --kv-color-tangerine-500: #F58A3D;
+  --kv-color-tangerine-600: #ED7621;
+  --kv-color-tangerine-700: #D46211;
+  --kv-color-tangerine-800: #B8520A;
+  --kv-color-tangerine-900: #A34400;
 
-  --kv-color-mango-100: #fff7e6;
-  --kv-color-mango-200: #fff1d4;
-  --kv-color-mango-300: #ffe5b2;
-  --kv-color-mango-400: #ffd480;
-  --kv-color-mango-500: #ffbb34;
-  --kv-color-mango-600: #f9ab10;
-  --kv-color-mango-700: #e59900;
-  --kv-color-mango-800: #cc8800;
-  --kv-color-mango-900: #b27700;
-
-  --kv-color-gray-100: #ffffff;
-  --kv-color-gray-200: #fafcfc;
-  --kv-color-gray-300: #f2f5f5;
-  --kv-color-gray-400: #e8ebeb;
-  --kv-color-gray-500: #d9dede;
-  --kv-color-gray-600: #adb2b2;
-  --kv-color-gray-700: #949999;
-  --kv-color-gray-800: #565959;
-  --kv-color-gray-900: #263333;
+  --kv-color-mango-100: #FFF7E6;
+  --kv-color-mango-200: #FFF1D4;
+  --kv-color-mango-300: #FFE5B2;
+  --kv-color-mango-400: #FFD480;
+  --kv-color-mango-500: #FFBB34;
+  --kv-color-mango-600: #F9AB10;
+  --kv-color-mango-700: #E59900;
+  --kv-color-mango-800: #CC8800;
+  --kv-color-mango-900: #B27700;
 
   /* COLORS BY STATUS */
   --kv-color-primary: var(--kv-color-lychee-800);
@@ -120,7 +111,7 @@
 
   /* BODY */
   --kv-font-family: "Red Hat Display", sans-serif;
-  --kv-body-background: var(--kv-color-gray-200);
+  --kv-body-background: var(--kv-color-lychee-200);
   --kv-body-color: var(--kv-color-primary);
 
   /* FONT-SIZE */

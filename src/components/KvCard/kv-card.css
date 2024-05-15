@@ -1,6 +1,6 @@
 .kv-card {
   padding: 1rem;
-  background: var(--kv-color-gray-200);
+  background: var(--kv-color-lychee-200);
   border: 1px solid #0002;
   border-radius: 1rem;
   overflow: hidden;

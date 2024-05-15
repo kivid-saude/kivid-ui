@@ -4,7 +4,7 @@
   --padding-inline: 0;
   --background: none;
   --border-width: 0;
-  --border-color: var(--kv-color-gray-3);
+  --border-color: var(--kv-color-lychee-3);
 
   display: grid;
   gap: var(--gap);

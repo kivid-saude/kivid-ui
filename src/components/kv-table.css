@@ -4,7 +4,7 @@ table {
 
 thead th {
   --border-radius: 0.5rem;
-  background-color: var(--kv-color-gray-300);
+  background-color: var(--kv-color-lychee-300);
   font-weight: 700;
 }
 thead th:first-child {
@@ -17,7 +17,7 @@ thead th:last-child {
 }
 
 tr:not(:first-child) td {
-  border-top: 1px solid var(--kv-color-gray-400);
+  border-top: 1px solid var(--kv-color-lychee-400);
 }
 
 th,
@@ -42,5 +42,6 @@ td {
   padding-inline: 0.5rem;
 }
 .p-selectable-row:hover {
-  background-color: var(--kv-color-gray-300);
+  background-color: var(--kv-color-lychee-300);
 }
+

@@ -11,10 +11,10 @@
   gap: 2rem;
   width: var(--kv-header-width);
   height: 100%;
-  background: var(--kv-color-gray-200);
+  background: var(--kv-color-lychee-200);
   border-width: 1px 1px 1px 0;
   border-style: solid;
-  border-color: var(--kv-color-gray-400);
+  border-color: var(--kv-color-lychee-400);
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
   padding: 2rem 0 3rem;
@@ -48,7 +48,7 @@
 }
 .logo {
   padding-top: 1.5rem;
-  border-top: 1px solid var(--kv-color-gray-400);
+  border-top: 1px solid var(--kv-color-lychee-400);
 }
 
 .slotEnd {
