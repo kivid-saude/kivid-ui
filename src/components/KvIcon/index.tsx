@@ -20,8 +20,8 @@ export const KvIcon = ({
   const classes = [
     styles["kv-icon"],
     styles[`kv-icon--size-${size}`],
-    className,
     MapColors[color],
+    className,
   ].join(" ");
 
   return (
