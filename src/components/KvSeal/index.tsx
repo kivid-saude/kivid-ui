@@ -1,52 +1,54 @@
-import { KeyColors, MapColors } from "../../types/styles";
-import { KvIcon } from "../KvIcon";
 import styles from "./styles.module.scss";
 
-type TKvSeal = {
-  color?: KeyColors;
-  size?: "large" | "medium" | "small" | "xsmall";
-  shape?: "circle" | "rect";
-  icon: string;
+import add from "./seal-icon-add.svg";
+import alert from "./seal-icon-alert.svg";
+import error from "./seal-icon-error.svg";
+import neutral from "./seal-icon-neutral.svg";
+import next from "./seal-icon-next.svg";
+import success from "./seal-icon-success.svg";
+
+export type TKvSeal = {
+  mode: "add" | "success" | "error" | "alert" | "neutral" | "next";
+  size?: "medium" | "small";
   disabled?: boolean;
-  className?: string;
+  inverted?: boolean;
 };
 
 export const KvSeal = ({
-  className = "",
-  color = "tertiary",
-  size = "large",
-  shape = "circle",
+  mode,
+  size = "medium",
+  inverted = false,
   disabled = false,
-  icon,
 }: TKvSeal) => {
   const classes = [
     styles["kv-seal"],
+    styles[`kv-seal--mode-${mode}`],
     styles[`kv-seal--size-${size}`],
-    styles[`kv-seal--shape-${shape}`],
-    styles[`kv-seal--disabled-${disabled}`],
-    MapColors[color],
-    className,
-  ].join(" ");
+  ];
 
-  const iconSize = () => {
-    switch (size) {
-      case "large":
-        return "medium";
-      case "medium":
-        return "small";
-      case "small":
-      case "xsmall":
-        return "xsmall";
+  inverted && classes.push(styles[`kv-seal--inverted`]);
+  disabled && classes.push(styles[`kv-seal--disabled`]);
+
+  const renderIcon = () => {
+    switch (mode) {
+      case "success":
+        return <use href={`${success}#success`} />;
+      case "add":
+        return <use href={`${add}#add`} />;
+      case "error":
+        return <use href={`${error}#error`} />;
+      case "next":
+        return <use href={`${next}#next`} />;
+      case "neutral":
+        return <use href={`${neutral}#neutral`} />;
+      case "alert":
+        return <use href={`${alert}#alert`} />;
     }
   };
 
   return (
-    <div className={classes}>
-      <KvIcon
-        className={styles["kv-seal__icon"]}
-        size={iconSize()}
-        icon={icon}
-      />
+    <div className={classes.join(" ")}>
+      <svg className={styles["kv-seal--icon"]}>{renderIcon()}</svg>
     </div>
   );
 };

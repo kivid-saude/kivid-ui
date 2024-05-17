@@ -27,62 +27,24 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    icon: "check",
+    mode: "success",
   },
 };
-export const XsmallCircle: Story = {
+export const SizeMedium: Story = {
   args: {
-    icon: "check",
-    size: "xsmall",
-    shape: "circle",
-  },
-};
-export const SmallCircle: Story = {
-  args: {
-    icon: "check",
-    size: "small",
-    shape: "circle",
-  },
-};
-export const MediumCircle: Story = {
-  args: {
-    icon: "check",
+    mode: "success",
     size: "medium",
-    shape: "circle",
   },
 };
-export const LargeCircle: Story = {
+export const SizeSmall: Story = {
   args: {
-    icon: "check",
-    size: "large",
-    shape: "circle",
-  },
-};
-export const XsmallRect: Story = {
-  args: {
-    icon: "check",
-    size: "xsmall",
-    shape: "rect",
-  },
-};
-export const SmallRect: Story = {
-  args: {
-    icon: "check",
+    mode: "success",
     size: "small",
-    shape: "rect",
   },
 };
-export const MediumRect: Story = {
+export const Inverted: Story = {
   args: {
-    icon: "check",
-    size: "medium",
-    shape: "rect",
-  },
-};
-export const LargeRect: Story = {
-  args: {
-    icon: "check",
-    size: "large",
-    shape: "rect",
+    mode: "success",
+    inverted: true,
   },
 };
