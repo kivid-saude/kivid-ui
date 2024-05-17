@@ -1,14 +1,11 @@
-import { KeyColors, MapColors } from "../../types/styles";
 import { KvSeal } from "../KvSeal";
 import styles from "./styles.module.scss";
 
 type TKvChip = {
   label: string;
-  color?: KeyColors;
-  size?: "large" | "medium" | "small";
+  mode?: "success" | "add" | "error" | "alert" | "neutral";
+  size?: "large" | "medium";
   fill?: "solid" | "outline";
-  icon?: string;
-  iconColor?: KeyColors;
   type?: "text" | "button";
   disabled?: boolean;
   onClick?: () => void;
@@ -16,31 +13,42 @@ type TKvChip = {
 
 export const KvChip = ({
   label,
-  color = "light",
+  mode = "neutral",
   size = "medium",
   fill = "outline",
-  icon,
-  iconColor,
   type = "text",
   disabled = false,
   onClick,
 }: TKvChip) => {
   const classes = [
     styles["kv-chip"],
+    styles[`kv-chip--mode-${mode}`],
     styles[`kv-chip--size-${size}`],
     styles[`kv-chip--fill-${fill}`],
-    icon ? styles[`kv-chip--with-icon`] : "",
-    MapColors[color],
   ].join(" ");
 
-  const sealSize = () => {
-    switch (size) {
-      case "large":
-      case "medium":
-        return "small";
-      case "small":
-        return "xsmall";
-    }
+  const renderContent = () => {
+    const getSealMode = () => {
+      switch (mode) {
+        case "add":
+          return "add";
+        case "success":
+          return "success";
+        case "error":
+          return "error";
+        case "alert":
+          return "alert";
+        case "neutral":
+          return "neutral";
+      }
+    };
+
+    return (
+      <>
+        <KvSeal mode={getSealMode()} size="small" inverted={fill === "solid"} />
+        <span>{label}</span>
+      </>
+    );
   };
 
   if (type === "button") {
@@ -51,18 +59,10 @@ export const KvChip = ({
         onClick={() => onClick?.()}
         disabled={disabled}
       >
-        {!!icon && <KvSeal size={sealSize()} icon={icon} color={iconColor} />}
-
-        <span>{label}</span>
+        {renderContent()}
       </button>
     );
   }
 
-  return (
-    <div className={classes}>
-      {!!icon && <KvSeal size={sealSize()} icon={icon} color={iconColor} />}
-
-      <span>{label}</span>
-    </div>
-  );
+  return <div className={classes}>{renderContent()}</div>;
 };

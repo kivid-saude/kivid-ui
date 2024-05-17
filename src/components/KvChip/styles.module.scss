@@ -1,15 +1,15 @@
-$sizes: (
-  "large": 2rem,
-  "medium": 1.5rem,
-  "small": 1.125rem,
-);
-
 .kv-chip {
   display: flex;
   align-items: center;
+  gap: var(--kv-chip-gap);
   width: fit-content;
-  border: 1px solid var(--kv-color-base);
+  height: var(--kv-chip-height);
+  padding: var(--kv-chip-padding);
+  background: var(--kv-chip-background);
+  border: 1px solid var(--kv-chip-border-color);
   border-radius: 1rem;
+  color: var(--kv-chip-color);
+  font-size: var(--kv-chip-font-size);
   font-weight: var(--kv-font-weight-bold);
   box-sizing: border-box;
   transition: 0.3s ease-in-out;
@@ -30,46 +30,42 @@ $sizes: (
   }
 
   &--fill-outline {
-    background: transparent;
-    color: var(--kv-color-primary);
+    --kv-chip-background: var(--kv-color-lychee-100);
+    --kv-chip-color: var(--kv-color-lychee-800);
+    --kv-chip-border-color: var(--kv-color-lychee-400);
   }
-
   &--fill-solid {
-    background: var(--kv-color-base);
-    color: var(--kv-color-contrast);
+    --kv-chip-background: var(--background);
+    --kv-chip-color: var(--kv-color-lychee-100);
+    --kv-chip-border-color: transparent;
   }
 
-  @each $size_name, $size_value in $sizes {
-    @if $size_name == "large" {
-      &--size-#{$size_name} {
-        --padding-left-with-icon: 0.5rem;
-        height: $size_value;
-        padding: 0.5rem 1rem;
-        gap: 0.5rem;
-        font-size: var(--kv-font-size-sm);
-      }
-    }
-    @if $size_name == "medium" {
-      &--size-#{$size_name} {
-        --padding-left-with-icon: 0.25rem;
-        height: $size_value;
-        padding: 0.25rem 0.5rem;
-        gap: 0.5rem;
-        font-size: var(--kv-font-size-xs);
-      }
-    }
-    @if $size_name == "small" {
-      &--size-#{$size_name} {
-        --padding-left-with-icon: 0.125rem;
-        height: $size_value;
-        padding: 0.125rem 0.25rem;
-        gap: 0.25rem;
-        font-size: var(--kv-font-size-2xs);
-      }
-    }
+  &--mode-success {
+    --background: var(--kv-color-pear-500);
+  }
+  &--mode-alert {
+    --background: var(--kv-color-tangerine-500);
+  }
+  &--mode-error {
+    --background: var(--kv-color-blackberry-500);
+  }
+  &--mode-add {
+    --background: var(--kv-color-grape-500);
+  }
+  &--mode-neutral {
+    --background: var(--kv-color-lychee-500);
   }
 
-  &--with-icon {
-    padding-left: var(--padding-left-with-icon);
+  &--size-medium {
+    --kv-chip-height: 1.5rem;
+    --kv-chip-padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+    --kv-chip-gap: 0.25rem;
+    --kv-chip-font-size: var(--kv-font-size-sm);
+  }
+  &--size-large {
+    --kv-chip-height: 2rem;
+    --kv-chip-padding: 0.5rem 1rem 0.5rem 0.5rem;
+    --kv-chip-gap: 0.5rem;
+    --kv-chip-font-size: var(--kv-font-size-md);
   }
 }
