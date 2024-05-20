@@ -40,9 +40,7 @@ export function KvTooltip({
             side={side}
             {...props}
           >
-            {status === "invalid" && (
-              <KvSeal icon={"close"} color="danger" size="small" />
-            )}
+            {status === "invalid" && <KvSeal variant="error" size="small" />}
             {content}
             <Tooltip.Arrow
               className={`${styles["kv-tooltip__arrow"]} ${status === "invalid" && styles["kv-tooltip__arrow--error"]}`}
