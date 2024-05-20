@@ -1,4 +1,5 @@
 import React from "react";
+import { KvButton } from "../KvButton";
 import { KvChip } from "../KvChip";
 import kvInputStyles from "../KvInput/styles.module.scss";
 import KvSpinner from "../KvSpinner";
@@ -50,19 +51,20 @@ const KvOtp = React.forwardRef<HTMLInputElement, TKvOTPInput>(
         </KvTooltip>
 
         {["idle", "invalid"].includes(status) && (
-          <KvChip
+          <KvButton
             type="button"
-            label="Reenviar Código"
-            color="light"
+            color="muted"
             onClick={() => handleResendToken?.()}
             disabled={disableTryAgain}
-          />
+          >
+            Reenviar Código
+          </KvButton>
         )}
 
         {["loading"].includes(status) && <KvSpinner color="light" />}
 
         {["valid"].includes(status) && (
-          <KvChip label="Confirmado" icon="check" iconColor="success" />
+          <KvChip label="Confirmado" variant="success" />
         )}
       </div>
     );
