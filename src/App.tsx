@@ -146,9 +146,9 @@ function App() {
 
             <KvBadge color="warning" label="+99" />
 
-            <KvSeal mode="success" />
+            <KvSeal variant="success" />
 
-            <KvChip label="Confirmado" size="medium" />
+            <KvChip variant="neutral" label="Confirmado" size="medium" />
           </div>
         </KvCard>
 
