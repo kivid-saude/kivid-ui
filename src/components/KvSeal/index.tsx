@@ -1,11 +1,11 @@
 import styles from "./styles.module.scss";
 
-import add from "./seal-icon-add.svg";
-import alert from "./seal-icon-alert.svg";
-import error from "./seal-icon-error.svg";
-import neutral from "./seal-icon-neutral.svg";
-import next from "./seal-icon-next.svg";
-import success from "./seal-icon-success.svg";
+import add from "./seal-icon-add.svg?url";
+import alert from "./seal-icon-alert.svg?url";
+import error from "./seal-icon-error.svg?url";
+import neutral from "./seal-icon-neutral.svg?url";
+import next from "./seal-icon-next.svg?url";
+import success from "./seal-icon-success.svg?url";
 
 export type TKvSeal = {
   mode: "add" | "success" | "error" | "alert" | "neutral" | "next";
