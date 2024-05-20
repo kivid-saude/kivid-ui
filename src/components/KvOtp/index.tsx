@@ -54,6 +54,7 @@ const KvOtp = React.forwardRef<HTMLInputElement, TKvOTPInput>(
           <KvButton
             type="button"
             color="muted"
+            size="small"
             onClick={() => handleResendToken?.()}
             disabled={disableTryAgain}
           >
@@ -64,7 +65,7 @@ const KvOtp = React.forwardRef<HTMLInputElement, TKvOTPInput>(
         {["loading"].includes(status) && <KvSpinner color="light" />}
 
         {["valid"].includes(status) && (
-          <KvChip label="Confirmado" variant="success" />
+          <KvChip label="Confirmado" variant="success" size="large" />
         )}
       </div>
     );
