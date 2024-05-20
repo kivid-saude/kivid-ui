@@ -33,8 +33,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
         {status === "invalid" && (
           <KvSeal
             className="slot slot--right"
-            icon="close"
-            color="danger"
+            variant="error"
             size="medium"
             disabled={props.disabled}
           />
@@ -43,8 +42,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
         {status === "valid" && (
           <KvSeal
             className="slot slot--right"
-            icon="check"
-            color="success"
+            variant="success"
             size="medium"
             disabled={props.disabled}
           />

@@ -27,24 +27,24 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    mode: "success",
+    variant: "success",
   },
 };
 export const SizeMedium: Story = {
   args: {
-    mode: "success",
+    variant: "success",
     size: "medium",
   },
 };
 export const SizeSmall: Story = {
   args: {
-    mode: "success",
+    variant: "success",
     size: "small",
   },
 };
 export const Inverted: Story = {
   args: {
-    mode: "success",
+    variant: "success",
     inverted: true,
   },
 };

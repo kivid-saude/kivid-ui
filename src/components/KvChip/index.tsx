@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 type TKvChip = {
   label: string;
-  mode?: "success" | "add" | "error" | "alert" | "neutral";
+  variant?: "success" | "add" | "error" | "alert" | "neutral";
   size?: "large" | "medium";
   fill?: "solid" | "outline";
   type?: "text" | "button";
@@ -13,7 +13,7 @@ type TKvChip = {
 
 export const KvChip = ({
   label,
-  mode = "neutral",
+  variant = "neutral",
   size = "medium",
   fill = "outline",
   type = "text",
@@ -22,14 +22,14 @@ export const KvChip = ({
 }: TKvChip) => {
   const classes = [
     styles["kv-chip"],
-    styles[`kv-chip--mode-${mode}`],
+    styles[`kv-chip--variant-${variant}`],
     styles[`kv-chip--size-${size}`],
     styles[`kv-chip--fill-${fill}`],
   ].join(" ");
 
   const renderContent = () => {
-    const getSealMode = () => {
-      switch (mode) {
+    const getSealVariant = () => {
+      switch (variant) {
         case "add":
           return "add";
         case "success":
@@ -45,7 +45,11 @@ export const KvChip = ({
 
     return (
       <>
-        <KvSeal mode={getSealMode()} size="small" inverted={fill === "solid"} />
+        <KvSeal
+          variant={getSealVariant()}
+          size="small"
+          inverted={fill === "solid"}
+        />
         <span>{label}</span>
       </>
     );

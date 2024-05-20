@@ -40,19 +40,19 @@
     --kv-chip-border-color: transparent;
   }
 
-  &--mode-success {
+  &--variant-success {
     --background: var(--kv-color-pear-500);
   }
-  &--mode-alert {
+  &--variant-alert {
     --background: var(--kv-color-tangerine-500);
   }
-  &--mode-error {
+  &--variant-error {
     --background: var(--kv-color-blackberry-500);
   }
-  &--mode-add {
+  &--variant-add {
     --background: var(--kv-color-grape-500);
   }
-  &--mode-neutral {
+  &--variant-neutral {
     --background: var(--kv-color-lychee-500);
   }
 

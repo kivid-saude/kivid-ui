@@ -1,55 +1,57 @@
 import styles from "./styles.module.scss";
 
-import add from "./seal-icon-add.svg?raw";
-import alert from "./seal-icon-alert.svg?raw";
-import error from "./seal-icon-error.svg?raw";
-import neutral from "./seal-icon-neutral.svg?raw";
-import next from "./seal-icon-next.svg?raw";
-import success from "./seal-icon-success.svg?raw";
+import add from "./seal-icon-add.svg";
+import alert from "./seal-icon-alert.svg";
+import error from "./seal-icon-error.svg";
+import neutral from "./seal-icon-neutral.svg";
+import next from "./seal-icon-next.svg";
+import success from "./seal-icon-success.svg";
 
 export type TKvSeal = {
-  mode: "add" | "success" | "error" | "alert" | "neutral" | "next";
+  variant: "add" | "success" | "error" | "alert" | "neutral" | "next";
   size?: "medium" | "small";
   disabled?: boolean;
   inverted?: boolean;
+  className?: string;
 };
 
 export const KvSeal = ({
-  mode,
+  variant,
   size = "medium",
   inverted = false,
   disabled = false,
+  className = "",
 }: TKvSeal) => {
   const classes = [
     styles["kv-seal"],
-    styles[`kv-seal--mode-${mode}`],
+    styles[`kv-seal--variant-${variant}`],
     styles[`kv-seal--size-${size}`],
   ];
 
   inverted && classes.push(styles[`kv-seal--inverted`]);
   disabled && classes.push(styles[`kv-seal--disabled`]);
+  className && classes.push(className);
 
   const renderIcon = () => {
-    switch (mode) {
+    switch (variant) {
       case "success":
-        return success;
+        return <use href={`${success}#success`} />;
       case "add":
-        return add;
+        return <use href={`${add}#add`} />;
       case "error":
-        return error;
+        return <use href={`${error}#error`} />;
       case "next":
-        return next;
+        return <use href={`${next}#next`} />;
       case "neutral":
-        return neutral;
+        return <use href={`${neutral}#neutral`} />;
       case "alert":
-        return alert;
+        return <use href={`${alert}#alert`} />;
     }
   };
 
   return (
-    <div
-      className={classes.join(" ")}
-      dangerouslySetInnerHTML={{ __html: renderIcon() }}
-    ></div>
+    <div className={classes.join(" ")}>
+      <svg>{renderIcon()}</svg>
+    </div>
   );
 };

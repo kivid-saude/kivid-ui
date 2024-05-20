@@ -29,7 +29,7 @@ export const Default: Story = {
 export const MediumOutline: Story = {
   args: {
     size: "medium",
-    mode: "neutral",
+    variant: "neutral",
     fill: "outline",
     label: "Label",
   },
@@ -37,7 +37,7 @@ export const MediumOutline: Story = {
 export const LargeOutline: Story = {
   args: {
     size: "large",
-    mode: "neutral",
+    variant: "neutral",
     fill: "outline",
     label: "Label",
   },
@@ -45,7 +45,7 @@ export const LargeOutline: Story = {
 export const MediumSolid: Story = {
   args: {
     size: "medium",
-    mode: "neutral",
+    variant: "neutral",
     fill: "solid",
     label: "Label",
   },
@@ -53,7 +53,7 @@ export const MediumSolid: Story = {
 export const LargeSolid: Story = {
   args: {
     size: "large",
-    mode: "neutral",
+    variant: "neutral",
     fill: "solid",
     label: "Label",
   },

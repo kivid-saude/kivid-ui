@@ -24,27 +24,27 @@
     color: var(--kv-seal-icon-color-inverted, #fff);
   }
 
-  &--mode-add {
+  &--variant-add {
     --kv-seal-background: var(--kv-color-grape-500);
     --kv-seal-icon-color: var(--kv-color-grape-500);
   }
-  &--mode-success {
+  &--variant-success {
     --kv-seal-background: var(--kv-color-pear-500);
     --kv-seal-icon-color: var(--kv-color-pear-500);
   }
-  &--mode-alert {
+  &--variant-alert {
     --kv-seal-background: var(--kv-color-tangerine-500);
     --kv-seal-icon-color: var(--kv-color-tangerine-500);
   }
-  &--mode-error {
+  &--variant-error {
     --kv-seal-background: var(--kv-color-blackberry-500);
     --kv-seal-icon-color: var(--kv-color-blackberry-500);
   }
-  &--mode-neutral {
+  &--variant-neutral {
     --kv-seal-background: var(--kv-color-lychee-600);
     --kv-seal-icon-color: var(--kv-color-lychee-600);
   }
-  &--mode-next {
+  &--variant-next {
     --kv-seal-background: var(--kv-color-lychee-600);
     --kv-seal-icon-color: var(--kv-color-lychee-600);
   }
