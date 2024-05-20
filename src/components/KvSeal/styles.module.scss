@@ -18,7 +18,7 @@
     --icon-size: 1rem;
   }
 
-  &--icon {
+  & svg {
     width: var(--icon-size);
     height: var(--icon-size);
     color: var(--kv-seal-icon-color-inverted, #fff);
