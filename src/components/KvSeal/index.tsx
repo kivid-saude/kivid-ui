@@ -1,11 +1,11 @@
 import styles from "./styles.module.scss";
 
-import add from "./seal-icon-add.svg";
-import alert from "./seal-icon-alert.svg";
-import error from "./seal-icon-error.svg";
-import neutral from "./seal-icon-neutral.svg";
-import next from "./seal-icon-next.svg";
-import success from "./seal-icon-success.svg";
+import { SealIconAdd } from "./SealIconAdd";
+import { SealIconAlert } from "./SealIconAlert";
+import { SealIconError } from "./SealIconError";
+import { SealIconNeutral } from "./SealIconNeutral";
+import { SealIconNext } from "./SealIconNext";
+import { SealIconSuccess } from "./SealIconSuccess";
 
 export type TKvSeal = {
   variant: "add" | "success" | "error" | "alert" | "neutral" | "next";
@@ -35,23 +35,19 @@ export const KvSeal = ({
   const renderIcon = () => {
     switch (variant) {
       case "success":
-        return <use href={`${success}#success`} />;
+        return <SealIconSuccess />;
       case "add":
-        return <use href={`${add}#add`} />;
+        return <SealIconAdd />;
       case "error":
-        return <use href={`${error}#error`} />;
+        return <SealIconError />;
       case "next":
-        return <use href={`${next}#next`} />;
+        return <SealIconNext />;
       case "neutral":
-        return <use href={`${neutral}#neutral`} />;
+        return <SealIconNeutral />;
       case "alert":
-        return <use href={`${alert}#alert`} />;
+        return <SealIconAlert />;
     }
   };
 
-  return (
-    <div className={classes.join(" ")}>
-      <svg>{renderIcon()}</svg>
-    </div>
-  );
+  return <div className={classes.join(" ")}>{renderIcon()}</div>;
 };

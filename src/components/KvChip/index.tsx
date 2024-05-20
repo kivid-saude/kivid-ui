@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 type TKvChip = {
   label: string;
-  variant?: "success" | "add" | "error" | "alert" | "neutral";
+  variant: "success" | "add" | "error" | "alert" | "neutral";
   size?: "large" | "medium";
   fill?: "solid" | "outline";
   type?: "text" | "button";
@@ -13,7 +13,7 @@ type TKvChip = {
 
 export const KvChip = ({
   label,
-  variant = "neutral",
+  variant,
   size = "medium",
   fill = "outline",
   type = "text",
