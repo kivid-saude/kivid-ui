@@ -29,6 +29,7 @@ export const Smask = (props: TSmask) => {
     try {
       const maskedValue = smask.mask(value, props.mask);
       setNewValue(maskedValue);
+      props.children?.props.onChange();
     } catch {
       return;
     }

@@ -61,7 +61,12 @@ export const Controlled = {
     return (
       <KvFieldset>
         <Smask mask={args.mask} value={text}>
-          <KvInput placeholder="(00) 00000-0000" />
+          <KvInput
+            placeholder="(00) 00000-0000"
+            onChange={() => {
+              console.log("onChange");
+            }}
+          />
         </Smask>
       </KvFieldset>
     );
