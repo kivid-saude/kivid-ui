@@ -11,7 +11,13 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    children: {
+      table: {
+        disable: true,
+      },
+    },
+  },
   args: {
     mask: ["(dd) dddd-dddd", "(dd) ddddd-dddd"],
   },
@@ -60,7 +66,7 @@ export const Controlled = {
 
     return (
       <KvFieldset>
-        <Smask mask={args.mask} value={text}>
+        <Smask {...args} value={text}>
           <KvInput
             placeholder="(00) 00000-0000"
             onChange={() => {
