@@ -40,10 +40,7 @@
   }
 
   &:disabled {
-    --background: var(--background-disabled);
-    --border-color: var(--border-color-disabled);
-    --color: var(--color-disabled);
-    opacity: 1;
+    opacity: 0.3;
     user-select: none;
     cursor: not-allowed;
   }
@@ -92,9 +89,6 @@
     --background-active: var(--kv-color-grape-500);
     --border-color-active: var(--kv-color-grape-500);
     --color-active: var(--kv-color-lychee-100);
-    --background-disabled: var(--kv-color-grape-300);
-    --border-color-disabled: var(--kv-color-grape-300);
-    --color-disabled: var(--kv-color-lychee-100);
   }
 
   &--success {
@@ -106,9 +100,6 @@
     --background-active: var(--kv-color-pear-500);
     --border-color-active: var(--kv-color-pear-500);
     --color-active: var(--kv-color-lychee-100);
-    --background-disabled: var(--kv-color-pear-300);
-    --border-color-disabled: var(--kv-color-pear-300);
-    --color-disabled: var(--kv-color-lychee-100);
   }
 
   &--danger {
@@ -120,9 +111,6 @@
     --background-active: var(--kv-color-blackberry-500);
     --border-color-active: var(--kv-color-blackberry-500);
     --color-active: var(--kv-color-lychee-100);
-    --background-disabled: var(--kv-color-blackberry-300);
-    --border-color-disabled: var(--kv-color-blackberry-300);
-    --color-disabled: var(--kv-color-lychee-100);
   }
 
   &--muted {
@@ -134,9 +122,6 @@
     --background-active: var(--kv-color-grape-100);
     --border-color-active: var(--kv-color-grape-300);
     --color-active: var(--kv-color-grape-500);
-    --background-disabled: var(--kv-color-white);
-    --border-color-disabled: var(--kv-color-lychee-400);
-    --color-disabled: var(--kv-color-lychee-400);
   }
 
   &--clear {
@@ -148,8 +133,5 @@
     --background-active: var(--kv-color-grape-100);
     --border-color-active: transparent;
     --color-active: var(--kv-color-grape-500);
-    --background-disabled: transparent;
-    --border-color-disabled: transparent;
-    --color-disabled: var(--kv-color-lychee-400);
   }
 }
