@@ -60,12 +60,12 @@
     --kv-chip-height: 1.5rem;
     --kv-chip-padding: 0.25rem 0.5rem 0.25rem 0.25rem;
     --kv-chip-gap: 0.25rem;
-    --kv-chip-font-size: var(--kv-font-size-sm);
+    --kv-chip-font-size: var(--kv-font-size-xs);
   }
   &--size-large {
     --kv-chip-height: 2rem;
     --kv-chip-padding: 0.5rem 1rem 0.5rem 0.5rem;
     --kv-chip-gap: 0.5rem;
-    --kv-chip-font-size: var(--kv-font-size-md);
+    --kv-chip-font-size: var(--kv-font-size-sm);
   }
 }
