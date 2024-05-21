@@ -40,7 +40,7 @@ export const Smask = (props: TSmask) => {
     if (!("value" in props)) return;
 
     const maskedValue = smask.mask(
-      props.value.replace(/\W/g, "").slice(0, maskLettersLength),
+      props.value?.replace(/\W/g, "").slice(0, maskLettersLength),
       props.mask,
     );
     setNewValue(maskedValue);
