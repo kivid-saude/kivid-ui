@@ -39,8 +39,10 @@ export const Smask = (props: TSmask) => {
   useEffect(() => {
     if (!("value" in props)) return;
 
-    const maskedValue = smask.mask(props.value, props.mask);
-
+    const maskedValue = smask.mask(
+      props.value.replace(/\W/g, "").slice(0, maskLettersLength),
+      props.mask,
+    );
     setNewValue(maskedValue);
   }, [maxLength, props, maskLettersLength]);
 
