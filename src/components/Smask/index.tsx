@@ -23,23 +23,23 @@ export const Smask = (props: TSmask) => {
     const { value } = event.currentTarget;
 
     if (!value) {
+      setNewValue(value);
       return;
     }
 
     try {
       const maskedValue = smask.mask(value, props.mask);
       setNewValue(maskedValue);
-      props.children?.props.onChange();
+      props.children?.props?.onChange?.(event);
     } catch {
-      return;
+      setNewValue(value);
     }
   };
 
   useEffect(() => {
     if (!("value" in props)) return;
 
-    const slice = props.value.slice(0, maskLettersLength);
-    const maskedValue = smask.mask(slice, props.mask);
+    const maskedValue = smask.mask(props.value, props.mask);
 
     setNewValue(maskedValue);
   }, [maxLength, props, maskLettersLength]);
