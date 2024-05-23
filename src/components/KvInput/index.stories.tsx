@@ -17,15 +17,17 @@ const meta = {
       },
       options: ["idle", "invalid", "valid"],
     },
-    invalidMessage: {
-      control: {
-        type: "text",
-      },
-    },
     rounded: {
       control: {
         type: "boolean",
       },
+    },
+  },
+  args: {
+    tooltipProps: {
+      hasPortal: true,
+      content: "",
+      status: "idle",
     },
   },
 } satisfies Meta<typeof KvInput>;
@@ -67,7 +69,10 @@ export const Valid: Story = {
 export const Invalid: Story = {
   args: {
     status: "invalid",
-    invalidMessage: "Campo obrigatório",
+    tooltipProps: {
+      content: "Campo obrigatório",
+      status: "invalid",
+    },
   },
   render: (args) => (
     <div style={{ display: "grid", gap: "1rem" }}>
@@ -117,8 +122,9 @@ export const ValidWithLabel: Story = {
 export const InvalidWithLabel: Story = {
   args: {
     status: "invalid",
-    invalidMessage: "Campo obrigatório",
     tooltipProps: {
+      content: "Campo obrigatório",
+      status: "invalid",
       hasPortal: false,
     },
   },
