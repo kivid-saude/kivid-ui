@@ -53,16 +53,21 @@ export const Controlled = {
     }, [args.value]);
 
     return (
-      <KvFieldset>
-        <Smask {...args} value={text}>
-          <KvInput
-            placeholder="(00) 00000-0000"
-            onChange={() => {
-              console.log("onChange");
-            }}
-          />
-        </Smask>
-      </KvFieldset>
+      <>
+        <KvFieldset>
+          <Smask {...args} value={text}>
+            <KvInput
+              placeholder="(00) 00000-0000"
+              onChange={() => {
+                console.log("onChange");
+              }}
+            />
+          </Smask>
+        </KvFieldset>
+        <br />
+        <br />
+        <button onClick={() => setText("")}>Clear input</button>
+      </>
     );
   },
 };
