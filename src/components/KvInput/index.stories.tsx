@@ -118,6 +118,9 @@ export const InvalidWithLabel: Story = {
   args: {
     status: "invalid",
     invalidMessage: "Campo obrigatório",
+    tooltipProps: {
+      hasPortal: false,
+    },
   },
   render: (args) => (
     <KvFieldset>

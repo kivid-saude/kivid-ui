@@ -1,6 +1,6 @@
 import React from "react";
 import { KvSeal } from "../KvSeal";
-import { KvTooltip } from "../KvTooltip";
+import { KvTooltip, TKvTooltip } from "../KvTooltip";
 import styles from "./styles.module.scss";
 
 export type TKvInputStatus = "idle" | "invalid" | "valid";
@@ -9,6 +9,7 @@ export type TKvInput = {
   invalidMessage?: string;
   rounded?: boolean;
   status?: TKvInputStatus;
+  tooltipProps?: Pick<TKvTooltip, "hasPortal">;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
@@ -18,6 +19,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
       invalidMessage = "",
       rounded = true,
       status = "idle",
+      tooltipProps,
       ...props
     },
     ref,
@@ -54,6 +56,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
           align="start"
           side="bottom"
           status={status === "invalid" ? status : undefined}
+          {...tooltipProps}
         >
           <input className={computedClasses} type="text" ref={ref} {...props} />
         </KvTooltip>

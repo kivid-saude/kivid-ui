@@ -3,7 +3,7 @@ import { TooltipContentProps } from "@radix-ui/react-tooltip";
 import { KvSeal } from "../KvSeal";
 import styles from "./styles.module.scss";
 
-type TKvTooltip = {
+export type TKvTooltip = {
   content: string | React.ReactNode;
   open?: boolean;
   defaultOpen?: boolean;
