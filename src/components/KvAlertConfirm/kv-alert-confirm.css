@@ -1,0 +1,5 @@
+.kv-alert-confirm-footer {
+  margin-top: 28px;
+  display: flex;
+  gap: 1rem;
+}

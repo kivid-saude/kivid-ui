@@ -1,0 +1,37 @@
+.kv-alert-confirm-container {
+  padding: 1.5rem;
+}
+
+.kv-title-container {
+  padding: unset;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.kv-title-container--primary,
+.kv-title-container--secondary {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #393e3e;
+}
+
+.kv-title-container--primary__bold,
+.kv-title-container--secondary__bold {
+  font-weight: 700;
+}
+
+.kv-description {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.kv-description--primary {
+  margin-top: 0.25rem;
+}
+
+.kv-description--secondary {
+  margin-top: 0.5rem;
+}

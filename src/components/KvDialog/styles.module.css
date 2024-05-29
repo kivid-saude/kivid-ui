@@ -13,7 +13,7 @@
   --dialog-footer-color: var(--kv-body-color);
   --dialog-footer-background: transparent;
   --dialog-box-shadow: 0 8px 24px 0 #0002;
-  --dialog-max-width: 400px;
+  --dialog-max-width: 420px;
   --dialog-max-height: 80vh;
   --dialog-min-height: auto;
 
