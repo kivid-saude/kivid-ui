@@ -3,7 +3,7 @@ table {
 }
 
 thead th {
-  --border-radius: 0.5rem;
+  --border-radius: 1rem;
   background-color: var(--kv-color-lychee-300);
   font-weight: 700;
 }
@@ -45,3 +45,25 @@ td {
   background-color: var(--kv-color-lychee-300);
 }
 
+.p-checkbox-box {
+  display: none;
+}
+
+.p-checkbox-icon {
+  display: none;
+}
+
+.p-checkbox-input {
+  width: 20px;
+  height: 20px;
+
+  vertical-align: middle;
+}
+
+.p-checkbox input[type="checkbox"] {
+  accent-color: #7c66e5;
+}
+
+.p-checkbox input[type="checkbox"]:checked {
+  background-color: #7c66e5;
+}
