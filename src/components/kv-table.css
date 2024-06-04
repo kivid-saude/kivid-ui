@@ -3,7 +3,7 @@ table {
 }
 
 thead th {
-  --border-radius: 0.5rem;
+  --border-radius: 1rem;
   background-color: var(--kv-color-lychee-300);
   font-weight: 700;
 }
@@ -36,6 +36,7 @@ td {
 }
 .p-paginator {
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 14px;
 }
 .p-paginator-element {
@@ -45,3 +46,77 @@ td {
   background-color: var(--kv-color-lychee-300);
 }
 
+.p-paginator-page {
+  min-width: 3rem;
+  padding: 12px 16px;
+  margin: 0.25rem;
+  color: var(--kv-color-lychee-800);
+  font-size: var(--kv-font-size-sm);
+  font-weight: var(--kv-font-weight-bold);
+  background-color: var(--kv-color-lychee-100);
+  border: 1px solid var(--kv-color-lychee-400);
+  border-radius: 1rem;
+}
+
+.p-paginator-page:hover {
+  filter: brightness(95%);
+}
+
+.p-paginator-page[aria-current="true"] {
+  background-color: var(--kv-color-grape-100);
+  border: 1px solid var(--kv-color-grape-300);
+}
+
+.p-checkbox-box {
+  display: none;
+}
+
+.p-checkbox-icon {
+  display: none;
+}
+
+.p-checkbox-input {
+  width: 20px;
+  height: 20px;
+
+  vertical-align: middle;
+}
+
+.p-checkbox {
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.p-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--kv-color-lychee-500);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.p-checkbox input[type="checkbox"]:checked {
+  position: relative;
+  background-color: var(--kv-color-tertiary);
+  border: none;
+}
+
+.p-checkbox input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  width: 0.4rem;
+  height: 0.7rem;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+
+.p-checkbox input[type="checkbox"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
