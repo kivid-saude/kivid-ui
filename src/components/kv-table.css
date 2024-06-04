@@ -48,13 +48,13 @@ td {
 .p-paginator-page {
   min-width: 3rem;
   padding: 12px 16px;
-  background-color: var(--kv-color-lychee-100);
   margin: 0.25rem;
-  border-radius: 1rem;
   color: var(--kv-color-lychee-800);
-  border: 1px solid var(--kv-color-lychee-400);
   font-size: var(--kv-font-size-sm);
   font-weight: var(--kv-font-weight-bold);
+  background-color: var(--kv-color-lychee-100);
+  border: 1px solid var(--kv-color-lychee-400);
+  border-radius: 1rem;
 }
 
 .p-paginator-page:hover {
@@ -98,21 +98,21 @@ td {
 }
 
 .p-checkbox input[type="checkbox"]:checked {
+  position: relative;
   background-color: var(--kv-color-tertiary);
   border: none;
-  position: relative;
 }
 
 .p-checkbox input[type="checkbox"]:checked::before {
   content: "";
+  position: absolute;
   width: 0.4rem;
   height: 0.7rem;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
 }
 
 .p-checkbox input[type="checkbox"]:disabled {
