@@ -18,9 +18,7 @@ const meta = {
       },
     },
   },
-  args: {
-    mask: ["(dd) dddd-dddd", "(dd) ddddd-dddd"],
-  },
+  args: {},
 } satisfies Meta<typeof Smask>;
 
 export default meta;
@@ -29,7 +27,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Uncontrolled: Story = {
   storyName: "Default (Uncontrolled)",
-  args: {},
+  args: {
+    mask: ["(dd) dddd-dddd", "(dd) ddddd-dddd"],
+  },
   render: (args) => {
     return (
       <KvFieldset>
@@ -44,6 +44,7 @@ export const Uncontrolled: Story = {
 export const Controlled = {
   args: {
     value: "",
+    mask: ["(dd) dddd-dddd", "(dd) ddddd-dddd"],
   },
   render: (args: { value: string; mask: [string, ...string[]] }) => {
     const [text, setText] = useState("");
@@ -58,8 +59,8 @@ export const Controlled = {
           <Smask {...args} value={text}>
             <KvInput
               placeholder="(00) 00000-0000"
-              onChange={() => {
-                console.log("onChange");
+              onChange={(event: unknown) => {
+                console.log("onChange", event);
               }}
             />
           </Smask>
@@ -68,6 +69,36 @@ export const Controlled = {
         <br />
         <button onClick={() => setText("")}>Clear input</button>
       </>
+    );
+  },
+};
+
+export const Currency: Story = {
+  args: {
+    mask: "currency",
+  },
+  render: (args) => {
+    return (
+      <KvFieldset>
+        <Smask {...args}>
+          <KvInput placeholder="Digite um valor" />
+        </Smask>
+      </KvFieldset>
+    );
+  },
+};
+
+export const Number: Story = {
+  args: {
+    mask: "number",
+  },
+  render: (args) => {
+    return (
+      <KvFieldset>
+        <Smask {...args}>
+          <KvInput placeholder="Digite um número" />
+        </Smask>
+      </KvFieldset>
     );
   },
 };
