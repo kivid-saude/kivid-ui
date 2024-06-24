@@ -33,7 +33,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
 
         {status === "clean" && (
           <KvIconButton
-            type={buttonType}
+            type="button"
             disabled={props.disabled}
             color="muted"
             className="slot slot--right pointer-events-none"
