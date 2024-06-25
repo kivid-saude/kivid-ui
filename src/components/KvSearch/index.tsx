@@ -9,10 +9,22 @@ type TKvSearch = {
   label?: string;
   status?: TKvInputStatus | TKvSearchStatus;
   onClean?: () => void;
+  onSearch?: () => void;
+  buttonType?: "button" | "reset" | "submit";
 } & Omit<TKvInput, "status">;
 
 export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
-  ({ label, status = "idle", onClean, ...props }, ref) => {
+  (
+    {
+      label,
+      status = "idle",
+      onClean,
+      onSearch,
+      buttonType = "button",
+      ...props
+    },
+    ref,
+  ) => {
     const hasLabel = Boolean(label?.length);
 
     return (
@@ -36,13 +48,14 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
 
         {status && ["idle", "loading"].includes(status) && (
           <KvIconButton
-            type="button"
+            type={buttonType}
             disabled={props.disabled}
             color="success"
             className="slot slot--right pointer-events-none"
             loading={status === "loading"}
             size={hasLabel ? "medium" : "small"}
             rounded={false}
+            onClick={onSearch}
             shape={hasLabel ? "rect" : "square"}
           >
             <KvIcon icon="search" color="white" size="medium" />
