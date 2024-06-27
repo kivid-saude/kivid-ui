@@ -1,7 +1,7 @@
 import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
-type TKvIconButton = {
+export type TKvIconButton = {
   color?: "tertiary" | "success" | "danger" | "muted";
   size?: "xsmall" | "small" | "medium" | "large";
   shape?: "square" | "rect";
@@ -19,6 +19,7 @@ export const KvIconButton = ({
   shape = "square",
   rounded = true,
   loading,
+  type = "button",
   ...props
 }: TKvIconButton) => {
   const classes = [
@@ -39,7 +40,7 @@ export const KvIconButton = ({
   };
 
   return (
-    <button className={classes.join(" ")} {...props}>
+    <button className={classes.join(" ")} type={type} {...props}>
       {renderContent()}
     </button>
   );
