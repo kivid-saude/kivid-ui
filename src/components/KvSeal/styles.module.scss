@@ -7,6 +7,7 @@
   width: var(--kv-seal-size);
   height: var(--kv-seal-size);
   transition: 0.2s ease-in-out;
+  pointer-events: none;
 
   &--size-medium {
     --kv-seal-size: 1.5rem;
