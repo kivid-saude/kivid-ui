@@ -9,7 +9,7 @@ const KvSelect = React.forwardRef<HTMLSelectElement, TKvSelect>(
     return (
       <>
         <select className={`kv-select ${className}`} ref={ref} {...props} />
-        <KvIcon icon="chevron-down" />
+        <KvIcon className="slot slot--right" icon="chevron-down" />
       </>
     );
   }

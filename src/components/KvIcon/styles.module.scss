@@ -13,11 +13,12 @@ $sizes: (
   pointer-events: none;
   transition: 0.3s ease-in-out;
 
-  :global(.kv-fieldset) > & {
-    position: absolute;
-    top: 50%;
+  &:global(.slot--right) {
     right: 1rem;
-    transform: translateY(-50%);
+  }
+
+  &:global(.slot--left) {
+    left: 1rem;
   }
 }
 
