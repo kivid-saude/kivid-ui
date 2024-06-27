@@ -1,0 +1,156 @@
+:root {
+  /* COLORS BY NAME */
+  --kv-color-lychee-100: #FAFCFC;
+  --kv-color-lychee-200: #F2F7F7;
+  --kv-color-lychee-300: #EBF2F2;
+  --kv-color-lychee-400: #E1EBEB;
+  --kv-color-lychee-500: #C9D4D4;
+  --kv-color-lychee-600: #B6C2C2;
+  --kv-color-lychee-700: #778080;
+  --kv-color-lychee-800: #393E3E;
+  --kv-color-lychee-900: #252929;
+
+  --kv-color-pear-100: #187C33;
+  --kv-color-pear-200: #1C903B;
+  --kv-color-pear-300: #20A544;
+  --kv-color-pear-400: #24BA4C;
+  --kv-color-pear-500: #26C450;
+  --kv-color-pear-600: #3ED366;
+  --kv-color-pear-700: #7EE28F;
+  --kv-color-pear-800: #B4EEBA;
+  --kv-color-pear-900: #CAF5CF;
+
+  --kv-color-java-100: #D6F3F8;
+  --kv-color-java-200: #C1EDF5;
+  --kv-color-java-300: #A2E4F1;
+  --kv-color-java-400: #79D9EA;
+  --kv-color-java-500: #32C5E0;
+  --kv-color-java-600: #2CB2C9;
+  --kv-color-java-700: #2AA7BE;
+  --kv-color-java-800: #2593A8;
+  --kv-color-java-900: #1E7686;
+
+  --kv-color-grape-100: #EAE8FD;
+  --kv-color-grape-200: #D5D1FB;
+  --kv-color-grape-300: #C0BAF9;
+  --kv-color-grape-400: #9D93F5;
+  --kv-color-grape-500: #7460E0;
+  --kv-color-grape-600: #6654D1;
+  --kv-color-grape-700: #5C4ABF;
+  --kv-color-grape-800: #5141AB;
+  --kv-color-grape-900: #463794;
+
+
+  --kv-color-pitaya-100: #FDE6F5;
+  --kv-color-pitaya-200: #FBCFEC;
+  --kv-color-pitaya-300: #F8A5DC;
+  --kv-color-pitaya-400: #F471C8;
+  --kv-color-pitaya-500: #EF43B6;
+  --kv-color-pitaya-600: #E619A1;
+  --kv-color-pitaya-700: #D41193;
+  --kv-color-pitaya-800: #AA1378;
+  --kv-color-pitaya-900: #8C1062;
+
+  --kv-color-blackberry-100: #FDE3E3;
+  --kv-color-blackberry-200: #FBCDCD;
+  --kv-color-blackberry-300: #F7AAAA;
+  --kv-color-blackberry-400: #F17878;
+  --kv-color-blackberry-500: #E54545;
+  --kv-color-blackberry-600: #D32F2F;
+  --kv-color-blackberry-700: #B12424;
+  --kv-color-blackberry-800: #922222;
+  --kv-color-blackberry-900: #7A2222;
+
+  --kv-color-tangerine-100: #FEF0E7;
+  --kv-color-tangerine-200: #FDE7D7;
+  --kv-color-tangerine-300: #FBD3B6;
+  --kv-color-tangerine-400: #F9B686;
+  --kv-color-tangerine-500: #F58A3D;
+  --kv-color-tangerine-600: #ED7621;
+  --kv-color-tangerine-700: #D46211;
+  --kv-color-tangerine-800: #B8520A;
+  --kv-color-tangerine-900: #A34400;
+
+  --kv-color-mango-100: #FFF7E6;
+  --kv-color-mango-200: #FFF1D4;
+  --kv-color-mango-300: #FFE5B2;
+  --kv-color-mango-400: #FFD480;
+  --kv-color-mango-500: #FFBB34;
+  --kv-color-mango-600: #F9AB10;
+  --kv-color-mango-700: #E59900;
+  --kv-color-mango-800: #CC8800;
+  --kv-color-mango-900: #B27700;
+
+  /* COLORS BY STATUS */
+  --kv-color-primary: var(--kv-color-lychee-800);
+  --kv-color-primary-contrast: var(--kv-color-lychee-100);
+
+  --kv-color-secondary: var(--kv-color-java-500);
+  --kv-color-secondary-contrast: var(--kv-color-lychee-100);
+
+  --kv-color-tertiary: var(--kv-color-grape-500);
+  --kv-color-tertiary-contrast: var(--kv-color-lychee-100);
+
+  --kv-color-success: var(--kv-color-pear-500);
+  --kv-color-success-contrast: var(--kv-color-lychee-100);
+
+  --kv-color-warning: var(--kv-color-tangerine-500);
+  --kv-color-warning-contrast: var(--kv-color-lychee-100);
+
+  --kv-color-danger: var(--kv-color-blackberry-500);
+  --kv-color-danger-contrast: var(--kv-color-lychee-100);
+
+  --kv-color-white: white;
+  --kv-color-white-contrast: var(--kv-color-primary);
+
+  --kv-color-medium: var(--kv-color-lychee-600);
+  --kv-color-medium-contrast: var(--kv-color-lychee-100);
+
+  --kv-color-light: var(--kv-color-lychee-400);
+  --kv-color-light-contrast: var(--kv-color-lychee-600);
+
+  /* BODY */
+  --kv-font-family: "Red Hat Display", sans-serif;
+  --kv-body-background: var(--kv-color-lychee-200);
+  --kv-body-color: var(--kv-color-primary);
+
+  /* FONT-SIZE */
+  --kv-font-size-2xs: 0.625rem;
+  --kv-font-size-xs: 0.75rem;
+  --kv-font-size-sm: 0.875rem;
+  --kv-font-size-md: 1rem;
+  --kv-font-size-lg: 1.125rem;
+  --kv-font-size-xl: 1.25rem;
+  --kv-font-size-2xl: 1.5rem;
+  --kv-font-size-3xl: 1.75rem;
+  --kv-font-size-4xl: 2rem;
+  --kv-font-size-5xl: 2.5rem;
+  --kv-font-size-6xl: 3rem;
+  --kv-font-size-base: var(--kv-font-size-medium);
+
+  /* LINE-HEIGHT */
+  --kv-line-height-xl: calc(1em + 1rem);
+  --kv-line-height-lg: calc(1em + 0.75rem);
+  --kv-line-height-md: calc(1em + 0.5rem);
+  --kv-line-height-sm: calc(1em + 0.25rem);
+  --kv-line-height-xs: calc(1em + 0.125rem);
+  --kv-line-height-base: var(--kv-line-height-md);
+
+  --kv-font-weight-thin: 200;
+  --kv-font-weight-light: 300;
+  --kv-font-weight-regular: 400;
+  --kv-font-weight-medium: 500;
+  --kv-font-weight-semibold: 600;
+  --kv-font-weight-bold: 700;
+  --kv-font-weight-black: 900;
+
+  --container-padding: 1.5rem;
+
+  --kv-header-width: 104px;
+
+  /* SHADOW */
+  --kv-shadow-highlight: 1px 1px 16px var(--kv-color-lychee-400);
+  --kv-shadow-floating: 4px 4px 16px var(--kv-color-lychee-400);
+  --kv-shadow-overlay: 6px 6px 32px var(--kv-color-lychee-400);
+  --kv-shadow-sheet: 0 -8px var(--kv-color-lychee-400);
+}
