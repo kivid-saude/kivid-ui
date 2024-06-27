@@ -1,6 +1,6 @@
 import React from "react";
 import { KvFieldset, KvIcon, KvLabel } from "..";
-import { KvIconButton } from "../KvIconButton";
+import { KvIconButton, TKvIconButton } from "../KvIconButton";
 import { KvInput, TKvInput, TKvInputStatus } from "../KvInput";
 
 type TKvSearchStatus = "loading" | "clean";
@@ -10,19 +10,12 @@ type TKvSearch = {
   status?: TKvInputStatus | TKvSearchStatus;
   onClean?: () => void;
   onSearch?: () => void;
-  buttonType?: "button" | "reset" | "submit";
+  buttonProps?: TKvIconButton;
 } & Omit<TKvInput, "status">;
 
 export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
   (
-    {
-      label,
-      status = "idle",
-      onClean,
-      onSearch,
-      buttonType = "button",
-      ...props
-    },
+    { label, status = "idle", onClean, onSearch, buttonProps, ...props },
     ref,
   ) => {
     const hasLabel = Boolean(label?.length);
@@ -36,7 +29,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
             type="button"
             disabled={props.disabled}
             color="muted"
-            className="slot slot--right pointer-events-none"
+            className="slot slot--right"
             size={hasLabel ? "medium" : "small"}
             rounded={false}
             onClick={onClean}
@@ -48,15 +41,15 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
 
         {status && ["idle", "loading"].includes(status) && (
           <KvIconButton
-            type={buttonType}
             disabled={props.disabled}
             color="success"
-            className="slot slot--right pointer-events-none"
+            className="slot slot--right"
             loading={status === "loading"}
             size={hasLabel ? "medium" : "small"}
             rounded={false}
             onClick={onSearch}
             shape={hasLabel ? "rect" : "square"}
+            {...buttonProps}
           >
             <KvIcon icon="search" color="white" size="medium" />
           </KvIconButton>
