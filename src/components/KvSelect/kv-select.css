@@ -3,10 +3,11 @@
   width: 100%;
   height: 3.5rem;
   padding: 1rem;
+  padding-right: 3rem;
   font-family: inherit;
   font-size: var(--kv-font-size-md);
   font-weight: var(--kv-font-weight-bold);
-  line-height: var(--kv-line-height-xs);
+  line-height: 1em;
   border: 1px solid var(--kv-color-lychee-400);
   color: var(--kv-body-color);
   border-radius: 1rem;
@@ -17,6 +18,6 @@
   outline-color: var(--kv-color-tertiary);
 }
 .kv-fieldset--has-label .kv-select {
-  height: 4.5rem;
-  padding-top: 2.25rem;
+  height: 4rem;
+  padding-top: 2rem;
 }
