@@ -2,9 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { KvAlertConfirm } from ".";
 import { AlertConfirmTitleHeader } from "./AlertConfirmTitleHeader";
 import { AlertConfirmFooter } from "./AlertConfirmFooter";
-import { KvButton } from "..";
-import { AlertConfirmHeaderContainer } from "./AlertConfirmHeaderContainer";
-import { AlertConfirmHeaderDescription } from "./AlertConfirmHeaderDescription";
+import { KvButton, KvFieldset, KvPasswordInput } from "..";
+import { AlertConfirmContent } from "./KvAlertConfirmContent";
 
 const meta = {
   title: "Kivid/KvAlertConfirm",
@@ -27,24 +26,35 @@ export const Default: Story = {
 
   render: (props) => (
     <KvAlertConfirm {...props}>
-      <AlertConfirmTitleHeader icon="check" iconColor="success">
-        <AlertConfirmHeaderContainer
-          primaryText="Meio de pagamento"
-          secondarySecondary="alterado com sucesso"
-        />
+      <AlertConfirmTitleHeader icon="close" iconColor="danger">
+        <p>
+          Excluir <strong>conta</strong>
+        </p>
 
-        <AlertConfirmHeaderDescription
-          primaryText="Curabitur blandit tempus porttitor."
-          secondaryText="Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis."
-        />
+        <p
+          style={{
+            marginTop: ".5rem",
+            fontSize: "12px",
+            lineHeight: "1rem",
+          }}
+        >
+          <p>Tem certeza que deseja excluir sua conta?</p>
+          <p>Para continuar, digite sua senha.</p>
+        </p>
       </AlertConfirmTitleHeader>
+
+      <AlertConfirmContent>
+        <KvFieldset>
+          <KvPasswordInput />
+        </KvFieldset>
+      </AlertConfirmContent>
 
       <AlertConfirmFooter>
         <KvButton size="large" color="muted">
           Cancelar
         </KvButton>
 
-        <KvButton size="large" color="success">
+        <KvButton size="large" color="danger">
           Confirmar
         </KvButton>
       </AlertConfirmFooter>

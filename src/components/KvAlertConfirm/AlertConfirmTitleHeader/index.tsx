@@ -37,7 +37,7 @@ export const AlertConfirmTitleHeader = ({
         <KvIcon className="kv-color-white" icon={icon ?? "check"} />
       </div>
 
-      {children}
+      <div className="kv-title-container--primary">{children}</div>
     </header>
   );
 };

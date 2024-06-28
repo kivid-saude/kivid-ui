@@ -11,11 +11,11 @@ export type AlertConfirmProps = {
 
 export const KvAlertConfirm = ({
   children,
-  // onDidDismiss,
+  onDidDismiss,
   ...props
 }: AlertConfirmProps) => {
   return (
-    <KvDialog {...props}>
+    <KvDialog {...props} onDidDismiss={onDidDismiss}>
       <div className="kv-alert-confirm-container">{children}</div>
     </KvDialog>
   );

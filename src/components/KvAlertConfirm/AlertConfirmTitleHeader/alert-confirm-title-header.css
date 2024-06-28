@@ -10,28 +10,9 @@
   gap: 0.25rem;
 }
 
-.kv-title-container--primary,
-.kv-title-container--secondary {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 24px;
+.kv-title-container--primary {
+  font-size: var(--kv-font-size-xl);
+  font-weight: var(--kv-font-weight-medium);
+  line-height: var(--kv-line-height-sm);
   color: #393e3e;
-}
-
-.kv-title-container--primary__bold,
-.kv-title-container--secondary__bold {
-  font-weight: 700;
-}
-
-.kv-description {
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.kv-description--primary {
-  margin-top: 0.25rem;
-}
-
-.kv-description--secondary {
-  margin-top: 0.5rem;
 }

@@ -1,5 +1,15 @@
+.kv-alert-confirm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.kv-alert-confirm-content {
+  width: 100%;
+}
+
 .kv-alert-confirm-footer {
-  margin-top: 28px;
   display: flex;
   gap: 1rem;
 }
