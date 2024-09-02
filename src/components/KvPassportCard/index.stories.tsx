@@ -36,6 +36,16 @@ export const Family: Story = {
   },
 };
 
+export const Company: Story = {
+  args: {
+    type: "company",
+    companyName: "Grupo Limiar",
+    passportDueDate: new Date(),
+    userName: "Gabriela Monteiro",
+    avatar: <KvAvatar src={avatarFemale} size="xsmall" />,
+  },
+};
+
 export const IndividualDefaultAvatar: Story = {
   args: {
     passportDueDate: "2024-04-15T12:00:00",
@@ -63,6 +73,15 @@ export const IndividualNoAvatar: Story = {
 export const FamilyNoAvatar: Story = {
   args: {
     type: "family",
+    passportDueDate: "2024-04-15T12:00:00",
+    userName: "Gabriela Monteiro",
+  },
+};
+
+export const CompanyNoAvatar: Story = {
+  args: {
+    type: "company",
+    companyName: "Grupo Limiar",
     passportDueDate: "2024-04-15T12:00:00",
     userName: "Gabriela Monteiro",
   },

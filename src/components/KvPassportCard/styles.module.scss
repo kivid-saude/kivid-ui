@@ -12,12 +12,16 @@
   background-position: center;
 }
 
-.kv-passport-card--variant-individual {
+.kv-passport-card--individual {
   background-image: url("./assets/passport-individual.png");
 }
 
-.kv-passport-card--variant-family {
+.kv-passport-card--family {
   background-image: url("./assets/passport-family.png");
+}
+
+.kv-passport-card--company {
+  background-image: url("./assets/passport-company.png");
 }
 
 .kv-passport-card__header {
@@ -27,16 +31,38 @@
 }
 
 .kv-passport-card__title {
-  font-size: var(--kv-font-size-xl);
+  font-size: var(--kv-font-size-md);
   font-weight: var(--kv-font-weight-bold);
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__company-name {
+  font-size: var(--kv-font-size-md);
+  font-weight: 500;
   line-height: var(--kv-line-height-xs);
 }
 
 .kv-passport-card__subtitle {
   margin-top: 0.25rem;
+  font-size: var(--kv-font-size-md);
+  font-weight: var(--kv-font-weight-medium);
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__company-text {
+  margin-top: 0.25rem;
   font-size: var(--kv-font-size-sm);
   font-weight: var(--kv-font-weight-medium);
   line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__company-title {
+  font-weight: bold;
+  font-size: var(--kv-font-size-sm);
+}
+
+.kv-passport-card__company-subtitle {
+  font-size: var(--kv-font-size-xs);
 }
 
 .kv-passport-card__footer {
@@ -44,8 +70,6 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  place-content: space-between;
   align-items: flex-end;
 }
 
