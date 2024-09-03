@@ -72,7 +72,7 @@ export const KvPassportCard = ({
       <footer className={styles["kv-passport-card__footer"]}>
         <div>
           <h2 className={styles["kv-passport-card__username"]}>{userName}</h2>
-          {type !== "company" && (
+          {!isCompanyPassport && (
             <p className={styles["kv-passport-card__due-date"]}>
               Validade <>{formatedPassportDueDate}</>
             </p>
