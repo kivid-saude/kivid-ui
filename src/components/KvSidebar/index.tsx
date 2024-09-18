@@ -8,7 +8,13 @@ type TKvSidebar = {
   logout?: React.ReactNode;
 };
 
-export const KvSidebar = ({ link, title, logo, nav, logout = false }: TKvSidebar) => {
+export const KvSidebar = ({
+  link,
+  title,
+  logo,
+  nav,
+  logout = false,
+}: TKvSidebar) => {
   return (
     <aside className={styles.aside}>
       <div className={styles.container}>

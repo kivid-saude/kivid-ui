@@ -147,6 +147,7 @@
   --container-padding: 1.5rem;
 
   --kv-header-width: 104px;
+  --kv-header-height: 80px;
 
   /* SHADOW */
   --kv-shadow-highlight: 1px 1px 16px var(--kv-color-lychee-400);

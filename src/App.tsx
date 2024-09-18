@@ -27,6 +27,7 @@ import { KvSeal } from "./components/KvSeal";
 import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
 import logo from "/logo-kivid.svg";
+import logoHorizontal from "/logo-kivid-horizontal.svg";
 
 function App() {
   const { props: alertProps, present: presentAlert } = useAlert({
@@ -43,7 +44,7 @@ function App() {
   return (
     <>
       <KvSidebar
-        logo={<img src={logo} />}
+        logo={<img src={window.innerWidth >= 768 ? logo : logoHorizontal} />}
         title={`Afiliados`}
         link={<a href="">kivid.com.br</a>}
       />

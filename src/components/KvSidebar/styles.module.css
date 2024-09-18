@@ -58,3 +58,46 @@
   align-content: end;
   gap: 1.5rem;
 }
+
+@media not all and (min-width: 768px) {
+  .aside {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 24px;
+    justify-content: space-between;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 0;
+    align-items: center;
+    gap: 0;
+    filter: drop-shadow(0px 4px 8px rgba(86, 89, 89, 0.08));
+  }
+
+  .link a {
+    display: block !important;
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+  }
+
+  .container {
+    gap: 0rem;
+  }
+
+  .slotEnd {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .logo {
+    padding-top: 0rem;
+    border-top: none;
+  }
+
+  .title {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+}
