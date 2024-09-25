@@ -1,64 +1,104 @@
 // COLORS TOKENS
-$lychee_100: #ffffff;
-$lychee_200: #fcfcfc;
-$lychee_300: #f2f5f5;
-$lychee_400: #e8ebeb;
-$lychee_500: #d9dede;
-$lychee_600: #adb2b2;
-$lychee_700: #949999;
-$lychee_800: #565959;
-$lychee_850: #383e3e;
-$lychee_900: #263333;
+$lychee_100: #fafcfc;
+$lychee_200: #f2f7f7;
+$lychee_300: #ebf2f2;
+$lychee_400: #e1ebeb;
+$lychee_500: #c9d4d4;
+$lychee_600: #b6c2c2;
+$lychee_700: #98a3a3;
+$lychee_800: #5c6363;
+$lychee_900: #393e3e;
 
-$pear100: #e1fae9;
-$pear_200: #a8f0c0;
-$pear_300: #50e582;
+$pear_100: #e9faf0;
+$pear_200: #bff2d4;
+$pear_300: #90e0b1;
+$pear_400: #65d493;
+$pear_500: #3dcc78;
+$pear_600: #37b86c;
+$pear_700: #30a260;
+$pear_800: #27824c;
+$pear_900: #206b3f;
 
-$java_100: #e1f8fa;
-$java_200: #abeff5;
-$java_300: #39d7e5;
+$java_100: #e3f7fc;
+$java_200: #c6edf7;
+$java_300: #a6dfed;
+$java_400: #73cee5;
+$java_500: #43c1e0;
+$java_600: #2ab0d1;
+$java_700: #2595ba;
+$java_800: #2284a8;
+$java_900: #1f769c;
 
-$grape_50: #eae9fb;
-$grape_100: #e8e5ff;
-$grape_200: #afaaf2;
-$grape_300: #7c67e5;
+$grape_100: #eae0ff;
+$grape_200: #d7c8fa;
+$grape_300: #b9a0f2;
+$grape_400: #9573e5;
+$grape_500: #7a50d9;
+$grape_600: #6139bf;
+$grape_700: #4f29a6;
+$grape_800: #42238c;
+$grape_900: #331773;
 
-$pitaya_100: #ffe5f7;
-$pitaya_200: #f5abdc;
-$pitaya_300: #f048b8;
+$pitaya_100: #fcdef1;
+$pitaya_200: #f7bee4;
+$pitaya_300: #f090d0;
+$pitaya_400: #eb65be;
+$pitaya_500: #e645b0;
+$pitaya_600: #cf3a9d;
+$pitaya_700: #b8348c;
+$pitaya_800: #a82f7f;
+$pitaya_900: #942971;
 
-$blackberry_100: #fae1e1;
-$blackberry_200: #f2a9a9;
-$blackberry_300: #e54545;
+$blackberry_100: #fcedec;
+$blackberry_200: #f7cbc7;
+$blackberry_300: #f0978f;
+$blackberry_400: #eb746a;
+$blackberry_500: #e65245;
+$blackberry_600: #cf493e;
+$blackberry_700: #b84136;
+$blackberry_800: #a1392f;
+$blackberry_900: #91342b;
 
-$tangerine_100: #fff0e5;
-$tangerine_200: #ffd2b2;
-$tangerine_300: #f5914a;
+$tangerine_100: #fff2ed;
+$tangerine_200: #ffdaca;
+$tangerine_300: #ffc1a6;
+$tangerine_400: #ffa680;
+$tangerine_500: #ff8b59;
+$tangerine_600: #f27f4e;
+$tangerine_700: #e07343;
+$tangerine_800: #cc6539;
+$tangerine_900: #b2562e;
 
-$mango_100: #fff7e5;
-$mango_200: #ffe8b2;
-$mango_300: #ffc234;
+$mango_100: #fef8ee;
+$mango_200: #fdebcc;
+$mango_300: #fcd89a;
+$mango_400: #fbcb78;
+$mango_500: #fabe57;
+$mango_600: #ebae46;
+$mango_700: #dea23a;
+$mango_800: #d19732;
+$mango_900: #c28825;
 
 // COLORS
 $kv_color_primary: $lychee_800;
 $kv_color_primary_contrast: $lychee_100;
 
-$kv_color_secondary: $java_300;
+$kv_color_secondary: $java_500;
 $kv_color_secondary_contrast: $lychee_100;
 
-$kv_color_tertiary: $grape_300;
+$kv_color_tertiary: $grape_500;
 $kv_color_tertiary_contrast: $lychee_100;
 
-$kv_color_success: $pear_300;
+$kv_color_success: $pear_500;
 $kv_color_success_contrast: $lychee_100;
 
-$kv_color_warning: $mango_300;
+$kv_color_warning: $tangerine_500;
 $kv_color_warning_contrast: $lychee_100;
 
-$kv_color_danger: $blackberry_300;
+$kv_color_danger: $blackberry_500;
 $kv_color_danger_contrast: $lychee_100;
 
-$kv_color_white: $lychee_100;
+$kv_color_white: white;
 $kv_color_white_contrast: $lychee_800;
 
 $kv_color_medium: $lychee_600;
