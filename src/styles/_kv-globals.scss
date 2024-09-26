@@ -119,6 +119,50 @@ strong {
   }
 } */
 
+.kv-gradient-100 {
+  background-image: linear-gradient(52deg, #3dcc78 19.93%, #41b2d9 79.91%);
+}
+
+.kv-gradient-200 {
+  background-image: linear-gradient(52deg, #fabe57 19.9%, #3dcc78 79.88%);
+}
+
+.kv-gradient-300 {
+  background-image: linear-gradient(52deg, #fabe57 19.92%, #ff8b59 80.08%);
+}
+
+.kv-gradient-400 {
+  background-image: linear-gradient(52deg, #ff8b59 10.12%, #e65cb8 90.1%);
+}
+
+.kv-gradient-500 {
+  background-image: linear-gradient(52deg, #774cd9 10.09%, #e65cb8 90.07%);
+}
+
+.kv-gradient-600 {
+  background-image: linear-gradient(52deg, #41b2d9 10.06%, #774cd9 90.03%);
+}
+
+.kv-gradient-700 {
+  background-image: linear-gradient(70deg, #9573e5 0.04%, #f39ecf 100%);
+}
+
+.kv-gradient-800 {
+  background-image: linear-gradient(70deg, #f09dd4 0.04%, #ffa680 100%);
+}
+
+.kv-gradient-900 {
+  background-image: linear-gradient(70deg, #f09dd4 0.04%, #9fdaed 100%);
+}
+
+.kv-gradient-1000 {
+  background-image: linear-gradient(70deg, #e3f7fc 0.04%, #73cee5 100%);
+}
+
+.kv-gradient-1100 {
+  background-image: linear-gradient(70deg, #eae0ff 0.04%, #9573e5 100%);
+}
+
 // Create classes for colors
 @each $colorName, $colorMap in $kv_colors_contrasts {
   .kv-color-#{$colorName} {
