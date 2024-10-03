@@ -11,7 +11,7 @@
   gap: 2rem;
   width: var(--kv-header-width);
   height: 100%;
-  background: var(--kv-color-lychee-200);
+  background: var(--kv-color-lychee-100);
   border-width: 1px 1px 1px 0;
   border-style: solid;
   border-color: var(--kv-color-lychee-400);
