@@ -81,7 +81,7 @@
   --kv-color-mango-900: #c28825;
 
   /* COLORS BY STATUS */
-  --kv-color-primary: var(--kv-color-lychee-800);
+  --kv-color-primary: var(--kv-color-lychee-900);
   --kv-color-primary-contrast: var(--kv-color-lychee-100);
 
   --kv-color-secondary: var(--kv-color-java-500);
