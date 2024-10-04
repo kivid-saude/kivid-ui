@@ -3,7 +3,7 @@
   --kv-color-lychee-100: #fafcfc;
   --kv-color-lychee-200: #f2f7f7;
   --kv-color-lychee-300: #ebf2f2;
-  --kv-color-lychee-400: #e1ebeb;
+  --kv-color-lychee-400: #dee7e7;
   --kv-color-lychee-500: #c9d4d4;
   --kv-color-lychee-600: #b6c2c2;
   --kv-color-lychee-700: #98a3a3;
@@ -81,7 +81,7 @@
   --kv-color-mango-900: #c28825;
 
   /* COLORS BY STATUS */
-  --kv-color-primary: var(--kv-color-lychee-800);
+  --kv-color-primary: var(--kv-color-lychee-900);
   --kv-color-primary-contrast: var(--kv-color-lychee-100);
 
   --kv-color-secondary: var(--kv-color-java-500);
