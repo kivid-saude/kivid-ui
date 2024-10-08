@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { KvButton } from "../KvButton";
+import { KvButton, TKvButton } from "../KvButton";
 import { KvButtons } from "../KvButtons";
 import { DialogProps, KvDialog } from "./KvDialog";
 import { KvDialogContent } from "./KvDialogContent";
@@ -9,22 +9,36 @@ import { KvDialogHeader } from "./KvDialogHeader";
 export type AlertProps = {
   title?: string | ReactNode;
   message?: string | ReactNode;
+
+  buttonLabel?: string;
+  buttonProps?: TKvButton;
 } & DialogProps;
 
 export const KvAlert = ({
-  message,
   title,
+  message,
+  buttonLabel = "OK",
   onDidDismiss,
+  buttonProps,
   ...props
 }: AlertProps) => {
   return (
-    <KvDialog {...props}>
+    <KvDialog
+      {...props}
+      dialogContainerStyle={{
+        rowGap: message ? 0 : 32,
+      }}
+    >
       <KvDialogHeader>{title}</KvDialogHeader>
-      <KvDialogContent>{message}</KvDialogContent>
+      {!!message && <KvDialogContent>{message}</KvDialogContent>}
       <KvDialogFooter>
         <KvButtons>
-          <KvButton color="muted" onClick={() => onDidDismiss?.()}>
-            OK
+          <KvButton
+            color="muted"
+            onClick={() => onDidDismiss?.()}
+            {...buttonProps}
+          >
+            {buttonLabel}
           </KvButton>
         </KvButtons>
       </KvDialogFooter>

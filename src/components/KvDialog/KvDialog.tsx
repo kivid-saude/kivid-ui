@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { CSSProperties, useEffect, useRef } from "react";
 import { animateClose, animateOpen } from "./animation";
 import styles from "./styles.module.css";
 
@@ -6,6 +6,7 @@ export type DialogProps = {
   showModal?: boolean;
   show?: boolean;
   onDidDismiss?: (bool?: boolean) => void;
+  dialogContainerStyle?: CSSProperties;
 } & Pick<React.DialogHTMLAttributes<HTMLDialogElement>, "className" | "style"> &
   React.PropsWithChildren;
 
@@ -21,6 +22,7 @@ export const KvDialog = ({
   show = false,
   className = "",
   style,
+  dialogContainerStyle,
 }: DialogProps) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
@@ -44,7 +46,14 @@ export const KvDialog = ({
       ref={dialog}
       style={style}
     >
-      <div className={styles.dialog__container}>{children}</div>
+      <div
+        className={styles.dialog__container}
+        style={{
+          ...dialogContainerStyle,
+        }}
+      >
+        {children}
+      </div>
     </dialog>
   );
 };
