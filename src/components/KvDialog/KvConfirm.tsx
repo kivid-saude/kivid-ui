@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { DialogProps, KvDialog } from ".";
-import { KvButton } from "../KvButton";
+import { KvButton, TKvButton } from "../KvButton";
 import { KvButtons } from "../KvButtons";
 import { KvDialogContent } from "./KvDialogContent";
 import { KvDialogFooter } from "./KvDialogFooter";
@@ -11,6 +11,8 @@ export type ConfirmProps = {
   message?: string | ReactNode;
   accept?: string;
   cancel?: string;
+  cancelButtonProps?: TKvButton;
+  confirmButtonProps?: TKvButton;
 } & DialogProps;
 
 export const KvConfirm = ({
@@ -18,6 +20,8 @@ export const KvConfirm = ({
   message = "",
   accept = "Confirmar",
   cancel = "Cancelar",
+  cancelButtonProps,
+  confirmButtonProps,
   onDidDismiss,
   ...props
 }: ConfirmProps) => {
@@ -27,10 +31,18 @@ export const KvConfirm = ({
       {message && <KvDialogContent>{message}</KvDialogContent>}
       <KvDialogFooter>
         <KvButtons column>
-          <KvButton color="muted" onClick={() => onDidDismiss?.(false)}>
+          <KvButton
+            color="muted"
+            onClick={() => onDidDismiss?.(false)}
+            {...cancelButtonProps}
+          >
             {cancel}
           </KvButton>
-          <KvButton color="success" onClick={() => onDidDismiss?.(true)}>
+          <KvButton
+            color="success"
+            onClick={() => onDidDismiss?.(true)}
+            {...confirmButtonProps}
+          >
             {accept}
           </KvButton>
         </KvButtons>
