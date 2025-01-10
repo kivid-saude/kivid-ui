@@ -32,6 +32,7 @@
   border: var(--dialog-border);
   border-radius: var(--dialog-border-radius);
   box-shadow: var(--dialog-box-shadow);
+  z-index: 1;
 }
 .dialog[open] {
   display: grid;
