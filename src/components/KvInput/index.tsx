@@ -48,6 +48,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
           content={tooltipProps?.content}
           open={tooltipProps?.status === "invalid" && !!tooltipProps?.content}
           status={tooltipProps?.status}
+          maxWidthAsChild
           {...tooltipProps}
         >
           <input className={computedClasses} type="text" ref={ref} {...props} />

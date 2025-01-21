@@ -20,7 +20,7 @@
   }
 
   & svg {
-    width: var(--icon-size);
+    min-width: var(--icon-size);
     height: var(--icon-size);
     color: var(--kv-seal-icon-color-inverted, #fff);
   }
@@ -49,7 +49,7 @@
     --kv-seal-background: var(--kv-color-lychee-600);
     --kv-seal-icon-color: var(--kv-color-lychee-600);
   }
-  
+
   &--inverted {
     --kv-seal-background: var(--kv-color-lychee-100);
     --kv-seal-icon-color-inverted: var(--kv-seal-icon-color);
