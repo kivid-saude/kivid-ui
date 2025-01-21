@@ -26,7 +26,7 @@ export function KvTooltip({
   side = "top",
   status = "idle",
   hasPortal = true,
-  maxWidthAsChild = true,
+  maxWidthAsChild = false,
   ...props
 }: TKvTooltip) {
   const triggerRef = useRef<HTMLElement | null>(null);
