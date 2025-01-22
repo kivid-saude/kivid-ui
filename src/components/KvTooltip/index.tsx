@@ -32,6 +32,20 @@ export function KvTooltip({
   const triggerRef = useRef<HTMLElement | null>(null);
   const [triggerWidth, setTriggerWidth] = useState<number | null>(null);
 
+  const setCombinedRefs = (node: HTMLElement | null) => {
+    triggerRef.current = node;
+
+    if (React.isValidElement(children) && "ref" in children) {
+      const { ref } = children;
+
+      if (typeof ref === "function") {
+        ref(node);
+      } else if (ref && typeof ref === "object" && "current" in ref) {
+        (ref as React.MutableRefObject<HTMLElement | null>).current = node;
+      }
+    }
+  };
+
   useEffect(() => {
     if (!maxWidthAsChild) {
       return;
@@ -94,7 +108,7 @@ export function KvTooltip({
       >
         <Tooltip.Trigger asChild>
           {React.cloneElement(children as React.ReactElement, {
-            ref: triggerRef,
+            ref: setCombinedRefs,
           })}
         </Tooltip.Trigger>
         {renderContent()}
