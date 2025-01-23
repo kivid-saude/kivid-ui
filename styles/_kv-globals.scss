@@ -1,0 +1,172 @@
+@use "./variables" as *;
+@use "sass:map";
+
+@import url(./kv-variables.css);
+@import url(./kv-overrides.css);
+@import url(../components/kv-table.css);
+
+@import "https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  background: var(--kv-body-background);
+  color: var(--kv-body-color);
+  font-family: var(--kv-font-family);
+  font-weight: 500;
+  user-select: none;
+  padding-left: var(--kv-header-width);
+}
+
+@media not all and (min-width: 768px) {
+  body {
+    padding-left: 0;
+    padding-top: var(--kv-header-height);
+  }
+}
+
+a {
+  color: var(--kv-body-color);
+}
+
+:focus {
+  outline: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+div,
+p,
+span,
+strong {
+  color: var(--kv-color-base, currentColor);
+} */
+
+/* LAYOUT */
+.kv-app__header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  /* background: var(--kv-color-lychee-1); */
+  /* border-bottom: 1px solid var(--kv-color-lychee-3); */
+}
+
+.kv-app__footer {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* COMPONENTS */
+
+/* .kv-container */
+.kv-container,
+.kv-container--fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: var(--container-padding);
+}
+@media (min-width: 768px) {
+  .kv-container {
+    max-width: 816px;
+  }
+}
+@media (min-width: 1024px) {
+  .kv-container {
+    max-width: calc(
+      816px + (var(--container-padding) + var(--container-padding))
+    );
+    /* padding-inline: 2rem; */
+  }
+}
+/* @media (min-width: 1280px) {
+  .kv-container {
+    max-width: 1280px;
+    padding-inline: 2.5rem;
+  }
+} */
+
+.kv-gradient-100 {
+  background-image: linear-gradient(52deg, #3dcc78 19.93%, #41b2d9 79.91%);
+}
+
+.kv-gradient-200 {
+  background-image: linear-gradient(52deg, #fabe57 19.9%, #3dcc78 79.88%);
+}
+
+.kv-gradient-300 {
+  background-image: linear-gradient(52deg, #fabe57 19.92%, #ff8b59 80.08%);
+}
+
+.kv-gradient-400 {
+  background-image: linear-gradient(52deg, #ff8b59 10.12%, #e65cb8 90.1%);
+}
+
+.kv-gradient-500 {
+  background-image: linear-gradient(52deg, #774cd9 10.09%, #e65cb8 90.07%);
+}
+
+.kv-gradient-600 {
+  background-image: linear-gradient(52deg, #41b2d9 10.06%, #774cd9 90.03%);
+}
+
+.kv-gradient-700 {
+  background-image: linear-gradient(70deg, #9573e5 0.04%, #f39ecf 100%);
+}
+
+.kv-gradient-800 {
+  background-image: linear-gradient(70deg, #f09dd4 0.04%, #ffa680 100%);
+}
+
+.kv-gradient-900 {
+  background-image: linear-gradient(70deg, #f09dd4 0.04%, #9fdaed 100%);
+}
+
+.kv-gradient-1000 {
+  background-image: linear-gradient(70deg, #e3f7fc 0.04%, #73cee5 100%);
+}
+
+.kv-gradient-1100 {
+  background-image: linear-gradient(70deg, #eae0ff 0.04%, #9573e5 100%);
+}
+
+// Create classes for colors
+@each $colorName, $colorMap in $kv_colors_contrasts {
+  .kv-color-#{$colorName} {
+    --kv-color-base: #{map.get($colorMap, "color")};
+    --kv-color-contrast: #{map.get($colorMap, "contrast")};
+  }
+}
