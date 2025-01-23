@@ -116,9 +116,9 @@ export function KvTooltip({
           {React.isValidElement(children) &&
             React.cloneElement(
               children as ReactElement<
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // eslint-disable-next-line
                 any,
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // eslint-disable-next-line
                 string | JSXElementConstructor<any>
               >,
               {
