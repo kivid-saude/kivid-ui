@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  JSXElementConstructor,
+  ReactElement,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { TooltipContentProps } from "@radix-ui/react-tooltip";
@@ -107,9 +113,18 @@ export function KvTooltip({
         onOpenChange={onOpenChange}
       >
         <Tooltip.Trigger asChild>
-          {React.cloneElement(children as React.ReactElement, {
-            ref: setCombinedRefs,
-          })}
+          {React.isValidElement(children) &&
+            React.cloneElement(
+              children as ReactElement<
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                any,
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                string | JSXElementConstructor<any>
+              >,
+              {
+                ref: setCombinedRefs,
+              },
+            )}
         </Tooltip.Trigger>
         {renderContent()}
       </Tooltip.Root>

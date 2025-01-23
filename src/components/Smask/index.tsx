@@ -12,7 +12,8 @@ export type TSmaskControlled = {
 
 export type TSmask = TSmaskUncontrolled | TSmaskControlled;
 
-export const Smask = (props: TSmask) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const Smask = (props: any) => {
   const [newValue, setNewValue] = useState("value" in props ? props.value : "");
 
   const setMaskedValue = useCallback(
