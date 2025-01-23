@@ -3,7 +3,7 @@ import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
 type TKvButton = {
-  color?: "tertiary" | "success" | "danger" | "muted" | "clear";
+  color?: "secondary" | "tertiary" | "success" | "danger" | "muted" | "clear";
   size?: "small" | "medium" | "large";
   expand?: "block" | "full";
   rounded?: boolean;
