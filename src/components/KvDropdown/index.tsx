@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, ReactNode } from "react";
 import { KvIcon, KvLabel } from "..";
-import "./kv-dropdown-form.css";
+import "./kv-dropdown.css";
 
 type Option = {
   label: string;
