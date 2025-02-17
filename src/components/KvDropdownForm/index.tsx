@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, ReactNode } from "react";
-import "./kv-dropdown-form.css";
 import { KvIcon, KvLabel } from "..";
+import "./kv-dropdown-form.css";
 
 type Option = {
   label: string;
@@ -9,23 +9,39 @@ type Option = {
 
 type TKvDropdownForm = {
   options: Option[];
+  label?: string
   placeholder?: string;
-  children?: ReactNode
+  children?: ReactNode;
+  value?: string;
+  onChange?: (value: string) => void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const KvDropdownForm = React.forwardRef<HTMLDivElement, TKvDropdownForm>(
   ({ className = "",
     options,
     placeholder = "Selecione uma opção",
+    value,
+    onChange,
     children,
+    label,
     ...props }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState<Option | null>(null);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
+    const hasLabel = Boolean(label)
+
+    useEffect(() => {
+      if (value) {
+        const selectedOption = options.find(option => option.value === value);
+        setSelected(selectedOption || null);
+      }
+    }, [value, options]);
+
     const handleSelect = (option: Option) => {
       setSelected(option);
+      onChange?.(option.value);
       setIsOpen(false);
     };
 
@@ -44,7 +60,7 @@ const KvDropdownForm = React.forwardRef<HTMLDivElement, TKvDropdownForm>(
 
     return (
       <div className={`kv-dropdown ${className}`} ref={dropdownRef} {...props}>
-        <KvLabel>label</KvLabel>
+        {hasLabel && <KvLabel>{label}</KvLabel>}
         <div className="kv-dropdown-select" onClick={() => setIsOpen(!isOpen)}>
           {selected ? selected.label : placeholder}
         </div>
