@@ -43,6 +43,10 @@ export const Large: Story = {
   render: () => <KvButton size="large">Button</KvButton>,
 };
 
+export const Secondary: Story = {
+  render: () => <KvButton color="secondary">Button</KvButton>,
+};
+
 export const Tertiary: Story = {
   render: () => <KvButton color="tertiary">Button</KvButton>,
 };
