@@ -7,7 +7,7 @@ type Option = {
   value: string;
 };
 
-type TKvDropdownForm = {
+type TKvDropdown = {
   options: Option[];
   label?: string;
   placeholder?: string;
@@ -18,7 +18,7 @@ type TKvDropdownForm = {
   onChange?: (value: string) => void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const KvDropdownForm = React.forwardRef<HTMLDivElement, TKvDropdownForm>(
+const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
   ({
     className = "",
     options,
@@ -97,6 +97,6 @@ const KvDropdownForm = React.forwardRef<HTMLDivElement, TKvDropdownForm>(
   }
 );
 
-KvDropdownForm.displayName = "KvDropdownForm";
+KvDropdown.displayName = "KvDropdown";
 
-export { KvDropdownForm };
+export { KvDropdown };
