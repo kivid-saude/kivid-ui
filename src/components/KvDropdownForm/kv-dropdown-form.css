@@ -16,31 +16,25 @@
   border: 1px solid var(--kv-color-lychee-400);
   color: var(--kv-body-color);
   border-radius: 1rem;
-  background: var(--kv-color-lychee-100);;
+  background: var(--kv-color-lychee-100);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .kv-fieldset--has-label .kv-dropdown-select {
   height: 4rem;
   padding-top: 2rem;
 }
 
-
 .kv-dropdown-list {
-  position: absolute;
-  top: 100%;
-  left: 0;
   width: 100%;
-  background: var(--kv-color-lychee-100);;
+  background: var(--kv-color-lychee-100);
   border: 1px solid var(--kv-color-lychee-400);
   border-radius: 1rem;
-  margin-top: 5px;
   list-style: none;
   padding: 1rem;
-  box-shadow: 4px 4px 16px 0px rgba(119, 128, 128, 0.08);
+  box-shadow: 4px 4px 16px rgba(119, 128, 128, 0.08);
   z-index: 1000;
 }
 
@@ -57,4 +51,16 @@
 .kv-dropdown-item:hover {
   background: var(--kv-color-lychee-100);
   color: var(--kv-color-lychee-500);
+}
+
+.kv-dropdown-list.overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+}
+
+.kv-dropdown-list.push {
+  position: relative;
+  margin-top: 5px;
 }
