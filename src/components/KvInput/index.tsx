@@ -9,17 +9,19 @@ export type TKvInput = {
   rounded?: boolean;
   status?: TKvInputStatus;
   tooltipProps?: TKvTooltip;
+  isSmall?: boolean
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
   (
-    { className = "", rounded = true, status = "idle", tooltipProps, ...props },
+    { className = "", rounded = true, status = "idle", tooltipProps, isSmall, ...props },
     ref,
   ) => {
     const classes = [styles["kv-input"]];
     if (rounded) classes.push(styles["kv-input--rounded"]);
     if (status === "invalid") classes.push(styles["kv-input--invalid"]);
     if (className) classes.push(className);
+    if (isSmall) classes.push(styles["kv-input--small"])
     const computedClasses = classes.join(" ");
 
     return (
