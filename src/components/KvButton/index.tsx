@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
-type TKvButton = {
+export type TKvButton = {
   color?: "secondary" | "tertiary" | "success" | "danger" | "muted" | "clear";
   size?: "small" | "medium" | "large";
   expand?: "block" | "full";
