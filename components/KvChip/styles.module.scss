@@ -1,0 +1,71 @@
+.kv-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--kv-chip-gap);
+  width: fit-content;
+  height: var(--kv-chip-height);
+  padding: var(--kv-chip-padding);
+  background: var(--kv-chip-background);
+  border: 1px solid var(--kv-chip-border-color);
+  border-radius: 1rem;
+  color: var(--kv-chip-color);
+  font-size: var(--kv-chip-font-size);
+  font-weight: var(--kv-font-weight-bold);
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+
+  &[type="button"] {
+    appearance: none;
+    font-family: var(--kv-font-family);
+
+    &:active {
+      opacity: 0.4;
+      transition-duration: 0s;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &--fill-outline {
+    --kv-chip-background: var(--kv-color-lychee-100);
+    --kv-chip-color: var(--kv-color-lychee-900);
+    --kv-chip-border-color: var(--kv-color-lychee-400);
+  }
+  &--fill-solid {
+    --kv-chip-background: var(--background);
+    --kv-chip-color: var(--kv-color-lychee-100);
+    --kv-chip-border-color: transparent;
+  }
+
+  &--variant-success {
+    --background: var(--kv-color-pear-500);
+  }
+  &--variant-alert {
+    --background: var(--kv-color-tangerine-500);
+  }
+  &--variant-error {
+    --background: var(--kv-color-blackberry-500);
+  }
+  &--variant-add {
+    --background: var(--kv-color-grape-500);
+  }
+  &--variant-neutral {
+    --background: var(--kv-color-lychee-500);
+  }
+
+  &--size-medium {
+    --kv-chip-height: 1.5rem;
+    --kv-chip-padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+    --kv-chip-gap: 0.25rem;
+    --kv-chip-font-size: var(--kv-font-size-xs);
+  }
+  &--size-large {
+    --kv-chip-height: 2rem;
+    --kv-chip-padding: 0.5rem 1rem 0.5rem 0.5rem;
+    --kv-chip-gap: 0.5rem;
+    --kv-chip-font-size: var(--kv-font-size-sm);
+  }
+}

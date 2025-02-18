@@ -1,0 +1,20 @@
+$sizes: (
+  "xlarge": 6rem,
+  "large": 4.5rem,
+  "medium": 3.5rem,
+  "small": 2.5rem,
+  "xsmall": 2rem,
+);
+
+.kv-avatar {
+  border: 1px solid var();
+  border-radius: 50%;
+  object-fit: contain;
+
+  @each $size_name, $size_value in $sizes {
+    &--size-#{$size_name} {
+      width: $size_value;
+      height: $size_value;
+    }
+  }
+}
