@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, ReactNode } from "react";
-import { KvIcon, KvLabel } from "..";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
+import { KvIcon } from "..";
 import "./kv-dropdown.css";
 
 type Option = {
@@ -9,7 +9,6 @@ type Option = {
 
 type TKvDropdown = {
   options: Option[];
-  label?: string;
   placeholder?: string;
   children?: ReactNode;
   value?: string;
@@ -28,7 +27,6 @@ const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
     closeOnOutsideClick = true,
     onChange,
     children,
-    label,
     ...props
   }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +71,6 @@ const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
         ref={dropdownRef}
         {...props}
       >
-        {label && <KvLabel>{label}</KvLabel>}
         <div className="kv-dropdown-select" onClick={() => setIsOpen(!isOpen)}>
           {selected ? selected.label : placeholder}
         </div>
@@ -94,7 +91,7 @@ const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
         )}
       </div>
     );
-  }
+  },
 );
 
 KvDropdown.displayName = "KvDropdown";
