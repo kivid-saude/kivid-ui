@@ -9,7 +9,6 @@ export type TKvButton = {
   rounded?: boolean;
   loading?: boolean;
   disabled?: boolean;
-  minWidth?: boolean;
 } & PropsWithChildren &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -21,7 +20,6 @@ export const KvButton = ({
   rounded = true,
   expand,
   loading,
-  minWidth = true,
   ...props
 }: TKvButton) => {
   const classes = [
@@ -32,7 +30,6 @@ export const KvButton = ({
   if (rounded) classes.push(styles[`kv-button--rounded`]);
   if (expand) classes.push(styles[`kv-button--expand-${expand}`]);
   if (loading) classes.push(styles["kv-button--loading"]);
-  if (minWidth) classes.push(styles["kv-button--min-width"]);
 
   const content = () => {
     if (loading) {

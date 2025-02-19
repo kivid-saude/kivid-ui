@@ -20,7 +20,9 @@ export const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
           ref={ref}
         />
         <KvButton
+          size="large"
           color={isChecked ? color : "muted"}
+          style={{ minWidth: "unset" }}
           onClick={() => setIsChecked(!isChecked)}
         >
           {children}

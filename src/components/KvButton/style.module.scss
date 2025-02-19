@@ -48,25 +48,19 @@
   &--small {
     --height: 2rem;
     --font-size: var(--kv-font-size-xs);
-    .kv-button--min-width & {
-      min-width: 5rem;
-    }
+    min-width: 5rem;
   }
 
   &--medium {
     --height: 2.5rem;
     --font-size: var(--kv-font-size-sm);
-    .kv-button--min-width & {
-      min-width: 9rem;
-    }
+    min-width: 9rem;
   }
 
   &--large {
     --height: 3rem;
     --font-size: var(--kv-font-size-md);
-    .kv-button--min-width & {
-      min-width: 11rem;
-    }
+    min-width: 11rem;
   }
 
   &--loading {
