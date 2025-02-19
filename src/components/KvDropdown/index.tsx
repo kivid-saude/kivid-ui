@@ -7,7 +7,7 @@ type Option = {
   value: string;
 };
 
-type TKvDropdown = {
+export type TKvDropdown = {
   options: Option[];
   placeholder?: string;
   children?: ReactNode;
@@ -15,14 +15,17 @@ type TKvDropdown = {
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
   onChange?: (value: string) => void;
-} & React.HTMLAttributes<HTMLDivElement>;
+};
 
-const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
+const KvDropdown = React.forwardRef<
+  HTMLDivElement,
+  TKvDropdown & React.HTMLAttributes<HTMLDivElement>
+>(
   ({
     className = "",
     options,
     placeholder = "Selecione uma opção",
-    value,
+    value = "",
     overlay = true,
     closeOnOutsideClick = true,
     onChange,
