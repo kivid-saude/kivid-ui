@@ -5,12 +5,12 @@ import { KvCheckbox } from "../KvCheckbox";
 type TKvCheckButton = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   checked?: boolean;
-} & Pick<TKvButton, "color"> &
+} & Pick<TKvButton, "color" | "size"> &
   PropsWithChildren &
   React.InputHTMLAttributes<HTMLInputElement>;
 
 const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
-  ({ children, color = "tertiary", ...props }, ref) => {
+  ({ children, color, size, ...props }, ref) => {
     const { onChange, checked = false } = props;
     const [isChecked, setIsChecked] = useState(checked);
     return (
@@ -23,8 +23,8 @@ const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
           ref={ref}
         />
         <KvButton
-          size="large"
-          color={isChecked ? color : "muted"}
+          size={size ?? "large"}
+          color={isChecked ? color ?? "tertiary" : "muted"}
           style={{ minWidth: "unset" }}
           onClick={() => setIsChecked(!isChecked)}
         >
