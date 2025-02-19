@@ -14,7 +14,7 @@ const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
     const { onChange, checked = false } = props;
     const [isChecked, setIsChecked] = useState(checked);
     return (
-      <>
+      <div>
         <KvCheckbox
           {...props}
           style={{ display: "none" }}
@@ -31,7 +31,7 @@ const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
         >
           {children}
         </KvButton>
-      </>
+      </div>
     );
   },
 );
