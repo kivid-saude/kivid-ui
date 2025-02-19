@@ -6,14 +6,17 @@ type TKvCheckButton = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   checked?: boolean;
 } & Pick<TKvButton, "color"> &
-  PropsWithChildren;
+  PropsWithChildren &
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
-  ({ children, onChange, checked = false, color = "tertiary" }, ref) => {
+  ({ children, color = "tertiary", ...props }, ref) => {
+    const { onChange, checked = false } = props;
     const [isChecked, setIsChecked] = useState(checked);
     return (
       <>
         <KvCheckbox
+          {...props}
           style={{ display: "none" }}
           checked={isChecked}
           onChange={(event) => onChange?.(event)}
