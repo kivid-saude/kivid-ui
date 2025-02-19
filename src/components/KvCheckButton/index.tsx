@@ -15,13 +15,14 @@ const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
     const [isChecked, setIsChecked] = useState(checked);
     return (
       <div>
-        <KvCheckbox
-          {...props}
-          style={{ display: "none" }}
-          checked={isChecked}
-          onChange={(event) => onChange?.(event)}
-          ref={ref}
-        />
+        <div style={{ display: "none" }}>
+          <KvCheckbox
+            {...props}
+            checked={isChecked}
+            onChange={(event) => onChange?.(event)}
+            ref={ref}
+          />
+        </div>
         <KvButton
           type="button"
           size={size ?? "large"}
