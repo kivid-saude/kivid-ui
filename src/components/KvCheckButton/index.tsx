@@ -8,7 +8,7 @@ type TKvCheckButton = {
 } & Pick<TKvButton, "color"> &
   PropsWithChildren;
 
-export const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
+const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
   ({ children, onChange, checked = false, color = "tertiary" }, ref) => {
     const [isChecked, setIsChecked] = useState(checked);
     return (
@@ -31,3 +31,7 @@ export const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
     );
   },
 );
+
+KvCheckButton.displayName = "KvCheckButton";
+
+export { KvCheckButton };
