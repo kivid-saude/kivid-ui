@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.kv-fieldset--has-label .kv-dropdown-select {
+.kv-fieldset--has-label > .kv-dropdown .kv-dropdown-select {
   height: 4rem;
   padding-top: 2rem;
 }
