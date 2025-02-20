@@ -14,11 +14,14 @@ export type TKvDropdown = {
   value?: string;
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
-  listProps?: React.HTMLAttributes<HTMLUListElement>;
+  listProps?: React.ComponentProps<"ul">;
   onChange?: (value: string) => void;
-} & React.HTMLAttributes<HTMLDivElement>;
+};
 
-const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
+const KvDropdown = React.forwardRef<
+  HTMLDivElement,
+  TKvDropdown & React.ComponentProps<"div">
+>(
   ({
     className = "",
     options,
@@ -36,9 +39,9 @@ const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-      if (!value) return;
+      if (!value || !options?.length) return;
       const selectedOption = options.find((option) => option.value === value);
-      setSelected(selectedOption || null);
+      setSelected(selectedOption ?? null);
     }, [value, options]);
 
     const handleSelect = (option: Option) => {
