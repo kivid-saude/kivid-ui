@@ -49,13 +49,8 @@
     max-height: 3rem;
   }
 
-  :global(.kv-fieldset--has-label) & {
+  :global(.kv-fieldset--has-label) > & {
     height: 4rem;
     padding-top: 2rem;
-  }
-
-  :global(.kv-fieldset--no-label) > & {
-    height: 3.5rem;
-    padding: 1rem;
   }
 }
