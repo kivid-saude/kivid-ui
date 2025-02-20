@@ -11,7 +11,6 @@ export const KvFieldset = ({ children, className }: TFieldset) => {
   if (className) classes.push(className);
 
   React.Children.forEach(children, (child) => {
-    console.log("child :", child);
     const bool = child && (child as { type: unknown }).type === KvLabel;
     bool && classes.push("kv-fieldset--has-label");
   });
