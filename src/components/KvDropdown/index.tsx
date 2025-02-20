@@ -31,11 +31,15 @@ const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
     listProps,
     ...props
   }) => {
-    const [selected, setSelected] = useState<Option | null>(
-      value ? options.find((option) => option.value === value) ?? null : null,
-    );
+    const [selected, setSelected] = useState<Option | null>();
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+      if (!value) return;
+      const selectedOption = options.find((option) => option.value === value);
+      setSelected(selectedOption || null);
+    }, [value, options]);
 
     const handleSelect = (option: Option) => {
       setSelected(option);
