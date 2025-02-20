@@ -14,6 +14,7 @@ export type TKvDropdown = {
   value?: string;
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
+  listProps?: React.HTMLAttributes<HTMLUListElement>
   onChange?: (value: string) => void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
@@ -27,6 +28,7 @@ const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
     closeOnOutsideClick = true,
     onChange,
     children,
+    listProps,
     ...props
   }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -81,18 +83,20 @@ const KvDropdown = React.forwardRef<HTMLDivElement, TKvDropdown>(
         </div>
         <KvIcon className="slot slot--right" icon="chevron-down" />
         {isOpen && (
-          <ul className={`kv-dropdown-list ${overlay ? "overlay" : "push"}`}>
+          <div className={`kv-dropdown-list ${overlay ? "overlay" : "push"}`}>
             {children}
-            {options.map((option) => (
-              <li
-                key={option.value}
-                className="kv-dropdown-item"
-                onClick={() => handleSelect(option)}
-              >
-                {option.label}
-              </li>
-            ))}
-          </ul>
+            <ul {...listProps}>
+              {options.map((option) => (
+                <li
+                  key={option.value}
+                  className="kv-dropdown-item"
+                  onClick={() => handleSelect(option)}
+                >
+                  {option.label}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     );

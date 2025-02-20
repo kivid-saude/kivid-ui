@@ -31,7 +31,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
     const hasLabel = Boolean(label?.length);
 
     return (
-      <KvFieldset hasLabel={hasLabel}>
+      <KvFieldset>
         {hasLabel && <KvLabel>{label}</KvLabel>}
 
         {status === "clean" && (
