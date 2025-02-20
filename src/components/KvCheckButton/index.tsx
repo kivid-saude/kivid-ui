@@ -20,9 +20,19 @@ const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
       <div className="relative">
         <input
           type="checkbox"
-          className="absolute inset-0 z-10 opacity-0 w-full h-full m-0 p-0 cursor-pointer"
           ref={ref}
           onChange={handleInputChange}
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 10,
+            opacity: 0,
+            width: "100%",
+            height: "100%",
+            margin: 0,
+            padding: 0,
+            cursor: "pointer",
+          }}
           {...props}
         />
         <KvButton
