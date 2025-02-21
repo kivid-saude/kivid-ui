@@ -84,7 +84,7 @@ export const Default: Story = {
       { label: "Fiat", value: "fiat" },
       { label: "Ford", value: "ford" },
     ],
-    value: ["bmw"],
+    value: ["bmw", "honda"],
   },
   render: (args) => {
     return (
