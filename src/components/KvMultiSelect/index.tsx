@@ -101,12 +101,15 @@ const KvMultiSelect = React.forwardRef<
         </div>
 
         <KvIcon className="slot slot--right" icon="chevron-down" />
-        <div style={{ position: "absolute", right: "3rem", top: "1.5rem" }}>
-          <KvBadge
-            color="secondary"
-            label={selected?.length.toString() ?? ""}
-          />
-        </div>
+
+        {selected?.length && (
+          <div style={{ position: "absolute", right: "3rem", top: "1.5rem" }}>
+            <KvBadge
+              color="secondary"
+              label={selected?.length.toString() ?? ""}
+            />
+          </div>
+        )}
 
         {isOpen && (
           <div className="kv-multi-select-list">
