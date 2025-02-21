@@ -88,12 +88,10 @@ export const Default: Story = {
   },
   render: (args) => {
     return (
-      <>
-        <KvFieldset>
-          <KvLabel>Marcas de carro:</KvLabel>
-          <KvMultiSelect {...args} />
-        </KvFieldset>
-      </>
+      <KvFieldset>
+        <KvLabel>Marcas de carro:</KvLabel>
+        <KvMultiSelect {...args} />
+      </KvFieldset>
     );
   },
 };
