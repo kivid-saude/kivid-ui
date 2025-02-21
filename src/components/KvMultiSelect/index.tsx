@@ -102,7 +102,7 @@ const KvMultiSelect = React.forwardRef<
 
         <KvIcon className="slot slot--right" icon="chevron-down" />
 
-        {selected?.length && (
+        {!!selected?.length && (
           <div style={{ position: "absolute", right: "3rem", top: "1.5rem" }}>
             <KvBadge
               color="secondary"
