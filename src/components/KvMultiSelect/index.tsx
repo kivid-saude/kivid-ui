@@ -84,7 +84,7 @@ const KvMultiSelect = React.forwardRef<
 
     return (
       <div
-        className={`kv-multi-select relative ${className} ${overlay ? "overlay" : "push"}`}
+        className={`kv-multi-select relative}`}
         ref={multiSelectRef}
         {...props}
       >
