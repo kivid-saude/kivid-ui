@@ -1,8 +1,7 @@
 import styles from "./styles.module.scss";
 
-type TKvLabel = React.PropsWithChildren &
-  React.LabelHTMLAttributes<HTMLLabelElement>;
-
-export const KvLabel = (props: TKvLabel) => {
-  return <label className={styles["kv-label"]}>{props.children}</label>;
+export const KvLabel = (
+  props: React.PropsWithChildren & React.ComponentProps<"label">,
+) => {
+  return <label className={styles["kv-label"]} {...props} />;
 };

@@ -4,7 +4,7 @@
   font-weight: 500;
   line-height: var(--kv-line-height-sm);
 
-  :global(.kv-fieldset--has-label) & {
+  :global(.kv-fieldset--has-label) > & {
     position: absolute;
     top: 0;
     display: grid;

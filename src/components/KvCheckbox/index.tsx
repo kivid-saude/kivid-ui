@@ -1,41 +1,67 @@
-"use client";
-
-import React, { useState } from "react";
-import styles from "./style.module.scss";
+import React from "react";
 import { KvIcon } from "../KvIcon";
+import { KvLabel } from "../KvLabel";
+import styles from "./style.module.scss";
 
-type TKvCheckbox = React.InputHTMLAttributes<HTMLInputElement>;
+type TKvCheckbox = {
+  label?: string;
+  color?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "success"
+    | "warning"
+    | "danger";
+  onCheckedChange?: (checked: boolean) => void;
+};
 
-export const KvCheckbox = React.forwardRef<HTMLInputElement, TKvCheckbox>(
-  ({ className = "", onChange, ...props }, ref) => {
-    const [isChecked, setIsChecked] = useState(props.checked ?? false);
-
+export const KvCheckbox = React.forwardRef<
+  HTMLInputElement,
+  TKvCheckbox & React.ComponentProps<"input">
+>(
+  (
+    {
+      className,
+      onChange,
+      onCheckedChange,
+      label,
+      color = "tertiary",
+      ...props
+    },
+    ref,
+  ) => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setIsChecked(event.target.checked);
-
+      onCheckedChange?.(event.currentTarget.checked);
       onChange?.(event);
     };
 
     return (
-      <div className={`${styles["kv-input-container"]} ${className}`}>
-        <input
-          ref={ref}
-          type="checkbox"
-          checked={isChecked}
-          id={props.id}
-          className={`${styles["kv-checkbox-input"]}`}
-          onChange={handleInputChange}
-          {...props}
-        />
-
-        {isChecked && (
-          <KvIcon
-            icon="check"
-            color="white"
-            size="small"
-            className={styles["kv-checkbox-icon"]}
+      <div className={styles["kv-checkbox"]}>
+        <div
+          className={`${styles["kv-checkbox-container"]} ${className}`}
+          style={{
+            ["--background-checked" as string]: `var(--kv-color-${color})`,
+          }}
+        >
+          <input
+            ref={ref}
+            type="checkbox"
+            className={`${styles["kv-checkbox-input"]}`}
+            onChange={handleInputChange}
+            {...props}
           />
-        )}
+
+          {props.checked && (
+            <KvIcon
+              icon="check"
+              color="white"
+              size="small"
+              className={styles["kv-checkbox-icon"]}
+            />
+          )}
+        </div>
+
+        {label && <KvLabel htmlFor={props.id}>{label}</KvLabel>}
       </div>
     );
   },

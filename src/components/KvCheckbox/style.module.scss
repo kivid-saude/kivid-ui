@@ -1,8 +1,16 @@
-.kv-input-container {
+.kv-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.kv-checkbox-container {
   --size: 1.25rem;
   position: relative;
   width: var(--size);
   height: var(--size);
+  pointer-events: none;
 }
 
 .kv-checkbox-input {
@@ -13,9 +21,10 @@
   border: 1px solid var(--kv-color-lychee-500);
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  pointer-events: all;
 
   &:checked {
-    background-color: var(--kv-color-tertiary);
+    background-color: var(--background-checked, var(--kv-color-tertiary));
     border: none;
   }
 

@@ -9,8 +9,7 @@ type TKvSearchStatus = "loading" | "clean";
 type TKvSearch = {
   label?: string;
   status?: TKvInputStatus | TKvSearchStatus;
-  size?: "xsmall" | "small" | "medium" | "large"
-  isSmall?: boolean
+  isSmall?: boolean;
   onClean?: () => void;
   onSearch?: () => void;
   buttonProps?: TKvIconButton;
@@ -18,14 +17,15 @@ type TKvSearch = {
 
 export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
   (
-    { label,
+    {
+      label,
       status = "idle",
       onClean,
       onSearch,
       buttonProps,
-      size = "medium",
       isSmall = false,
-      ...props },
+      ...props
+    },
     ref,
   ) => {
     const hasLabel = Boolean(label?.length);
@@ -40,7 +40,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
             disabled={props.disabled}
             color="muted"
             className="slot slot--right"
-            size={size || hasLabel ? "medium" : "small"}
+            size={hasLabel ? "medium" : "xsmall"}
             rounded={false}
             onClick={onClean}
             shape={hasLabel ? "rect" : "square"}
@@ -55,7 +55,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
             color="success"
             className="slot slot--right"
             loading={status === "loading"}
-            size={hasLabel ? "medium" : "small"}
+            size={hasLabel ? "medium" : "xsmall"}
             rounded={false}
             onClick={onSearch}
             shape={hasLabel ? "rect" : "square"}
@@ -65,7 +65,12 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
           </KvIconButton>
         )}
 
-        <KvInput ref={ref} status={status as TKvInputStatus} isSmall={isSmall} {...props} />
+        <KvInput
+          ref={ref}
+          status={status as TKvInputStatus}
+          isSmall={isSmall}
+          {...props}
+        />
       </KvFieldset>
     );
   },
