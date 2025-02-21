@@ -1,0 +1,68 @@
+.kv-multi-select {
+  height: 3.5rem;
+  width: 100%;
+  color: var(--kv-body-color);
+  background: var(--kv-color-lychee-100);
+  border: 1px solid var(--kv-color-lychee-400);
+  border-radius: 1rem;
+  cursor: pointer;
+
+  .kv-fieldset--has-label & {
+    height: 4rem;
+  }
+
+  .kv-fieldset--has-label > & .kv-multi-select-value {
+    padding-top: 2rem;
+  }
+}
+
+.kv-multi-select-value {
+  width: calc(100% - 4rem);
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: var(--kv-font-size-md);
+  font-weight: var(--kv-font-weight-bold);
+  line-height: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kv-multi-select-list {
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem 0;
+  background: var(--kv-color-lychee-100);
+  border: 1px solid var(--kv-color-lychee-400);
+  border-radius: 1rem;
+  box-shadow: 4px 4px 16px rgba(119, 128, 128, 0.078);
+  cursor: default;
+}
+
+.kv-multi-select-list.overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+}
+
+.kv-multi-select-list.push {
+  position: relative;
+  margin-top: 5px;
+}
+
+.kv-multi-select-item {
+  padding: 0.5rem;
+  font-weight: 700;
+  line-height: 18px;
+  color: var(--kv-color-lychee-900);
+  border-radius: 0.5rem;
+  list-style: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.kv-multi-select-item:hover {
+  background: var(--kv-color-lychee-300);
+  // color: var(--kv-color-lychee-800);
+}
