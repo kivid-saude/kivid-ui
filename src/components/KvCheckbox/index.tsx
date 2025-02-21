@@ -61,7 +61,11 @@ export const KvCheckbox = React.forwardRef<
           )}
         </div>
 
-        {label && <KvLabel htmlFor={props.id}>{label}</KvLabel>}
+        {label && (
+          <KvLabel htmlFor={props.id} style={{ fontSize: ".875rem" }}>
+            {label}
+          </KvLabel>
+        )}
       </div>
     );
   },
