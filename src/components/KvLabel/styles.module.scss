@@ -7,7 +7,7 @@
   :global(.kv-fieldset--has-label) > & {
     position: absolute;
     top: 0;
-    z-index: 90;
+    z-index: 80;
     display: grid;
     align-items: end;
     padding-top: 0.875rem;
