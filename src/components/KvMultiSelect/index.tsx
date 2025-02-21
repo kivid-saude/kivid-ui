@@ -18,7 +18,7 @@ export type TKvMultiSelect = {
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
   listProps?: React.HTMLAttributes<HTMLUListElement>;
-  onSelectedChange?: (value: string) => void;
+  onSelectedChange?: (value: string[]) => void;
 };
 
 const KvMultiSelect = React.forwardRef<
@@ -38,6 +38,7 @@ const KvMultiSelect = React.forwardRef<
   }) => {
     const [selected, setSelected] = useState<Option[] | null>();
     const [isOpen, setIsOpen] = useState(false);
+    const [search, setSearch] = useState("");
     const multiSelectRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -48,14 +49,18 @@ const KvMultiSelect = React.forwardRef<
       setSelected(selectedOption ?? null);
     }, [value, options]);
 
+    const filteredOptions = options.filter((option) =>
+      option.label.toLowerCase().includes(search.toLowerCase()),
+    );
+
     const handleSelectedChange = (option: Option) => {
       setSelected(() => {
-        if (selected?.some((val) => val.value === option.value)) {
-          return selected?.filter((val) => val.value !== option.value);
+        if (selected?.some((sel) => sel.value === option.value)) {
+          return selected?.filter((sel) => sel.value !== option.value);
         }
         return [...(selected ?? []), option];
       });
-      onSelectedChange?.(option.value);
+      onSelectedChange?.(selected?.map((sel) => sel.value) ?? []);
     };
 
     useEffect(() => {
@@ -104,24 +109,23 @@ const KvMultiSelect = React.forwardRef<
         </div>
 
         {isOpen && (
-          <div
-            className={`kv-multi-select-list ${overlay ? "overlay" : "push"}`}
-          >
+          <div className="kv-multi-select-list">
             <div style={{ padding: "0 1rem" }}>
               <KvMultiSelectHeader>
                 <KvSearch
                   placeholder="Digite para buscar"
+                  status={search ? "clean" : "idle"}
+                  value={search}
                   isSmall
-                  onChange={(v) => {
-                    console.log("value", v.target.value);
-                  }}
+                  onChange={(e) => setSearch(e.target.value)}
+                  onClean={() => setSearch("")}
                 />
               </KvMultiSelectHeader>
             </div>
 
             <div style={{ padding: "0 0.5rem" }}>
               <ul {...listProps}>
-                {options.map((option) => (
+                {filteredOptions.map((option) => (
                   <li
                     key={option.value}
                     className="kv-multi-select-item"

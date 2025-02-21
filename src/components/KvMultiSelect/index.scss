@@ -5,7 +5,6 @@
   background: var(--kv-color-lychee-100);
   border: 1px solid var(--kv-color-lychee-400);
   border-radius: 1rem;
-  cursor: pointer;
 
   .kv-fieldset--has-label & {
     height: 4rem;
@@ -26,29 +25,21 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 .kv-multi-select-list {
-  z-index: 1000;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  z-index: 90;
   width: 100%;
   padding: 1rem 0;
   background: var(--kv-color-lychee-100);
   border: 1px solid var(--kv-color-lychee-400);
   border-radius: 1rem;
   box-shadow: 4px 4px 16px rgba(119, 128, 128, 0.078);
-  cursor: default;
-}
-
-.kv-multi-select-list.overlay {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 5px;
-}
-
-.kv-multi-select-list.push {
-  position: relative;
-  margin-top: 5px;
 }
 
 .kv-multi-select-item {

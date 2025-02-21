@@ -77,19 +77,23 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     options: [
-      { label: "Option 1", value: "option1" },
-      { label: "Option 2", value: "option2" },
-      { label: "Option 3", value: "option3" },
+      { label: "Audi", value: "audi" },
+      { label: "BMW", value: "bmw" },
+      { label: "Honda", value: "honda" },
+      { label: "BYD", value: "byd" },
+      { label: "Fiat", value: "fiat" },
+      { label: "Ford", value: "ford" },
     ],
-    placeholder: "Select an option",
-    value: ["option2"],
+    value: ["bmw"],
   },
   render: (args) => {
     return (
-      <KvFieldset>
-        <KvLabel>Label:</KvLabel>
-        <KvMultiSelect {...args} />
-      </KvFieldset>
+      <>
+        <KvFieldset>
+          <KvLabel>Marcas de carro:</KvLabel>
+          <KvMultiSelect {...args} />
+        </KvFieldset>
+      </>
     );
   },
 };
