@@ -22,12 +22,6 @@ $sizes: (
   }
 }
 
-@media not all and (min-width: 768px) {
-  .kv-icon:global(.slot--right) {
-    right: 0.5rem;
-  }
-}
-
 @each $size_name, $size_value in $sizes {
   .kv-icon--size-#{$size_name} {
     --icon-size: #{$size_value};

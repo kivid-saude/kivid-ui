@@ -1,4 +1,10 @@
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { KvBadge, KvButton, KvButtons, KvIcon } from "..";
 import { KvCheckbox } from "../KvCheckbox";
 import { KvSearch } from "../KvSearch";
@@ -14,11 +20,11 @@ export type TKvMultiSelect = {
   options: Option[];
   placeholder?: string;
   children?: ReactNode;
-  value?: string[];
+  value?: Option["value"][];
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
   listProps?: React.HTMLAttributes<HTMLUListElement>;
-  onSelectedChange?: (value: string[]) => void;
+  onSelectedChange?: (value: Option["value"][]) => void;
 };
 
 export const KvMultiSelect = ({
@@ -75,35 +81,28 @@ export const KvMultiSelect = ({
     onSelectedChange?.([]);
   };
 
+  const toggleIsOpen = useCallback(() => {
+    setIsOpen((open) => !open);
+    isOpen && setCurrentValues(selectedValues);
+  }, [isOpen, selectedValues]);
+
   useEffect(() => {
+    if (!closeOnOutsideClick) return;
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        closeOnOutsideClick &&
         multiSelectRef.current &&
         !multiSelectRef.current.contains(event.target as Node)
       ) {
-        setIsOpen(false);
-        setCurrentValues(selectedValues);
+        toggleIsOpen();
       }
     };
-
-    if (closeOnOutsideClick) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }
-  }, [closeOnOutsideClick, selectedValues]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [closeOnOutsideClick, selectedValues, toggleIsOpen]);
 
   return (
     <div className="kv-multi-select" ref={multiSelectRef} {...props}>
-      <div
-        className="kv-multi-select__value"
-        onClick={() => {
-          isOpen && setCurrentValues(selectedValues);
-          setIsOpen(!isOpen);
-        }}
-      >
+      <div className="kv-multi-select__value" onClick={toggleIsOpen}>
         {selectedValues?.length
           ? selectedValues
               .map(({ label }) => label)
