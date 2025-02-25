@@ -84,7 +84,10 @@ export const Default: Story = {
       { label: "Fiat", value: "fiat" },
       { label: "Ford", value: "ford" },
     ],
-    value: ["bmw", "honda"],
+    value: ["bmw"],
+    onSelectedChange(value) {
+      console.log(value);
+    },
   },
   render: (args) => {
     return (
