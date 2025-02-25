@@ -26,11 +26,9 @@ const KvMultiSelect = React.forwardRef<
   TKvMultiSelect & React.ComponentProps<"div">
 >(
   ({
-    className = "",
     options,
     placeholder = "Selecione...",
     value = [],
-    overlay = true,
     closeOnOutsideClick = true,
     onSelectedChange,
     listProps,
@@ -46,7 +44,7 @@ const KvMultiSelect = React.forwardRef<
       const selectedOption = options.filter((option) =>
         value.includes(option.value),
       );
-      setSelected(selectedOption);
+      setSelected((prevSelected) => selectedOption ?? prevSelected);
     }, [value, options]);
 
     const filteredOptions = options.filter((option) =>
@@ -55,17 +53,14 @@ const KvMultiSelect = React.forwardRef<
 
     const handleSelectedChange = (option: Option) => {
       setSelected((prevSelected) => {
-        const isOptionSelected = prevSelected.some(
-          (sel) => sel.value === option.value
+        const hasSelected = prevSelected?.some(
+          ({ value }) => value === option.value,
         );
-
-        const updatedSelected = isOptionSelected
-          ? prevSelected.filter((sel) => sel.value !== option.value)
-          : [...prevSelected, option];
-
-        onSelectedChange?.(updatedSelected.map((sel) => sel.value));
-
-        return updatedSelected;
+        const newSelected = hasSelected
+          ? prevSelected?.filter(({ value }) => value !== option.value)
+          : [...(prevSelected ?? []), option];
+        onSelectedChange?.(newSelected.map(({ value }) => value));
+        return newSelected;
       });
     };
 
@@ -100,9 +95,9 @@ const KvMultiSelect = React.forwardRef<
         >
           {selected?.length
             ? selected
-              .map(({ label }) => label)
-              .sort()
-              .join(", ")
+                .map(({ label }) => label)
+                .sort()
+                .join(", ")
             : placeholder}
         </div>
 
