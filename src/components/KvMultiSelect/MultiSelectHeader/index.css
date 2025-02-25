@@ -1,7 +1,3 @@
-.multi-select-header-hr {
-  height: 1px;
-  background-color: var(--kv-color-lychee-400);
-  border: none;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+.kv-multi-select__header {
+  padding: 0 1rem;
 }

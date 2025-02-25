@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { KvBadge, KvIcon } from "..";
+import { KvBadge, KvButton, KvButtons, KvIcon } from "..";
 import { KvCheckbox } from "../KvCheckbox";
 import { KvSearch } from "../KvSearch";
 import "./index.scss";
@@ -30,17 +30,21 @@ export const KvMultiSelect = ({
   listProps,
   ...props
 }: TKvMultiSelect) => {
-  const [selected, setSelected] = useState<Option[]>([]);
+  const [selectedValues, setSelectedValues] = useState<Option[]>([]);
+  const [currentValues, setCurrentValues] = useState<Option[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const multiSelectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!value?.length || !options?.length) return;
-    const selectedOption = options.filter((option) =>
+    const hasSelected = options.some((option) => value.includes(option.value));
+    if (!hasSelected) return;
+    const selectedOptions = options.filter((option) =>
       value.includes(option.value),
     );
-    setSelected((prevSelected) => selectedOption ?? prevSelected);
+    setCurrentValues(selectedOptions);
+    setSelectedValues(selectedOptions);
   }, [value, options]);
 
   const filteredOptions = options.filter((option) =>
@@ -48,16 +52,27 @@ export const KvMultiSelect = ({
   );
 
   const handleSelectedChange = (option: Option) => {
-    setSelected((prevSelected) => {
+    setCurrentValues((prevSelected) => {
       const hasSelected = prevSelected?.some(
         ({ value }) => value === option.value,
       );
       const newSelected = hasSelected
         ? prevSelected?.filter(({ value }) => value !== option.value)
         : [...(prevSelected ?? []), option];
-      onSelectedChange?.(newSelected.map(({ value }) => value));
       return newSelected;
     });
+  };
+
+  const handleSubmitSelected = () => {
+    setSelectedValues(currentValues);
+    onSelectedChange?.(currentValues.map(({ value }) => value));
+    setIsOpen(false);
+  };
+
+  const handleReset = () => {
+    setSelectedValues([]);
+    setCurrentValues([]);
+    onSelectedChange?.([]);
   };
 
   useEffect(() => {
@@ -68,6 +83,7 @@ export const KvMultiSelect = ({
         !multiSelectRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
+        setCurrentValues(selectedValues);
       }
     };
 
@@ -77,13 +93,19 @@ export const KvMultiSelect = ({
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }
-  }, [closeOnOutsideClick]);
+  }, [closeOnOutsideClick, selectedValues]);
 
   return (
     <div className={`kv-multi-select relative`} ref={multiSelectRef} {...props}>
-      <div className="kv-multi-select-value" onClick={() => setIsOpen(!isOpen)}>
-        {selected?.length
-          ? selected
+      <div
+        className="kv-multi-select__value"
+        onClick={() => {
+          isOpen && setCurrentValues(selectedValues);
+          setIsOpen(!isOpen);
+        }}
+      >
+        {selectedValues?.length
+          ? selectedValues
               .map(({ label }) => label)
               .sort()
               .join(", ")
@@ -92,42 +114,44 @@ export const KvMultiSelect = ({
 
       <KvIcon className="slot slot--right" icon="chevron-down" />
 
-      {!!selected?.length && (
+      {!!selectedValues?.length && (
         <div style={{ position: "absolute", right: "3rem", top: "1.5rem" }}>
           <KvBadge
             color="secondary"
-            label={selected?.length.toString() ?? ""}
+            label={selectedValues?.length.toString() ?? ""}
           />
         </div>
       )}
 
       {isOpen && (
-        <div className="kv-multi-select-list">
-          <div style={{ padding: "0 1rem" }}>
-            <KvMultiSelectHeader>
-              <KvSearch
-                placeholder="Digite para buscar"
-                status={search ? "clean" : "idle"}
-                value={search}
-                isSmall
-                onChange={(e) => setSearch(e.target.value)}
-                onClean={() => setSearch("")}
-              />
-            </KvMultiSelectHeader>
-          </div>
+        <section className="kv-multi-select__content">
+          <KvMultiSelectHeader>
+            <KvSearch
+              placeholder="Digite para buscar"
+              status={search ? "clean" : "idle"}
+              value={search}
+              isSmall
+              onChange={(e) => setSearch(e.target.value)}
+              onClean={() => setSearch("")}
+            />
+          </KvMultiSelectHeader>
 
-          <div style={{ padding: "0 0.5rem" }}>
+          <hr className="kv-multi-select__hr" />
+
+          <div className="kv-multi-select__list">
             <ul {...listProps}>
               {filteredOptions.map((option) => (
                 <li
                   key={option.value}
-                  className="kv-multi-select-item"
+                  className="kv-multi-select__item"
                   onClick={() => handleSelectedChange(option)}
                 >
                   <KvCheckbox
                     id={option.value}
                     name={option.value}
-                    checked={selected?.some((s) => s.value === option.value)}
+                    checked={currentValues?.some(
+                      (s) => s.value === option.value,
+                    )}
                     label={option.label}
                     color="secondary"
                   />
@@ -135,7 +159,18 @@ export const KvMultiSelect = ({
               ))}
             </ul>
           </div>
-        </div>
+
+          <hr className="kv-multi-select__hr" />
+
+          <KvButtons column style={{ marginTop: "0.5rem", padding: "0 1rem" }}>
+            <KvButton color="muted" onClick={handleReset}>
+              Limpar
+            </KvButton>
+            <KvButton color="success" onClick={handleSubmitSelected}>
+              Confirmar
+            </KvButton>
+          </KvButtons>
+        </section>
       )}
     </div>
   );

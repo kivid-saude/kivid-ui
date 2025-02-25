@@ -2,10 +2,5 @@ import { PropsWithChildren } from "react";
 import "./index.css";
 
 export const KvMultiSelectHeader = ({ children }: PropsWithChildren) => {
-  return (
-    <header>
-      {children}
-      <hr className="multi-select-header-hr" />
-    </header>
-  );
+  return <header className="kv-multi-select__header">{children}</header>;
 };
