@@ -96,7 +96,7 @@ export const KvMultiSelect = ({
   }, [closeOnOutsideClick, selectedValues]);
 
   return (
-    <div className={`kv-multi-select relative`} ref={multiSelectRef} {...props}>
+    <div className="kv-multi-select" ref={multiSelectRef} {...props}>
       <div
         className="kv-multi-select__value"
         onClick={() => {
@@ -115,10 +115,11 @@ export const KvMultiSelect = ({
       <KvIcon className="slot slot--right" icon="chevron-down" />
 
       {!!selectedValues?.length && (
-        <div style={{ position: "absolute", right: "3rem", top: "1.5rem" }}>
+        <div className="slot slot--right" style={{ right: "3.5rem" }}>
           <KvBadge
-            color="secondary"
             label={selectedValues?.length.toString() ?? ""}
+            color="secondary"
+            size="large"
           />
         </div>
       )}
@@ -163,10 +164,14 @@ export const KvMultiSelect = ({
           <hr className="kv-multi-select__hr" />
 
           <KvButtons column style={{ marginTop: "0.5rem", padding: "0 1rem" }}>
-            <KvButton color="muted" onClick={handleReset}>
+            <KvButton color="muted" type="button" onClick={handleReset}>
               Limpar
             </KvButton>
-            <KvButton color="success" onClick={handleSubmitSelected}>
+            <KvButton
+              color="success"
+              type="button"
+              onClick={handleSubmitSelected}
+            >
               Confirmar
             </KvButton>
           </KvButtons>

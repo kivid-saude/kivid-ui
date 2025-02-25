@@ -1,4 +1,5 @@
 .kv-multi-select {
+  display: grid;
   height: 3.5rem;
   width: 100%;
   color: var(--kv-body-color);
@@ -18,7 +19,7 @@
 .kv-multi-select__value {
   width: 100%;
   padding: 1rem;
-  padding-right: 6rem;
+  padding-right: 5rem;
   font-size: var(--kv-font-size-md);
   font-weight: var(--kv-font-weight-bold);
   line-height: 1em;
