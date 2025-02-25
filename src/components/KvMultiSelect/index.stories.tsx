@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { KvMultiSelect } from ".";
 import { KvFieldset } from "../KvFieldset";
 import { KvLabel } from "../KvLabel";
@@ -45,16 +46,6 @@ const meta = {
         },
       },
     },
-    className: {
-      control: {
-        type: "text",
-      },
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-    },
     value: {
       control: {
         type: "text",
@@ -67,7 +58,9 @@ const meta = {
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: {},
+  args: {
+    onSelectedChange: fn(),
+  },
 } satisfies Meta<typeof KvMultiSelect>;
 
 export default meta;
@@ -85,9 +78,6 @@ export const Default: Story = {
       { label: "Ford", value: "ford" },
     ],
     value: ["bmw"],
-    onSelectedChange(value) {
-      console.log(value);
-    },
   },
   render: (args) => {
     return (
