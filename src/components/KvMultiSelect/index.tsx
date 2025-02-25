@@ -89,12 +89,9 @@ export const KvMultiSelect = ({
   useEffect(() => {
     if (!closeOnOutsideClick) return;
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        multiSelectRef.current &&
-        !multiSelectRef.current.contains(event.target as Node)
-      ) {
-        toggleIsOpen();
-      }
+      if (!multiSelectRef.current) return;
+      if (multiSelectRef.current.contains(event.target as Node)) return;
+      toggleIsOpen();
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
