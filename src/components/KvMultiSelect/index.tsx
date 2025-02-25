@@ -36,7 +36,7 @@ const KvMultiSelect = React.forwardRef<
     listProps,
     ...props
   }) => {
-    const [selected, setSelected] = useState<Option[] | null>();
+    const [selected, setSelected] = useState<Option[]>([]);
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState("");
     const multiSelectRef = useRef<HTMLDivElement | null>(null);
@@ -46,7 +46,7 @@ const KvMultiSelect = React.forwardRef<
       const selectedOption = options.filter((option) =>
         value.includes(option.value),
       );
-      setSelected(selectedOption ?? null);
+      setSelected(selectedOption);
     }, [value, options]);
 
     const filteredOptions = options.filter((option) =>
@@ -54,13 +54,19 @@ const KvMultiSelect = React.forwardRef<
     );
 
     const handleSelectedChange = (option: Option) => {
-      setSelected(() => {
-        if (selected?.some((sel) => sel.value === option.value)) {
-          return selected?.filter((sel) => sel.value !== option.value);
-        }
-        return [...(selected ?? []), option];
+      setSelected((prevSelected) => {
+        const isOptionSelected = prevSelected.some(
+          (sel) => sel.value === option.value
+        );
+
+        const updatedSelected = isOptionSelected
+          ? prevSelected.filter((sel) => sel.value !== option.value)
+          : [...prevSelected, option];
+
+        onSelectedChange?.(updatedSelected.map((sel) => sel.value));
+
+        return updatedSelected;
       });
-      onSelectedChange?.(selected?.map((sel) => sel.value) ?? []);
     };
 
     useEffect(() => {
@@ -84,7 +90,7 @@ const KvMultiSelect = React.forwardRef<
 
     return (
       <div
-        className={`kv-multi-select relative}`}
+        className={`kv-multi-select relative`}
         ref={multiSelectRef}
         {...props}
       >
@@ -94,9 +100,9 @@ const KvMultiSelect = React.forwardRef<
         >
           {selected?.length
             ? selected
-                .map(({ label }) => label)
-                .sort()
-                .join(", ")
+              .map(({ label }) => label)
+              .sort()
+              .join(", ")
             : placeholder}
         </div>
 
