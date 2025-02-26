@@ -2,6 +2,7 @@ import React, {
   ReactNode,
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -36,72 +37,70 @@ export const KvMultiSelect = ({
   listProps,
   ...props
 }: TKvMultiSelect) => {
-  const [selectedValues, setSelectedValues] = useState<Option[]>([]);
-  const [currentValues, setCurrentValues] = useState<Option[]>([]);
+  const [selectedOptions, setSelectedOptions] = useState<Option[]>([]);
+  const [newSelectedOptions, setNewSelectedOptions] = useState<Option[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const multiSelectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!value?.length || !options?.length) return;
-    const hasSelected = options.some((option) => value.includes(option.value));
-    if (!hasSelected) return;
-    const selectedOptions = options.filter((option) =>
-      value.includes(option.value),
-    );
-    setCurrentValues(selectedOptions);
-    setSelectedValues(selectedOptions);
+    const selectedOptions = options.filter((_) => value.includes(_.value));
+    setNewSelectedOptions(selectedOptions);
+    setSelectedOptions(selectedOptions);
   }, [value, options]);
 
-  const filteredOptions = options.filter((option) =>
-    option.label.toLowerCase().includes(search.toLowerCase()),
-  );
+  const filteredOptions = useMemo(() => {
+    return options.filter((option) =>
+      option.label.toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [options, search]);
 
   const handleSelectedChange = (option: Option) => {
-    setCurrentValues((prevSelected) => {
-      const hasSelected = prevSelected?.some(
-        ({ value }) => value === option.value,
-      );
+    setNewSelectedOptions((prevSelected) => {
+      const hasSelected = prevSelected?.some((_) => _.value === option.value);
       const newSelected = hasSelected
-        ? prevSelected?.filter(({ value }) => value !== option.value)
-        : [...(prevSelected ?? []), option];
+        ? prevSelected.filter((_) => _.value !== option.value)
+        : [...prevSelected, option];
       return newSelected;
     });
   };
 
-  const handleSubmitSelected = () => {
-    setSelectedValues(currentValues);
-    onSelectedChange?.(currentValues.map(({ value }) => value));
+  const handleSubmit = () => {
+    setSelectedOptions(newSelectedOptions);
+    onSelectedChange?.(newSelectedOptions.map(({ value }) => value));
     setIsOpen(false);
   };
 
   const handleReset = () => {
-    setSelectedValues([]);
-    setCurrentValues([]);
+    setSelectedOptions([]);
+    setNewSelectedOptions([]);
     onSelectedChange?.([]);
   };
 
   const toggleIsOpen = useCallback(() => {
+    isOpen && setNewSelectedOptions(selectedOptions);
     setIsOpen((open) => !open);
-    isOpen && setCurrentValues(selectedValues);
-  }, [isOpen, selectedValues]);
+  }, [isOpen, selectedOptions]);
 
   useEffect(() => {
     if (!closeOnOutsideClick) return;
+    if (!isOpen) return;
     const handleClickOutside = (event: MouseEvent) => {
       if (!multiSelectRef.current) return;
       if (multiSelectRef.current.contains(event.target as Node)) return;
       toggleIsOpen();
+      document.removeEventListener("click", handleClickOutside);
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [closeOnOutsideClick, selectedValues, toggleIsOpen]);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [toggleIsOpen, closeOnOutsideClick, isOpen, selectedOptions]);
 
   return (
     <div className="kv-multi-select" ref={multiSelectRef} {...props}>
       <div className="kv-multi-select__value" onClick={toggleIsOpen}>
-        {selectedValues?.length
-          ? selectedValues
+        {selectedOptions?.length
+          ? selectedOptions
               .map(({ label }) => label)
               .sort()
               .join(", ")
@@ -110,10 +109,10 @@ export const KvMultiSelect = ({
 
       <KvIcon className="slot slot--right" icon="chevron-down" />
 
-      {!!selectedValues?.length && (
+      {!!selectedOptions?.length && (
         <div className="slot slot--right" style={{ right: "3.5rem" }}>
           <KvBadge
-            label={selectedValues?.length.toString() ?? ""}
+            label={selectedOptions?.length.toString() ?? ""}
             color="secondary"
             size="large"
           />
@@ -146,7 +145,7 @@ export const KvMultiSelect = ({
                   <KvCheckbox
                     id={option.value}
                     name={option.value}
-                    checked={currentValues?.some(
+                    checked={newSelectedOptions?.some(
                       (s) => s.value === option.value,
                     )}
                     label={option.label}
@@ -163,11 +162,7 @@ export const KvMultiSelect = ({
             <KvButton color="muted" type="button" onClick={handleReset}>
               Limpar
             </KvButton>
-            <KvButton
-              color="success"
-              type="button"
-              onClick={handleSubmitSelected}
-            >
+            <KvButton color="success" type="button" onClick={handleSubmit}>
               Confirmar
             </KvButton>
           </KvButtons>
