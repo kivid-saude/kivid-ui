@@ -1,0 +1,19 @@
+.KvItem {
+  --padding-vertical: 1rem;
+  --padding-inline: 1rem;
+  --padding: var(--padding-vertical) var(--padding-inline);
+  --border-width: 0;
+  --border-color: var(--kv-color-lychee-400);
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: var(--padding);
+  background: none;
+
+  &:not(:first-child) {
+    border-top: var(--border-width) solid var(--border-color);
+  }
+}

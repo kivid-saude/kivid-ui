@@ -1,0 +1,14 @@
+.kv-otp {
+  width: 280px;
+  padding-left: 1.5rem;
+  font-size: var(--kv-font-size-xl);
+  text-align: center;
+  letter-spacing: 1em;
+
+  &:disabled {
+    opacity: 1;
+    background: var(--kv-color-lychee-100);
+    color: var(--kv-color-lychee-600);
+    cursor: not-allowed;
+  }
+}

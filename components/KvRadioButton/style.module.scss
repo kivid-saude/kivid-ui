@@ -1,0 +1,22 @@
+.kv-input-radio {
+  --size: 1.25rem;
+  appearance: none;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid var(--kv-color-lychee-500);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:checked {
+    background-color: var(--kv-color-tertiary);
+    border: 2px solid var(--kv-color-white);
+    outline: 1.5px solid var(--kv-color-tertiary);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

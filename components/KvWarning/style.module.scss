@@ -1,0 +1,80 @@
+.kv-warning {
+  display: grid;
+  place-items: center;
+  background-color: var(--kv-color-base);
+  color: var(--kv-color-contrast);
+
+  &--square {
+    border-radius: 1rem;
+
+    &--small {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &--medium {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &--large {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  &--rect {
+    border-radius: 0.5rem;
+
+    &--small {
+      width: 3rem;
+      height: 1.5rem;
+    }
+
+    &--medium {
+      width: 4rem;
+      height: 2rem;
+    }
+
+    &--large {
+      width: 5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &--primary {
+    background-color: var(--kv-color-primary);
+  }
+
+  &--secondary {
+    background-color: var(--kv-color-secondary);
+  }
+
+  &--tertiary {
+    background-color: var(--kv-color-tertiary);
+  }
+
+  &--success {
+    background-color: var(--kv-color-success);
+  }
+
+  &--warning {
+    background-color: var(--kv-color-warning);
+  }
+
+  &--danger {
+    background-color: var(--kv-color-danger);
+  }
+
+  &--medium {
+    background-color: var(--kv-color-medium);
+  }
+
+  &--light {
+    background-color: var(--kv-color-light);
+  }
+
+  &--white {
+    background-color: var(--kv-color-white);
+  }
+}

@@ -1,0 +1,14 @@
+.kv-list {
+  --gap: 0;
+  --padding-block: 0;
+  --padding-inline: 0;
+  --background: none;
+  --border-width: 0;
+  --border-color: var(--kv-color-lychee-3);
+
+  display: grid;
+  gap: var(--gap);
+  padding: var(--padding-block) var(--padding-inline);
+  background: var(--background);
+  border-top: var(--border-width) solid var(--border-color);
+}

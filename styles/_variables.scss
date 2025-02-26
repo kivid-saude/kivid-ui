@@ -1,0 +1,207 @@
+// COLORS TOKENS
+$lychee_100: #fafcfc;
+$lychee_200: #f2f7f7;
+$lychee_300: #ebf2f2;
+$lychee_400: #dee7e7;
+$lychee_500: #c9d4d4;
+$lychee_600: #b6c2c2;
+$lychee_700: #98a3a3;
+$lychee_800: #5c6363;
+$lychee_900: #393e3e;
+
+$pear_100: #e9faf0;
+$pear_200: #bff2d4;
+$pear_300: #90e0b1;
+$pear_400: #65d493;
+$pear_500: #3dcc78;
+$pear_600: #37b86c;
+$pear_700: #30a260;
+$pear_800: #27824c;
+$pear_900: #206b3f;
+
+$java_100: #e3f7fc;
+$java_200: #c6edf7;
+$java_300: #a6dfed;
+$java_400: #73cee5;
+$java_500: #43c1e0;
+$java_600: #2ab0d1;
+$java_700: #2595ba;
+$java_800: #2284a8;
+$java_900: #1f769c;
+
+$grape_100: #eae0ff;
+$grape_200: #d7c8fa;
+$grape_300: #b9a0f2;
+$grape_400: #9573e5;
+$grape_500: #7a50d9;
+$grape_600: #6139bf;
+$grape_700: #4f29a6;
+$grape_800: #42238c;
+$grape_900: #331773;
+
+$pitaya_100: #fcdef1;
+$pitaya_200: #f7bee4;
+$pitaya_300: #f090d0;
+$pitaya_400: #eb65be;
+$pitaya_500: #e645b0;
+$pitaya_600: #cf3a9d;
+$pitaya_700: #b8348c;
+$pitaya_800: #a82f7f;
+$pitaya_900: #942971;
+
+$blackberry_100: #fcedec;
+$blackberry_200: #f7cbc7;
+$blackberry_300: #f0978f;
+$blackberry_400: #eb746a;
+$blackberry_500: #e65245;
+$blackberry_600: #cf493e;
+$blackberry_700: #b84136;
+$blackberry_800: #a1392f;
+$blackberry_900: #91342b;
+
+$tangerine_100: #fff2ed;
+$tangerine_200: #ffdaca;
+$tangerine_300: #ffc1a6;
+$tangerine_400: #ffa680;
+$tangerine_500: #ff8b59;
+$tangerine_600: #f27f4e;
+$tangerine_700: #e07343;
+$tangerine_800: #cc6539;
+$tangerine_900: #b2562e;
+
+$mango_100: #fef8ee;
+$mango_200: #fdebcc;
+$mango_300: #fcd89a;
+$mango_400: #fbcb78;
+$mango_500: #fabe57;
+$mango_600: #ebae46;
+$mango_700: #dea23a;
+$mango_800: #d19732;
+$mango_900: #c28825;
+
+// COLORS
+$kv_color_primary: $lychee_900;
+$kv_color_primary_contrast: $lychee_100;
+
+$kv_color_secondary: $java_500;
+$kv_color_secondary_contrast: $lychee_100;
+
+$kv_color_tertiary: $grape_500;
+$kv_color_tertiary_contrast: $lychee_100;
+
+$kv_color_success: $pear_500;
+$kv_color_success_contrast: $lychee_100;
+
+$kv_color_warning: $tangerine_500;
+$kv_color_warning_contrast: $lychee_100;
+
+$kv_color_danger: $blackberry_500;
+$kv_color_danger_contrast: $lychee_100;
+
+$kv_color_white: $lychee_100;
+$kv_color_white_contrast: $lychee_800;
+
+$kv_color_medium: $lychee_600;
+$kv_color_medium_contrast: $lychee_100;
+
+$kv_color_light: $lychee_400;
+$kv_color_light_contrast: $lychee_600;
+
+$kv_color_neutral: $lychee_600;
+$kv_color_neutral_contrast: $lychee_100;
+
+$kv_colors: (
+  "primary": $kv_color_primary,
+  "secondary": $kv_color_secondary,
+  "tertiary": $kv_color_tertiary,
+  "success": $kv_color_success,
+  "warning": $kv_color_warning,
+  "danger": $kv_color_danger,
+  "white": $kv_color_white,
+  "medium": $kv_color_medium,
+  "light": $kv_color_light,
+  "neutral": $kv_color_neutral,
+);
+
+// FONT_SIZE
+$kv_font_size_xs: 0.75rem; /* 12px */
+$kv_font_size_sm: 0.875rem; /* 14px */
+$kv_font_size_md: 1rem; /* 16px */
+$kv_font_size_lg: 1.125rem; /* 18px */
+$kv_font_size_xl: 1.25rem; /* 20px */
+$kv_font_size_2xl: 1.5rem; /* 24px */
+$kv_font_size_3xl: 1.75rem; /* 28px */
+$kv_font_size_4xl: 2rem; /* 32px */
+$kv_font_size_5xl: 2.5rem; /* 40px */
+$kv_font_size_6xl: 3rem; /* 48px*/
+
+// LINE_HEIGHT
+$kv_line_height_xl: calc(1em + 1rem);
+$kv_line_height_lg: calc(1em + 0.75rem);
+$kv_line_height_md: calc(1em + 0.5rem);
+$kv_line_height_sm: calc(1em + 0.25rem);
+$kv_line_height_xs: calc(1em + 0.125rem);
+
+// FONT_WEIGHT
+$kv_font_weight_thin: 200;
+$kv_font_weight_light: 300;
+$kv_font_weight_regular: 400;
+$kv_font_weight_medium: 500;
+$kv_font_weight_semibold: 600;
+$kv_font_weight_bold: 700;
+$kv_font_weight_black: 900;
+
+@mixin dataTypography {
+  font-size: $kv_font_size_md;
+  line-height: $kv_line_height_xs;
+}
+
+@mixin labelTypography {
+  font-size: $kv_font_size_sm;
+  line-height: $kv_line_height_xs;
+}
+
+@mixin descriptionTypography {
+  font-size: var(--kv-font-size-xs);
+  line-height: var(--kv-line-height-xs);
+  letter-spacing: 0.0125em;
+}
+
+$kv_colors_contrasts: (
+  "primary": (
+    "color": var(--kv-color-primary),
+    "contrast": var(--kv-color-primary-contrast),
+  ),
+  "secondary": (
+    "color": var(--kv-color-secondary),
+    "contrast": var(--kv-color-secondary-contrast),
+  ),
+  "tertiary": (
+    "color": var(--kv-color-tertiary),
+    "contrast": var(--kv-color-tertiary-contrast),
+  ),
+  "success": (
+    "color": var(--kv-color-success),
+    "contrast": var(--kv-color-success-contrast),
+  ),
+  "warning": (
+    "color": var(--kv-color-warning),
+    "contrast": var(--kv-color-warning-contrast),
+  ),
+  "danger": (
+    "color": var(--kv-color-danger),
+    "contrast": var(--kv-color-danger-contrast),
+  ),
+  "white": (
+    "color": var(--kv-color-white),
+    "contrast": var(--kv-color-white-contrast),
+  ),
+  "medium": (
+    "color": var(--kv-color-medium),
+    "contrast": var(--kv-color-medium-contrast),
+  ),
+  "light": (
+    "color": var(--kv-color-light),
+    "contrast": var(--kv-color-light-contrast),
+  ),
+);

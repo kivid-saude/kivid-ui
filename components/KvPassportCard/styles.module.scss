@@ -1,0 +1,93 @@
+.kv-passport-card {
+  display: grid;
+  align-content: space-between;
+  width: 23rem;
+  max-width: 100%;
+  height: 13rem;
+  padding: 1.5rem;
+  color: var(--kv-color-white);
+  border-radius: var(--border-radius, 1rem);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.kv-passport-card--individual {
+  background-image: url("./assets/passport-individual.png");
+}
+
+.kv-passport-card--family {
+  background-image: url("./assets/passport-family.png");
+}
+
+.kv-passport-card--company {
+  background-image: url("./assets/passport-company.png");
+}
+
+.kv-passport-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.kv-passport-card__title {
+  font-size: var(--kv-font-size-md);
+  font-weight: var(--kv-font-weight-bold);
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__company-name {
+  font-size: var(--kv-font-size-md);
+  font-weight: 500;
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__subtitle {
+  margin-top: 0.25rem;
+  font-size: var(--kv-font-size-md);
+  font-weight: var(--kv-font-weight-medium);
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__company-text {
+  margin-top: 0.25rem;
+  font-size: var(--kv-font-size-sm);
+  font-weight: var(--kv-font-weight-medium);
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__company-title {
+  font-weight: bold;
+  font-size: var(--kv-font-size-sm);
+}
+
+.kv-passport-card__company-subtitle {
+  font-size: var(--kv-font-size-xs);
+}
+
+.kv-passport-card__footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.kv-passport-card__username {
+  font-size: var(--kv-font-size-lg);
+  font-weight: var(--kv-font-weight-bold);
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__due-date {
+  margin-top: 0.25rem;
+  font-size: var(--kv-font-size-xs);
+  font-weight: var(--kv-font-weight-medium);
+  line-height: var(--kv-line-height-xs);
+}
+
+.kv-passport-card__logo {
+  height: 20px;
+  transform-origin: bottom left;
+  transform: rotate(-90deg) translateY(80px);
+}

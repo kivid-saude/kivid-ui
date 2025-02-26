@@ -1,0 +1,103 @@
+.dialog {
+  --dialog-backdrop-color: #fffa;
+  --dialog-padding: 2rem;
+  --dialog-background: var(--kv-color-lychee-100);
+  --dialog-border: 1px solid var(--kv-color-lychee-400);
+  --dialog-border-radius: 12px;
+  --dialog-header-padding: 2rem 2rem 0;
+  --dialog-header-color: var(--kv-body-color);
+  --dialog-header-background: var(--dialog-background);
+  --dialog-content-padding: 2rem;
+  --dialog-content-color: var(--kv-body-color);
+  --dialog-content-background: var(--dialog-background);
+  --dialog-footer-padding: 0 2rem 2rem;
+  --dialog-footer-color: var(--kv-body-color);
+  --dialog-footer-background: transparent;
+  --dialog-box-shadow: 0 8px 24px 0 #0002;
+  --dialog-max-width: 400px;
+  --dialog-max-height: 80vh;
+  --dialog-min-height: auto;
+
+  position: fixed;
+  width: calc(100% - 5rem);
+  max-width: var(--dialog-max-width);
+  /* height: calc(100% - 5rem); */
+  min-height: var(--dialog-min-height);
+  max-height: var(--dialog-max-height);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: none;
+  border: var(--dialog-border);
+  border-radius: var(--dialog-border-radius);
+  box-shadow: var(--dialog-box-shadow);
+}
+.dialog[open] {
+  display: grid;
+}
+.dialog::backdrop {
+  background-color: #fffa;
+}
+
+.dialog__container {
+  position: relative;
+  display: grid;
+  grid-auto-rows: auto 1fr auto;
+  align-items: start;
+  width: 100%;
+  /* min-height: var(--dialog-min-height); */
+  /* max-height: 100%; */
+  overflow: hidden;
+  background: var(--dialog-background);
+  /* border-radius: var(--dialog-border-radius); */
+  /* box-shadow: var(--dialog-box-shadow); */
+}
+
+.dialog__header {
+  padding: var(--dialog-header-padding);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dialog-header-color);
+  background: var(--dialog-header-background);
+}
+
+.dialog__main {
+  display: grid;
+  overflow: auto;
+  padding: var(--dialog-content-padding);
+  color: var(--dialog-content-color);
+  background: var(--dialog-content-background);
+}
+
+.dialog__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--dialog-footer-padding);
+  color: var(--dialog-footer-color);
+  background: var(--dialog-footer-background);
+}
+
+.dialog__menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.dialog__close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  border: 0;
+  background: var(--kv-color-lychee-700);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
