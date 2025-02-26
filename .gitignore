@@ -1,0 +1,9 @@
+/node_modules
+/stories
+/public
+/.vite
+vite-env.d.ts
+*.stories.ts
+*.stories.tsx
+App.tsx
+main.tsx
