@@ -25,6 +25,7 @@ export type TKvMultiSelect = {
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
   listProps?: React.HTMLAttributes<HTMLUListElement>;
+  disabled?: boolean
   onSelectedChange?: (value: Option["value"][]) => void;
 };
 
@@ -35,6 +36,7 @@ export const KvMultiSelect = ({
   closeOnOutsideClick = true,
   onSelectedChange,
   listProps,
+  disabled,
   ...props
 }: TKvMultiSelect) => {
   const [selectedValue, setSelectedValue] = useState<Option["value"][]>(value);
@@ -98,18 +100,29 @@ export const KvMultiSelect = ({
     return () => document.removeEventListener("click", handleClickOutside);
   }, [close, closeOnOutsideClick, isOpen, selectedValue]);
 
+  const shouldRenderPlaceholder = !!disabled || !selectedOptions.length
+
+  function handleClick() {
+    if (disabled) return
+
+    if (isOpen) {
+      close()
+      return
+    }
+
+    setIsOpen(true)
+  }
+
   return (
-    <div className="kv-multi-select" ref={multiSelectRef} {...props}>
+    <div className="kv-multi-select " ref={multiSelectRef} {...props}>
       <div
-        className="kv-multi-select__value"
-        onClick={() => (isOpen ? close() : setIsOpen(true))}
+        className={`kv-multi-select__value ${disabled ? "kv-multi-select__disabled" : "kv-multi-select__enabled"}`}
+        onClick={() => handleClick()}
       >
-        {selectedOptions?.length
-          ? selectedOptions
-              .map(({ label }) => label)
-              .sort()
-              .join(", ")
-          : placeholder}
+        {shouldRenderPlaceholder ? placeholder : selectedOptions
+          .map(({ label }) => label)
+          .sort()
+          .join(", ")}
       </div>
 
       <KvIcon className="slot slot--right" icon="chevron-down" />

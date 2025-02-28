@@ -26,7 +26,15 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.kv-multi-select__enabled {
   cursor: pointer;
+}
+
+.kv-multi-select__disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .kv-multi-select__content {
