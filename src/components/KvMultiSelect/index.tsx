@@ -50,8 +50,7 @@ export const KvMultiSelect = ({
   }, [options, selectedValue]);
 
   useEffect(() => {
-    // if (!value?.length) return;
-    console.log("value :", value);
+    if (!value?.length) return;
     setSelectedValue(value);
   }, [value]);
 
