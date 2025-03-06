@@ -24,7 +24,7 @@ export type TKvMultiSelect = {
   value?: Option["value"][];
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
-  maxHeight?: number;
+  maxHeight?: React.CSSProperties["maxHeight"];
   disabled?: boolean;
   onSelectedChange?: (value: Option["value"][]) => void;
 };
@@ -35,7 +35,7 @@ export const KvMultiSelect = ({
   value = [],
   closeOnOutsideClick = true,
   onSelectedChange,
-  maxHeight,
+  maxHeight = "unset",
   disabled,
   ...props
 }: TKvMultiSelect) => {
@@ -155,7 +155,7 @@ export const KvMultiSelect = ({
           <hr className="kv-multi-select__hr" />
 
           <div className="kv-multi-select__list">
-            <ul style={{ maxHeight: maxHeight ?? "unset", overflow: "auto" }}>
+            <ul style={{ overflow: "auto", maxHeight: maxHeight }}>
               {filteredOptions.map((option) => (
                 <li
                   key={option.value}
