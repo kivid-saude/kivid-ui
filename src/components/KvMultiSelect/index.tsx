@@ -1,4 +1,4 @@
-import React, {
+import {
   ReactNode,
   useCallback,
   useEffect,
@@ -24,7 +24,7 @@ export type TKvMultiSelect = {
   value?: Option["value"][];
   overlay?: boolean;
   closeOnOutsideClick?: boolean;
-  listProps?: React.HTMLAttributes<HTMLUListElement>;
+  maxHeight?: number;
   onSelectedChange?: (value: Option["value"][]) => void;
 };
 
@@ -34,7 +34,7 @@ export const KvMultiSelect = ({
   value = [],
   closeOnOutsideClick = true,
   onSelectedChange,
-  listProps,
+  maxHeight,
   ...props
 }: TKvMultiSelect) => {
   const [selectedValue, setSelectedValue] = useState<Option["value"][]>(value);
@@ -140,7 +140,7 @@ export const KvMultiSelect = ({
           <hr className="kv-multi-select__hr" />
 
           <div className="kv-multi-select__list">
-            <ul {...listProps}>
+            <ul style={{ maxHeight: maxHeight ?? "unset" }}>
               {filteredOptions.map((option) => (
                 <li
                   key={option.value}
