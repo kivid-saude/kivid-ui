@@ -155,7 +155,7 @@ export const KvMultiSelect = ({
           <hr className="kv-multi-select__hr" />
 
           <div className="kv-multi-select__list">
-            <ul style={{ maxHeight: maxHeight ?? "unset" }}>
+            <ul style={{ maxHeight: maxHeight ?? "unset", overflow: "auto" }}>
               {filteredOptions.map((option) => (
                 <li
                   key={option.value}
