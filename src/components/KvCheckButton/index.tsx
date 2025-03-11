@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import { KvButton, TKvButton } from "../KvButton";
 
 type TKvCheckButton = {
@@ -9,12 +9,16 @@ type TKvCheckButton = {
 
 const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
   ({ children, color, size, onChange, ...props }, ref) => {
-    const [isChecked, setIsChecked] = useState(props.checked);
+    const [isChecked, setIsChecked] = useState<boolean>();
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       setIsChecked(!isChecked);
       onChange?.(event);
     };
+
+    useEffect(() => {
+      setIsChecked(props.checked);
+    }, [props.checked]);
 
     return (
       <div className="relative">
