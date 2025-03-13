@@ -41,7 +41,7 @@ const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
         />
         <KvButton
           type="button"
-          size={size ?? "large"}
+          size={size ?? "medium"}
           color={isChecked ? color ?? "tertiary" : "medium"}
           style={{
             minWidth: "unset",
