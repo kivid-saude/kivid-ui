@@ -31,7 +31,7 @@ export const KvButton = ({
 }: TKvButton) => {
   const classes = [
     styles["kv-button"],
-    styles[`kv-button--${size}`],
+    styles[`kv-button--size__${size}`],
     styles[`kv-button--${color}`],
   ];
   if (rounded) classes.push(styles[`kv-button--rounded`]);

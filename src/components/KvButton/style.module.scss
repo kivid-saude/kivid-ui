@@ -45,19 +45,19 @@
     cursor: not-allowed;
   }
 
-  &--small {
+  &--size__small {
     --height: 2rem;
     --font-size: var(--kv-font-size-xs);
     min-width: 5rem;
   }
 
-  &--medium {
+  &--size__medium {
     --height: 2.5rem;
     --font-size: var(--kv-font-size-sm);
     min-width: 9rem;
   }
 
-  &--large {
+  &--size__large {
     --height: 3rem;
     --font-size: var(--kv-font-size-md);
     min-width: 11rem;
