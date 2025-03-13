@@ -1,0 +1,65 @@
+.kv-seal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--kv-seal-background);
+  border-radius: 50%;
+  width: var(--kv-seal-size);
+  height: var(--kv-seal-size);
+  transition: 0.2s ease-in-out;
+  pointer-events: none;
+
+  &--size-medium {
+    --kv-seal-size: 1.5rem;
+    --icon-size: 1.5rem;
+  }
+  &--size-small {
+    --kv-seal-width: 1rem;
+    --kv-seal-height: 1rem;
+    --icon-size: 1rem;
+  }
+
+  & svg {
+    min-width: var(--icon-size);
+    height: var(--icon-size);
+    color: var(--kv-seal-icon-color-inverted, #fff);
+  }
+
+  &--variant-add {
+    --kv-seal-background: var(--kv-color-grape-500);
+    --kv-seal-icon-color: var(--kv-color-grape-500);
+  }
+  &--variant-success {
+    --kv-seal-background: var(--kv-color-pear-500);
+    --kv-seal-icon-color: var(--kv-color-pear-500);
+  }
+  &--variant-alert {
+    --kv-seal-background: var(--kv-color-tangerine-500);
+    --kv-seal-icon-color: var(--kv-color-tangerine-500);
+  }
+  &--variant-error {
+    --kv-seal-background: var(--kv-color-blackberry-500);
+    --kv-seal-icon-color: var(--kv-color-blackberry-500);
+  }
+  &--variant-neutral {
+    --kv-seal-background: var(--kv-color-lychee-600);
+    --kv-seal-icon-color: var(--kv-color-lychee-600);
+  }
+  &--variant-next {
+    --kv-seal-background: var(--kv-color-lychee-600);
+    --kv-seal-icon-color: var(--kv-color-lychee-600);
+  }
+
+  &--inverted {
+    --kv-seal-background: var(--kv-color-lychee-100);
+    --kv-seal-icon-color-inverted: var(--kv-seal-icon-color);
+  }
+
+  &:global(.slot--right) {
+    right: 1rem;
+  }
+
+  &:global(.slot--left) {
+    left: 1rem;
+  }
+}
