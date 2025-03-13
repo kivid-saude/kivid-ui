@@ -47,6 +47,7 @@ const KvCheckButton = React.forwardRef<HTMLInputElement, TKvCheckButton>(
             minWidth: "unset",
             padding: "0.75rem",
             width: "100%",
+            borderRadius: "0.5rem",
           }}
         >
           {children}
