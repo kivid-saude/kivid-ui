@@ -124,6 +124,17 @@
     --color-active: var(--kv-color-lychee-100);
   }
 
+  &--medium {
+    --background: var(--kv-color-lychee-500);
+    --background-hover: var(--kv-color-lychee-600);
+    --background-focus: var(--kv-color-lychee-600);
+    --border-color: var(--kv-color-lychee-500);
+    --color: var(--kv-color-lychee-100);
+    --background-active: var(--kv-color-lychee-500);
+    --border-color-active: var(--kv-color-lychee-500);
+    --color-active: var(--kv-color-lychee-100);
+  }
+
   &--muted {
     --background: var(--kv-color-lychee-100);
     --background-hover: var(--kv-color-lychee-200);
