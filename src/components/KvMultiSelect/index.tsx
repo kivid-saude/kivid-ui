@@ -45,6 +45,7 @@ export type TKvMultiSelect = {
   cancelButtonColor?: ButtonConfig["color"];
   cancelButtonText?: ButtonConfig["text"];
   buttonSize?: ButtonConfig["size"];
+  resetAllValues?: boolean
 };
 
 export const KvMultiSelect = ({
@@ -60,6 +61,7 @@ export const KvMultiSelect = ({
   cancelButtonColor = 'muted',
   cancelButtonText = 'Limpar',
   buttonSize,
+  resetAllValues = false,
   ...props
 }: TKvMultiSelect) => {
   const [selectedValue, setSelectedValue] = useState<Option["value"][]>(value);
@@ -101,9 +103,15 @@ export const KvMultiSelect = ({
     setSelectedOldValue(selectedValue);
   };
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setSelectedValue([]);
-  };
+  }, []);
+
+  useEffect(() => {
+    if (resetAllValues) {
+      handleReset();
+    }
+  }, [resetAllValues, handleReset]);
 
   const close = useCallback(() => {
     setSelectedValue(selectedOldValue);
