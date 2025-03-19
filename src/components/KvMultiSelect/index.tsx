@@ -17,6 +17,19 @@ type Option = {
   value: string;
 };
 
+type ButtonConfig = {
+  color:
+  | "secondary"
+  | "tertiary"
+  | "success"
+  | "danger"
+  | "muted"
+  | "clear"
+  | "medium";
+  size: "small" | "medium" | "large";
+  text: string
+}
+
 export type TKvMultiSelect = {
   options: Option[];
   placeholder?: string;
@@ -27,6 +40,11 @@ export type TKvMultiSelect = {
   maxHeight?: React.CSSProperties["maxHeight"];
   disabled?: boolean;
   onSelectedChange?: (value: Option["value"][]) => void;
+  confirmButtonColor?: ButtonConfig["color"];
+  confirmButtonText?: ButtonConfig["text"];
+  cancelButtonColor?: ButtonConfig["color"];
+  cancelButtonText?: ButtonConfig["text"];
+  buttonSize?: ButtonConfig["size"];
 };
 
 export const KvMultiSelect = ({
@@ -37,6 +55,11 @@ export const KvMultiSelect = ({
   onSelectedChange,
   maxHeight = "unset",
   disabled,
+  confirmButtonColor = 'success',
+  confirmButtonText = 'Confirmar',
+  cancelButtonColor = 'muted',
+  cancelButtonText = 'Limpar',
+  buttonSize,
   ...props
 }: TKvMultiSelect) => {
   const [selectedValue, setSelectedValue] = useState<Option["value"][]>(value);
@@ -122,9 +145,9 @@ export const KvMultiSelect = ({
         {shouldRenderPlaceholder
           ? placeholder
           : selectedOptions
-              .map(({ label }) => label)
-              .sort()
-              .join(", ")}
+            .map(({ label }) => label)
+            .sort()
+            .join(", ")}
       </div>
 
       <KvIcon className="slot slot--right" icon="chevron-down" />
@@ -177,11 +200,11 @@ export const KvMultiSelect = ({
           <hr className="kv-multi-select__hr" />
 
           <KvButtons column style={{ marginTop: "0.5rem", padding: "0 1rem" }}>
-            <KvButton color="muted" type="button" onClick={handleReset}>
-              Limpar
+            <KvButton color={cancelButtonColor} size={buttonSize} type="button" onClick={handleReset}>
+              {cancelButtonText}
             </KvButton>
-            <KvButton color="success" type="button" onClick={handleSubmit}>
-              Confirmar
+            <KvButton color={confirmButtonColor} size={buttonSize} type="button" onClick={handleSubmit}>
+              {confirmButtonText}
             </KvButton>
           </KvButtons>
         </section>
