@@ -21,6 +21,7 @@ export const KvDialog = ({
   show = false,
   className = "",
   style,
+  onDidDismiss,
 }: DialogProps) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
@@ -43,6 +44,7 @@ export const KvDialog = ({
       className={`${styles.dialog} ${className}`}
       ref={dialog}
       style={style}
+      onClose={() => onDidDismiss?.()}
     >
       <div className={styles.dialog__container}>{children}</div>
     </dialog>
