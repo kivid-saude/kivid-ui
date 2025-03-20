@@ -1,0 +1,29 @@
+$sizes: (
+  large: 2rem,
+  medium: 1.5rem,
+  small: 1rem,
+  xsmall: 0.5rem,
+);
+
+.kv-icon {
+  flex-shrink: 0;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--kv-color-base, currentColor);
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+
+  &:global(.slot--right) {
+    right: 1rem;
+  }
+
+  &:global(.slot--left) {
+    left: 1rem;
+  }
+}
+
+@each $size_name, $size_value in $sizes {
+  .kv-icon--size-#{$size_name} {
+    --icon-size: #{$size_value};
+  }
+}

@@ -1,0 +1,18 @@
+.kv-label {
+  width: 100%;
+  font-size: var(--kv-font-size-xs);
+  font-weight: 500;
+  line-height: var(--kv-line-height-sm);
+
+  :global(.kv-fieldset--has-label) > & {
+    position: absolute;
+    top: 0;
+    z-index: 80;
+    display: grid;
+    align-items: end;
+    padding-top: 0.875rem;
+    padding-inline: 1rem;
+    pointer-events: none;
+    line-height: 1;
+  }
+}

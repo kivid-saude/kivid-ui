@@ -1,0 +1,43 @@
+.kv-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.kv-checkbox-container {
+  --size: 1.25rem;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
+}
+
+.kv-checkbox-input {
+  appearance: none;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 0.5rem;
+  border: 1px solid var(--kv-color-lychee-500);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  pointer-events: all;
+
+  &:checked {
+    background-color: var(--background-checked, var(--kv-color-tertiary));
+    border: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.kv-checkbox-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
