@@ -51,7 +51,7 @@ export type TKvMultiSelect = {
 export const KvMultiSelect = ({
   options,
   placeholder = "Selecione...",
-  value = [],
+  value,
   closeOnOutsideClick = true,
   onSelectedChange,
   maxHeight = "unset",
@@ -64,7 +64,7 @@ export const KvMultiSelect = ({
   resetAllValues = false,
   ...props
 }: TKvMultiSelect) => {
-  const [selectedValue, setSelectedValue] = useState<Option["value"][]>(value);
+  const [selectedValue, setSelectedValue] = useState<Option["value"][]>(value ?? []);
   const [selectedOldValue, setSelectedOldValue] = useState<Option["value"][]>(
     [],
   );
