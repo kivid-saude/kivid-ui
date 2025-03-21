@@ -137,7 +137,7 @@ export const KvMultiSelect = ({
     return () => document.removeEventListener("click", handleClickOutside);
   }, [close, closeOnOutsideClick, isOpen, selectedValue]);
 
-  const shouldRenderPlaceholder = !!disabled || !selectedOptions.length;
+  const shouldRenderPlaceholder = (selectedValue?.length === 0) && (!!disabled || !selectedOptions.length);
 
   function handleClick() {
     if (disabled) return;
