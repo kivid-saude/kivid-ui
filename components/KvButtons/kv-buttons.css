@@ -1,0 +1,10 @@
+.kv-buttons {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+}
+.kv-buttons--column {
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 1rem;
+}
