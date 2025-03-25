@@ -46,6 +46,7 @@ export type TKvMultiSelect = {
   cancelButtonText?: ButtonConfig["text"];
   buttonSize?: ButtonConfig["size"];
   resetAllValues?: boolean
+  enableAllValuesSelectionMode?: boolean
 };
 
 export const KvMultiSelect = ({
@@ -62,6 +63,7 @@ export const KvMultiSelect = ({
   cancelButtonText = 'Limpar',
   buttonSize,
   resetAllValues = false,
+  enableAllValuesSelectionMode = false,
   ...props
 }: TKvMultiSelect) => {
   const [selectedValue, setSelectedValue] = useState<Option["value"][]>(value);
@@ -93,6 +95,11 @@ export const KvMultiSelect = ({
       const newValue = hasSelected
         ? oldSelected.filter((item) => item !== value)
         : [...oldSelected, value];
+
+      if (enableAllValuesSelectionMode) {
+        onSelectedChange?.(newValue);
+      }
+
       return newValue;
     });
   };
@@ -102,6 +109,23 @@ export const KvMultiSelect = ({
     onSelectedChange?.(selectedValue);
     setSelectedOldValue(selectedValue);
   };
+
+  const handleSelectAllValues = () => {
+    const allValues = options.map(option => option.value);
+    setSelectedValue(allValues);
+    setSelectedOldValue(allValues);
+    setIsOpen(false);
+    onSelectedChange?.(allValues);
+  };
+
+  const handleResetAllValues = useCallback(() => {
+    const empty: Option["value"][] = [];
+    setSelectedValue(empty);
+    setSelectedOldValue(empty);
+    onSelectedChange?.(empty);
+    setIsOpen(false);
+  }, [onSelectedChange]);
+
 
   const handleReset = useCallback(() => {
     setSelectedValue([]);
@@ -114,9 +138,11 @@ export const KvMultiSelect = ({
   }, [resetAllValues, handleReset]);
 
   const close = useCallback(() => {
-    setSelectedValue(selectedOldValue);
+    if (!enableAllValuesSelectionMode) {
+      setSelectedValue(selectedOldValue);
+    }
     setIsOpen(false);
-  }, [selectedOldValue]);
+  }, [enableAllValuesSelectionMode, selectedOldValue]);
 
   useEffect(() => {
     if (!closeOnOutsideClick) return;
@@ -208,12 +234,27 @@ export const KvMultiSelect = ({
           <hr className="kv-multi-select__hr" />
 
           <KvButtons column style={{ marginTop: "0.5rem", padding: "0 1rem" }}>
-            <KvButton color={cancelButtonColor} size={buttonSize} type="button" onClick={handleReset}>
-              {cancelButtonText}
-            </KvButton>
-            <KvButton color={confirmButtonColor} size={buttonSize} type="button" onClick={handleSubmit}>
-              {confirmButtonText}
-            </KvButton>
+            {!enableAllValuesSelectionMode && (
+              <>
+                <KvButton color={cancelButtonColor} size={buttonSize} type="button" onClick={handleReset}>
+                  {cancelButtonText}
+                </KvButton>
+                <KvButton color={confirmButtonColor} size={buttonSize} type="button" onClick={handleSubmit}>
+                  {confirmButtonText}
+                </KvButton>
+              </>
+            )}
+
+            {enableAllValuesSelectionMode && (
+              <>
+                <KvButton color='muted' size={buttonSize} rounded={false} type="button" onClick={handleSelectAllValues}>
+                  Todos
+                </KvButton>
+                <KvButton color='muted' size={buttonSize} rounded={false} type="button" onClick={handleResetAllValues}>
+                  Limpar
+                </KvButton>
+              </>
+            )}
           </KvButtons>
         </section>
       )}

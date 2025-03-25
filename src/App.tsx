@@ -28,6 +28,8 @@ import { useAlert } from "./hooks/useAlert";
 import { useModal } from "./hooks/useModal";
 import logo from "/logo-kivid.svg";
 import logoHorizontal from "/logo-kivid-horizontal.svg";
+import { KvMultiSelect } from "./components/KvMultiSelect";
+import { useState } from "react";
 
 function App() {
   const { props: alertProps, present: presentAlert } = useAlert({
@@ -40,6 +42,35 @@ function App() {
     present: presentModal,
     dismiss: dismissModal,
   } = useModal();
+
+  const options = [
+    {
+      label: 'Audi',
+      value: 'audi'
+    },
+    {
+      label: 'BMW',
+      value: 'bmw'
+    },
+    {
+      label: 'Honda',
+      value: 'honda'
+    },
+    {
+      label: 'BYD',
+      value: 'byd'
+    },
+    {
+      label: 'Fiat',
+      value: 'fiat'
+    },
+    {
+      label: 'Ford',
+      value: 'ford'
+    }
+  ]
+
+  const [multiSelectValues, setMultiSelectValues] = useState([])
 
   return (
     <>
@@ -63,6 +94,22 @@ function App() {
             icon="check"
             iconColor="success"
           />
+
+
+          <section style={{ margin: '20px 0' }}>
+            <h3>MultiSelect</h3>
+            <KvFieldset>
+              <KvLabel>
+                Marcas de carro:
+              </KvLabel>
+              <KvMultiSelect
+                onSelectedChange={() => setMultiSelectValues}
+                options={options}
+                value={multiSelectValues}
+                enableAllValuesSelectionMode
+              />
+            </KvFieldset>
+          </section>
 
           <form style={{ display: "grid", gap: "1rem", marginTop: "1.5rem" }}>
             <KvFieldset>
