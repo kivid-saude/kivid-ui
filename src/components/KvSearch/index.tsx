@@ -52,7 +52,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
         {status && ["idle", "loading"].includes(status) && (
           <KvIconButton
             disabled={props.disabled}
-            color="success"
+            color="secondary"
             className="slot slot--right"
             loading={status === "loading"}
             size={hasLabel ? "medium" : "xsmall"}

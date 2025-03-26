@@ -2,7 +2,7 @@ import { KvSpinner } from "../KvSpinner";
 import styles from "./style.module.scss";
 
 export type TKvIconButton = {
-  color?: "tertiary" | "success" | "danger" | "muted";
+  color?: "tertiary" | "success" | "danger" | "muted" | "secondary";
   size?: "xsmall" | "small" | "medium" | "large";
   shape?: "square" | "rect";
   rounded?: boolean;
