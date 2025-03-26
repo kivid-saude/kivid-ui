@@ -10,36 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
 
-      # - name: Install dependencies
-      #   run: npm install
+    # - name: Install dependencies
+    #   run: npm install
 
-      - name: Run deploy script
-        run: |
-          git config --global user.name "Marcelo Ribeiro"
-          git config --global user.email "kividsaude@gmail.com"
-          git checkout main
-          git subtree split --prefix=src -b components-temp
-          git checkout components-temp
-          cat <<EOL >> .gitignore
-          /node_modules
-          /stories
-          /public
-          /.vite
-          vite-env.d.ts
-          *.stories.ts
-          *.stories.tsx
-          App.tsx
-          main.tsx
-          EOL
-
-          git add .gitignore
-          git commit -m "Atualiza .gitignore para a branch components" || echo "Sem alterações no .gitignore"
-          git push origin components-temp:components --force
+    - name: Run deploy script
+      run: |
+        git config --global user.name "Marcelo Ribeiro"
+        git config --global user.email "kividsaude@gmail.com"
+        git push origin --delete components
+        git subtree split -P src -b components
+        git checkout components
+        echo "/node_modules" >> .gitignore
+        echo "/stories" >> .gitignore
+        echo "/public" >> .gitignore
+        echo "/.vite" >> .gitignore
+        echo "vite-env.d.ts" >> .gitignore
+        echo "*.stories.ts" >> .gitignore
+        echo "*.stories.tsx" >> .gitignore
+        echo "App.tsx" >> .gitignore
+        echo "main.tsx" >> .gitignore
+        git rm -r --cached .
+        git add -A
+        git commit -m "Add .gitignore for components branch"
+        git push origin components
