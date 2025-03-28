@@ -76,10 +76,18 @@ export const KvMultiSelect = ({
     return options.filter((o) => selectedValue.includes(o.value));
   }, [options, selectedValue]);
 
+  const changeSelectedValue = useCallback((newValue: Option["value"][]) => {
+    const filteredValue = newValue.filter((item) => {
+      return options.some((option) => option.value === item);
+    });
+
+    setSelectedValue(filteredValue);
+  }, [options]);
+
   const handleReset = useCallback(() => {
     setSelectedValue((prev) => (prev.length ? [] : prev))
   }, []);
-
+  
   useEffect(() => {
     if (!value?.length) {
       handleReset();
@@ -87,9 +95,9 @@ export const KvMultiSelect = ({
       return;
     }
     
-    setSelectedValue(value);
+    changeSelectedValue(value);
     setSelectedOldValue(value);
-  }, [value, handleReset]);
+  }, [value, changeSelectedValue, handleReset]);
 
   const filteredOptions = useMemo(() => {
     return options.filter((option) =>
@@ -120,9 +128,9 @@ export const KvMultiSelect = ({
   }, [resetAllValues, handleReset]);
 
   const close = useCallback(() => {
-    setSelectedValue(selectedOldValue);
+    changeSelectedValue(selectedOldValue);
     setIsOpen(false);
-  }, [selectedOldValue]);
+  }, [selectedOldValue, changeSelectedValue]);
 
   useEffect(() => {
     if (!closeOnOutsideClick) return;
