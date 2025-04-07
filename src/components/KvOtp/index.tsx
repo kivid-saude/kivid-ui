@@ -10,6 +10,7 @@ type TKvOTPInput = {
   status?: "idle" | "loading" | "valid" | "invalid";
   invalidMessage?: string;
   disableTryAgain?: boolean;
+  hideResendButton?: boolean;
   handleResendToken?: () => void;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -19,12 +20,33 @@ const KvOtp = React.forwardRef<HTMLInputElement, TKvOTPInput>(
       className = "",
       invalidMessage = "Código não confere",
       status = "idle",
+      hideResendButton = false,
       handleResendToken,
       disableTryAgain,
       ...props
     },
     ref,
   ) => {
+    function renderResendButton() {
+      if (hideResendButton) return null
+
+      if (["idle", "invalid"].includes(status)) {
+        return (
+          <KvButton
+            type="button"
+            color="muted"
+            size="small"
+            onClick={() => handleResendToken?.()}
+            disabled={disableTryAgain}
+          >
+            Reenviar Código
+          </KvButton>
+        )
+      }
+
+      return null
+    }
+
     return (
       <div style={{ display: "grid", gap: "1rem", justifyItems: "center" }}>
         <KvTooltip
@@ -50,17 +72,7 @@ const KvOtp = React.forwardRef<HTMLInputElement, TKvOTPInput>(
           />
         </KvTooltip>
 
-        {["idle", "invalid"].includes(status) && (
-          <KvButton
-            type="button"
-            color="muted"
-            size="small"
-            onClick={() => handleResendToken?.()}
-            disabled={disableTryAgain}
-          >
-            Reenviar Código
-          </KvButton>
-        )}
+        {renderResendButton()}
 
         {["loading"].includes(status) && <KvSpinner color="light" />}
 

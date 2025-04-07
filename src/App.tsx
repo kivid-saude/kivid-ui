@@ -176,7 +176,7 @@ function App() {
 
         <KvCard>
           <form style={{ display: "grid", gap: "1rem" }}>
-            <KvOtp placeholder="######" />
+            <KvOtp placeholder="######" hideResendButton />
 
             <KvButtons>
               <KvButton color="success" expand="block" type="submit">
