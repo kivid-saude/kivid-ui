@@ -13,6 +13,7 @@ type TKvSearch = {
   onClean?: () => void;
   onSearch?: () => void;
   buttonProps?: TKvIconButton;
+  invalidMessage?: string;
 } & Omit<TKvInput, "status">;
 
 export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(

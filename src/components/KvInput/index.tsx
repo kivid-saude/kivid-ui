@@ -9,12 +9,13 @@ export type TKvInput = {
   rounded?: boolean;
   status?: TKvInputStatus;
   tooltipProps?: TKvTooltip;
-  isSmall?: boolean
+  isSmall?: boolean;
+  invalidMessage?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
   (
-    { className = "", rounded = true, status = "idle", tooltipProps, isSmall, ...props },
+    { className = "", rounded = true, status = "idle", tooltipProps, isSmall, invalidMessage, ...props },
     ref,
   ) => {
     const classes = [styles["kv-input"]];
@@ -47,9 +48,9 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
         <KvTooltip
           align="start"
           side="bottom"
-          content={tooltipProps?.content}
-          open={tooltipProps?.status === "invalid" && !!tooltipProps?.content}
-          status={tooltipProps?.status}
+          content={tooltipProps?.content || invalidMessage}
+          open={tooltipProps?.status === "invalid" && !!tooltipProps?.content || status === "invalid" && !!invalidMessage}
+          status={tooltipProps?.status || (status === "invalid" ? "invalid" : undefined)}
           maxWidthAsChild
           {...tooltipProps}
         >
