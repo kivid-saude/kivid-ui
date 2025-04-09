@@ -18,19 +18,15 @@ jobs:
         with:
           node-version: "16"
 
-      # - name: Install dependencies
-      #   run: npm install
-
       - name: Run deploy script
         run: |
-          git config --global user.name "Marcelo Ribeiro"
-          git config --global user.email "kividsaude@gmail.com"
-          if git ls-remote --exit-code --heads origin lib; then
-            git fetch origin lib:lib
-            git checkout lib
-          else
-            git checkout -b lib
+          git config --global user.name "Ops Kivid"
+          git config --global user.email "ops@kivid.com.br"
+          git ls-remote --exit-code origin lib &> /dev/null
+          if [ $? -eq 0 ]; then
+            git push origin --delete lib
           fi
+          git checkout -b lib
           echo "/node_modules" >> .gitignore
           echo "/stories" >> .gitignore
           echo "/public" >> .gitignore
@@ -43,4 +39,4 @@ jobs:
           git rm -r --cached .
           git add -A
           git commit -m "Add .gitignore for lib branch"
-          git push origin lib --force
+          git push --set-upstream origin lib
