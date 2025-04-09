@@ -8,25 +8,36 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: "16"
 
+      # - name: Install dependencies
+      #   run: npm install
+
       - name: Run deploy script
         run: |
           git config --global user.name "Ops Kivid"
           git config --global user.email "ops@kivid.com.br"
-          git ls-remote --exit-code origin lib &> /dev/null
-          if [ $? -eq 0 ]; then
-            git push origin --delete lib
+
+          # Create or switch to lib branch
+          if git show-ref --quiet refs/remotes/origin/lib; then
+            git checkout lib || git checkout -b lib origin/lib
+          else
+            git checkout -b lib
           fi
-          git checkout -b lib
+
+          # Update .gitignore
           echo "/node_modules" >> .gitignore
           echo "/stories" >> .gitignore
           echo "/public" >> .gitignore
@@ -36,7 +47,9 @@ jobs:
           echo "*.stories.tsx" >> .gitignore
           echo "App.tsx" >> .gitignore
           echo "main.tsx" >> .gitignore
+
+          # Commit and push changes
           git rm -r --cached .
           git add -A
           git commit -m "Add .gitignore for lib branch"
-          git push --set-upstream origin lib
+          git push origin lib --force
