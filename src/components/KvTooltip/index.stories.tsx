@@ -14,25 +14,15 @@ const meta = {
     status: {
       defaultValue: "idle",
       control: "radio",
-      options: {
-        idle: "idle",
-        invalid: "invalid",
-      },
+      options: ["idle", "invalid"],
     },
     align: {
       control: "radio",
-      options: {
-        start: "start",
-        end: "end",
-        center: "center",
-      },
+      options: ["start", "end", "center"],
     },
     side: {
       control: "radio",
-      options: {
-        top: "top",
-        bottom: "bottom",
-      },
+      options: ["top", "bottom"],
     },
   },
   args: {

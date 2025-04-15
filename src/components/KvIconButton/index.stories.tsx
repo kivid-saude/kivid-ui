@@ -15,12 +15,7 @@ const meta = {
   argTypes: {
     size: {
       control: "radio",
-      options: {
-        xsmall: "xsmall",
-        small: "small",
-        medium: "medium",
-        large: "large",
-      },
+      options: ["xsmall", "small", "medium", "large"],
     },
   },
   args: {
