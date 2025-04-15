@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { KvPassportCard } from ".";
 import { KvAvatar } from "../KvAvatar";
-import avatarFemale from "./assets/avatar-female.png";
+import avatarFemale from "./assets/avatar-female.png?url";
 
 const meta = {
   title: "Kivid/KvPassportCard",
