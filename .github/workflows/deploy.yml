@@ -21,35 +21,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "16"
+          registry-url: "https://registry.npmjs.org"
 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: Install dependencies
+        run: npm install
 
-      - name: Run deploy script
-        run: |
-          git config --global user.name "Ops Kivid"
-          git config --global user.email "ops@kivid.com.br"
+      - name: Build package
+        run: npm run build
 
-          # Create or switch to lib branch
-          if git show-ref --quiet refs/remotes/origin/lib; then
-            git checkout lib || git checkout -b lib origin/lib
-          else
-            git checkout -b lib
-          fi
-
-          # Update .gitignore
-          echo "/node_modules" >> .gitignore
-          echo "/stories" >> .gitignore
-          echo "/public" >> .gitignore
-          echo "/.vite" >> .gitignore
-          echo "vite-env.d.ts" >> .gitignore
-          echo "*.stories.ts" >> .gitignore
-          echo "*.stories.tsx" >> .gitignore
-          echo "App.tsx" >> .gitignore
-          echo "main.tsx" >> .gitignore
-
-          # Commit and push changes
-          git rm -r --cached .
-          git add -A
-          git commit -m "Add .gitignore for lib branch"
-          git push origin lib --force
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

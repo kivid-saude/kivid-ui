@@ -1,16 +1,24 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `
-  //         @import "./src/styles/variables.scss";
-  //       `,
-  //     },
-  //   },
-  // },
+  build: {
+    lib: {
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "KividUI",
+      fileName: (format) => `kivid-ui.${format}.js`,
+    },
+    rollupOptions: {
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
+  },
 });
