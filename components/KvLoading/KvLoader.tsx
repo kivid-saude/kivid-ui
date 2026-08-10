@@ -1,11 +1,11 @@
 "use client";
 
-import { Player } from "@lottiefiles/react-lottie-player";
+import { LottiePlayer } from "../lottie-player";
 import loadingSrc from "./loading-borboleta.json";
 
 export const KvLoader = () => {
   return (
-    <Player
+    <LottiePlayer
       loop={true}
       autoplay={true}
       src={loadingSrc}
