@@ -49,6 +49,13 @@
     max-height: 3rem;
   }
 
+  // Variante compacta (isCompact): barras de filtro.
+  &--compact {
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    font-size: var(--kv-font-size-sm);
+  }
+
   :global(.kv-fieldset--has-label) > & {
     height: 4rem;
     padding-top: 2rem;

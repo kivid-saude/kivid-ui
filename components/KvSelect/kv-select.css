@@ -21,3 +21,14 @@
   height: 4rem;
   padding-top: 2rem;
 }
+
+/* Variante compacta (isCompact): barras de filtro. */
+.kv-select--compact {
+  height: 2.5rem;
+  padding: 0 2.25rem 0 0.75rem;
+  font-size: var(--kv-font-size-sm);
+}
+/* Com o seletor irmão no seletor CSS: vence o `right: 1rem` do KvIcon em qualquer ordem de folhas. */
+.kv-select--compact + .kv-select__chevron--compact.slot--right {
+  right: 0.75rem;
+}

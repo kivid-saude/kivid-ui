@@ -10,6 +10,8 @@ type TKvSearch = {
   label?: string;
   status?: TKvInputStatus | TKvSearchStatus;
   isSmall?: boolean;
+  /** Variante compacta para barras de filtro: 40 px de altura e texto de 14 px. Sem rótulo. */
+  isCompact?: boolean;
   onClean?: () => void;
   onSearch?: () => void;
   buttonProps?: TKvIconButton;
@@ -25,6 +27,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
       onSearch,
       buttonProps,
       isSmall = false,
+      isCompact = false,
       ...props
     },
     ref,
@@ -70,6 +73,7 @@ export const KvSearch = React.forwardRef<HTMLInputElement, TKvSearch>(
           ref={ref}
           status={status as TKvInputStatus}
           isSmall={isSmall}
+          isCompact={isCompact}
           {...props}
         />
       </KvFieldset>

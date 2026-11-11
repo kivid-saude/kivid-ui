@@ -10,11 +10,16 @@ export type TKvInput = {
   status?: TKvInputStatus;
   tooltipProps?: TKvTooltip;
   isSmall?: boolean
+  /**
+   * Variante compacta para barras de filtro: 40 px de altura e texto de 14 px. Sem rótulo:
+   * dentro de um `KvFieldset` com `KvLabel`, a altura do campo com rótulo continua valendo.
+   */
+  isCompact?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
   (
-    { className = "", rounded = true, status = "idle", tooltipProps, isSmall, ...props },
+    { className = "", rounded = true, status = "idle", tooltipProps, isSmall, isCompact, ...props },
     ref,
   ) => {
     const classes = [styles["kv-input"]];
@@ -22,6 +27,7 @@ const KvInput = React.forwardRef<HTMLInputElement, TKvInput>(
     if (status === "invalid") classes.push(styles["kv-input--invalid"]);
     if (className) classes.push(className);
     if (isSmall) classes.push(styles["kv-input--small"])
+    if (isCompact) classes.push(styles["kv-input--compact"]);
     const computedClasses = classes.join(" ");
 
     return (
