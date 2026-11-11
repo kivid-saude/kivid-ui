@@ -10,7 +10,10 @@ export type TKvInput = {
   status?: TKvInputStatus;
   tooltipProps?: TKvTooltip;
   isSmall?: boolean;
-  /** Variante compacta para barras de filtro: 40 px de altura e texto de 14 px. */
+  /**
+   * Variante compacta para barras de filtro: 40 px de altura e texto de 14 px. Sem rótulo:
+   * dentro de um `KvFieldset` com `KvLabel`, a altura do campo com rótulo continua valendo.
+   */
   isCompact?: boolean;
   invalidMessage?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;

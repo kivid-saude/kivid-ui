@@ -5,7 +5,8 @@ import "./kv-select.css";
 type TKvSelect = {
   /**
    * Variante compacta para barras de filtro: 40 px de altura e texto de 14 px.
-   * Sem a prop, o seletor é o de sempre (56 px, 16 px).
+   * Sem a prop, o seletor é o de sempre (56 px, 16 px). Sem rótulo: dentro de um
+   * `KvFieldset` com `KvLabel`, a altura do campo com rótulo continua valendo.
    */
   isCompact?: boolean;
 } & React.SelectHTMLAttributes<HTMLSelectElement>;
