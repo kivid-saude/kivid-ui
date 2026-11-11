@@ -31,3 +31,16 @@ export const Default: Story = {
     </KvFieldset>
   ),
 };
+
+/** Barras de filtro: 40 px de altura, texto de 14 px, sem rótulo. */
+export const Compact: Story = {
+  render: (args) => (
+    <KvFieldset>
+      <KvSelect {...args} isCompact aria-label="Unidade">
+        <option value="">Todas as unidades</option>
+        <option value="option1">Unidade Centro</option>
+        <option value="option2">Unidade Norte</option>
+      </KvSelect>
+    </KvFieldset>
+  ),
+};
